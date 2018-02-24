@@ -1,18 +1,40 @@
 .Cookbook {
-  text-align: center;
+  background-color: whitesmoke;
 }
 
 .Cookbook-header {
-  background-color: #222;
+  text-align: center;
+  background-color: darkolivegreen;
   height: 70px;
   padding: 20px;
   color: white;
 }
 
 .Cookbook-title {
+  text-align: center;
   font-size: 1.5em;
 }
 
 .Cookbook-intro {
+  text-align: center;
   font-size: large;
+}
+
+.Cookbook-filters {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: darkolivegreen;
+  color: white;
+}
+
+.Cookbook-recipes {
+  text-align: center;
+  margin: auto;
+}
+
+.Cookbook-recipeCard {
+  margin-bottom: 15px;
 }

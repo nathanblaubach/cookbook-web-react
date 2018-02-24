@@ -26,10 +26,10 @@ class Cookbook extends React.Component {
           The zillionth cookbook app to be made, because why not?
         </p>
         <div className="row">
-          <div className="col-lg-2">
+          <div className="col-lg-3">
             <Filters />
           </div>
-          <div className="col-lg-10">
+          <div className="col-lg-9">
             <RecipeList value={recipes} />
           </div>
         </div>
