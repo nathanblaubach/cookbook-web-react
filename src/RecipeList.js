@@ -1,33 +1,29 @@
 import React from 'react';
+import './RecipeList.css';
 
 function RecipeCard(props) {
   return (
-    <div className="col-lg-3 col-md-4 col-sm-6 col-12 Cookbook-recipeCard">
-      <div className="card">
+    <div className="col-md-4 col-sm-6 col-12">
+      <div className="card RecipeList-recipeCard">
         <div className="card-block">
-          <h3 className="card-title">{props.value}</h3>
-          <p className="card-text">This recipe is so great that it will change your life. You haven't lived until you've tried it!</p>
+          <h2 className="card-title">{props.value}</h2>
         </div>
       </div>
     </div>
   );
 }
 
-class RecipeList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      recipes : props.value,
-    };
-  }
+function RecipeList(props) {
+  const searchBarFilter = recipe => recipe.toUpperCase().includes(props.searchString);
 
-  render() {
-    return (
-      <div className="row Cookbook-recipes">
-        {this.state.recipes.map(recipe => <RecipeCard value={recipe} />)}
-      </div>
-    );
-  }
+  const filteredRecipes = props.recipes.filter(searchBarFilter);
+  return (
+    <div className="row RecipeList">
+      {filteredRecipes.map((recipe, i) => 
+        <RecipeCard key={i} value={recipe} />
+      )}
+    </div>
+  );
 }
 
 export default RecipeList;
