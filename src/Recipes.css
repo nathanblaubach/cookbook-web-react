@@ -1,9 +1,9 @@
-.RecipeList {
+.Recipes {
   text-align: center;
   margin: auto;
 }
 
-.RecipeList-recipeCard {
+.Recipes-recipeCard {
   color: #0A2A0A;
   margin-bottom: 15px;
   padding: 15%;
