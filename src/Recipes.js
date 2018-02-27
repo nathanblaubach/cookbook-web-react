@@ -15,7 +15,7 @@ function RecipeCard(props) {
 
 function Recipes(props) {
   const searchBarFilter = recipe => recipe.name.toUpperCase().includes(props.searchString);
-  const recipeTagFilter = recipe => props.checkedTags.includes(recipe.tag) || props.checkedTags.length === 0;
+  const recipeTagFilter = recipe => props.checkedCategories.includes(recipe.category) || props.checkedCategories.length === 0;
 
   const filteredRecipes = props.recipes.filter(searchBarFilter)
                                        .filter(recipeTagFilter);
