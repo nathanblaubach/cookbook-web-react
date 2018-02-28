@@ -3,12 +3,8 @@ import './Recipes.css';
 
 function RecipeCard(props) {
   return (
-    <div className="col-md-4 col-sm-6 col-12">
-      <div className="card Recipes-recipeCard">
-        <div className="card-block">
-          <h2 className="card-title">{props.value.name}</h2>
-        </div>
-      </div>
+    <div className="Recipes-card">
+      {props.value.name}
     </div>
   );
 }
@@ -21,7 +17,7 @@ function Recipes(props) {
                                        .filter(recipeTagFilter);
 
   return (
-    <div className="row Recipes">
+    <div className="Recipes-layout">
       {filteredRecipes.map((recipe, i) => 
         <RecipeCard key={i} value={recipe} />
       )}

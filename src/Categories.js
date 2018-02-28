@@ -3,9 +3,9 @@ import './Categories.css';
 
 function Category(props) {
   return (
-    <div className="form-check">
-      <input type="checkbox" className="form-check-input" id={props.id} onChange={props.onChange} />
-      <label className="form-check-label" htmlFor={props.id}>{props.name}</label>
+    <div>
+      <input type="checkbox" id={props.id} onChange={props.onChange} />
+      <label htmlFor={props.id}>{props.name}</label>
     </div>
   );
 }
@@ -21,7 +21,7 @@ class Categories extends React.Component {
   render() {
     return (
       <div className="Categories">
-        <h1>Recipes For:</h1>
+        <h2>Recipes For:</h2>
         {this.state.categories.map(category => 
           <Category 
             key={category.key}

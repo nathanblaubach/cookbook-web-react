@@ -34,26 +34,25 @@ class Cookbook extends React.Component {
 
   render() {
     return (
-      <div className="Cookbook">
-        <header className="Cookbook-header">
-          <h1 className="Cookbook-title">Cookbook</h1>
-          <input type="text" className="form-control" id="searchText" onKeyUp={() => this.handleSearchBarChange()} />
-        </header>
-        <div className="row">
-          <div className="col-lg-3">
-            <Categories 
-              categories={this.state.categories}
-              onChange={(i) => this.handleTagSelectionChange(i)}
-            />
-          </div>
-          <div className="col-lg-9">
-            <Recipes
-              recipes={this.state.recipes}
-              searchString={this.state.searchString}
-              checkedCategories={this.state.checkedCategories}
-            />
-          </div>
+      <div className="Cookbook-layout">
+        <div className="header">
+          <p>The McClain Family Cookbook</p>
+          <input id="searchText" type="textbox" placeholder="Search" onKeyUp={() => this.handleSearchBarChange()} />  
         </div>
+        <div className="sidebar">
+          <Categories 
+            categories={this.state.categories}
+            onChange={(i) => this.handleTagSelectionChange(i)}
+          />
+        </div>
+        <div className="content">
+          <Recipes
+            recipes={this.state.recipes}
+            searchString={this.state.searchString}
+            checkedCategories={this.state.checkedCategories}
+          />
+        </div>
+        <div className="footer"></div>
       </div>
     );
   }

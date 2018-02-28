@@ -1,10 +1,17 @@
 .Categories {
-  width: 90%;
-  margin: auto;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 10px;
+  margin: 1rem;
+  border-radius: 5px;
+  padding: 1rem;
   background-color: darkolivegreen;
   color: white;
 }
 
+@media (max-width: 700px) {
+  .Categories {
+    margin: 0px;
+    border-radius: 0px;
+    padding: 2rem;
+    background-color: darkolivegreen;
+    color: white;
+  }
+}
