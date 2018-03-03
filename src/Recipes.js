@@ -3,7 +3,7 @@ import './Recipes.css';
 
 function RecipeCard(props) {
   return (
-    <div className="Recipes-card">
+    <div className="Recipes-card" onClick={props.onClick}>
       {props.value.name}
     </div>
   );
@@ -19,7 +19,7 @@ function Recipes(props) {
   return (
     <div className="Recipes-layout">
       {filteredRecipes.map((recipe, i) => 
-        <RecipeCard key={i} value={recipe} />
+        <RecipeCard key={i} value={recipe} onClick={props.onClick} />
       )}
     </div>
   );

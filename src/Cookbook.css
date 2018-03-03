@@ -7,7 +7,7 @@
       "sd   main main main"
       "ft   ft   ft   ft  ";
 }
-@media (max-width: 1050px) {
+@media (max-width: 1024px) {
   .Cookbook-layout {
     grid-template-areas: 
       "hd   hd   hd   hd  "
@@ -36,13 +36,13 @@
 }
 
 #searchText {
-  font-size:28px;
-  height: 40px;
+  font-size:1em;
+  height: 1.5em;
   width: 90%;
   max-width: 700px;
   display: block;
   margin: 0px auto 1rem;
   padding-left: 10px;
-  border-radius: 5px;
+  border-radius: .5rem;
   border: 0px;
 }

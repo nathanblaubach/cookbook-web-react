@@ -1,8 +1,8 @@
 import React from 'react';
 import Categories from './Categories.js';
 import Recipes from './Recipes.js';
+import { Recipe, recipeModalToggle } from './Recipe/Recipe.js';
 import './Cookbook.css';
-
 
 class Cookbook extends React.Component {
   constructor(props) {
@@ -46,10 +46,12 @@ class Cookbook extends React.Component {
           />
         </div>
         <div className="content">
+          <Recipe />
           <Recipes
             recipes={this.state.recipes}
             searchString={this.state.searchString}
             checkedCategories={this.state.checkedCategories}
+            onClick={() => recipeModalToggle()}
           />
         </div>
         <div className="footer"></div>

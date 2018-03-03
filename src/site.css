@@ -1,0 +1,26 @@
+.Recipe-card {
+  font-size: 1em;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+  border: 1px solid darkolivegreen;
+  border-radius: 5px;
+}
+
+.header-footer {
+  grid-area: hd;
+  background-color: darkolivegreen;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  padding: 1rem;
+}
+
+.image-placeholder {
+  height: 150px;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+  background-color: lightgray;
+  border: 1px solid darkgray;
+}
