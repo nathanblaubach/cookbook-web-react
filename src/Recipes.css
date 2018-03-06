@@ -5,30 +5,8 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.Recipes-card {
-  font-size: 2em;
-  padding: 30px;
-  text-align: center;
-  color: rgb(0, 50, 0);
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-
 @media (max-width: 768px) {
   .Recipes-layout {
-    margin: 0;
-    grid-gap: 0;
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  .Recipes-card {
-    font-size: 2em;
-    padding: 30px;
-    text-align: center;
-    color: rgb(0, 50, 0);
-    background-color: white;
-    border-radius: 0px;
-    border: 1px solid darkolivegreen;
   }
 }

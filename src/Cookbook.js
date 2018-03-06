@@ -1,7 +1,7 @@
 import React from 'react';
 import Categories from './Categories.js';
 import Recipes from './Recipes.js';
-import { Recipe, recipeModalToggle } from './Recipe/Recipe.js';
+import Recipe from './Recipe/Recipe.js';
 import './Cookbook.css';
 
 class Cookbook extends React.Component {
@@ -14,7 +14,16 @@ class Cookbook extends React.Component {
       recipes: cookbookData.recipes,
       checkedCategories: [],
       searchString: "",
+      selectedRecipe: 0,
+      showRecipe: false,
     }
+  }
+
+  handleRecipeClick(recipeId) {
+    this.setState({
+      selectedRecipe: recipeId,
+      showRecipe: recipeId !== undefined,
+    });
   }
 
   handleSearchBarChange() {
@@ -35,26 +44,30 @@ class Cookbook extends React.Component {
   render() {
     return (
       <div className="Cookbook-layout">
-        <div className="header">
-          <p>The McClain Family Cookbook</p>
+        <div className="header title">
+          <h2>The McClain Family Cookbook</h2>
           <input id="searchText" type="textbox" placeholder="Search" onKeyUp={() => this.handleSearchBarChange()} />  
         </div>
         <div className="sidebar">
           <Categories 
             categories={this.state.categories}
+            visible={window.innerWidth > 1024}
             onChange={(i) => this.handleTagSelectionChange(i)}
           />
         </div>
         <div className="content">
-          <Recipe />
+          <Recipe 
+            recipe={this.state.recipes.filter(recipe => recipe.id === this.state.selectedRecipe)[0]}
+            showRecipe={this.state.showRecipe}
+            onClick={(recipeId) => this.handleRecipeClick(recipeId)}
+          />
           <Recipes
             recipes={this.state.recipes}
             searchString={this.state.searchString}
             checkedCategories={this.state.checkedCategories}
-            onClick={() => recipeModalToggle()}
+            onClick={(recipeId) => this.handleRecipeClick(recipeId)}
           />
         </div>
-        <div className="footer"></div>
       </div>
     );
   }

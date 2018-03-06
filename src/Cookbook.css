@@ -3,40 +3,31 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(100px, auto);
   grid-template-areas: 
-      "hd   hd   hd   hd  "
-      "sd   main main main"
-      "ft   ft   ft   ft  ";
+    "hd   hd   hd   hd  "
+    "sd   main main main";
 }
 @media (max-width: 1024px) {
   .Cookbook-layout {
     grid-template-areas: 
       "hd   hd   hd   hd  "
       "sd   sd   sd   sd  "
-      "main main main main"
-      "ft   ft   ft   ft  ";
+      "main main main main";
   }
 }
 
 .header {
   grid-area: hd;
-  background-color: darkolivegreen;
-  color: white;
-  text-align: center;
-  font-size: 2em;
 }
 .sidebar {
   grid-area: sd;
+  padding: 1rem;
 }
 .content {
   grid-area: main;
 }
-.footer {
-  grid-area: ft;
-  background-color: darkolivegreen;
-}
 
 #searchText {
-  font-size:1em;
+  font-size: 1em;
   height: 1.5em;
   width: 90%;
   max-width: 700px;

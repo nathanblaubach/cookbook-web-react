@@ -1,5 +1,4 @@
 import React from 'react';
-import './Categories.css';
 
 function Category(props) {
   return (
@@ -15,21 +14,32 @@ class Categories extends React.Component {
     super(props);
     this.state = {
       categories : props.categories,
+      visible : props.visible,
       onChange : props.onChange,
     };
   }
+
+  toggleCategoryVisible() {
+    const flipped = !this.state.visible;
+    this.setState({
+      visible : flipped,
+    });
+  }
+
   render() {
     return (
-      <div className="Categories">
-        <h2>Recipes For:</h2>
-        {this.state.categories.map(category => 
-          <Category 
-            key={category.key}
-            id={category.key}
-            name={category.name}
-            onChange={() => this.state.onChange(category.key)}
-          />
-        )}
+      <div className="panel">
+        <h2 onClick={() => this.toggleCategoryVisible()}>Categories</h2>
+        <div>
+          {this.state.categories.filter(category => this.state.visible).map(category => 
+            <Category 
+              key={category.key}
+              id={category.key}
+              name={category.name}
+              onChange={() => this.state.onChange(category.key)}
+            />
+          )}
+        </div>
       </div>
     );
   }

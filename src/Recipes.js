@@ -3,24 +3,28 @@ import './Recipes.css';
 
 function RecipeCard(props) {
   return (
-    <div className="Recipes-card" onClick={props.onClick}>
-      {props.value.name}
+    <div className="card" onClick={props.onClick}>
+      <h2>{props.value.name}</h2>
     </div>
   );
 }
 
 function Recipes(props) {
   const searchBarFilter = recipe => recipe.name.toUpperCase().includes(props.searchString);
-  const recipeTagFilter = recipe => props.checkedCategories.includes(recipe.category) || props.checkedCategories.length === 0;
-
-  const filteredRecipes = props.recipes.filter(searchBarFilter)
-                                       .filter(recipeTagFilter);
-
+  const recipeTagFilter = recipe => props.checkedCategories.includes(recipe.category) || 
+                                    props.checkedCategories.length === 0;
   return (
     <div className="Recipes-layout">
-      {filteredRecipes.map((recipe, i) => 
-        <RecipeCard key={i} value={recipe} onClick={props.onClick} />
-      )}
+      {props.recipes.filter(searchBarFilter)
+                    .filter(recipeTagFilter)
+                    .map(recipe => 
+                      <RecipeCard
+                        key={recipe.id}
+                        value={recipe}
+                        onClick={(id) => props.onClick(recipe.id)}
+                      />
+                    )
+      }
     </div>
   );
 }

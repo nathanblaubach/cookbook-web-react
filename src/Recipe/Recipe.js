@@ -1,38 +1,26 @@
 import React from 'react';
-import Information from './Information.js';
 import Ingredients from './Ingredients.js';
 import Instructions from './Instructions.js';
-
 import '../site.css';
-import './Recipe.css';
 
 function Recipe(props) {
-  return (
-    <div id="modal">
-      <div className="Recipe-layout">
-        <div className="Recipe-header">
-          <div className="header-footer">
-            <p onClick={() => recipeModalToggle()}>Back</p>
-          </div>
+  if (!props.showRecipe) {
+    return(<div></div>);
+  } else {
+    return (
+      <div className="popup">
+        <div className="title">
+          <h4 id="exit-button" onClick={() => props.onClick(undefined)}>Back</h4>
+          <h2>{props.recipe.name}</h2>
         </div>
-        <div className="Recipe-information">
-          <Information />
-        </div>
-        <div className="Recipe-ingredients">
-          <Ingredients />
-        </div>
-        <div className="Recipe-instructions">
-          <Instructions />
+        <div className="recipe-panel">
+          <div><Ingredients ingredients={props.recipe.ingredients} /></div>
+          <div><Instructions instructions={props.recipe.instructions} /></div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+  
 }
 
-var hidden = true;
-function recipeModalToggle() {
-  hidden = !hidden;
-  document.getElementById("modal").style.display = hidden ? 'none' : 'block';
-}
-
-export { Recipe, recipeModalToggle };
+export default Recipe;
