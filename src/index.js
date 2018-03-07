@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import Cookbook from './Cookbook';
 import registerServiceWorker from './registerServiceWorker';
 

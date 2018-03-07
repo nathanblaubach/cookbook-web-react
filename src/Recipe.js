@@ -1,7 +1,22 @@
 import React from 'react';
-import Ingredients from './Ingredients.js';
-import Instructions from './Instructions.js';
-import '../site.css';
+
+function Ingredients(props) {
+  return (
+    <div className="card">
+      <h3>Ingredients:</h3>
+      {props.ingredients.map(ingredient => <p>{ingredient}</p>)}
+    </div>
+  );
+}
+
+function Instructions(props) {
+  return (
+    <div className="card">
+      <h3>Instructions:</h3>
+      {props.instructions.map(instruction => <p>{instruction}</p>)}
+    </div>
+  );
+}
 
 function Recipe(props) {
   if (!props.showRecipe) {

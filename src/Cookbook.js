@@ -1,7 +1,8 @@
 import React from 'react';
+import { Instagram, Facebook, Twitter, Mail } from 'react-feather';
 import Categories from './Categories.js';
 import Recipes from './Recipes.js';
-import Recipe from './Recipe/Recipe.js';
+import Recipe from './Recipe.js';
 import './Cookbook.css';
 
 class Cookbook extends React.Component {
@@ -46,7 +47,7 @@ class Cookbook extends React.Component {
       <div className="Cookbook-layout">
         <div className="header title">
           <h2>The McClain Family Cookbook</h2>
-          <input id="searchText" type="textbox" placeholder="Search" onKeyUp={() => this.handleSearchBarChange()} />  
+          <input id="searchText" className="searchBar" type="textbox" placeholder="Search" onKeyUp={() => this.handleSearchBarChange()} />  
         </div>
         <div className="sidebar">
           <Categories 
@@ -67,6 +68,15 @@ class Cookbook extends React.Component {
             checkedCategories={this.state.checkedCategories}
             onClick={(recipeId) => this.handleRecipeClick(recipeId)}
           />
+        </div>
+        <div className="footer title">
+          <p>This cookbook is a digitized version of the cookbook that was created in 2006 of McClain Family Recipes.</p>
+          <p>The goal is to make it easier to access as well as add new recipes as time goes on.</p>
+          <p>If you have one to add, you can either send it to me or wait until I am able to get the add feature up and running</p>
+          <Instagram />&nbsp;<a href="https://www.instagram.com/nathanblaubach/">Instagram</a><br /><br />
+          <Facebook />&nbsp;<a href="https://www.facebook.com/nathan.blaubach">Facebook</a><br /><br />
+          <Twitter />&nbsp;<a href="https://twitter.com/BlaubachNathan">Twitter</a><br /><br />
+          <Mail />&nbsp;<a href="mailto:nathanblaubach@gmail.com">Email</a>
         </div>
       </div>
     );
