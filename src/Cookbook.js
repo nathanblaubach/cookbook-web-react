@@ -47,7 +47,7 @@ class Cookbook extends React.Component {
       <div className="Cookbook-layout">
         <div className="header title">
           <h2>The McClain Family Cookbook</h2>
-          <input id="searchText" className="searchBar" type="textbox" placeholder="Search" onKeyUp={() => this.handleSearchBarChange()} />  
+          <input id="searchText" className="searchBar" type="textbox" placeholder="Search" onInput={() => this.handleSearchBarChange()} />  
         </div>
         <div className="sidebar">
           <Categories 
