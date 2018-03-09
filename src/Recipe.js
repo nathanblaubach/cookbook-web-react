@@ -1,10 +1,11 @@
 import React from 'react';
+import * as Icon from 'react-feather';
 
 function Ingredients(props) {
   return (
     <div className="card">
       <h3>Ingredients:</h3>
-      {props.ingredients.map(ingredient => <p>{ingredient}</p>)}
+      {props.ingredients.map((ingredient, i) => <p key={i}>{(i+1) + ". " + ingredient}</p>)}
     </div>
   );
 }
@@ -13,7 +14,7 @@ function Instructions(props) {
   return (
     <div className="card">
       <h3>Instructions:</h3>
-      {props.instructions.map(instruction => <p>{instruction}</p>)}
+      {props.instructions.map((instruction, i) => <p key={i}>{(i+1) + ". " + instruction}</p>)}
     </div>
   );
 }
@@ -25,7 +26,7 @@ function Recipe(props) {
     return (
       <div className="popup">
         <div className="title">
-          <h4 id="exit-button" onClick={() => props.onClick(undefined)}>Back</h4>
+          <h3 id="exit-button" onClick={() => props.onClick(undefined)}><Icon.ArrowLeft /> Back</h3>
           <h2>{props.recipe.name}</h2>
         </div>
         <div className="recipe-panel">

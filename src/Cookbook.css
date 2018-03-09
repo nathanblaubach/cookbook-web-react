@@ -8,6 +8,9 @@ body {
 h2 {
   text-align: center;
 }
+#exit-button {
+  text-align: left;
+}
 
 /* Grid Setup */
 
