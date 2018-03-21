@@ -1,11 +1,11 @@
 import React from 'react';
-import * as Icon from 'react-feather';
+import { ArrowLeft } from 'react-feather';
 
 function Ingredients(props) {
   return (
     <div className="card">
       <h3>Ingredients:</h3>
-      {props.ingredients.map((ingredient, i) => <p key={i}>{(i+1) + ". " + ingredient}</p>)}
+      {props.ingredients.map((ingredient, i) => <p key={i}>{ingredient}</p>)}
     </div>
   );
 }
@@ -20,16 +20,18 @@ function Instructions(props) {
 }
 
 function Recipe(props) {
-  if (!props.showRecipe) {
+  if (!props.visible) {
     return(<div></div>);
   } else {
     return (
       <div className="popup">
-        <div className="title">
-          <h3 id="exit-button" onClick={() => props.onClick(undefined)}><Icon.ArrowLeft /> Back</h3>
-          <h2>{props.recipe.name}</h2>
+        <div className="header">
+          <div className="header-content">
+            <ArrowLeft className="icon" onClick={() => props.onClick(undefined)}/>
+          </div>
         </div>
-        <div className="recipe-panel">
+        <div className="content">
+          <h1 align="center">{props.recipe.name}</h1>
           <div><Ingredients ingredients={props.recipe.ingredients} /></div>
           <div><Instructions instructions={props.recipe.instructions} /></div>
         </div>

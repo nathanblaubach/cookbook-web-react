@@ -4,62 +4,83 @@ body {
   font-family: sans-serif;
   background: whitesmoke;
 }
-
 h2 {
   text-align: center;
 }
-#exit-button {
-  text-align: left;
+a {
+  color: white;
 }
-
-/* Grid Setup */
 
 .header {
-  grid-area: hd;
+  width: 100%;
+  position: fixed;
 }
-.sidebar {
-  grid-area: sd;
+.header-content {
+  background-color: #00304E;
+  color: white;
   padding: 1rem;
 }
+.header-grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 30px) 25fr;
+}
+.icon {
+  height: 42px;
+}
+.searchBar {
+  border: 0px;
+  height: 2.5em;
+  font-size: 1em;
+  padding-left: 10px;
+}
+.sidebar-modal {
+  position: fixed;
+  height: 100%;
+  width: 80%;
+  max-width: 300px;
+  padding: 2rem;
+  overflow: auto;
+  background-color: #00304E;
+  color: white;
+}
+
 .content {
-  grid-area: main;
+  padding: 1rem;
+  padding-top: 90px;
+  max-width: 1024px;
+  margin: auto;
 }
-.footer {
-  grid-area: ft;
-}
-
-.Cookbook-layout {
+.content-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  grid-template-areas: 
-    "hd   hd   hd   hd  "
-    "sd   main main main"
-    "ft   ft   ft   ft  ";
-}
-@media (max-width: 1024px) {
-  .Cookbook-layout {
-    grid-template-areas: 
-      "hd   hd   hd   hd  "
-      "sd   sd   sd   sd  "
-      "main main main main"
-      "ft   ft   ft   ft  ";
-  }
-}
-
-.Recipes-layout {
-  display: grid;
-  margin: 1rem;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
 }
-
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 768px) {
-  .Recipes-layout {
+  .content-grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
+.card {
+  padding: 1rem;
+  color: black;
+  background-color: white;
+  border-color: lightgray;
+  border-style: solid;
+  border-width: 1px;
+}
+.card:hover {
+  border-color: #00304E;
+  color: #00304E;
+}
+
+/*Recipe.css*/
 .recipe-panel {
   display: grid;
   grid-gap: 1rem;
@@ -74,31 +95,12 @@ h2 {
   }
 }
 
-/* Formatting Components */
-
-.title {
+.footer {
   padding: 1.5rem;
-  background-color: darkolivegreen;
+  background-color: #00304E;
   color: white;
   text-align: center;
   font-size: 1.5em;
-}
-
-.panel {
-  padding: 1rem;
-  color: white;
-  background-color: darkolivegreen;
-  border-radius: 5px;
-}
-
-.card {
-  padding: 1rem;
-  color: black;
-  background-color: white;
-  border-color:darkolivegreen;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
 }
 
 .popup {
@@ -110,35 +112,4 @@ h2 {
   width: 100%;
   height: 100%;
   overflow: auto;
-}
-
-.searchBar {
-  font-size: 1em;
-  height: 1.5em;
-  width: 90%;
-  max-width: 700px;
-  display: block;
-  margin: 0px auto 1rem;
-  padding-left: 10px;
-  border-radius: .5rem;
-  border: 0px;
-}
-/* unvisited link */
-a:link {
-  color: white;
-}
-
-/* visited link */
-a:visited {
-  color: white;
-}
-
-/* mouse over link */
-a:hover {
-  color: white;
-}
-
-/* selected link */
-a:active {
-  color: white;
 }

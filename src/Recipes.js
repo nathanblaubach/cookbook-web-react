@@ -13,7 +13,7 @@ function Recipes(props) {
   const recipeTagFilter = recipe => props.checkedCategories.includes(recipe.category) || 
                                     props.checkedCategories.length === 0;
   return (
-    <div className="Recipes-layout">
+    <div className="content-grid">
       {props.recipes.filter(searchBarFilter)
                     .filter(recipeTagFilter)
                     .map(recipe => 
