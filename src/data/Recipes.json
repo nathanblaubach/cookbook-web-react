@@ -5,12 +5,18 @@
       "id":   0, 
       "name": "Hot Mulled Cider", 
       "ingredients": [
-        "",
-        ""
+        "1/2 cup brown sugar",
+        "1 tsp whole allspice",
+        "1 tsp whole cloves",
+        "1/4 tsp salt",
+        "dash of ground nutmeg",
+        "3 inch stick of cinnamon",
+        "2 quarts apple cider"
       ], 
       "instructions": [
-        "",
-        ""
+        "Slowly bring to a boil",
+        "Cover & simmer for 20 minutes",
+        "Remove spices"
       ]
     },
     { 
@@ -18,12 +24,20 @@
       "id":   1, 
       "name": "Cranberry Tea", 
       "ingredients": [
-        "",
-        ""
+        "3 quarts water",
+        "1 1/2 quart cranberry juice",
+        "3 cups sugar",
+        "1 cup red hots",
+        "12 whole cloves",
+        "Juice of 4 oranges",
+        "Juice of 4 lemons"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix 1 quart of water with the sugar, red hots, and cloves",
+        "Bring to a boil and cook until sugar and red hots have dissolved",
+        "Strain and combine with cranberry juice",
+        "When ready to serve, add the rest of water, and the juice from the oranges and lemons",
+        "Serve Hot or Cold"
       ]
     },
     { 
@@ -31,12 +45,13 @@
       "id":   2, 
       "name": "Hot Cocoa Mix", 
       "ingredients": [
-        "",
-        ""
+        "4 cups powdered milk",
+        "3 cups Quick Nestles Chocolate Powder",
+        "1 cup creamer",
+        "1 cup powdered sugar"
       ], 
       "instructions": [
-        "",
-        ""
+        "Use 1/3 cup cocoa mix in 1 cup hot water"
       ]
     },
     { 
@@ -44,38 +59,35 @@
       "id":   3, 
       "name": "Cindy Smith's Punch", 
       "ingredients": [
-        "",
-        ""
+        "1 quart cranberry juice",
+        "6 ounce orange juice concentrate",
+        "16 ounce white soda",
+        "16 ounce ginger ale",
+        "1 pint sherbert-any flavor"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together"
       ]
     },
     { 
       "category": 0, 
       "id":   4, 
       "name": "7-Up Punch", 
+      "serves" : 30,
       "ingredients": [
-        "",
-        ""
+        "1 pound can crushed pineapple",
+        "1 - 12 ounce package frozen strawberries, thawed",
+        "42 ounce 7-UP",
+        "1 cup grenadine",
+        "1 - 46 ounce can pineapple juice",
+        "2 trays of ice cubes"
       ], 
       "instructions": [
-        "",
-        ""
-      ]
-    },
-    { 
-      "category": 0, 
-      "id":   5, 
-      "name": "Orange Rind Curls", 
-      "ingredients": [
-        "",
-        ""
-      ], 
-      "instructions": [
-        "",
-        ""
+        "Chill fruits ahead of time",
+        "Combine fruit in punch bowl",
+        "Stir in pineapple juice and grenadine",
+        "Pour in 7-UP slowly and mix gently",
+        "Add ice cubes"
       ]
     },
     { 
@@ -83,12 +95,19 @@
       "id":   6, 
       "name": "Slush Sparkle", 
       "ingredients": [
-        "",
-        ""
+        "5 cups water",
+        "3 cups sugar",
+        "1 - 46 ounce can pinapple juice",
+        "1 - 12 ounce can lemonade concentrate",
+        "1 - 12 ounce can orange juice concentrate",
+        "6 mashed bananas"
       ], 
       "instructions": [
-        "",
-        ""
+        "Heat the water and sugar until dissolved",
+        "Add the juice and bananas",
+        "Pour into containers and freeze",
+        "Stir occasionally while freezing",
+        "Serve with 7-UP over top"
       ]
     },
     { 
@@ -96,12 +115,14 @@
       "id":   7, 
       "name": "Tomato Cocktail", 
       "ingredients": [
-        "",
-        ""
+        "2 1/2 cup tomato juice",
+        "3 tbsp lemon juice",
+        "1/4 tsp celery salt",
+        "1 tsp sugar",
+        "1 tsp worchestershire sauce"
       ], 
       "instructions": [
-        "",
-        ""
+        "Chill, serve and enjoy"
       ]
     },
     { 
@@ -109,12 +130,13 @@
       "id":   8, 
       "name": "Fruit Smoothies", 
       "ingredients": [
-        "",
-        ""
+        "1 cup vanilla yogurt",
+        "1 cup skim milk",
+        "1 banana",
+        "1 cup of your favorite fruit (frozen, fresh or canned... we like pineapple, mango and blueberries)"
       ], 
       "instructions": [
-        "",
-        ""
+        "Put all ingredients into blender and process until smooth"
       ]
     },
     { 
@@ -122,12 +144,16 @@
       "id":   9, 
       "name": "White Grape Punch", 
       "ingredients": [
-        "",
-        ""
+        "64 ounce white grape juice",
+        "juice of 1 lemon (approx 3tbsp)",
+        "1 quart unsweetened pineapple juice",
+        "2 cups water",
+        "2 liter bottle of dry ginger ale",
+        "1 quart pineapple sherbet",
+        "Fresh pineapple cubes and seedless green grapes to garnish"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together"
       ]
     },
     { 
@@ -135,12 +161,17 @@
       "id":  10, 
       "name": "Summertime Slush", 
       "ingredients": [
-        "",
-        ""
+        "3 large boxes of jello",
+        "10 cups water",
+        "1 cup sugar",
+        "2 large cans pineapple juice",
+        "1 large can frozen lemonade",
+        "2 bottles ginger ale (24-30 ounce each)"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine and freeze 5-6 for slush",
+        "It will not freeze solid Keeps well in freezer",
+        "Use Dixie cups for individual servings"
       ]
     },
     { 
@@ -148,12 +179,26 @@
       "id":  11, 
       "name": "Chai Tea", 
       "ingredients": [
-        "",
-        ""
+        "5/8 cup French vanilla non-dairy creamer, dry",
+        "5/8 cup non-dairy creamer dry",
+        "5/8 cup nonfat dry milk",
+        "1 3/4 cup sugar",
+        "1 1/8 cup instant tea, unsweetened",
+        "1 tsp ground ginger",
+        "1 tsp ground cinnamon",
+        "1/2 tsp ground cardamom",
+        "1/2 tsp ground allspice",
+        "1/2 tsp ground cloves",
+        "1/2 tsp ground nutmeg",
+        "1/2 tsp ground coriander",
+        "1/2 tsp ground white pepper"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine all ingredients and mix well",
+        "Store in an airtight container",
+        "Yields 4 1/4 cups mix",
+        "To prepare: Add 3 rounded teaspoons in cup with boiling water",
+        "Note: 5/8 cup = 1/2 cup + 1/8 cup"
       ]
     },
     {
@@ -161,12 +206,22 @@
       "id":  12, 
       "name": "Hot Spinach Artichocke Dip", 
       "ingredients": [
-        "",
-        ""
+        "1 jar (6 - 1/2 ounce) marinated artichoke hearts, drained and chopped",
+        "1 package (10 ounce) frozen chopped spinach, thawed and well drained",
+        "2 tbsp chopped onion",
+        "1 tbsp butter",
+        "1/4 cup grated parmesan cheese",
+        "1/2 cup milk",
+        "2 cups shredded Colby/Monterey Jack cheese",
+        "3/4 tsp Creole seasoning"
       ], 
       "instructions": [
-        "",
-        ""
+        "In a skillet, saute artichokes and onion in butter until onion is tender",
+        "Stir in spinach and parmesan cheese",
+        "Cook over low heat until spinach is heated through",
+        "Add Colby/Monterey Jack cheese, milk, and Creole seasoning",
+        "Heat until cheese is melted",
+        "Serve immediately with vegetables, tortilla chips, or crackers"
       ]
     },
     { 
@@ -174,12 +229,15 @@
       "id":  13, 
       "name": "Fresh Fruit Dip", 
       "ingredients": [
-        "",
-        ""
+        "1 carton reduced calorie Cool Whip",
+        "1 - 8 ounce package reduced fat cream cheese - strawberry flavored",
+        "1 package strawberry gelatin (can be sugar free)"
       ], 
       "instructions": [
-        "",
-        ""
+        "Whip together",
+        "Refrigerate for a couple of hours",
+        "Cut up fruits",
+        "Insert toothpicks and dip"
       ]
     },
     { 
@@ -187,12 +245,13 @@
       "id":  14, 
       "name": "Chestnuts", 
       "ingredients": [
-        "",
-        ""
+        "1/2 slice bacon per chestnut"
       ], 
       "instructions": [
-        "",
-        ""
+        "Wrap bacon slices around chestnuts with a toothpick",
+        "Place on cookie sheet and bake @ 350 degrees for 1 hour",
+        "Place in crock pot",
+        "Pour sweet and sour sauce over chestnuts and serve warm"
       ]
     },
     { 
@@ -200,12 +259,16 @@
       "id":  15, 
       "name": "Cheese Ball", 
       "ingredients": [
-        "",
-        ""
+        "2 - 8 ounce package cream cheese",
+        "1 - 8 1/2 ounce can crushed pineapple",
+        "2 cup pecans chopped",
+        "1/4 cup green pepper, finely chopped",
+        "2 tbsp onion, finely chopped",
+        "1 tbsp seasoned salt"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix together well, saving 1 cup pecans to roll cheese ball in",
+        "Refrigerate at least eight hours before serving"
       ]
     },
     { 
@@ -213,12 +276,13 @@
       "id":  16, 
       "name": "Little Smokies", 
       "ingredients": [
-        "",
-        ""
+        "Little Smokies",
+        "1 cup grape jelly",
+        "1 bottle Heinz Chili Sauce"
       ], 
       "instructions": [
-        "",
-        ""
+        "Place in crock pot with enough sauce to cover",
+        "Cook on low 5-6 hours"
       ]
     },
     { 
@@ -226,12 +290,14 @@
       "id":  17, 
       "name": "Reuben Spread", 
       "ingredients": [
-        "",
-        ""
+        "5 package Buddig sliced corn beef (chopped)",
+        "4 package shredded Swiss cheese",
+        "1 pound can sauerkraut, drained and chopped",
+        "1 1/2 cup mayo"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix well. Cover and bake @ 350 degrees for 30 minutes",
+        "Spread on cocktail Rye bread"
       ]
     },
     { 
@@ -239,12 +305,14 @@
       "id":  18, 
       "name": "Cheese Dreams", 
       "ingredients": [
-        "",
-        ""
+        "6 ounce Old English Sharp Cheese spread",
+        "1 cup butter",
+        "1 large loaf bread UNSLICED"
       ], 
       "instructions": [
-        "",
-        ""
+        "Cut bread into 2 inch cubes",
+        "Whip cheese and butter and frost all sides of bread cubes",
+        "Bake at 375 degrees for 10 minutes"
       ]
     },
     { 
@@ -252,12 +320,22 @@
       "id":  19, 
       "name": "Taco Salad", 
       "ingredients": [
-        "",
-        ""
+        "1 - 8 ounce package cream cheese",
+        "1 pound small curd cottage cheese",
+        "1 package taco seasoning",
+        "1 large package shredded taco cheese",
+        "Lettuce",
+        "Tomatoes",
+        "Onions",
+        "Black Olives"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix cream cheese, cottage cheese and taco seasoning together",
+        "Spread thin on 2 pizza pans",
+        "Chop up the vegetables",
+        "Sprinkle on top of cream cheese mixture",
+        "Top with shredded taco cheese",
+        "Scoop up with plain Tostados"
       ]
     },
     { 
@@ -265,12 +343,15 @@
       "id":  20, 
       "name": "Vegetable Dip", 
       "ingredients": [
-        "",
-        ""
+        "1 1/3 cup miracle whip salad dressing",
+        "1 1/3 cup sour cream",
+        "2 tbsp chopped onions",
+        "2 tbsp chopped parsley",
+        "2 tsp dill weed",
+        "2 tsp Beau Monde seasoning"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix together and chill"
       ]
     },
     { 
@@ -278,12 +359,13 @@
       "id":  21, 
       "name": "Fruit Dip", 
       "ingredients": [
-        "",
-        ""
+        "1 large carton cool whip",
+        "1/2 cup brown sugar",
+        "1/2 tsp cinnamon",
+        "1/4 tsp nutmeg"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together"
       ]
     },
     { 
@@ -291,12 +373,14 @@
       "id":  22, 
       "name": "Caramel Apple Dip", 
       "ingredients": [
-        "",
-        ""
+        "1 - 8 ounce package cream cheese",
+        "1/2 cup brown sugar",
+        "1 tsp vanilla",
+        "1/2 tsp caramel flavoring"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together",
+        "Variation: Omit the caramel flavoring and add chopped peanuts, finely chopped"
       ]
     },
     { 
@@ -304,12 +388,13 @@
       "id":  23, 
       "name": "Apple Snickers", 
       "ingredients": [
-        "",
-        ""
+        "Apples",
+        "Snickers bars",
+        "Cool Whip"
       ], 
       "instructions": [
-        "",
-        ""
+        "Cut up Apples and Snickers bars",
+        "Mix all ingredients together"
       ]
     },
     { 
@@ -317,12 +402,25 @@
       "id":  24, 
       "name": "Nuts And Bolts", 
       "ingredients": [
-        "",
-        ""
+        "1 box rice chex",
+        "1 box cheerios",
+        "1 box thin pretzel sticks",
+        "1 package cashew nuts",
+        "1 package peanuts",
+        "1 pound butter",
+        "1 tbsp worcestershire sauce",
+        "1 tbsp garlic sauce",
+        "1/2 tsp onion salt"
       ], 
       "instructions": [
-        "",
-        ""
+        "Melt butter",
+        "Add worcestershire sauce, garlic and onion",
+        "Combine cereals, pretzels and nuts",
+        "Pour butter over ceareal mixture and stir well",
+        "Use a large turkey roaster with a cover",
+        "Put in oven for 1 hour",
+        "Bake at 250 degrees",
+        "Stir often"
       ]
     },
     { 
@@ -330,12 +428,17 @@
       "id":  25, 
       "name": "Joni's Wedding Chex Mix", 
       "ingredients": [
-        "",
-        ""
+        "1 cup butter",
+        "2 1/2 tbsp worcestershire sauce",
+        "15 cups chex cereal",
+        "9 cups Cheerio's",
+        "1 tbsp onion salt",
+        "1 tbsp garlic",
+        "4 cups nuts",
+        "6 cups pretzels"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together"
       ]
     },
     { 
@@ -343,12 +446,20 @@
       "id":  26, 
       "name": "Spinach Dip in a Bread Bowl", 
       "ingredients": [
-        "",
-        ""
+        "2 cups sour cream",
+        "1 envelope (1 ounce) Ranch Salad Dressing Mix",
+        "1 - 10 ounce package frozen chopped spinach, thawed and well drained",
+        "1/4 cup chopped onion",
+        "3/4 tsp basil",
+        "1/2 tsp oregano",
+        "1 - 1 pound loaf of bread",
+        "Raw vegetables"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine first 6 ingredients and chill for at least an hour",
+        "Cut top off (1 1/2 inch) of loaf of bread",
+        "Hollow out loaf, leaving a thick shell",
+        "Save bread for dipping as well as raw vegetables"
       ]
     },
     { 
@@ -356,12 +467,34 @@
       "id":  27, 
       "name": "Chicken Pillows", 
       "ingredients": [
-        "",
-        ""
+        "2 whole chicken breasts",
+        "3 tbsp lemon juice",
+        "2 tbsp canola oil",
+        "1 tsp finely chopped garlic",
+        "1 tsp oregano",
+        "1/2 tsp salt",
+        "1/2 cup butter",
+        "1/2 pound phyllo dough"
       ], 
       "instructions": [
-        "",
-        ""
+        "Cut chicken 1 inch cubes",
+        "Combine remaining ingredients and add chicken",
+        "Marinate covered overnight in refrigerator",
+        "Melt butter",
+        "Unwrap phyllo and place on wax paper",
+        "Cover what you are not working with to prevent it from drying out",
+        "Cut Pastry in half with scissors lengthwise, giving you 2 long strips about 6 inches wide",
+        "Take one strip of phyllo, fold crosswise and brush with butter",
+        "Place 2 pieces of chicken at one short end and roll up in pastry to midpoint",
+        "Fold left and right edges toward center over filling and continue rolling; Forming a neat package",
+        "Brush entire package with butter and place seam side down on jelly roll pan",
+        "Repeat with remaining chicken and phyllo",
+        "Bake at 400 degrees for 15 minutes until golden brown",
+        "To freeze ahead, Place filled and buttered phyllo rolls on a large baking sheet and freeze",
+        "When frozen, transfer to large plastic bag and seal",
+        "To bake, Place frozen rolls on single layer on cookie sheet",
+        "Crush with butter",
+        "Bake at 400 degrees for 20 minutes"
       ]
     },
     {
@@ -369,12 +502,22 @@
       "id":  28, 
       "name": "Bar-B-Q Ribs", 
       "ingredients": [
-        "",
-        ""
+        "4 pounds spare ribs",
+        "1 cup catsup",
+        "1/4 cup sugar",
+        "1/2 tsp pepper",
+        "1 tsp chili powder",
+        "1/4 tsp garlic salt",
+        "1 tsp paprika",
+        "1 tsp salt",
+        "1 tsp dry mustard",
+        "1/2 cup vinegar"
       ], 
       "instructions": [
-        "",
-        ""
+        "Place ribs on roasting pan",
+        "Combine other ingredients and pour over ribs",
+        "Cover and bake at 325 degrees for 2 1/2 hours",
+        "Remove cover and bake an additional 30 minutes"
       ]
     },
     { 
@@ -382,12 +525,31 @@
       "id":  29, 
       "name": "Taco Casserole", 
       "ingredients": [
-        "",
-        ""
+        "1 tbsp oil",
+        "1 cup chopped onion",
+        "1 tsp minced garlic",
+        "1 1/2 pounds ground beef",
+        "15 ounce tomato sauce",
+        "1 1/2 ounce taco seasoning mix",
+        "1 can red kidney beans",
+        "2 cups shredded cheddar cheese",
+        "8 ounces nacho chips",
+        "1/2 cup taco sauce"
       ], 
       "instructions": [
-        "",
-        ""
+        "Brown onion and garlic in oil-add meat for 5 minutes",
+        "Drain fat",
+        "Stir in tomato sauce and taco seasoning mix",
+        "Rinse and drain kidney beans",
+        "Mix beans with half of the cheese",
+        "Grease 9x13 inch casserole pan",
+        "Line bottom with 1/3 chips",
+        "Spread a layer of bean and cheese mixture",
+        "Add 1/3 chips and spread layer of meat mixture",
+        "Add remaining chips",
+        "Drizzle taco sauce over top",
+        "Add remaining cheese",
+        "Bake 25 minutes at 375"
       ]
     },
     { 
@@ -395,12 +557,20 @@
       "id":  30, 
       "name": "Corn Beef Casserole", 
       "ingredients": [
-        "",
-        ""
+        "6 ounce cooked noodles",
+        "1/2 cup chopped onion",
+        "12 ounce can corned beef/or fresh",
+        "1 can cream of chicken soup",
+        "1/4 pound American or Velveeta Cheese-cubed",
+        "1/2 cup buttered bread crumbs",
+        "1 cup milk"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine milk and soup",
+        "Layer noodles through cheese in order above",
+        "Pour milk mixture over top",
+        "Bake 35 minutes at 350 degrees",
+        "Add bread crumbs and bake an additional 10 minutes"
       ]
     },
     { 
@@ -408,12 +578,34 @@
       "id":  31, 
       "name": "Frikadellas (Norwegian Meatballs)", 
       "ingredients": [
-        "",
-        ""
+        "2 beaten eggs",
+        "1/2 cup flour",
+        "1/2 tsp dry mustard",
+        "1/4 tsp pepper",
+        "2 pounds ground meat (any combination of lean ground beef, pork, turkey)",
+        "1 cup milk",
+        "1 1/2 tsp salt",
+        "1/2 tsp nutmeg",
+        "2 tbsp oil"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine first 7 ingredients in a large bowl",
+        "Beat smooth",
+        "Mix in the ground meats",
+        "Blend thoroughly",
+        "Heat oil in a skillet",
+        "Drop meat mixture by rounded tablespoons into hot skillet",
+        "As they brown, flatten into patties (1/2 inch thick 2 inch diameter)",
+        "Brown well on both sides",
+        "Drain on paper towel",
+        "Place in covered casserol",
+        "Freeze to reheat later OR place in 350 degree oven in covered casserole dish for 20-30 minutes"        
+      ],
+      "additional" : [
+        "Serving suggestions",
+        "Traditional - Serve with lingonberries and sour cream",
+        "Our way - brown gravy and mashed potatoes",
+        "Also very good with barbeque sauce"
       ]
     },
     { 
@@ -421,12 +613,20 @@
       "id":  32, 
       "name": "Stuffed Peppers", 
       "ingredients": [
-        "",
-        ""
+        "4 large green peppers (tops cut off and cleaned out)",
+        "1 1/2 pounds uncooked ground beef",
+        "1 cup minute rice",
+        "1 tbsp worcestershire sauce",
+        "1 egg",
+        "4 cans tomato soup"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix together ground beef, rice, egg and sauce in a bowl",
+        "Stuff green peppers full with hamburger mixture",
+        "Make excess hamburger mixture into large balls and place peppers and balls into 9x13 baking pan",
+        "Cover with tomato soup",
+        "Bake at 350 degrees for 1 1/2 hours",
+        "Serve and enjoy"
       ]
     },
     { 
@@ -434,12 +634,33 @@
       "id":  33, 
       "name": "Reuben Loaf", 
       "ingredients": [
-        "",
-        ""
+        "3 1/4 cup flour",
+        "1/4 cup Thousand Island dressing",
+        "6 ounce thinly sliced corn beef",
+        "1 package yeast-rapid rise",
+        "8 ounce can sauerkraut - well drained",
+        "1 egg white - beaten",
+        "1 tbsp sugar",
+        "1 tsp salt",
+        "8 ounces Swiss cheese",
+        "1 cup hot water",
+        "1 tbsp margerine",
+        "sesame seeds"
       ], 
       "instructions": [
-        "",
-        ""
+        "Set aside 1 cup flour",
+        "In a large bowl, mix remaining flour, sugar, salt and yeast",
+        "Stir in hot water and oleo",
+        "Mix in only enough reserved flour to make a soft dough",
+        "Knead 4 minutes",
+        "On greased baking sheet, roll dough in approximately 14x10 inch rectangle",
+        "Spread dressing down center third of dough lengthwise",
+        "Top with layers of beef, cheese and sauerkraut",
+        "Cut 1 inch wide strips along sides of filling of dough edges",
+        "Alternating sides, fold strips at an angle across the filling",
+        "Cover and place baking sheet over large shallow pan, half filled with boiling water for 15 minutes",
+        "Brush with egg white, sprinkle with sesame seeds",
+        "Bake 25 minutes at 400 degrees"
       ]
     },
     { 
@@ -447,12 +668,21 @@
       "id":  34, 
       "name": "Sloppy Joe", 
       "ingredients": [
-        "",
-        ""
+        "5 pounds ground beef",
+        "2 cups chopped onion",
+        "2 cups celery",
+        "1/2 green pepper",
+        "18 ounces tomato paste",
+        "24 ounces tomato sauce",
+        "2 1/2 tsp salt",
+        "2 1/2 tsp sugar",
+        "1 tsp garlic powder",
+        "1/2 tsp Oregano"
       ], 
       "instructions": [
-        "",
-        ""
+        "Saute onions, celery and green pepper",
+        "Brown meat",
+        "Add all other ingredients and simmer about 2 hours"
       ]
     },
     { 
@@ -460,12 +690,19 @@
       "id":  35, 
       "name": "Chop Suey Casserole", 
       "ingredients": [
-        "",
-        ""
+        "1 pound ground beef",
+        "1 can cream of mushroom soup",
+        "1 can cream of chicken soup",
+        "1 onion chopped",
+        "1 cup celery chopped",
+        "1/2 cup raw rice",
+        "4 tbsp soy sauce",
+        "1 1/2 cup water"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine, place in greased casserole dish",
+        "Bake at 425 for 30 minutes",
+        "Sprinkle top with Chinese noodles"
       ]
     },
     { 
@@ -473,12 +710,17 @@
       "id":  36, 
       "name": "Belly Burner Meat Balls", 
       "ingredients": [
-        "",
-        ""
+        "2 pounds ground beef",
+        "2 small onions chopped",
+        "1 1/2 cup milk",
+        "1 1/2 dried bread crumbs",
+        "2 tsp cornstarch",
+        "2 tsp salt",
+        "2 eggs"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine and shape into 1 inch meatballs and simmer covered 10 minutes",
+        "Stir occasionally"
       ]
     },
     { 
@@ -486,12 +728,36 @@
       "id":  37, 
       "name": "Hamburger Pie", 
       "ingredients": [
-        "",
-        ""
+        "1 cup flour",
+        "1 1/2 tsp salt",
+        "1/3 cup shortening",
+        "1/4 cup catsup",
+        "2 tsp onion",
+        "1 pound ground beef",
+        "1 beaten egg",
+        "1/2 tsp basil",
+        "1/4 tsp marjoram",
+        "1/8 tsp pepper",
+        "1 cup grated cheese",
+        "1/2 cup bread crumbs"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine flour, shortening and 1/2 tsp salt and place in pie pan",
+        "Top with 1/4 cup chopped onion",
+        "Brown beef",
+        "Add rest of ingredients and pour over crust",
+        "Topping #1",
+        "Top with 6 fresh tomato slices",
+        "Bake at 400 20-25 minutes",
+        "Add a slice of cheese on top of each tomato the last minute of baking",
+        "Just enough to melt the cheese",
+        "Topping #2",
+        "Make instant potato for 4 servings",
+        "Hold out milk",
+        "Add beaten egg",
+        "Then add just enough milk to make them right consistency",
+        "Place on top of meat filling",
+        "Bake at 400 20-25 minutes"
       ]
     },
     { 

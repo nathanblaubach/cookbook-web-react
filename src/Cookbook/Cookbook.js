@@ -3,23 +3,20 @@ import { Menu, Filter, Mail } from 'react-feather';
 import Navigation from './Navigation.js';
 import Categories from './Categories.js';
 import Recipes from './Recipes.js';
-import Recipe from './Recipe.js';
 import './Cookbook.css';
 
 class Cookbook extends React.Component {
   constructor(props) {
     super(props);
-    const dataService = require('./data/FileIO.js');
+    const dataService = require('../data/FileIO.js');
     const cookbookData = dataService.data();
     this.state = {
       categories: cookbookData.categories,
       recipes: cookbookData.recipes,
       checkedCategories: [],
       searchString: "",
-      selectedRecipe: 0,
       showMenu: false,
       showCategories: false,
-      showRecipe: false,
     }
   }
 
@@ -43,10 +40,7 @@ class Cookbook extends React.Component {
   }
 
   handleRecipeClick(recipeId) {
-    this.setState({
-      selectedRecipe: recipeId,
-      showRecipe: recipeId !== undefined,
-    });
+    window.location="./recipe/"+recipeId;
   }
 
   handleSearchBarChange() {
@@ -89,12 +83,6 @@ class Cookbook extends React.Component {
         />
 
         <div className="content">
-          <Recipe 
-            recipe={this.state.recipes.filter(recipe => recipe.id === this.state.selectedRecipe)[0]}
-            visible={this.state.showRecipe}
-            backClick={() => this.handleBackClick()}
-            onClick={(recipeId) => this.handleRecipeClick(recipeId)}
-          />
           <Recipes
             recipes={this.state.recipes}
             searchString={this.state.searchString}

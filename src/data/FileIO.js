@@ -6,3 +6,8 @@ exports.data = function () {
     "recipes" : recipes,
   }
 }
+
+exports.getRecipe = function (id) {
+  const recipes = require("./Recipes.json").data;
+  return recipes.filter(recipe => recipe.id === id)[0];
+}
