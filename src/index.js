@@ -1,13 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Header from './Header';
+import Cookbook from './Cookbook/Cookbook';
+import RecipeView from './Recipe/RecipeView';
+import About from './About';
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
+const links = [
+  {
+    "nav":"./", 
+    "display":"Cookbook"
+  },
+  {
+    "nav":"./about", 
+    "display":"About"
+  }
+];
 
 ReactDOM.render(
   (
     <BrowserRouter>
-      <App />
+      <div>
+        <Header links={links} />
+        <div className="content">
+          <Switch>
+            <Route exact path='/' component={Cookbook}/>
+            <Route path='/about' component={About}/>
+            <Route path='/:number' component={RecipeView}/>
+          </Switch>
+        </div>
+      </div>
     </BrowserRouter>
   ), 
   document.getElementById('root')

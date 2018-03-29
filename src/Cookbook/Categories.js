@@ -15,9 +15,9 @@ function Categories(props) {
     return(<div></div>);
   } else {
     return (
-      <div className="sidebar-modal">
+      <div className="categories-modal">
         <ArrowLeft className="icon" onClick={props.backClick}/>
-        <h2>Recipes For:</h2>
+        <h1>Recipes For:</h1>
         <div>
           {props.categories.map(category => 
             <Category 
