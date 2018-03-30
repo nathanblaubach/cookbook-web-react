@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function RecipeCard(props) {
-  const link = "./" + props.value.id;
+  const link = "/recipeView/" + props.value.id;
   return (
       <Link className="card" to={link}>
         <h2>

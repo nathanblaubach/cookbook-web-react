@@ -9,11 +9,11 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 const links = [
   {
-    "nav":"./", 
+    "nav":"/", 
     "display":"Cookbook"
   },
   {
-    "nav":"./about", 
+    "nav":"/about", 
     "display":"About"
   }
 ];
@@ -27,7 +27,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path='/' component={Cookbook}/>
             <Route path='/about' component={About}/>
-            <Route path='/:number' component={RecipeView}/>
+            <Route path='/recipeView/:number' component={RecipeView}/>
           </Switch>
         </div>
       </div>
