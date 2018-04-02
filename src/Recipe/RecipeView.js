@@ -1,4 +1,5 @@
 import React from 'react';
+import './Recipe.css';
 
 function Ingredients(props) {
   return (
@@ -22,10 +23,10 @@ function RecipeView(props) {
   const dataService = require('../data/FileIO.js');
   const recipe = dataService.getRecipe(parseInt(props.match.params.number, 10));
   return (
-    <div>
-      <h1 align="center">{recipe.name}</h1>
-      <div><Ingredients ingredients={recipe.ingredients} /></div>
-      <div><Instructions instructions={recipe.instructions} /></div>
+    <div className="recipe-grid">
+      <h1>{recipe.name}</h1>
+      <Ingredients ingredients={recipe.ingredients} />
+      <Instructions instructions={recipe.instructions} />
     </div>
   );
 }

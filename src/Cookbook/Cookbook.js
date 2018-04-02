@@ -52,15 +52,12 @@ class Cookbook extends React.Component {
           onClick={() => this.showCategories()}
           onInput={() => this.handleSearchBarChange()}
         />
-        
-        
         <Recipes
           recipes={this.state.recipes}
           searchString={this.state.searchString}
           checkedCategories={this.state.checkedCategories}
           onClick={(recipeId) => this.handleRecipeClick(recipeId)}
         />
-
         <Categories
           categories={this.state.categories}
           checkedCategories={this.state.checkedCategories}

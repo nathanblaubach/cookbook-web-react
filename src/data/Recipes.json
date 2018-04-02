@@ -765,12 +765,26 @@
       "id":  38, 
       "name": "Oven Swedish Meatballs", 
       "ingredients": [
-        "",
-        ""
+        "1 1/2 pound ground beef",
+        "1 small onion grated",
+        "1/2 cup bread crumbs",
+        "2 eggs slightly beaten",
+        "2 cups light cream",
+        "2 tsp salt",
+        "1/4 tsp pepper",
+        "1/4 tsp allspice",
+        "1/4 tsp nutmeg",
+        "2 tbsp flour",
+        "1 tsp instant beef broth"
       ], 
       "instructions": [
-        "",
-        ""
+        "In a large bowl, combine beef, onion, bread crumbs, eggs and 1/2 of the cream, salt, pepper, allspice, and nutmeg",
+        "Form into small balls and place on lightly greased baking sheet",
+        "Bake at 350 for 20 minutes",
+        "Remove and keep warm warm while making sauce",
+        "Cook 2 tbsp fat from the baking pan along with the flour and beef broth, stirring constantly, just until bubbly",
+        "Stir in rest of cream and cook until sauce thickens about 1 minute",
+        "Add meatballs and simmer until meatballs are hot"
       ]
     },
     { 
@@ -778,12 +792,20 @@
       "id":  39, 
       "name": "Brown's BBQ Beef Supreme Sloppy Joes", 
       "ingredients": [
-        "",
-        ""
+        "5 1/2 pounds ground beef, browned",
+        "2 onions, chopped and browned",
+        "6-8 sticks celery, chopped, cooked with meat and onions",
+        "1/2 tsp minced garlic",
+        "1/2 cup Worcestershire sauce",
+        "1/2 cup lemon juice",
+        "6 cans tomato soup",
+        "1/2 cup brown sugar",
+        "3 tbsp prepared mustard"
       ], 
       "instructions": [
-        "",
-        ""
+        "Combine all ingredients",
+        "Does well in crock pot after draining fat from ground beef",
+        "Best when slow cooked for hours"
       ]
     },
     { 
@@ -791,25 +813,73 @@
       "id":  40, 
       "name": "Beautiful Baked Ziti", 
       "ingredients": [
-        "",
-        ""
+        "1 package (19.76 ounces) sweet Italian sausage",
+        "8 ounce penne pasta",
+        "1 Jar pasta sauce",
+        "1/2 cup shredded parmesan",
+        "1 package frozen garlic bread, thawed",
+        "3 cups shredded mozzerella cheese",
+        "3/4 cup water",
+        "1 tbsp garlic",
+        "1 tbsp basil"
       ], 
       "instructions": [
-        "",
-        ""
+        "Cook sausage and penne according to package and coin slice sausage",
+        "In a large bowl, mix cooked sausage, pasta, pasta sauce, water, basil, garlic, parmesan and pepper",
+        "Toss gently",
+        "Place mixture into a greased 9x13 pan",
+        "Place 12 slices of garlic bread on top of mixture and cover with mozzerella",
+        "Bake uncovered at 400 for 30 minutes or until heated through",
+        "When I make this I double the pasta and I put in a ton of cheese. I also can't fit 12 slices of bread on the top"
       ]
     },
     { 
       "category": 2, 
       "id":  41, 
-      "name": "Beef Stroganoff", 
+      "name": "Sloppy Joe", 
       "ingredients": [
-        "",
-        ""
+        "1 pound ground beef",
+        "3/4 cup chopped onion",
+        "1 1/2 tsp garlic salt",
+        "1/8 tsp pepper",
+        "1/2 cup chili sauce",
+        "1/4 cup brown sugar",
+        "1 tbsp white vinegar",
+        "1 tbsp prepared mustard",
+        "1 - 8 ounce tomato sauce",
+        "6 buns"
       ], 
       "instructions": [
-        "",
-        ""
+        "Brown meat and onion",
+        "Drain fat",
+        "Add garlic salt, pepper, chili sauce, brown sugar, vinegar, mustard and tomato sauce",
+        "Bring to boil",
+        "Reduce heat",
+        "Simmer uncovered for 10 minutes, stirring occasionally"
+      ]
+    },
+    { 
+      "category": 2, 
+      "id":  240, 
+      "name": "Beef Stroganoff", 
+      "ingredients": [
+        "2 pound round steak",
+        "5 cubes beef bouillon",
+        "1/4 cup catsup",
+        "2 tsp salt",
+        "2 cups sour cream",
+        "2 onions, chopped",
+        "2 cups boiling water",
+        "2 garlic cloves",
+        "6-8 cups egg noodles",
+        "6 tbsp flour or 3 tbsp corn starch"
+      ], 
+      "instructions": [
+        "Brown meat and onion",
+        "Add rest of ingredients except for sour cream",
+        "Cook noodles",
+        "Thicken sauce with flour or corn starch",
+        "Just before serving, add sour cream"
       ]
     },
     { 
@@ -817,12 +887,18 @@
       "id":  42, 
       "name": "Tater Tot Casserole", 
       "ingredients": [
-        "",
-        ""
+        "1 1/2 pounds ground beef",
+        "1 can cream of mushroom soup",
+        "1 bag frozen tater tots",
+        "1/2 onion, chopped",
+        "2 tbsp milk"
       ], 
       "instructions": [
-        "",
-        ""
+        "Crumble raw meat into 13x9 pan",
+        "Sprinkle onion on top",
+        "Mix Together soup and milk, pour over meat",
+        "Cover with tater tots",
+        "Bake at 400 degrees for 1 hour"
       ]
     },
     { 
@@ -830,12 +906,20 @@
       "id":  43, 
       "name": "Colorado Pie", 
       "ingredients": [
-        "",
-        ""
+        "Pastry for 2 crust pie, using 1 tsp onion salt in pastry",
+        "1 pound ground beef",
+        "2 cups cooked green beans (drained)",
+        "1/2 tsp oregano",
+        "1/2 cup chopped onion",
+        "1/4 tsp pepper",
+        "1/2 tsp salt",
+        "1 - 10 ounce can tomato soup"
       ], 
       "instructions": [
-        "",
-        ""
+        "Brown ground beef with onion",
+        "Add rest of the ingredients and pour into unbaked crust",
+        "Add top curst and cut slits in into",
+        "Bake at 400 for 25 minutes"
       ]
     },
     { 
@@ -843,12 +927,25 @@
       "id":  44, 
       "name": "Pizza Style Fondue", 
       "ingredients": [
-        "",
-        ""
+        "1/2 cup chopped onion",
+        "2 - 10 1/2 ounce cans pizza sauce",
+        "1 1/2 tsp fennel seed (Important!)",
+        "1 cup grated mozzarella cheese",
+        "2 1/2 cup grated cheddar cheese",
+        "1/2 cup ground chuck",
+        "1 tbsp cornstarch",
+        "1 1/3 tsp oregano",
+        "1/4 tsp garlic powder"
       ], 
       "instructions": [
-        "",
-        ""
+        "Brown meat and onion",
+        "Add pizza sauce and remaining ingredients, except cheese",
+        "Stir and cook about 5 minutes until it comes to a boil and thickens",
+        "Reduce heat to low",
+        "Combine cheeses",
+        "Add 1/3 at a time, stirring after each addition until melted",
+        "Place in fondue pot",
+        "Spear French bread cubes, English muffins, etc for dipping"
       ]
     },
     { 
@@ -856,12 +953,25 @@
       "id":  45, 
       "name": "Kathy's Spaghetti Sauce", 
       "ingredients": [
-        "",
-        ""
+        "3/4 cup diced onion",
+        "3 tbsp oil",
+        "1 clove garlic",
+        "4 cups peeled tomatoes (5-6)",
+        "2 - 6 ounce cans tomato paste",
+        "1 cup water",
+        "1 bay leaf",
+        "1-3 tbsp sugar",
+        "1/2 tsp pepper",
+        "1 1/2 tsp salt",
+        "1 1/2 tsp oregano",
+        "1 tsp basil",
+        "2 beef bouillon cubes"
       ], 
       "instructions": [
-        "",
-        ""
+        "Saute onion and garlic in oil",
+        "Add the rest of the ingredients",
+        "Simmer all ingredients 1-2 hours",
+        "If freezing - omit water and tomato paste and add before final cooking"
       ]
     },
     { 
@@ -869,12 +979,29 @@
       "id":  46, 
       "name": "Diane's Thick Pan Pizza", 
       "ingredients": [
-        "",
-        ""
+        "6 cups flour",
+        "1 cup warm water",
+        "4 tbsp sugar",
+        "3 tbsp oil",
+        "1 package yeast dissolved in 1/2 cup warm water",
+        "2 - 15 ounce cans tomato sauce",
+        "2 tbsp basil",
+        "1 tsp salt",
+        "1/4 tsp garlic powder",
+        "1/8 tsp pepper",
+        "2 pounds ground beef, browned",
+        "2 pounds grated mozzarella cheese",
+        "oregano"
       ], 
       "instructions": [
-        "",
-        ""
+        "Mix flour, water, sugar, oil and yeast",
+        "Knead until elastic",
+        "Let rise for 15 minutes",
+        "Spread dough on 2 - 9x13 pans",
+        "Mix tomato sauce, basil, salt, garlic powder and pepper into a sauce",
+        "Layer mozzerella cheese, sauce, meat and more cheese",
+        "Sprinkle with oregano",
+        "Bake 20 minutes at 450 degrees"
       ]
     },
     { 
@@ -882,12 +1009,26 @@
       "id":  47, 
       "name": "Stir Fried Beef and Broccoli", 
       "ingredients": [
-        "",
-        ""
+        "1 pound round steak, cut crosswise in thin slices",
+        "1/2 cup water divided",
+        "1/3 cup soy sauce",
+        "1 clove garlic, crushed",
+        "1 bunch broccoli cuts (4 cups)",
+        "1 large onion, cut in wedges",
+        "1 tsp ginger",
+        "1 tsp cornstarch",
+        "2 tbsp brown sugar",
+        "3 tbsp sherry"
       ], 
       "instructions": [
-        "",
-        ""
+        "Marinate steak in 1/4 cup water, soy sauce, sugar, sherry, garlic, ginger and cornstarch at least 10 minutes",
+        "Drain, reserving marinade",
+        "Heat oil in skillet, add steak slices and stir until browned",
+        "Remove",
+        "Add broccoli and onion, then stir fry 1 minute",
+        "Add 1/4 cup water, cover and steam 3 minutes or until tender crisp",
+        "Return meat to marinade",
+        "Stir to heat through 4-6 servings"
       ]
     },
     { 
