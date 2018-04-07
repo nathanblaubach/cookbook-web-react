@@ -4,14 +4,18 @@ import { Link } from 'react-router-dom';
 
 function Navigation(props) {
   if (!props.visible) {
-    return(<div></div>);
+    return(
+      <div></div>
+    );
   } else {
     return (
       <div className="header-modal">
         <Menu className="icon" onClick={props.backClick} />
         <h1>Menu</h1>
         {props.links.map(link =>
-          <Link to={link.nav} onClick={props.backClick}><h3>{link.display}</h3></Link>
+          <Link to={link.nav} onClick={props.backClick}>
+            <h3>{link.display}</h3>
+          </Link>
         )}
       </div>
     );
@@ -20,22 +24,16 @@ function Navigation(props) {
 
 class Header extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       menuVisible: false,
       navigationLinks: props.links,
     };
   }
 
-  showMenu() {
+  showHideMenu(show) {
     this.setState({
-      menuVisible: true,
-    });
-  }
-
-  hideMenu() {
-    this.setState({
-      menuVisible: false,
+      menuVisible: show,
     });
   }
 
@@ -45,7 +43,7 @@ class Header extends React.Component {
         <div className="header">
           <div className="header-content">
             <div className="header-grid">
-              <Menu className="icon" onClick={() => this.showMenu()} />
+              <Menu className="icon" onClick={() => this.showHideMenu(true)} />
               <div>McClain Cookbook</div>
             </div>
           </div>
@@ -53,7 +51,7 @@ class Header extends React.Component {
         <Navigation
           visible={this.state.menuVisible}
           links={this.state.navigationLinks}
-          backClick={() => this.hideMenu()}
+          backClick={() => this.showHideMenu(false)}
         />
       </div>
     );

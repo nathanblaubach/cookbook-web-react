@@ -18,25 +18,16 @@ class Cookbook extends React.Component {
     }
   }
 
-  showCategories() {
-    this.setState({
-      showCategories: true,
-    });
-  }
-
-  hideCategories() {
-    this.setState({
-      showCategories: false,
-    });
+  showHideCategories(show) {
+    this.setState({ showCategories: show });
   }
 
   handleSearchBarChange() {
-    this.setState({
-      searchString: document.getElementById('searchText').value.toUpperCase(),
-    });
+    const searchText = document.getElementById('searchText').value.toUpperCase();
+    this.setState({ searchString: searchText });
   }
 
-  handleTagSelectionChange(i) {
+  handleCategorySelectionChange(i) {
     const updatedCategories = this.state.checkedCategories.includes(i)
       ? this.state.checkedCategories.filter(cat => cat !== i)
       : this.state.checkedCategories.concat(i);
@@ -48,8 +39,8 @@ class Cookbook extends React.Component {
   render() {
     return (
       <div>
-        <Search 
-          onClick={() => this.showCategories()}
+        <Search
+          onClick={() => this.showHideCategories(true)}
           onInput={() => this.handleSearchBarChange()}
         />
         <Recipes
@@ -62,8 +53,8 @@ class Cookbook extends React.Component {
           categories={this.state.categories}
           checkedCategories={this.state.checkedCategories}
           visible={this.state.showCategories}
-          backClick={() => this.hideCategories()}
-          onChange={(i) => this.handleTagSelectionChange(i)}
+          backClick={() => this.showHideCategories(false)}
+          onChange={(i) => this.handleCategorySelectionChange(i)}
         />
       </div>
     );

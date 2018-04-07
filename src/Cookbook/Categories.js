@@ -12,15 +12,17 @@ function Category(props) {
 
 function Categories(props) {
   if (!props.visible) {
-    return(<div></div>);
+    return(
+      <div></div>
+    );
   } else {
     return (
       <div className="categories-modal">
         <ArrowLeft className="icon" onClick={props.backClick}/>
         <h1>Recipes For:</h1>
         <div>
-          {props.categories.map(category => 
-            <Category 
+          {props.categories.map(category =>
+            <Category
               key={category.key}
               id={category.key}
               name={category.name}
