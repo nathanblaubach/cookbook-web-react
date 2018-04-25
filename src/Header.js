@@ -31,10 +31,9 @@ class Header extends React.Component {
     };
   }
 
-  showHideMenu(show) {
-    this.setState({
-      menuVisible: show,
-    });
+  toggleMenuVisibility() {
+    const shouldShow = !this.state.menuVisible;
+    this.setState({ menuVisible: shouldShow });
   }
 
   render() {
@@ -43,7 +42,7 @@ class Header extends React.Component {
         <div className="header">
           <div className="header-content">
             <div className="header-grid">
-              <Menu className="icon" onClick={() => this.showHideMenu(true)} />
+              <Menu className="icon" onClick={() => this.toggleMenuVisibility()} />
               <div>McClain Cookbook</div>
             </div>
           </div>
@@ -51,7 +50,7 @@ class Header extends React.Component {
         <Navigation
           visible={this.state.menuVisible}
           links={this.state.navigationLinks}
-          backClick={() => this.showHideMenu(false)}
+          backClick={() => this.toggleMenuVisibility()}
         />
       </div>
     );
