@@ -18,8 +18,9 @@ class Cookbook extends React.Component {
     }
   }
 
-  showHideCategories(show) {
-    this.setState({ showCategories: show });
+  toggleCategoryVisibility() {
+    const shouldShow = !this.state.showCategories;
+    this.setState({ showCategories: shouldShow });
   }
 
   handleSearchBarChange() {
@@ -40,7 +41,7 @@ class Cookbook extends React.Component {
     return (
       <div>
         <Search
-          onClick={() => this.showHideCategories(true)}
+          onClick={() => this.toggleCategoryVisibility()}
           onInput={() => this.handleSearchBarChange()}
         />
         <Recipes
@@ -53,7 +54,7 @@ class Cookbook extends React.Component {
           categories={this.state.categories}
           checkedCategories={this.state.checkedCategories}
           visible={this.state.showCategories}
-          backClick={() => this.showHideCategories(false)}
+          backClick={() => this.toggleCategoryVisibility()}
           onChange={(i) => this.handleCategorySelectionChange(i)}
         />
       </div>

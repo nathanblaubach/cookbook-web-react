@@ -1,20 +1,20 @@
 import React from 'react';
 import './Recipe.css';
 
-function Ingredients(props) {
+function NotecardHeader(props) {
   return (
-    <div className="card">
-      <h3>Ingredients:</h3>
-      {props.ingredients.map((ingredient, i) => <p key={i}>{ingredient}</p>)}
+    <div className="notecard-title">
+      <h1>{props.titleText}</h1>
     </div>
   );
 }
 
-function Instructions(props) {
+function NotecardSection(props) {
   return (
-    <div className="card">
-      <h3>Instructions:</h3>
-      {props.instructions.map((instruction, i) => <p key={i}>{(i+1) + ". " + instruction}</p>)}
+    <div>
+      <div className="notecard-subtitle"><p>{props.sectionName}</p></div>
+      {props.sectionItems.map((item, i) => <div className="notecard-row" key={i}><p>{item}</p></div>)}
+      <div className="notecard-row"><p>&nbsp;</p></div>
     </div>
   );
 }
@@ -23,10 +23,10 @@ function RecipeView(props) {
   const dataService = require('../data/FileIO.js');
   const recipe = dataService.getRecipe(parseInt(props.match.params.number, 10));
   return (
-    <div className="recipe-grid">
-      <h1>{recipe.name}</h1>
-      <Ingredients ingredients={recipe.ingredients} />
-      <Instructions instructions={recipe.instructions} />
+    <div className="notecard">
+      <NotecardHeader  titleText={recipe.name} />
+      <NotecardSection sectionName="Ingredients:"  sectionItems={recipe.ingredients}  />
+      <NotecardSection sectionName="Instructions:" sectionItems={recipe.instructions} />
     </div>
   );
 }

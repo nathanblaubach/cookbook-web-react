@@ -11,6 +11,12 @@ a {
   color: white;
   text-decoration: none;
 }
+hr {
+  color: lightgray;
+  background-color: lightgray;
+  border-color: 0px lightgray solid;
+  margin : 40px;
+}
 .icon {
   height: 42px;
 }
@@ -70,4 +76,8 @@ a {
 .card a {
   color: black;
   text-decoration: underline;
+}
+
+.about {
+  text-align: center;
 }

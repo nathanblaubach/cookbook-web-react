@@ -1,12 +1,16 @@
+// Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './Header';
-import Cookbook from './Cookbook/Cookbook';
-import RecipeView from './Recipe/RecipeView';
-import About from './About';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+
+// My code
+import Header     from './Header';
+import Cookbook   from './Cookbook/Cookbook';
+import RecipeView from './Recipe/RecipeView';
+import About      from './About';
+import                 './index.css';
+
 const links = [
   {
     "nav":"/", 
