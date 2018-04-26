@@ -12,8 +12,8 @@ function Navigation(props) {
       <div className="header-modal">
         <Menu className="icon" onClick={props.backClick} />
         <h1>Menu</h1>
-        {props.links.map(link =>
-          <Link to={link.nav} onClick={props.backClick}>
+        {props.links.map((link, i) =>
+          <Link key={i} to={link.nav} onClick={props.backClick}>
             <h3>{link.display}</h3>
           </Link>
         )}
