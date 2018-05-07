@@ -1,25 +1,19 @@
 import React from 'react';
-import { Menu } from 'react-feather';
+import { Menu } from './Resources/Icons.js';
 import { Link } from 'react-router-dom';
 
 function Navigation(props) {
-  if (!props.visible) {
-    return(
-      <div></div>
-    );
-  } else {
-    return (
-      <div className="header-modal">
-        <Menu className="icon" onClick={props.backClick} />
-        <h1>Menu</h1>
-        {props.links.map((link, i) =>
-          <Link key={i} to={link.nav} onClick={props.backClick}>
-            <h3>{link.display}</h3>
-          </Link>
-        )}
-      </div>
-    );
-  }
+  return !props.visible ? <div></div> : (
+    <div className="header-modal">
+      <Menu className="icon" onClick={props.backClick} />
+      <h1>Menu</h1>
+      {props.links.map((link, i) =>
+        <Link key={i} to={link.nav} onClick={props.backClick}>
+          <h3>{link.display}</h3>
+        </Link>
+      )}
+    </div>
+  );
 }
 
 class Header extends React.Component {

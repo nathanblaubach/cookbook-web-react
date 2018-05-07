@@ -7,7 +7,7 @@ import './Cookbook.css';
 class Cookbook extends React.Component {
   constructor(props) {
     super(props);
-    const dataService = require('../data/FileIO.js');
+    const dataService = require('../../data/FileIO.js');
     const cookbookData = dataService.data();
     this.state = {
       categories: cookbookData.categories,

@@ -19,3 +19,8 @@
 .notecard-title p, .notecard-subtitle p, .notecard-row p {
   margin: .5rem;
 }
+.notecard svg {
+  stroke: black;
+  padding-left: 1rem;
+  float: left;
+}

@@ -6,9 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 // My code
 import Header     from './Header';
-import Cookbook   from './Cookbook/Cookbook';
-import RecipeView from './Recipe/RecipeView';
-import About      from './About';
+import Cookbook   from './Pages/Cookbook/Cookbook';
+import RecipeView from './Pages/Recipe/RecipeView';
+import About      from './Pages/About/About';
 import                 './index.css';
 
 const links = [

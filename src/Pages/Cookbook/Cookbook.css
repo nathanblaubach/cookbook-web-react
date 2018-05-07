@@ -6,12 +6,19 @@
   margin: 0 0 1rem 0;
   color: #00304E;
 }
-.searchBar {
+
+.searchArea svg {
+  stroke: #00304E;
+  padding-top: 8px;
+}
+
+.searchArea input {
   border: 2px solid #00304E;
   height: 2.5em;
   font-size: 1em;
   padding-left: 10px;
 }
+
 .categories-modal {
   position: fixed;
   top:0;

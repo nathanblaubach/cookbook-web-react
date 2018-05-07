@@ -17,8 +17,10 @@ hr {
   border-color: 0px lightgray solid;
   margin : 40px;
 }
-.icon {
-  height: 42px;
+svg {
+  stroke: white;
+  stroke-width:4;
+  fill: none;
 }
 
 .header {
@@ -47,7 +49,7 @@ hr {
 }
 .header-grid div {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   padding: .3rem;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft } from 'react-feather';
+import { LeftArrow } from '../../Resources/Icons.js';
 
 function Category(props) {
   return (
@@ -18,7 +18,7 @@ function Categories(props) {
   } else {
     return (
       <div className="categories-modal">
-        <ArrowLeft className="icon" onClick={props.backClick}/>
+        <LeftArrow onClick={props.backClick}/>
         <h1>Recipes For:</h1>
         <div>
           {props.categories.map(category =>
