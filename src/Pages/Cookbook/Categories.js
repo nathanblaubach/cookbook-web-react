@@ -11,29 +11,23 @@ function Category(props) {
 }
 
 function Categories(props) {
-  if (!props.visible) {
-    return(
-      <div></div>
-    );
-  } else {
-    return (
-      <div className="categories-modal">
-        <LeftArrow onClick={props.backClick}/>
-        <h1>Recipes For:</h1>
-        <div>
-          {props.categories.map(category =>
-            <Category
-              key={category.key}
-              id={category.key}
-              name={category.name}
-              checked={props.checkedCategories.includes(category.key)}
-              onChange={() => props.onChange(category.key)}
-            />
-          )}
-        </div>
+  return !props.visible ? <div></div> : (
+    <div className="categories-modal">
+      <LeftArrow onClick={props.backClick}/>
+      <h1>Recipes For:</h1>
+      <div>
+        {props.categories.map(category =>
+          <Category
+            key={category.key}
+            id={category.key}
+            name={category.name}
+            checked={props.checkedCategories.includes(category.key)}
+            onChange={() => props.onChange(category.key)}
+          />
+        )}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Categories;
