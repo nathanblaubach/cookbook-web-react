@@ -18,9 +18,10 @@ hr {
   margin : 40px;
 }
 svg {
+  height: 30px;
+  width: 30px;
   stroke: white;
-  stroke-width:4;
-  fill: none;
+  fill: white;
 }
 
 .header {

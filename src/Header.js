@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 function Navigation(props) {
   return !props.visible ? <div></div> : (
     <div className="header-modal">
-      <Menu className="icon" onClick={props.backClick} />
+      <span onClick={props.backClick}>
+        <Menu className="icon" />
+      </span>
       <h1>Menu</h1>
       {props.links.map((link, i) =>
         <Link key={i} to={link.nav} onClick={props.backClick}>
@@ -36,7 +38,9 @@ class Header extends React.Component {
         <div className="header">
           <div className="header-content">
             <div className="header-grid">
-              <Menu className="icon" onClick={() => this.toggleMenuVisibility()} />
+              <span onClick={() => this.toggleMenuVisibility()}>
+                <Menu className="icon" />
+              </span>
               <div>McClain Cookbook</div>
             </div>
           </div>

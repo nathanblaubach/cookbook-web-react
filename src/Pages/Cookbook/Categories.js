@@ -13,7 +13,9 @@ function Category(props) {
 function Categories(props) {
   return !props.visible ? <div></div> : (
     <div className="categories-modal">
-      <LeftArrow onClick={props.backClick}/>
+      <span onClick={props.backClick}>
+        <LeftArrow />
+      </span>
       <h1>Recipes For:</h1>
       <div>
         {props.categories.map(category =>
