@@ -7,7 +7,6 @@ function Search(props) {
       <span onClick={props.onClick}>
         <Filter className="icon" />
       </span>
-
       <input id="searchText" type="textbox" placeholder="Search" onInput={props.onInput} />
     </div>
   );

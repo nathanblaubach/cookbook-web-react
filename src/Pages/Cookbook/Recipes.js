@@ -5,7 +5,7 @@ function RecipeCard(props) {
   const link = "/recipeView/" + props.value.id;
   return (
     <Link className="card card-clickable" to={link}>
-      <h2>{props.value.name}</h2>
+      <h2 align="center">{props.value.name}</h2>
     </Link>
   );
 }

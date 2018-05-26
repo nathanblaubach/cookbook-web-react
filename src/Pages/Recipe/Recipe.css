@@ -1,3 +1,6 @@
+.recipe svg {
+  stroke: #00304E;
+}
 .notecard {
   background-color: lightyellow;
   border: 1px darkgray solid;
@@ -18,9 +21,4 @@
 }
 .notecard-title p, .notecard-subtitle p, .notecard-row p {
   margin: .5rem;
-}
-.notecard svg {
-  stroke: black;
-  padding-left: 1rem;
-  float: left;
 }

@@ -4,54 +4,47 @@ body {
   font-family: sans-serif;
   background: whitesmoke;
 }
-h1, h2 {
-  text-align: center;
-}
 a {
   color: white;
   text-decoration: none;
 }
-hr {
-  color: lightgray;
-  background-color: lightgray;
-  border-color: 0px lightgray solid;
-  margin : 40px;
-}
 svg {
-  height: 30px;
-  width: 30px;
+  user-select: none;
   stroke: white;
-  fill: white;
 }
 
 .header {
+  padding: 0;
   width: 100%;
   position: fixed;
-}
-.header-content {
   background-color: #00304E;
-  color: white;
-  padding: 1rem;
+  border-bottom: 4px white solid;
+  box-shadow: black 0px 5px 20px;
 }
-.header-modal {
-  position: fixed;
-  height: 100%;
-  width: 80%;
-  max-width: 350px;
-  padding: 1rem;
-  overflow: auto;
-  background-color: #00304E;
+.title {
+  margin: auto;
+  font-size: 1.5em;
   color: white;
 }
 .header-grid {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 30px 25fr 30px;
+  grid-template-columns: 60px 25fr 60px;
 }
-.header-grid div {
-  text-align: center;
-  font-size: 1.2em;
-  padding: .3rem;
+
+.sidebar {
+  position: fixed;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 80%;
+  max-width: 350px;
+  overflow: auto;
+  background-color: #00304E;
+  color: white;
+}
+.sidebar-content {
+  margin: 1rem;
 }
 
 .content {
@@ -82,5 +75,6 @@ svg {
 }
 
 .about {
+  margin-bottom: 1rem;
   text-align: center;
 }

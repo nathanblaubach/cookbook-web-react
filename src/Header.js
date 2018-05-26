@@ -4,16 +4,18 @@ import { Link } from 'react-router-dom';
 
 function Navigation(props) {
   return !props.visible ? <div></div> : (
-    <div className="header-modal">
+    <div className="sidebar">
       <span onClick={props.backClick}>
-        <Menu className="icon" />
+        <Menu />
       </span>
-      <h1>Menu</h1>
-      {props.links.map((link, i) =>
-        <Link key={i} to={link.nav} onClick={props.backClick}>
-          <h3>{link.display}</h3>
-        </Link>
-      )}
+      <div className="sidebar-content">
+        <h1>Menu</h1>
+        {props.links.map((link, i) =>
+          <Link key={i} to={link.nav} onClick={props.backClick}>
+            <h3>{link.display}</h3>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }
@@ -36,13 +38,11 @@ class Header extends React.Component {
     return (
       <div>
         <div className="header">
-          <div className="header-content">
-            <div className="header-grid">
-              <span onClick={() => this.toggleMenuVisibility()}>
-                <Menu className="icon" />
-              </span>
-              <div>McClain Cookbook</div>
-            </div>
+          <div className="header-grid">
+            <span onClick={() => this.toggleMenuVisibility()}>
+              <Menu className="icon" />
+            </span>
+            <span className="title">McClain Cookbook</span>
           </div>
         </div>
         <Navigation

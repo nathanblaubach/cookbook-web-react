@@ -12,21 +12,23 @@ function Category(props) {
 
 function Categories(props) {
   return !props.visible ? <div></div> : (
-    <div className="categories-modal">
+    <div className="sidebar">
       <span onClick={props.backClick}>
         <LeftArrow />
       </span>
-      <h1>Recipes For:</h1>
-      <div>
-        {props.categories.map(category =>
-          <Category
-            key={category.key}
-            id={category.key}
-            name={category.name}
-            checked={props.checkedCategories.includes(category.key)}
-            onChange={() => props.onChange(category.key)}
-          />
-        )}
+      <div className="sidebar-content">
+        <h1>Recipes For:</h1>
+        <div>
+          {props.categories.map(category =>
+            <Category
+              key={category.key}
+              id={category.key}
+              name={category.name}
+              checked={props.checkedCategories.includes(category.key)}
+              onChange={() => props.onChange(category.key)}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

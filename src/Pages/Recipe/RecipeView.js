@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 function NotecardHeader(props) {
   return (
     <div className="notecard-title">
-      <Link to='/'><LeftArrow /></Link>
       <h1>{props.titleText}</h1>
     </div>
   );
@@ -31,10 +30,15 @@ function RecipeView(props) {
   const dataService = require('../../data/FileIO.js');
   const recipe = dataService.getRecipe(parseInt(props.match.params.number, 10));
   return (
-    <div className="notecard">
-      <NotecardHeader  titleText={recipe.name} />
-      <NotecardSection sectionName="Ingredients:"  sectionItems={recipe.ingredients}  />
-      <NotecardSection sectionName="Instructions:" sectionItems={recipe.instructions} />
+    <div className="recipe">
+      <Link to='/'>
+        <LeftArrow />
+      </Link>
+      <div className="notecard">
+        <NotecardHeader  titleText={recipe.name} />
+        <NotecardSection sectionName="Ingredients:"  sectionItems={recipe.ingredients}  />
+        <NotecardSection sectionName="Instructions:" sectionItems={recipe.instructions} />
+      </div>
     </div>
   );
 }

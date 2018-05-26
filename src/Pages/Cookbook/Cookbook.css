@@ -1,38 +1,19 @@
 .searchArea {
-  padding-left: 1rem;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(1, 30px) 25fr;
-  margin: 0 0 1rem 0;
-  color: #00304E;
-}
-
-.searchArea svg {
-  stroke: #00304E;
-  padding-top: 8px;
-}
-.searchArea svg polygon {
-  stroke-width: 4;
-}
-
-.searchArea input {
-  border: 2px solid #00304E;
-  height: 2.5em;
-  font-size: 1em;
-  padding-left: 10px;
-}
-
-.categories-modal {
-  position: fixed;
-  top:0;
-  left:0;
-  height: 100%;
-  width: 80%;
-  max-width: 350px;
-  padding: 1rem;
-  overflow: auto;
+  border: 2px #00304E solid;
   background-color: #00304E;
-  color: white;
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  margin-bottom: 1rem;
+}
+.searchArea svg {
+  height: 45px;
+  width : 45px;
+}
+.searchArea input {
+  border: none;
+  border-radius: 0;
+  font-size: 1.0em;
+  padding-left: 1rem;
 }
 
 .cookbook-grid {
