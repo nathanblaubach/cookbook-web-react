@@ -36,13 +36,15 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
+      <header>
         <div className="header">
           <div className="header-grid">
             <span onClick={() => this.toggleMenuVisibility()}>
-              <Menu className="icon" />
+              <Menu />
             </span>
-            <span className="title">McClain Cookbook</span>
+              <span style={{"text-align": "center"}}>
+              <img height="60px" src={require("./Resources/logo/logo-white-small.png")} alt="logo"/>
+            </span>
           </div>
         </div>
         <Navigation
@@ -50,7 +52,7 @@ class Header extends React.Component {
           links={this.state.navigationLinks}
           backClick={() => this.toggleMenuVisibility()}
         />
-      </div>
+      </header>
     );
   }
 }

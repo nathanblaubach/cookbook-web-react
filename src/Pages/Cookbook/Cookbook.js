@@ -1,7 +1,8 @@
-import React from 'react';
+import React      from 'react';
+import Search     from './Search.js';
+import Recipes    from './Recipes.js';
 import Categories from './Categories.js';
-import Search from './Search.js';
-import Recipes from './Recipes.js';
+
 import './Cookbook.css';
 
 class Cookbook extends React.Component {

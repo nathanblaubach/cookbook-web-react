@@ -107,5 +107,5 @@ export {
   Times,
   Divide,
   Filter,
-  Tag,
+  Tag
 }
