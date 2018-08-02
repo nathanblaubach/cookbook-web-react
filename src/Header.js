@@ -40,9 +40,9 @@ class Header extends React.Component {
         <div className="header">
           <div className="header-grid">
             <span onClick={() => this.toggleMenuVisibility()}>
-              <Menu />
+              <Menu size={'60'} />
             </span>
-              <span style={{"text-align": "center"}}>
+              <span style={{textAlign : "center"}}>
               <img height="60px" src={require("./Resources/logo/logo-white-small.png")} alt="logo"/>
             </span>
           </div>
