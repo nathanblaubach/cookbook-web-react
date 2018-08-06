@@ -1103,12 +1103,16 @@
       "id":  51, 
       "name": "Chicken Salad",
       "ingredients": [
-        "",
-        ""
+        "4 cups cooked diced chicken",
+        "4 cups grated carrots",
+        "4 cups finely chopped celery",
+        "1 medium onion, chopped",
+        "3 cups salad dressing or mayo",
+        "Dash of mustard",
+        "Can add 2 - 3 cups shoestring potatoes just before serving, if desired"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together"
       ]
     },
     {
@@ -1116,12 +1120,20 @@
       "id":  52,
       "name": "Cheesy Ham and Broccoli Casserole",
       "ingredients": [
-        "",
-        ""
+        "1 ½ cups cooked smoked ham, cut up",
+        "¾ cups cheddar cheese, shredded",
+        "1 - 10 ounce package frozen broccoli, chopped and drained",
+        "1 can cream of mushroom or chicken soup",
+        "1 ½ cups Bisquick mix",
+        "½ cup milk",
+        "3 tablespoons margarine, melted",
+        "1 egg"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix ham, cheese, broccoli and soup in 1 ½ quart casserole dish",
+        "Stir remaining ingredients until dough forms",
+        "Drop by spoonfuls evenly over vegetable mixture",
+        "Bake uncovered 40-50 minutes or until top is brown @ 350 degrees"
       ]
     },
     {
@@ -1129,12 +1141,13 @@
       "id":  53,
       "name": "Creamy Italian Chicken",
       "ingredients": [
-        "",
-        ""
+        "Boneless skinless chicken for 4",
+        "1 can cream of chicken soup",
+        "1 -  4 oz. cream cheese",
+        "½ pkg. Good Seasons Italian dressing packet"
       ],
       "instructions": [
-        "",
-        ""
+        "Place all ingredients in crock pot for 5 hours."
       ]
     },
     {
@@ -1142,12 +1155,33 @@
       "id":  54,
       "name": "Chili-Cheese Black Bean Enchiladas",
       "ingredients": [
-        "",
-        ""
+        "½ c. chopped onion",
+        "½ t. Dried oregano",
+        "½ t. Ground cumin",
+        "½ t. Chili powder",
+        "2 garlic cloves, minced",
+        "¾ c. bottled salsa",
+        "1 - 15 oz. can black beans, rinsed & drained",
+        "12 oz. extra lean ground beef - browned",
+        "⅓ c. (3 oz.) block-style fat free cream cheese, softened",
+        "1 c. shredded reduced-fat extra sharp cheddar cheese, divided",
+        "12 (6”) corn tortillas",
+        "1 (10 oz.) can enchilada sauce"
       ],
       "instructions": [
-        "",
-        ""
+        "Spray pan with cooking spray, over medium high heat",
+        "add onion & saute 4 minutes or until tender",
+        "Stir in cumin, oregano, chili powder, garlic, beans, & beef",
+        "cook 2 minutes, stirring mixture frequently",
+        "Stir in salsa and cook 1 minute",
+        "Remove from heat & add cream cheese and ½ cup cheddar cheese, stirring until cheese melts.",
+        "Warm tortillas according to package directions.",
+        "Spread ⅓ c. enchilada sauce in bottom of 9 x 13 pan coated with cooking spray.",
+        "Spoon about ⅓ c. black bean mixture down center of each tortilla and roll up.",
+        "Arrange enchiladas, seam side down, crosswise in dish.",
+        "Pour remaining enchilada sauce evenly over enchiladas and sprinkle with ½ c. cheddar cheese.",
+        "Bake @ 350 degrees for 20 minutes or until thoroughly heated.",
+        "Yield 6 servings."
       ]
     },
     {
@@ -1155,12 +1189,16 @@
       "id":  55,
       "name": "Honey Baked Chicken",
       "ingredients": [
-        "",
-        ""
+        "3 pounds chicken",
+        "⅓ c. oleo",
+        "⅓ c. honey",
+        "2 T. mustard",
+        "1 t. Salt",
+        "1 t. Curry powder"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine oleo, honey, mustard, salt, and curry powder together and pour over chicken.",
+        "Bake 1 ¼ hours basting every 15 minutes until tender and browned. Good with rice."
       ]
     },
     {
@@ -1168,12 +1206,23 @@
       "id":  56,
       "name": "Chicken and Broccoli Casserole",
       "ingredients": [
-        "",
-        ""
+        "4 cooked chicken breasts",
+        "2 pkg. Frozen broccoli",
+        "1 c. reduced fat mayo",
+        "1 t. Lemon juice",
+        "1 c. bread crumbs",
+        "Seasoning to taste",
+        "1 c. reduced fat shredded cheddar cheese",
+        "2 cans reduced fat cream of mushroom soup"
       ],
       "instructions": [
-        "",
-        ""
+        "Cube or shred chicken.",
+        "Partly cook broccoli.",
+        "Place broccoli in the bottom of a 9x13” pan.",
+        "Scatter chicken.",
+        "Combine soup, mayo, and lemon juice, pour over chicken.",
+        "Top with crumbs and cheese.",
+        "Bake @ 350 degrees for 30 minutes."
       ]
     },
     {
@@ -1181,12 +1230,25 @@
       "id":  57,
       "name": "Turkey Tetrazzini",
       "ingredients": [
-        "",
-        ""
+        "¼ c. butter",
+        "1 t. Salt",
+        "1 c. chicken broth",
+        "3 c. cut up turkey (cooked)",
+        "¼ c. grated parmesan cheese",
+        "1 -  8 oz. pkg. spaghetti noodles, cooked and drained",
+        "1 - 4 oz. can mushrooms - optional",
+        "¼ c. flour",
+        "¼ t. Pepper",
+        "1 c. cream",
+        "2 T. sherry",
+        "Paprika"
       ],
       "instructions": [
-        "",
-        ""
+        "On high power in 3 qt. Casserole, heat butter 1-2 minutes until melted.",
+        "Stir in flour, salt, and pepper.",
+        "Add brother and cream, stir until smooth.",
+        "On medium power, heat 4-5 minutes until sauce is thickened.",
+        "Stir in rest of ingredients and warm through."
       ]
     },
     {
@@ -1194,12 +1256,22 @@
       "id":  58,
       "name": "Chicken Rolls",
       "ingredients": [
-        "",
-        ""
+        "Chicken breast pounded thin",
+        "1 slice swiss cheese",
+        "1 slice ham",
+        "Parmesan cheese",
+        "Salt",
+        "White pepper",
+        "parsley"
       ],
       "instructions": [
-        "",
-        ""
+        "Roll up cheese and ham in chicken breast and secure with 3 toothpicks.",
+        "Roll in parmesan cheese, salt, white pepper, and parsley.",
+        "Saute in canola oil.",
+        "Place in crock pot.",
+        "Add cream of mushroom soup and cooking wine.",
+        "Cook until tender.",
+        "Bake at 300 degrees for 1 hour."
       ]
     },
     {
@@ -1207,12 +1279,41 @@
       "id":  59,
       "name": "Lasanga Primavera",
       "ingredients": [
-        "",
-        ""
+        "9 uncooked lasagna noodles",
+        "3 large carrots",
+        "2 medium green or red bell peppers (one of each looks pretty)",
+        "3 cups fresh or frozen (thawed) broccoli flowerets",
+        "1 can (14 ½ oz.) diced tomatoes",
+        "1 container (15 oz.) ricotta cheese",
+        "½ c. grated parmesan cheese",
+        "1 egg",
+        "2 containers (10 oz. each) refrigerated Alfredo sauce",
+        "3 ½ cups shredded mozzarella cheese (14 oz.)"
       ],
       "instructions": [
-        "",
-        ""
+        "Heat the oven to 350 degrees.",
+        "Boil noodles in a dutch oven 12-15 minutes until tender.",
+        "Peel and shred carrots by rubbing them across the largest holes of a grater. You need about 2 cups.",
+        "Cut bell peppers lengthwise in half and cut out seeds and membrane.",
+        "Chop bell peppers.",
+        "Cut broccoli flowerets into bite-size pieces if needed.",
+        "Drain tomatoes in a strainer.",
+        "Mix tomatoes, carrots, bell peppers, and broccoli.",
+        "Stir the ricotta cheese, parmesan cheese, and egg until well mixed.",
+        "Drain noodles in a strainer or colander.",
+        "Spread ⅔ c. of the Alfredo sauce in an ungreased 9x13” pan.",
+        "Top with 3 noodles.",
+        "Spread half of the cheese mixture, ⅓ of the vegetable mixture, and ⅔ c. of the sauce over the noodles.",
+        "Sprinkle with 1 cup of the mozzarella cheese.",
+        "Top cheese with 3 noodles.",
+        "Spread remaining cheese mixture, ⅓ of the vegetable mixture, and ⅔ c. of the sauce over the noodles.",
+        "Sprinkle with 1 cup of the mozzarella cheese.",
+        "Top with remaining 3 noodles and vegetable mixture.",
+        "Pour remaining sauce evenly over the top.",
+        "Sprinkle with remaining mozzarella.",
+        "Cover with aluminum foil and bake 30 minutes.",
+        "Carefully remove foil and continue baking about 30 minutes longer or until lasagna is hot in center.",
+        "Remove from oven and let stand 15 minutes. Cut and serve."
       ]
     },
     {
@@ -1220,12 +1321,21 @@
       "id":  60,
       "name": "California Chicken - Crock Pot",
       "ingredients": [
-        "",
-        ""
+        "3 pieces of chicken, quartered",
+        "1 c. orange juice",
+        "1 T. molasses",
+        "2 T. green pepper, chopped",
+        "3 med. oranges or 1-13 ½ oz. can mandarin oranges",
+        "2 T. soy sauce",
+        "½ c. chili sauce",
+        "1 t. Dry mustard",
+        "1 t. Garlic salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Arrange chicken quarters in bottom.",
+        "Pour other ingredients over chicken except green pepper and oranges.",
+        "Simmer on high 4 ½-5 hours.",
+        "Add green pepper and oranges 30 minutes before serving."
       ]
     },
     {
@@ -1233,12 +1343,33 @@
       "id":  61,
       "name": "Chicken Alfredo Lasanga",
       "ingredients": [
-        "",
-        ""
+        "6 oz. boneless, skinless chicken breasts",
+        "1 T. olive oil",
+        "1 clove garlic, minced",
+        "1 T. flour",
+        "1 c. sliced mushrooms",
+        "1 egg lightly beaten",
+        "¾ c. cottage cheese",
+        "1 c. alfredo sauce",
+        "¼ cup parmesan cheese plus 2 T. (divided)",
+        "1 ½ t. Italian seasoning",
+        "½ t. Dried parsley flakes",
+        "4 lasagna noodles cooked and drained",
+        "1 ½ c. (6 oz) shredded mozzarella cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Cut chicken breasts into bite size pieces.",
+        "Saute in oil with mushrooms and garlic until the chicken is no longer pink.",
+        "Stir in the flour til blended.",
+        "Stir Alfredo sauce and bring to a boil.",
+        "Reduce heat and simmer uncovered for 5 minutes.",
+        "In a small bowl, combine cottage cheese, ¼ cup parmesan cheese, egg, seasoning, and parsley.",
+        "Spread ½ cup alfredo/chicken mix in an 8”x4”x2” loaf pan coated with cooking spray.",
+        "Layer with 2 noodles trimmed to fit pan.",
+        "Then ½ cup of cottage cheese mix, ¾ cup alfredo mix, and then ¾ cup mozzarella cheese.",
+        "Repeat layers and sprinkle remaining mozzarella cheese on top.",
+        "Cover and bake for 30 minutes at 350.",
+        "Then uncover and bake 10 minutes longer or until bubbly."
       ]
     },
     {
@@ -1246,12 +1377,32 @@
       "id":  62,
       "name": "Chicken Couscous",
       "ingredients": [
-        "",
-        ""
+        "1 lb boneless chicken breasts, cut into bite size pieces",
+        "1 ½ t. Ground cumin",
+        "⅛ t. Cayenne pepper",
+        "1 T. olive oil",
+        "1 red bell pepper, seeded and chopped",
+        "½ c. golden raisins",
+        "1 - 5.7 oz box couscous",
+        "½ t. Ginger",
+        "¼ t. Cinnamon",
+        "4 scallions, sliced",
+        "1 t. Salt",
+        "½ c. orange juice",
+        "1 ¾ c. water"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix cumin, ginger, cinnamon, and cayenne in large ziploc bag.",
+        "Add chicken and shake to coat.",
+        "Heat the oil in a large nonstick skillet, then add chicken.",
+        "Saute until cooked through, about 8 minutes.",
+        "Transfer chicken to a plate and keep warm.",
+        "In the skillet, saute the bell pepper and scallions until softened.",
+        "Stir in raisins, orange juice, salt and water; bring to boil.",
+        "Stir in couscous.",
+        "Remove from heat, cover, and let stand until liquid is absorbed, about 5 minutes.",
+        "Add the chicken, mix thoroughly with a fork.",
+        "Makes 4 servings. 8 WW points."
       ]
     },
     {
@@ -1259,12 +1410,26 @@
       "id":  63,
       "name": "Holly's Impossible Chicken Broccoli Pie",
       "ingredients": [
-        "",
-        ""
+        "1 pkg. 10 oz. frozen chopped broccoli",
+        "3 c. shredded cheddar cheese (12 oz)",
+        "1 1/2 c. cut up cooked chicken",
+        "2/3 c. chopped onion",
+        "1 1/3 c. milk",
+        "3/4 c. Bisquick",
+        "3 eggs",
+        "1/4 t. Salt",
+        "1/4 t. Pepper"
       ],
       "instructions": [
-        "",
-        ""
+        "Rinse broccoli to thaw, drain.",
+        "Mix broccoli, 2 cups cheese, chicken, and onion.",
+        "Beat milk, eggs, bisquick, salt and pepper until smooth. (about 1 minute)",
+        "Pour into greased pie plate.",
+        "Bake @ 400 degrees until knife inserted in center comes out clean 25-35 minutes.",
+        "Top with remaining cheese.",
+        "Bake until cheese is melted 1-2 minutes longer.",
+        "Cool 5 minutes.",
+        "Serves 6-8."
       ]
     },
     {
@@ -1272,12 +1437,27 @@
       "id":  64,
       "name": "Kathy's Chicken and Rice",
       "ingredients": [
-        "",
-        ""
+        "1 1/4 c. uncooked rice",
+        "1 can condensed cream of mushroom soup",
+        "1 can condensed cream of celery soup",
+        "1 can condensed cream of chicken soup",
+        "1/4 c. melted butter or margarine",
+        "1/4 c. dry sherry",
+        "10 pieces of chicken (legs, thighs, breasts)",
+        "1/2 c. slivered almonds",
+        "1/3 c. grated Parmesan cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Heat oven to 275 degrees",
+        "Lightly butter bottom of 3 qt. baking dish",
+        "Combine soups, butter & sherry",
+        "Divide in half",
+        "Mix rice with half of the soup mixture and pour in bottom of dish",
+        "Place chicken pieces (skin side up) in a single layer on top of soup",
+        "Spread remaining soup mixture over top of chicken",
+        "Sprinkle with almonds & cheese",
+        "Cover & back 2 1/2 hr or until chicken is fork tender",
+        "To brown chicken slightly, remove cover, increase oven to 400 degrees & bake for another 20 minutes"
       ]
     },
     {
@@ -1285,12 +1465,18 @@
       "id":  65,
       "name": "Kathy's Tacos de Gallina",
       "ingredients": [
-        "",
-        ""
+        "2 c. cooked chicken",
+        "8 tortillas",
+        "1/4 c. gravy",
+        "1/2 c. grated cheese",
+        "2 c. tomato sauce with onion, garlic, basil, and oregano"
       ],
       "instructions": [
-        "",
-        ""
+        "Divide chicken up on tortillas",
+        "Pour gravy over chicken.",
+        "Roll tortillas up and place in 8x8” pan.",
+        "Pour tomato sauce over tortillas and add cheese.",
+        "Bake 375 for 20-30 minutes."
       ]
     },
     {
@@ -1298,12 +1484,26 @@
       "id":  66,
       "name": "Tomato-Basil Chicken",
       "ingredients": [
-        "",
-        ""
+        "1 T. vegetable oil",
+        "4 skinless, boneless chicken breast halves",
+        "1 can condensed tomato soup",
+        "½ c. milk",
+        "2 T. grated parmesan cheese",
+        "½ t. Dried basil leaves, crushed",
+        "¼ t. Garlic powder, or 2 cloved garlic, minced",
+        "4 cups hot cooked pasta"
       ],
       "instructions": [
-        "",
-        ""
+        "In medium skillet over medium-high heat, heat oil.",
+        "Add chicken and cook 10 minutes or until browned.",
+        "Set chicken aside.",
+        "Pour off fat.",
+        "Add soup, milk, cheese, basil, and garlic powder.",
+        "Heat to a boil.",
+        "Return chicken to pan.",
+        "Reduce heat to low.",
+        "Cover and cook 5 minutes or until chicken is no longer pink.",
+        "Serve with pasta."
       ]
     },
     {
@@ -1311,12 +1511,29 @@
       "id":  67,
       "name": "Fettuccine and Chicken in Herb Sauce",
       "ingredients": [
-        "",
-        ""
+        "12 oz. fettuccine",
+        "3 T. margarine",
+        "1 T. flour",
+        "1 T. chicken bouillon",
+        "1 t. Basil",
+        "Grated parmesan",
+        "½ t. Garlic powder",
+        "½ t. Pepper",
+        "2 c. milk",
+        "2 c. cooked chicken",
+        "3 T. parsley"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook fettuccine.",
+        "Melt margarine, add flour for white sauce.",
+        "Add bouillon, basil, garlic, pepper.",
+        "Add milk gradually, cook and stir until thick and bubbly.",
+        "Stir in chicken.",
+        "Heat through.",
+        "In large serving bowl, combine fettuccine, chicken and sauce and parsley.",
+        "Toss to coat.",
+        "Sprinkle parmesan on top.",
+        "6-8 servings."
       ]
     },
     {
@@ -1324,12 +1541,26 @@
       "id":  68,
       "name": "Thai Chicken and Cashews",
       "ingredients": [
-        "",
-        ""
+        "3 c. chicken diced (6 breasts)",
+        "½ c. vegetable oil",
+        "6 dried chilies (fry in oil) OPTIONAL",
+        "1 ½ c. diced onion",
+        "1 T. garlic salt",
+        "1 ½ c. celery, chopped",
+        "3 T. fish sauce (a MUST)",
+        "3 T. soy sauce",
+        "9 dried black mushrooms (optional)",
+        "1 ½ chicken broth",
+        "3 T. water",
+        "3 T. cornstarch",
+        "1 ½ c. cashews"
       ],
       "instructions": [
-        "",
-        ""
+        "Heat oil (& fry chilies - optional) - chicken & onion, then garlic salt and turn, add celery, mushrooms, fish & soy sauces, and broth.",
+        "Cover and simmer 5 minutes.",
+        "Add cornstarch and  water until sauce thickens.",
+        "Add cashews right before serving.",
+        "Great on rice."
       ]
     },
     {
@@ -1337,12 +1568,23 @@
       "id":  69,
       "name": "Frozen Fruit Cup",
       "ingredients": [
-        "",
-        ""
+        "3 c. water",
+        "2 c. sugar",
+        "1 c. pineapple juice",
+        "3 sliced bananas",
+        "½ c. crushed pineapple",
+        "Juice from 3 lemons and 3 oranges (½ c. each)",
+        "1 c. blueberries",
+        "1 pkg. Frozen strawberries with juice"
       ],
       "instructions": [
-        "",
-        ""
+        "Boil water and sugar.",
+        "Pour into 9x13 pan.",
+        "Add rest of fruit and stir.",
+        "Freeze.",
+        "Thaw 15 minutes when ready to serve.",
+        "Cut into squares and pour 7-up over each portion.",
+        "great with chicken recipe - thai chicken and cashews"
       ]
     },
     {
@@ -1350,12 +1592,35 @@
       "id":  70,
       "name": "Chicken and Vegetable Lasagna - Crock Pot",
       "ingredients": [
-        "",
-        ""
+        "1 large onion, chopped",
+        "1 med. Zucchini, diced",
+        "1 medium carrot, diced",
+        "2 cloves garlic, minced",
+        "2 ½ c. cooked shredded chicken",
+        "1 T. fresh oregano",
+        "2 T. fresh parsley",
+        "1 T. fresh thyme",
+        "1 t. Salt",
+        "1 t. Pepper",
+        "10 oz. lasagna noodles",
+        "White sauce:",
+        "2 T. butter",
+        "2 T. flour",
+        "1 t. Salt",
+        "1 c. milk",
+        "12 oz. cottage cheese",
+        "2 c. shredded mozzarella cheese, divided"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook lasagna noodles, drain, and cut into thirds.",
+        "In skillet, saute onions, zucchini, carrot, and garlic.",
+        "Add cooked shredded chicken and season with spices.",
+        "Transfer to crock pot.",
+        "Add noodles to crock pot.",
+        "In bowl, mix white sauce ingredients, but only 1 cup of cheese.",
+        "Stir into crock pot.",
+        "Cover and cook 4 hours on low.",
+        "Last 30 minutes, top with remaining 1 c. cheese and turn to high."
       ]
     },
     {
@@ -1363,12 +1628,26 @@
       "id":  71,
       "name": "Chicken Sate with Ponzu Sauce",
       "ingredients": [
-        "",
-        ""
+        "4-6 oz. skinles, boneless chicken breast halves",
+        "¼ c. brown sugar",
+        "¼ c. sake (rice wine)",
+        "¼ c. rice vinegar",
+        "¼ c. fresh lime juice",
+        "2 t. Soy sauce",
+        "1 t. Dark sesame oil",
+        "¼ t. Crushed red pepper",
+        "1 clove garlic, minced"
       ],
       "instructions": [
-        "",
-        ""
+        "Cut each chicken breast half lengthwise into 4 strips.",
+        "Combine sugar and remaining ingredients in a small bowl; stir until sugar dissolves.",
+        "Combine half of sake mixture and all of chicken in a large bowl.",
+        "Let stand 10 minutes.",
+        "Reserve remaining sake mixture.",
+        "Drain chicken, discarding marinade.",
+        "Thread chicken strips onto skewers.",
+        "Place chicken on grill rack coated with cooking spray; grill 2 minutes on each side until done.",
+        "Serve with remaining sake mixture."
       ]
     },
     {
@@ -1376,12 +1655,29 @@
       "id":  72,
       "name": "Chicken Mushroom Crepes",
       "ingredients": [
-        "",
-        ""
+        "30 crepes",
+        "¼ c. olive oil",
+        "¼ c. butter/oil",
+        "¼ c. green onion",
+        "1-2 c. chopped carrots",
+        "3 cloves garlic",
+        "Red bell pepper",
+        "6-8 chicken breasts",
+        "Dill weed",
+        "Thyme",
+        "3-6 c. rice",
+        "1 pt. Sour cream",
+        "2 c. cheddar cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Saute vegetables in butter/oil.",
+        "Cut up chicken in small pieces.",
+        "Mix all ingredients together, including rice.",
+        "After things have cooled down, add sour cream and cheddar cheese.",
+        "Put mixture in crepes.",
+        "Warm up in microwave or on cookie sheets in warm oven.",
+        "Make topping → whipped cream, dill, 4-5 T. grey poupon mustard Simmer and reduce liquid.",
+        "Spoon topping on warmed crepes."
       ]
     },
     {
@@ -1389,12 +1685,18 @@
       "id":  73,
       "name": "Marinade for Tri-tip",
       "ingredients": [
-        "",
-        ""
+        "2 medium shallots, minced (or equivalent of onion)",
+        "1 T. dried thyme leaves",
+        "3 T. brown sugar",
+        "¼ c. soy sauce",
+        "3 T. worcestershire sauce",
+        "2 T. balsamic or rice vinegar",
+        "⅓ c. vegetable oil"
       ],
       "instructions": [
-        "",
-        ""
+        "Cut off visible fat and cut up tri-tip into smaller pieces.",
+        "In large ziploc bag, marinade meat, refrigerate and marinate 6-8 hours.",
+        "Grill."
       ]
     },
     {
@@ -1402,12 +1704,24 @@
       "id":  74,
       "name": "Lettuce and Mandarine Orange Salad",
       "ingredients": [
-        "",
-        ""
+        "½ c. almond slices",
+        "3 T. sugar",
+        "2 T. sugar",
+        "2 T. red wine vinegar",
+        "½ t. Salt",
+        "¼ t. Pepper",
+        "2 dashes Tabasco sauce",
+        "¼ c. olive oil",
+        "1 head romaine lettuce",
+        "1 can mandarin oranges, drained",
+        "3 green onions",
+        "2 ribs celery, chopped"
       ],
       "instructions": [
-        "",
-        ""
+        "Heat sugar (3 T.) and almonds in a non-stick pan until sugar melts and coats nuts.",
+        "Spoon out onto foil and then break apart.",
+        "Mix 2 T. sugar, red wine vinegar, salt, pepper, tabasco sauce, and olive oil together for the dressing.",
+        "Mix the veggies and oranges, drizzle with dressing, top with sugared almonds."
       ]
     },
     {
@@ -1415,12 +1729,22 @@
       "id":  75,
       "name": "Linda's Sweet and Sour Dressing",
       "ingredients": [
-        "",
-        ""
+        "⅔ c. sugar",
+        "1 t. Dry mustard",
+        "½ t. Salt",
+        "5 T. white vinegar",
+        "½ t. Grated onion",
+        "1 ½ T. lemon juice",
+        "1 c. canola oil",
+        "1 ½ t. Celery seed",
+        "Dash of celery salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine sugar, mustard, salt, onion, and 2 T. vinegar. Mix in blender.",
+        "Add oil very slowly with blender on.",
+        "Add remaining vinegar and lemon juice until thick.",
+        "Stir in celery seed and salt.",
+        "Store covered in refrigerator at least one day ahead for best flavor."
       ]
     },
     {
@@ -1428,12 +1752,20 @@
       "id":  76,
       "name": "Korean Salad",
       "ingredients": [
-        "",
-        ""
+        "1 lb. spinach - washed, drained, and broken up",
+        "1 c. bean sprouts, drained",
+        "1 can water chestnuts, sliced",
+        "3-4 hard boiled eggs, sliced",
+        "6-8 slices bacon, fried and crumbled",
+        "*1 c. vegetable or canola oil",
+        "*¼ c. apple cider vinegar",
+        "*¾ c. sugar",
+        "*1 med. Onion, grated",
+        "*½ c. ketchup",
+        "*1 T. worcestershire sauce"
       ],
       "instructions": [
-        "",
-        ""
+        "*Mix starred ingredients together for the dressing the day before."
       ]
     },
     {
@@ -1441,12 +1773,27 @@
       "id":  77,
       "name": "Gourmet Salad",
       "ingredients": [
-        "",
-        ""
+        "½ t. Salt",
+        "Dash pepper",
+        "¼ c. salad oil",
+        "Big dash tabasco sauce",
+        "2 T. sugar",
+        "2 T. vinegar",
+        "1 t. Snipped parsley",
+        "¼ c. almonds, chopped",
+        "1 T + 1 t. Sugar",
+        "¼ head lettuce",
+        "½ head romaine lettuce",
+        "1 c. celery",
+        "2 scallions",
+        "1 can mandarin oranges"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine salt, pepper, salad oil, tabasco sauce, sugar, vinegar, and parsley and shake well.",
+        "Store in refrigerator overnight.",
+        "Carmelize almonds and sugar until brown.",
+        "Chop up lettuce, romaine lettuce, celery, and scallions and place in plastic bag overnight in refrigerator.",
+        "Before serving, add mandarin oranges."
       ]
     },
     {
@@ -1454,12 +1801,19 @@
       "id":  78,
       "name": "Layered Overnight Salad",
       "ingredients": [
-        "",
-        ""
+        "1 head lettuce, chopped",
+        "1 head cauliflower, chopped",
+        "1 large sweet onion, chopped",
+        "1 lb. bacon, fried crisp and crumbled",
+        "2 c. mayo",
+        "⅓ c. grated parmesan cheese",
+        "¼ c. sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "In large bowl, place ingredients in layers as listed above.",
+        "Cover bowl so it is air tight and store in refrigerator overnight or for several hours.",
+        "Toss just before serving.",
+        "For a family of 4 make ¼ recipe."
       ]
     },
     {
@@ -1467,12 +1821,29 @@
       "id":  79,
       "name": "Sweet Potato Hash",
       "ingredients": [
-        "",
-        ""
+        "1/2 # sweet potatoes, peeled & diced",
+        "1/3 c. water",
+        "2 (1 ounce) links turkey breakfast sausage",
+        "1 1/4 c. chopped onion",
+        "3/4 tsp, salt, divided",
+        "1 1/2 T. maple syrup",
+        "1/2 tsp. olive oil",
+        "1 T. water",
+        "1/4 tsp. pepper",
+        "1/8 tsp. Nutmeg"
       ],
       "instructions": [
-        "",
-        ""
+        "Place sweet potatoes and 1/3 c. water in large microwave-safe bowl",
+        "Cover with plastic wrap & microwave on HIGH 15 minutes or until potatoes are tender",
+        "Carefully uncover; drain & keep warm.",
+        "Heat oil in large nonstick skillet over med-high heat.",
+        "Remove casings from sausage.",
+        "Add onion to pan; sauté 6 minutes or until tender.",
+        "Add sausage & 4/4 t. salt;",
+        "cook 4 minutes or until sausage is done, stirring to crumble.",
+        "Stir in sweet potatoes, 42 t. salt, syrup, 1 T. water, pepper & nutmeg.",
+        "Cook until liquid is absorbed & sweet potatoes begin to brown (about 5 minutes).",
+        "Yield 4 servings"
       ]
     },
     {
@@ -1480,12 +1851,15 @@
       "id":  80,
       "name": "Au Gratin Potatoes",
       "ingredients": [
-        "",
-        ""
+        "1 pkg. 32 oz. hash brown frozen potatoes",
+        "2 can potato soup",
+        "1 lb, grated cheddar cheese",
+        "1 pt. sour cream"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix above ingredients & put in greased shallow 9 x 13 pan",
+        "Bake 1 1/2 hrs. @ 350 degrees",
+        "Can be made ahead & frozen"
       ]
     },
     {
@@ -1493,12 +1867,17 @@
       "id":  81,
       "name": "Mashed Potato Casserole",
       "ingredients": [
-        "",
-        ""
+        "3-4 large potatoes - cooked & mashed",
+        "1/3 c. sour cream",
+        "1 t. salt",
+        "1/8 t. dill weed dash pepper",
+        "1/4 c. butter or bacon drippings",
+        "2 t. chives, chopped",
+        "1 c. cooked chopped spinach, drained",
+        "1/2 c. grated cheddar cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Bake @ 400 for 20 minutes. Serves 6-8"
       ]
     },
     {
@@ -1506,12 +1885,19 @@
       "id":  82,
       "name": "Pizza Potatoes",
       "ingredients": [
-        "",
-        ""
+        "6 med. potatoes sliced",
+        "2 T. olive oil",
+        "2 oz. sliced pepperoni",
+        "8 oz. can pizza sauce",
+        "1 lg. onion",
+        "2 c. mozzarella",
+        "1 t. Salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Sauté potato & onion in oil, drain well.",
+        "Combine potatoes, onions, cheese, salt & pepperoni.",
+        "Pour pizza sauce over top.",
+        "Cook in slow cooker covered on low for 6-10 hours or until potatoes are soft."
       ]
     },
     {
@@ -1519,12 +1905,15 @@
       "id":  83,
       "name": "Hidden Valley Ranch Potatoes",
       "ingredients": [
-        "",
-        ""
+        "1 packet Hidden Valley Ranch Dressing dry mix",
+        "2 lbs. small red potatoes, quartered",
+        "1/4 cup oil"
       ],
       "instructions": [
-        "",
-        ""
+        "Place potatoes in a plastic bag, add oil.",
+        "Toss and coat.",
+        "Add dressing mix; toss again until coated.",
+        "Bake on ungreased baking pan at 450 degrees for 35 minutes."
       ]
     },
     {
@@ -1532,12 +1921,29 @@
       "id":  84,
       "name": "Banana Pineapple Salad",
       "ingredients": [
-        "",
-        ""
+        "1 pkg. lemon jello",
+        "2 c. boiling water",
+        "1 c. crushed pineapple, well drained – save juice",
+        "8 large chopped marshmallows (or equivalent of small)",
+        "3 diced bananas",
+        "1/2 c. sugar",
+        "2 T. cornstarch",
+        "2/3 c. heavy whipped cream",
+        "American cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine jello and boiling water and let set until partly congealed",
+        "Add pineapple, marshmallows and bananas",
+        "Chill until firm.",
+        "Add water to pineapple juice to make I cup.",
+        "Add sugar and cornstarch",
+        "Mix together with one well beaten egg yolk.",
+        "Cook well, stirring constantly.",
+        "Cool.",
+        "Fold in heavy whipped cream",
+        "Spread over firm gelatin mixture.",
+        "Grate American cheese over top.",
+        "Cover."
       ]
     },
     {
@@ -1545,12 +1951,30 @@
       "id":  85,
       "name": "7-Up Salad",
       "ingredients": [
-        "",
-        ""
+        "Salad:",
+        "1 large pkg. lemon jello",
+        "2 c. boiling water",
+        "2 c. 7-up",
+        "2-3 c. miniature marshmallows",
+        "1 c. crushed pineapple, drained",
+        "Topping:",
+        "2 T. butter",
+        "2 T. flour",
+        "1 egg well beaten",
+        "1 cup pineapple juice",
+        "1/4 c. sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "Salad:",
+        "Dissolve jello in water, let cool.",
+        "Add 7-up, marshmallows & pineapple.",
+        "Use 9 x 13 baking dish or pan.",
+        "Put in refrigerator until thickened.",
+        "Spread topping on firm jello mixture.",
+        "Topping:",
+        "Cook until thickened.",
+        "Cool & fold in 2 c. cool whip.",
+        "Sprinkle with mild grated cheese & chopped walnuts."
       ]
     },
     {
@@ -1558,12 +1982,20 @@
       "id":  86,
       "name": "Linda's Sparkling Fruit Mold",
       "ingredients": [
-        "",
-        ""
+        "1 1/2 c. boiling water",
+        "2 - 3 oz. pkg. sparkling white grape jello",
+        "2 c. cold club soda, seltzer or diet sprite",
+        "1 can pineapple tidbits, drained",
+        "1 - 11 oz. can mandarin oranges, drained",
+        "1/2 c. dried cranberries"
       ],
       "instructions": [
-        "",
-        ""
+        "Dissolve gelatin in water.",
+        "Refrigerate 15 min.",
+        "Gently stir in soda.",
+        "Refrigerate 30 minutes on until slightly thickened.",
+        "Stir in fruit.",
+        "Cover & Refrigerate."
       ]
     },
     {
@@ -1571,12 +2003,29 @@
       "id":  87,
       "name": "Mississippi Corn Bread Salad",
       "ingredients": [
-        "",
-        ""
+        "1 - 8 1/2 oz. pkg. corn muffin mix",
+        "10 slices bacon, crisp-cooked",
+        "3 large tomatoes, chopped (3 cups)",
+        "2 -15 oz. cans pinto beans, rinsed and drained",
+        "2 -15 oz. cans whole kernel corn, drained",
+        "1 c. chopped red and/or green sweet peppers",
+        "1/2 c. chopped green onions",
+        "1 c. mayonnaise",
+        "1 - 8 oz. carton dairy sour cream",
+        "1 - 1 oz. package ranch salad dressing mix",
+        "2 c. shredded cheddar cheese (8 oz.)"
       ],
       "instructions": [
-        "",
-        ""
+        "Prepare muffin mix according to directions; cool.",
+        "Crumble muffins. (You should have about 5 cups crumbs.)",
+        "Crumble bacon.",
+        "Set crumbs & bacon aside.",
+        "In a large bowl, stir together tomatoes, beans, corn, sweet peppers, & onions; set aside.",
+        "For dressing, in a small mixing bowl, stir together mayonnaise, sour cream, & salad dressing mix; set aside.",
+        "In a 3-4 quart glass serving bowl, layer half of the crumbled corn bread, bean mixture, bacon & cheese.",
+        "Spread with dressing mixture.",
+        "Repeat layers.",
+        "Cover & chill for 3 to 24 hours."
       ]
     },
     {
@@ -1584,12 +2033,19 @@
       "id":  88,
       "name": "Ramen Noodle Salad",
       "ingredients": [
-        "",
-        ""
+        "1 # package shredded cabbage",
+        "1 bunch green onions, chopped",
+        "1/2 c. oil",
+        "1/2 c. sugar",
+        "1/8 c. vinegar",
+        "1 pkg. seasoning from Ramen Noodles",
+        "1 pkg. Ramen Noodles crushed",
+        "1/2 c. almonds, sunflower seeds or cashews"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine oil, sugar, vinegar and Ramen Noodles seasoning",
+        "Pour over cabbage & onion mixture.",
+        "Just before serving add Ramen Noodles and almond, sunflower seeds or cashews"
       ]
     },
     {
@@ -1597,12 +2053,21 @@
       "id":  89,
       "name": "Marilee's 3 Bean Salad",
       "ingredients": [
-        "",
-        ""
+        "1 can green beans",
+        "1 can yellow beans",
+        "1 can kidney beans",
+        "1/2 c. onion",
+        "celery",
+        "green pepper",
+        "3/4 c. sugar",
+        "1/2 c. Crisco oil",
+        "1/2 C. cider vinegar",
+        "1 t. salt",
+        "1/8 t. Pepper"
       ],
       "instructions": [
-        "",
-        ""
+        "Drain all beans",
+        "Add remaining ingredients"
       ]
     },
     {
@@ -1610,12 +2075,18 @@
       "id":  90,
       "name": "Ann's Fruit Salad",
       "ingredients": [
-        "",
-        ""
+        "1 lg. can. mandarin oranges - cut in half drain",
+        "1 lg, can pineapple chunks - cut in half but save juice",
+        "1 lg. can peaches – cut up",
+        "1 lg. can pears - cut up Few maraschino cherries for color",
+        "2 firm bananas, if desired",
+        "3 oz. pkg. instant vanilla pudding",
+        "1/2 c. fruit juice"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook & cool.",
+        "Pour over fruit.",
+        "Keeps well in refrigerator."
       ]
     },
     {
@@ -1623,12 +2094,18 @@
       "id":  91,
       "name": "Vegetable Salad",
       "ingredients": [
-        "",
-        ""
+        "2 c. mayo",
+        "1 c. sugar",
+        "4 T. vinegar",
+        "1 head cauliflower",
+        "1 bunch broccoli",
+        "1 med red onion, chopped",
+        "8 oz. shredded cheddar cheese",
+        "1 lb. bacon – fried & crumbled"
       ],
       "instructions": [
-        "",
-        ""
+        "Make dressing day before: Mix mayo, sugar, and vinegar",
+        "Break cauliflower, broccoli, onion, chees and bacon into bite sized pieces"
       ]
     },
     {
@@ -1636,12 +2113,20 @@
       "id":  92,
       "name": "Marinated Vegetables",
       "ingredients": [
-        "",
-        ""
+        "1/3 c. oil",
+        "3/4 c. vinegar",
+        "1 c. sugar",
+        "Cauliflower",
+        "Broccoli",
+        "Carrots",
+        "Green pepper",
+        "Green onions",
+        "Water chestnuts",
+        "Celery"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine oil, vinegar and sugar",
+        "Add remaining ingredients"
       ]
     },
     {
@@ -1649,12 +2134,23 @@
       "id":  93,
       "name": "Marilee's Broccoli and Grape Salad",
       "ingredients": [
-        "",
-        ""
+        "2 – 4 broccoli heads cut small",
+        "1 lb. bacon, fried & crumbled",
+        "2 c. red grapes, halved",
+        "1 c. slivered almonds",
+        "1 small onion",
+        "2 c. celery chopped",
+        "1 c. raisins",
+        "1/4 c. milk",
+        "1 T. vinegar",
+        "1 c. Miracle Whip",
+        "1/4 c. sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "Salad: Mix broccoli, bacon, grapes, almonds, onion, celery and raisins",
+        "Dressing: Mix milk, vinegar, Miracle Whip and sugar",
+        "Pour dressing over just before serving.",
+        "Serves 8 - 10."
       ]
     },
     {
@@ -1662,12 +2158,20 @@
       "id":  94,
       "name": "German Potato Salad",
       "ingredients": [
-        "",
-        ""
+        "3 lb. red potatoes, cooked, cooled & sliced",
+        "Onions, salt & pepper.",
+        "1/2 c. bacon fat (scant)",
+        "I T. flour",
+        "1/2 c. water",
+        "1/2 c. vinegar",
+        "1/2 c. sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "In-between layers of potatoes, add cut up onion, salt & pepper.",
+        "Heat bacon fat.",
+        "Mix flour in water & add along with vinegar & sugar to bacon fat.",
+        "Bring to a boil & cook until slightly thickened.",
+        "Pour over prepared potatoes & serve warm."
       ]
     },
     {
@@ -1675,12 +2179,21 @@
       "id":  95,
       "name": "Susie's Vegetable Casserole",
       "ingredients": [
-        "",
-        ""
+        "1 - 16 oz. bag frozen cauliflower/broccoli/carrot mix",
+        "1 can cream of mushroom soup",
+        "1 c. shredded Swiss Cheese (4 oz.)",
+        "1/3 c. sour cream",
+        "1/4 t. pepper",
+        "1 c. French fried onions (2.8 oz. can)"
       ],
       "instructions": [
-        "",
-        ""
+        "Thaw & drain vegetables.",
+        "Combine soup, half of the cheese, sour cream, pepper & half of the onion pieces.",
+        "Add drained vegetables.",
+        "Place in greased I quart covered casserole dish.",
+        "Bake @ 350 for 30 minutes.",
+        "Top with remaining cheese & onion pieces.",
+        "Bake uncovered 5 more minutes."
       ]
     },
     {
@@ -1688,12 +2201,15 @@
       "id":  96,
       "name": "Candied Sweet Potatoes",
       "ingredients": [
-        "",
-        ""
+        "1 - 17 oz. can sweet potatoes sliced 1/2 inch thick",
+        "1/2 c. brown sugar",
+        "3 T. butter",
+        "3 T. light cream",
+        "1/2 t. Salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix & heat sugar, butter, cream and salt until bubbly",
+        "Add potatoes & cook long enough to heat the potatoes throughout."
       ]
     },
     {
@@ -1701,12 +2217,18 @@
       "id":  97,
       "name": "Green Bean Casserole",
       "ingredients": [
-        "",
-        ""
+        "2 – 15 oz. French style green beans, drained",
+        "2 cans cream of chicken soup",
+        "3/4 c. grated cheese",
+        "I c. bread crumbs",
+        "3 T. butter"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine beans & soup in 2 1/2 qt casserole.",
+        "Top with grated cheese.",
+        "Melt butter & stir in bread crumbs.",
+        "Spread over cheese.",
+        "Bake uncovered 20 min. @ 350 degrees."
       ]
     },
     {
@@ -1714,12 +2236,31 @@
       "id":  98,
       "name": "Linda's Cheesy Broccoli Bake",
       "ingredients": [
-        "",
-        ""
+        "2 lbs. fresh broccoli",
+        "1 c. water",
+        "1/4 c. chopped onion",
+        "1/4 c. chopped celery",
+        "1/4 lb. fresh mushrooms sliced",
+        "8 oz. can sliced water chestnuts, drained",
+        "8 oz. American cheese",
+        "1 can cream of mushroom soup",
+        "4 oz. cheddar cheese, shredded",
+        "1/2 t. salt",
+        "1/4 t. garlic salt",
+        "1/4 t. pepper",
+        "2 T. butter"
       ],
       "instructions": [
-        "",
-        ""
+        "Cut up broccoli into 1” pieces. Cook in boiling water & 1/2 t. salt, 5-8 min. or until crisp tender, drain",
+        "Sauté onion, celery & mushrooms in oleo until tender, drain.",
+        "Combine mushroom mixture, broccoli & water chestnuts stirring gently-set aside.",
+        "Combine American cheese & soup.",
+        "Cook over low heat until cheese melts.",
+        "Stir in garlic salt & pepper.",
+        "Pour over broccoli mixture.",
+        "Spoon into greased 2 qt. casserole.",
+        "Bake @ 350 degrees 25 minutes.",
+        "Sprinkle with cheddar cheese & bake 5 minutes more."
       ]
     },
     {
@@ -1727,12 +2268,24 @@
       "id":  99,
       "name": "Onion Pie",
       "ingredients": [
-        "",
-        ""
+        "30 Saltine Crackers, crushed",
+        "3 c. onions, sliced thin",
+        "1/2 lb. sharp cheddar cheese, grated",
+        "1/2 c. butter",
+        "1/4 c. butter",
+        "1 1/2 c. scalded milk to 3 beaten eggs",
+        "1/2 tsp. salt",
+        "1/2 tsp. pepper"
       ],
       "instructions": [
-        "",
-        ""
+        "Make a crust of crushed saltine crackers & 1/2 c. of melted butter.",
+        "Sauté onions in 1/4 c. butter until golden brown.",
+        "Put these on top of cracker crumbs in shallow casserole.",
+        "Sprinkle cheese on top of onions.",
+        "This may be fixed hours ahead of time.",
+        "When time to put in oven, add milk, eggs, salt and pepper",
+        "Pour mixture over the onion cheese mixture in casserole.",
+        "Bake at 350 degrees for 1/2 hour or until custard sets."
       ]
     },
     {
@@ -1740,12 +2293,31 @@
       "id": 100,
       "name": "Chi-Chi's Sweet Corn Cake",
       "ingredients": [
-        "",
-        ""
+        "1/2 C. (1 stick) butter, softened",
+        "1/3.c. masa harina",
+        "1/4 c. water",
+        "1/4 t. salt",
+        "1 1/2 c. frozen corn, thawed",
+        "1/3 c. sugar",
+        "2 T. heavy cream",
+        "1/2 t. baking powder",
+        "1/4 c. cornmeal"
       ],
       "instructions": [
-        "",
-        ""
+        "Blend butter in medium bowl with electric mixer 'til creamy.",
+        "Add the masa harina & water to the butter & combine well.",
+        "Put the defrosted corn into a blender & with short pulses, coarsely chop the corn on low speed.",
+        "Stir the chopped corn into the butter & masa harina mixture.",
+        "Add the cornmeal.",
+        "In another medium bowl, mix together the sugar, cream, salt & baking powder.",
+        "Blend well & pour this mixture into the other bowl, & stir all by hand.",
+        "Pour the corn batter into an ungreased 8x8” baking pan.",
+        "Smooth the surface of the batter with spatula.",
+        "Cover the pan with aluminum foil.",
+        "Place this pan in a 9x13 pan filled 1/3 of the way with hot water.",
+        "Bake for 50-60 minutes.",
+        "Remove the small pan from the larger pan, & let sit for 10 minutes.",
+        "To serve, scoop out each portion."
       ]
     },
     {
@@ -1753,12 +2325,23 @@
       "id": 101,
       "name": "Zucchini Casserole",
       "ingredients": [
-        "",
-        ""
+        "4 med. zucchini sliced 1/2 inch thick",
+        "3/4 c. sliced carrots",
+        "1/2 c. chopped onion",
+        "1 can cream of chicken soup",
+        "6 T. Oleo",
+        "1/2 c. sour cream",
+        "2 1/4 c. stuffing mix"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook zucchini & carrots until tender, about 15 minutes. Drain.",
+        "In large saucepan, sauté onion in 4 T. oleo.",
+        "Stir in only 1/2 c. stuffing mix, soup, & sour cream.",
+        "Gently stir in vegetables.",
+        "Place in a greased 1 1/2 qt. casserole dish.",
+        "Melt remaining 2 T. oleo, add remaining stuffing mix.",
+        "Toss gently & sprinkle over casserole.",
+        "Bake 30 minutes @ 350 degrees."
       ]
     },
     {
@@ -1766,12 +2349,25 @@
       "id": 102,
       "name": "Linda's 5 Way Beans",
       "ingredients": [
-        "",
-        ""
+        "1 can red kidney beans",
+        "1 can pork & beans",
+        "1 can green lima beans",
+        "1 can great northern (white) beans",
+        "1 green pepper, chopped",
+        "Sharp Cheddar cheese, grated",
+        "2 onions, chopped small",
+        "2 T. Worcestershire sauce",
+        "1/2 c. brown sugar",
+        "1 c. catsup"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients, except cheese.",
+        "Use the juice from the beans.",
+        "Place in greased baking dish.",
+        "Bake covered for 2 hours @ 350 degrees.",
+        "You can freeze for later use at this point.",
+        "Add cheese & bake 1 hour longer, uncovered.",
+        "Cover & allow to set 20-30 min. before serving."
       ]
     },
     {
@@ -1779,12 +2375,25 @@
       "id": 103,
       "name": "Marilee's Golden Cheddar Broccoli Bake",
       "ingredients": [
-        "",
-        ""
+        "2 - 10 oz. pkg. frozen broccoli",
+        "1 - 12 oz. can corn",
+        "1 1/2 c. cheddar cheese, shredded",
+        "3/4 c. cornflake crumbs",
+        "4 T. margarine",
+        "2 T. flour",
+        "1/4 t. salt",
+        "1 1/2 c. milk"
       ],
       "instructions": [
-        "",
-        ""
+        "Melt 2 T. margarine, stir in flour & salt.",
+        "Gradually add milk, mixing until smooth.",
+        "Add cheese, stirring until melted.",
+        "Mix in 1/4 c. cornflake crumbs & corn.",
+        "Arrange broccoli in 11 3/4 x 7 1/2 baking dish.",
+        "Pour cheese over broccoli: Toss remaining 1/2 c. cornflake crumbs with 2 T. melted margarine. Sprinkle over casserole.",
+        "Bake @ 350 degrees for 30 minutes.",
+        "To make ahead, cover unbaked & refrigerate overnight.",
+        "Bake uncovered @ 350 degrees for 45 minutes."
       ]
     },
     {
@@ -1792,12 +2401,20 @@
       "id": 104,
       "name": "Marilee's Calico Beans",
       "ingredients": [
-        "",
-        ""
+        "1 - 28 oz. can baked beans",
+        "1 can kidney beans",
+        "1 can lima beans",
+        "1 T. molasses",
+        "2 rounded T. Lipton onion soup mix",
+        "1 lb.ground beef, browned & drained",
+        "¼ c. ketchup",
+        "¼ c. brown sugar",
+        "¼ c. vinegar",
+        "1 t. dry mustard"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine in dish.",
+        "Bake I hour or so @ 350 degrees."
       ]
     },
     {
@@ -1805,12 +2422,24 @@
       "id": 105,
       "name": "Diane's Del Monico Potatoes",
       "ingredients": [
-        "",
-        ""
+        "24 oz. frozen hash browns, grated",
+        "6 T. butter",
+        "3 T. flour",
+        "2 1/2 t. salt",
+        "2 1/2 c. milk",
+        "2 t. parsley",
+        "I T. minced onion",
+        "1 1/2 c. grated cheese",
+        "1/4 t. caraway seed"
       ],
       "instructions": [
-        "",
-        ""
+        "Thaw potatoes.",
+        "Make sauce by melting butter; add flour, then slowly add milk, stirring constantly.",
+        "When sauce is thickened, add spices.",
+        "Stir in 1 c. cheese & potatoes.",
+        "Pour into greased baking dish.",
+        "Top with 1/2 c. cheese.",
+        "Bake @ 350 degrees for 30 minutes."
       ]
     },
     {
@@ -1818,12 +2447,24 @@
       "id": 106,
       "name": "Boston Baked Beans",
       "ingredients": [
-        "",
-        ""
+        "1/2 lbs. dried great northern beans",
+        "I small smoked butt, cut into cubes",
+        "1/4 c. minced onion",
+        "1/2 c. maple syrup",
+        "2 t. salt",
+        "1/2 c. brown sugar",
+        "1/2 t. dry mustard",
+        "1/4 t. pepper"
       ],
       "instructions": [
-        "",
-        ""
+        "Sort & rinse beans.",
+        "Cover with warm water & soak overnight.",
+        "Drain water off in the morning.",
+        "Using just enough fresh water to cover beans, simmer about 1 hour until tender.",
+        "Add remaining ingredients",
+        "Bake @ 300 degrees for 8 hours.",
+        "Remove cover last 1/2 hour.",
+        "Can use a crock pot."
       ]
     },
     {
@@ -1831,12 +2472,29 @@
       "id": 107,
       "name": "Diane's Carrot Casserole",
       "ingredients": [
-        "",
-        ""
+        "12 med. carrots, sliced",
+        "1 small onion",
+        "1/4 c. flour",
+        "2 c. milk",
+        "8 oz. pkg. American Cheese slices",
+        "1 t. salt",
+        "1/4 t. dry mustard",
+        "1/4 t. celery salt",
+        "dash pepper",
+        "1 c. bread crumbs"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook carrots until tender/crisp - drain.",
+        "In medium pan, melt 1/4 c. oleo - add onions & cook 5 minutes.",
+        "Stir in flour, stirring constantly until smooth.",
+        "Add milk & next 4 ingredients.",
+        "Cook & stir until thickened.",
+        "In a small pan, melt 3 T. oleo, add bread crumbs & toss until coated.",
+        "Lightly grease a 2 qt. casserole dish.",
+        "Pour half of the carrots into the dish, layer with half of the cheese slices. Repeat.",
+        "Pour sauce over all.",
+        "Sprinkle with crumbs.",
+        "Bake 20 min. until hot @ 350 degrees."
       ]
     },
     {
@@ -1844,12 +2502,25 @@
       "id": 108,
       "name": "Linda's Super Rice",
       "ingredients": [
-        "",
-        ""
+        "2 c. rice",
+        "4 c. boiling water",
+        "1/4 c. butter",
+        "2 beef bouillon cubes",
+        "1/2 c. sliced mushrooms",
+        "1/2 c. sliced almonds",
+        "1/2 c. chopped celery",
+        "1/2 c. chopped onion",
+        "1/2 t. salt",
+        "1/2 t. marjoram",
+        "1/4 t. savory",
+        "1 T. parsley"
       ],
       "instructions": [
-        "",
-        ""
+        "Lightly brown rice, celery & onion in butter in large fry pan.",
+        "Crush bouillon cubes & dissolve in boiling water.",
+        "Sprinkle salt, marjoram & savory over rice mixture.",
+        "Stir in bouillon, cover tightly & cook slowly 20-25 min.",
+        "Fold in mushrooms, almonds & parsley just before serving."
       ]
     },
     {
@@ -1857,12 +2528,12 @@
       "id": 109,
       "name": "Kathryn's Pickled Beets",
       "ingredients": [
-        "",
-        ""
+        "I c. vinegar",
+        "2 c. sugar",
+        "3 c. beet juice "
       ],
       "instructions": [
-        "",
-        ""
+        "Quarter small beets, eighths for larger ones"
       ]
     },
     {
@@ -1870,12 +2541,21 @@
       "id": 110,
       "name": "Gary and Beas's Pickles",
       "ingredients": [
-        "",
-        ""
+        "Brine enough for 5 quarts:",
+        "4 c. water",
+        "2 c. vinegar",
+        "1 1/2 c. sugar",
+        "1 T. Mixed pickle spices",
+        "1/3 c. salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Bring to a boil.",
+        "Cut cukes in NARROW strips & pack into jars.",
+        "Add a slice of onion, a clove of garlic, cut in half, & 2-3 heads of dill.",
+        "Pour boiling brine over pickles in jars.",
+        "Add lids.",
+        "Process 5 minutes in water bath.",
+        "Let cool in hot water."
       ]
     },
     {
@@ -1883,12 +2563,22 @@
       "id": 111,
       "name": "Candied Dill Pickles",
       "ingredients": [
-        "",
-        ""
+        "2 c. white sugar",
+        "1 c. vinegar",
+        "1 T. mixed pickling spices"
       ],
       "instructions": [
-        "",
-        ""
+        "Quarter the dill pickles lengthwise.",
+        "Wash in cold water & drain.",
+        "Mix sugar, vinegar and spices into a syrup",
+        "(Put whole cloves in a small bag so they can be easily removed)",
+        "Bring syrup to a boil & pour over dill pickles.",
+        "Let stand overnight.",
+        "In the morning drain off the syrup, reheat it & pour over the pickles.",
+        "Let stand overnight.",
+        "Repeat this process, one more time.",
+        "When cool, remove spices & enjoy.",
+        "Note: 3 cups of syrup covers a 1/2 qt jar of sliced pickles."
       ]
     },
     {
@@ -1896,12 +2586,18 @@
       "id": 112,
       "name": "VCY Refrigerator Pickles",
       "ingredients": [
-        "",
-        ""
+        "3 lbs. pickles sliced thin",
+        "1 lb. onions, sliced thin",
+        "1 green pepper - chopped",
+        "1 red pepper - chopped",
+        "2 c. vinegar",
+        "3 1/2 c. sugar",
+        "1/4 c. salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Stir vinegar, sugar and salt until dissolved: DO NOT HEAT THIS!",
+        "When thoroughly dissolved, pour over pickles & keep in refrigerator.",
+        "Add dill heads."
       ]
     },
     {
@@ -1909,12 +2605,24 @@
       "id": 113,
       "name": "Wild Rice Soup",
       "ingredients": [
-        "",
-        ""
+        "Enough wild rice to make 3 cups after cooking",
+        "3-5 chopped carrots",
+        "1-2 T margarine",
+        "1 t. minced onion",
+        "1 qt. 2% milk",
+        "3 cans cream of potato soup",
+        "1/2 lb. cubed Velveeta cheese (can be light)",
+        "3 c. cubed ham"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook enough wild rice to make 3 cups after cooking.",
+        "Sauté chopped carrots in margarine; add minced onion",
+        "Add milk",
+        "Add cream of potato soup",
+        "Gradually add cheese",
+        "Add cubed ham",
+        "Add wild rice",
+        "Heat to warm, but don't boil as it might separate; stir occasionally to avoid burning."
       ]
     },
     {
@@ -1922,12 +2630,23 @@
       "id": 114,
       "name": "Taco Soup",
       "ingredients": [
-        "",
-        ""
+        "2 1/2 lbs. ground beef & onion",
+        "2 pkg. taco seasoning",
+        "1 can black beans",
+        "1 can pinto beans",
+        "1 can kidney beans",
+        "1 can garbanzo beans",
+        "1 can corn",
+        "1 can hominy",
+        "1 large can crushed tomatoes",
+        "2 cans diced tomatoes",
+        "1 can diced chilies",
+        "1 can chicken broth Simmer."
       ],
       "instructions": [
-        "",
-        ""
+        "Brown beef and onion",
+        "Add remaining ingredients using juice from beans:",
+        "Serve with taco chips, sour cream & shredded cheese."
       ]
     },
     {
@@ -1935,12 +2654,21 @@
       "id": 115,
       "name": "Taco Soup",
       "ingredients": [
-        "",
-        ""
+        "1 lb. ground beef-browned and drained",
+        "1 can diced tomatoes",
+        "2 cans red kidney beans",
+        "1/2 cup chopped celery",
+        "1 can corn",
+        "1 small can tomato sauce",
+        "1 package taco seasoning",
+        "1 or 2 bay leaves",
+        "2 beef bouillon cubes (or 1 can beef broth)",
+        "Water"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine all ingredients;",
+        "Cook in Crock Pot 2-4 hours on high, or 8+ hours on low; or on stove,",
+        "Simmer 1-2 hours, replenishing water as it cooks down."
       ]
     },
     {
@@ -1948,12 +2676,28 @@
       "id": 116,
       "name": "Creamy Onion Spinach Soup",
       "ingredients": [
-        "",
-        ""
+        "4 bunches scallions",
+        "2 lg. yellow onions",
+        "8 c. chicken broth",
+        "1/2 lb. fresh spinach",
+        "1/2 t. salt",
+        "2 leeks",
+        "1 lg. potato",
+        "3 T. minced garlic",
+        "2 c. milk or cream",
+        "1 t. white pepper"
       ],
       "instructions": [
-        "",
-        ""
+        "Roughly chop all onions, cook 10 min or until soft.",
+        "Add broth, potato, peeled & diced & garlic.",
+        "Cover and cook 1 hour.",
+        "Remove from heat; stir in spinach.",
+        "Carefully, puree in blender.",
+        "Return soup to pan.",
+        "Add milk.",
+        "Heat just to boiling (do not boil).",
+        "Add salt & pepper.",
+        "Top with croutons."
       ]
     },
     {
@@ -1961,12 +2705,27 @@
       "id": 117,
       "name": "Cheese-Broccoli Soup",
       "ingredients": [
-        "",
-        ""
+        "6 1/2 T. diced onion",
+        "1/4 C. margarine",
+        "7 T. flour",
+        "4 c. hot milk",
+        "1-20 oz. bag frozen chopped broccoli, thawed",
+        "1 c. boiling water",
+        "t. chicken bouillon",
+        "8 oz. sharp cheddar cheese",
+        "Salt & pepper to taste"
       ],
       "instructions": [
-        "",
-        ""
+        "Sauté onion in margarine until translucent, about 5 minutes.",
+        "Reduce heat to low & stir in flour, salt & pepper to make a smooth paste.",
+        "Cook, stirring 3-5 min.",
+        "Stir in hot milk.",
+        "Simmer 5-10 min., stirring constantly, until mixture thickens.",
+        "Meanwhile, combine water, bouillon & broccoli.",
+        "Cover & cook until tender, about 5 min.",
+        "Add cooked broccoli to white sauce.",
+        "Stir in cheese & cook, stirring constantly, over med.",
+        "Heat until melted"
       ]
     },
     {
@@ -1974,12 +2733,20 @@
       "id": 118,
       "name": "Dad's Vegetable Soup",
       "ingredients": [
-        "",
-        ""
+        "Beef Roast (Inexpensive)",
+        "Beef broth",
+        "Onions",
+        "Celery",
+        "Carrots",
+        "Green Beans",
+        "Corn"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook beef roast in broth.",
+        "While beef is cooking, cut up onions, celery, & carrots, add to broth.",
+        "When beef is tender, cut up in chunks.",
+        "Add green beans, corn or any combination of vegetables you like.",
+        "Last 15 minutes add cut up or shredded head of cabbage."
       ]
     },
     {
@@ -1987,12 +2754,32 @@
       "id": 119,
       "name": "Carrot Jalapeno Soup",
       "ingredients": [
-        "",
-        ""
+        "3 slices bacon, cut crosswise into ¼ inch pieces",
+        "2 c. chopped carrots",
+        "3/4 c. chopped onion",
+        "6 c. reduced sodium chicken broth",
+        "1/3 c. grated sharp Cheddar cheese",
+        "1/3 c. grated pepper Jack cheese",
+        "1 - 2 jalapeno chilies, seeded and finely chopped",
+        "1/4 c. heavy cream",
+        "1 t. kosher salt",
+        "1/8 to 1/4 t. crushed red pepper flakes",
+        "1/3 c. white wine",
+        "1/2 c. chopped celery",
+        "1 1/2 t. chopped garlic",
+        "1/2 t. black pepper"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook bacon until crisp, about 7 minutes.",
+        "Add carrots, onion & celery cook, stirring, until onion is softened, about 10 minutes.",
+        "Add jalapeno, garlic & red pepper flakes & cook, stirring until garlic is golden, about 3 minutes.",
+        "Add wine to pot & boil, stirring & scraping up brown bits, about 30 seconds.",
+        "Add chicken broth & bring to a boil, then reduce heat & simmer until vegetables are very soft, about 20 minutes.",
+        "Remove from heat & puree in batches in a blender until smooth,",
+        "(be careful when blending hot liquids).",
+        "Return soup to pot & bring to a boil over moderately high heat, stirring occasionally.",
+        "Stir in cheese until smooth & remove from heat, then stir in cream, salt & pepper.",
+        "Season with salt."
       ]
     },
     {
@@ -2000,12 +2787,17 @@
       "id": 120,
       "name": "She Crab Soup",
       "ingredients": [
-        "",
-        ""
+        "1/4 c. diced celery",
+        "1/2 c. diced onion",
+        "2 c. diced potatoes",
+        "1T. Worcestershire sauce",
+        "2 c. milk 1 # lump crab meat (imitation works great)",
+        "1 can cream of mushroom soup"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook first three ingredients in water until tender.",
+        "Puree, then add remaining ingredients",
+        "Season to taste: salt, pepper & Creole seasoning"
       ]
     },
     {
@@ -2013,12 +2805,19 @@
       "id": 121,
       "name": "Souper Chili",
       "ingredients": [
-        "",
-        ""
+        "1 lb. ground beef",
+        "1/2 small onion, chopped",
+        "1 can bean & bacon soup (with one can water)",
+        "1 can tomato soup (with one can water)",
+        "1 large can chili con carne with beans",
+        "1 small can chopped green chilies"
       ],
       "instructions": [
-        "",
-        ""
+        "Brown meat & drain.",
+        "Brown onion.",
+        "Add other ingredients.",
+        "Bring to a boil & simmer for 30 minutes, stirring occasionally.",
+        "Serve with flour tortillas."
       ]
     },
     {
@@ -2026,12 +2825,18 @@
       "id": 122,
       "name": "Pizza Dough",
       "ingredients": [
-        "",
-        ""
+        "6 cups flour",
+        "1 pkg. yeast dissolved in 1/2 cup water",
+        "3 T. oil",
+        "4 T. sugar",
+        "1 1/4 c. warm water"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix and knead ingredients till elastic.",
+        "Cover & let rise in warm place 20 minutes",
+        "Spread out on 3 round pizza pans.",
+        "Add favorite sauce (tomato or white).",
+        "Add favorite toppings: cheese, sausage, pepperoni, ham, pineapple, sautéed onions, peppers, mushrooms, black olives, etc."        
       ]
     },
     {
@@ -2039,12 +2844,26 @@
       "id": 123,
       "name": "Marilee's Zucchini Bread",
       "ingredients": [
-        "",
-        ""
+        "2 eggs",
+        "1 c. peeled & grated zucchini",
+        "1 c. sugar",
+        "1/2 c. cooking oil",
+        "1 tsp. vanilla",
+        "1/2 t. salt",
+        "1/4 t. Baking Powder",
+        "1 t. Baking Soda",
+        "1 1/2 t. cinnamon",
+        "1/2 c. flour",
+        "1/2 c. nuts optional"
       ],
       "instructions": [
-        "",
-        ""
+        "Beat eggs until light & fluffy.",
+        "Add zucchini, sugar, oil & vanilla.",
+        "Mix well.",
+        "Add dry ingredients and fold into nuts.",
+        "Combine with liquid ingredients.",
+        "Grease loaf pans.",
+        "Bake @350 degrees for 1 hour."
       ]
     },
     {
@@ -2052,12 +2871,25 @@
       "id": 124,
       "name": "Honey Buns",
       "ingredients": [
-        "",
-        ""
+        "3 cups Bisquick baking mix",
+        "1/3 cup sugar",
+        "2/3 cup whipping cream",
+        "1/2 tsp. ground nutmeg",
+        "1 egg",
+        "3 tbsp. honey",
+        "3 tbsp chopped pecans"
       ],
       "instructions": [
-        "",
-        ""
+        "Heat oven to 425 degrees.",
+        "Grease 9 inch round pan.",
+        "Mix baking mix, sugar, whipping cream, nutmeg, and egg until dough forms.",
+        "Gently smooth dough into a ball on cloth-covered board dusted with baking mix.",
+        "Knead 10 times.",
+        "Divide dough into 16 equal parts; shape each part into a ball.",
+        "Place 12 balls around the edge of the pan; place 4 balls in center.",
+        "Bake until golden brown; 15-17 minutes.",
+        "Remove from pan.",
+        "Spread honey over buns, sprinkle with pecans."
       ]
     },
     {
@@ -2065,12 +2897,30 @@
       "id": 125,
       "name": "Holly's Potato Dough",
       "ingredients": [
-        "",
-        ""
+        "3 pkg. dry yeast",
+        "1 c. lukewarm water",
+        "1 qt. scalded milk",
+        "2 c. mashed potatoes (no milk added)",
+        "1 c. butter (1/2 oleo)",
+        "1 c. sugar",
+        "2 eggs beaten",
+        "1 T. salt",
+        "11 – 12 c. additional flour"
       ],
       "instructions": [
-        "",
-        ""
+        "Dissolve yeast into water",
+        "Mix milk, potatoes, butter and sugar in large bowl:",
+        "Let cool to lukewarm, then add yeast mixture & 6 c. flour.",
+        "Let stand until foams up (about 20 min.)",
+        "Add eggs, salt and flour",
+        "Turn out on floured surface & knead until satiny.",
+        "Let rise 'til double.",
+        "Shape into rolls.",
+        "Place on greased pans.",
+        "Bake roll 15 minutes @ 400 degrees.",
+        "Brush tops lightly with butter to remove any floury appearance.",
+        "Cool Completely before freezing.",
+        "Makes 100 rolls."
       ]
     },
     {
@@ -2078,12 +2928,27 @@
       "id": 126,
       "name": "Holly's Honey Whole Wheat Bread",
       "ingredients": [
-        "",
-        ""
+        "4 c. whole wheat flour",
+        "1/2 c. nonfat dry milk",
+        "1 T. salt",
+        "2 pkg. dry yeast",
+        "4- 4 1/2 c. white flour",
+        "3 c. warm water",
+        "1/2 c. honey",
+        "2 T. oil"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine 3 c. whole wheat flour, milk, salt and yeast in mixer bowl",
+        "Heat water, honey and oil until warm, then pour over flour mixture.",
+        "Beat with electric mixer for 3 minutes.",
+        "Stir in 1 c. whole wheat flour and white flour.",
+        "Knead 5 minutes.",
+        "Place in greased bowl, turn & let rise until doubled.",
+        "Punch down.",
+        "Divide in half & shape into loaves.",
+        "Place in greased bread pans.",
+        "Cover & let rise 40 – 45 min.",
+        "Bake 40 - 45 min @ 375 degrees."
       ]
     },
     {
@@ -2091,12 +2956,24 @@
       "id": 127,
       "name": "Carmel Bubble Rolls",
       "ingredients": [
-        "",
-        ""
+        "1 1/2 loaves frozen bread OR 18 - 20 frozen rolls",
+        "1/2 melted butter",
+        "3/4-1 cup brown sugar",
+        "1 pkg. (4 3/4) vanilla or butterscotch pudding (COOKED KIND)",
+        "Pecans (opt.)",
+        "Cinnamon (opt.)"
       ],
       "instructions": [
-        "",
-        ""
+        "Grease 9 X 13 inch pan.",
+        "Cut bread dough into small pieces & place in pan. (If using the bread, let it thaw a few hours first so you can cut the bread, otherwise just place the rolls in the pan.)",
+        "Pour pudding mix over bread.",
+        "Add 1 cup chopped pecans if desired.",
+        "Mix melted butter with brown sugar.",
+        "Pour over pudding mix.",
+        "Sprinkle a bit of cinnamon over everything if desired.",
+        "Place a light cloth over pan and let rise overnight on counter.",
+        "Bake at 350 degrees for 30 minutes.",
+        "Invert on a plate and eat."
       ]
     },
     {
@@ -2104,12 +2981,24 @@
       "id": 128,
       "name": "Grandma Conklyn's Cinnamon Rolls",
       "ingredients": [
-        "",
-        ""
+        "1 c. milk",
+        "1 c. warm water to dissolve Yeast",
+        "1 t. sugar",
+        "2 pkgs. yeast.",
+        "1 T. (scant) salt",
+        "3 eggs, beaten",
+        "1/2 C. sugar",
+        "1/2 c. margarine"
       ],
       "instructions": [
-        "",
-        ""
+        "Add I t. sugar to water, then add yeast.",
+        "Mix together other ingredients; add yeast & enough flour to make a soft dough. About 6 cups flour.",
+        "Knead & let rise to double.",
+        "Divide into thirds.",
+        "Roll out dough, spread softened butter over dough & cover with cinnamon mixed with sugar.",
+        "Roll up, cut, place into greased pans.",
+        "Let rise. When dough is rising, cover with a light dish towel.",
+        "Bake @ 350 25-30 min."
       ]
     },
     {
@@ -2117,12 +3006,36 @@
       "id": 129,
       "name": "Krantz",
       "ingredients": [
-        "",
-        ""
+        "1 c. scalded milk",
+        "1 t. salt",
+        "1 T. sugar",
+        "2 pkgs. yeast",
+        "4 eggs divided",
+        "nuts",
+        "4 c. flour",
+        "1 1/2 c. butter",
+        "1 lemon rind grated",
+        "1 c. sugar",
+        "1 t. Vanilla"
       ],
       "instructions": [
-        "",
-        ""
+        "Scald milk & cool slightly.",
+        "When warm, add yeast & sugar.",
+        "Work shortening & butter into flour & lemon rind.",
+        "Blend as pie crust.",
+        "Add 4 egg yolks & yeast mixture & work into a ball.",
+        "Refrigerate overnight.",
+        "Beat egg whites until stiff.",
+        "Add I c. sugar slowly, then add vanilla.",
+        "Divide into 3 pieces.",
+        "On a floured cloth, roll into a long narrow piece.",
+        "Thin like a pie crust.",
+        "Spread 1/3 of the egg whites over the dough, sprinkle with nuts.",
+        "Fold together lengthwise & twist.",
+        "Place in a greased, circular cake pan.",
+        "Let rise 1/2 hour.",
+        "Bake @ 400 for 10 min. then reduce heat to 350 degrees until done.",
+        "Cinnamon & sugar can be used in place of nuts."
       ]
     },
     {
@@ -2130,12 +3043,20 @@
       "id": 130,
       "name": "Banana Nut Bread",
       "ingredients": [
-        "",
-        ""
+        "3/4 c. margarine",
+        "1 1/2 c. sugar",
+        "3 eggs - beaten",
+        "1 1/2 c. ripe bananas- mashed",
+        "3 c. flour",
+        "4 1/2 t. milk",
+        "2 1/4 t. baking powder",
+        "3/4 t. baking soda",
+        "1 t. salt",
+        "1 ½ t. lemon juice",
+        "1 ½ c. chopped nuts"
       ],
       "instructions": [
-        "",
-        ""
+        "Bake @350 for 55 min."
       ]
     },
     {
@@ -2143,12 +3064,45 @@
       "id": 131,
       "name": "Christmas Stolen",
       "ingredients": [
-        "",
-        ""
+        "1 ½ c. milk",
+        "½ c. sugar",
+        "1 ½ t. salt",
+        "¾ c. butter",
+        "1 oz. yeast",
+        "2 eggs",
+        "2 egg yolks",
+        "3 c. flour",
+        "2 2/3 c. flour, additional",
+        "1 T. sugar",
+        "1 t. cardamom",
+        "2 c. citron/candied fruit (orange peel/pineapple, cherries etc.)",
+        "(Icing ingredients below)"
       ],
       "instructions": [
-        "",
-        ""
+        "Scald milk; add sugar, salt & butter.",
+        "Cool to luke warm, & add yeast & 1 T. sugar.",
+        "Add eggs & beat.",
+        "Then add 3 c. flour.",
+        "Beat well.",
+        "Cover, let rise I 1/2 hours, or until double.",
+        "Add other ingredients & enough flour (about 2 2/3 c.) until dough pulls away from side of bowl & is no longer sticky to the touch.",
+        "Knead on floured board until smooth and satiny.",
+        "Place in lightly greased bowl.",
+        "Cover, Let rise 1 1/2 hrs, or until doubled.",
+        "Divide dough into thirds.",
+        "Roll into 8” x 10” oval.",
+        "Spread with melted butter.",
+        "Press down center & fold in half lengthwise.",
+        "Place on greased pan.",
+        "Brush with melted better.",
+        "Let rise 45 min. or until double.",
+        "Bake @ 350 for 30 min.",
+        "Cool. Frost & decorate with cherries & nuts.",
+        "Icing:",
+        "1 1/2 lbs. powdered",
+        "1/2 pt. cream",
+        "vanilla",
+        "1 t. Lt. Karo syrup"
       ]
     },
     {
@@ -2156,12 +3110,20 @@
       "id": 132,
       "name": "Parmesan Rolls",
       "ingredients": [
-        "",
-        ""
+        "Biscuits",
+        "1/2-1 stick margarine",
+        "Parsley flakes",
+        "Minced onion",
+        "Parmesan or Romano cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Make 1 recipe of biscuits or use canned refrigerated kind.",
+        "Cut rounds in half to make half circles.",
+        "Melt 1/2-1 stick margarine in 9 X 9 pan.",
+        "Sprinkle melted butter with parsley flakes, minced onion and Parmesan or Romano cheese",
+        "Place half circles in rows on top of butter mixture, over-lapping each roll",
+        "Bake @ 350 until brown.",
+        "Turn upside down on platter to serve."
       ]
     },
     {
@@ -2169,12 +3131,21 @@
       "id": 133,
       "name": "Mom's Butterhorn Rolls",
       "ingredients": [
-        "",
-        ""
+        "1 large cake of yeast + 1 tsp. sugar - sprinkle sugar over yeast",
+        "3 eggs",
+        "3/4 c. margarine, melted",
+        "1/2 c sugar (scant)",
+        "I t. salt",
+        "1 3/4 c. water",
+        "7 c flour."
       ],
       "instructions": [
-        "",
-        ""
+        "In a big bowl mix well the eggs, margarine, sugar, salt and water",
+        "Then add the flour.",
+        "Let rise until double.",
+        "Cut into 4 parts.",
+        "Roll into rounds and cut each round into 16 pieces",
+        "Bake 15 min. @ 400 degrees."
       ]
     },
     {
@@ -2182,12 +3153,20 @@
       "id": 134,
       "name": "Kathy's Cranberry Bread",
       "ingredients": [
-        "",
-        ""
+        "1 c. sugar",
+        "2 T. oil",
+        "1/2 c. orange juice",
+        "1 cup frozen cranberry halves",
+        "1/2 c. walnuts - chopped",
+        "1 t. baking powder",
+        "1/2 t. baking soda",
+        "1 egg",
+        "1/2 t. salt",
+        "2 c. flour"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix, but do not overbeat. Grease pans.",
+        "Bake 1 hour @ 350 degrees"
       ]
     },
     {
@@ -2195,12 +3174,22 @@
       "id": 135,
       "name": "Mom's Banana Bread",
       "ingredients": [
-        "",
-        ""
+        "1/2 c. margarine",
+        "1 1/2 c. sugar",
+        "2 eggs",
+        "1/4 c. sour milk or buttermilk",
+        "1 c. mashed bananas",
+        "2 c. flour",
+        "1/2 t. baking powder",
+        "3/4 t. baking soda",
+        "1/2 t. salt",
+        "1 t. vanilla",
+        "1/2 c. pecans"
       ],
       "instructions": [
-        "",
-        ""
+        "Spray bread pans.",
+        "Bake 25 - 30 min @ 350 degrees.",
+        "Variations: Add chocolate chips"
       ]
     },
     {
@@ -2208,12 +3197,24 @@
       "id": 136,
       "name": "Pumpkin Bread",
       "ingredients": [
-        "",
-        ""
+        "1 c. canola oil",
+        "3 c. sugar",
+        "4 eggs",
+        "2/3 c. water",
+        "2 cups pumpkin (1# can)",
+        "3 1/2 c. flour",
+        "2 t. baking soda",
+        "2 t. salt",
+        "1 t. baking powder",
+        "1 t. cinnamon",
+        "1 t. nutmeg",
+        "1/2 t. Cloves"
       ],
       "instructions": [
-        "",
-        ""
+        "Beat together, sugar, oil & eggs, add pumpkin.",
+        "Add flour mixture alternately with water.",
+        "Grease 2 loaf pans.",
+        "Bake 1 hour @ 350 degrees or until done."
       ]
     },
     {
@@ -2221,12 +3222,24 @@
       "id": 137,
       "name": "Bran Muffins",
       "ingredients": [
-        "",
-        ""
+        "1 1/2 c. sugar",
+        "1/2 c. heaping shortening",
+        "2 eggs",
+        "1 pt. buttermilk",
+        "2 1/2 c. flour",
+        "2 1/2 t. baking soda",
+        "1/2 t. salt",
+        "1 c. boiling water",
+        "1 c. 100% Bran Cereal",
+        "2 c. All Brand Cereal"
       ],
       "instructions": [
-        "",
-        ""
+        "Pour hot water over bran cereal.",
+        "Cream shortening & sugar.",
+        "Add eggs, milk, & bran mix.",
+        "Fold in dry ingredients just to moisten.",
+        "Bake 15-20 min @ 400 degrees.",
+        "Batter will keep 6-7 weeks in refrigerator."
       ]
     },
     {
@@ -2234,12 +3247,25 @@
       "id": 138,
       "name": "Cranberry Almond Sour Cream Bread",
       "ingredients": [
-        "",
-        ""
+        "2 c. sour cream",
+        "8 eggs",
+        "1 c. butter - melted",
+        "2 t. almond extract",
+        "6 c. flour",
+        "2 c. sugar",
+        "4 t. baking powder",
+        "1 t. salt",
+        "1/2 can whole cranberry sauce"
       ],
       "instructions": [
-        "",
-        ""
+        "Cream: combine sour cream, eggs, butter and almond extract",
+        "Combine and add the flour, sugar, baking powder and salt",
+        "Spray Pam in 3 loaf pans.",
+        "Using 1/2 of batter, put some in bottom of the 3 pans.",
+        "Divide cranberry sauce between the 3 pans & place on top of the batter.",
+        "Cover the cranberry sauce with the remaining batter.",
+        "Sprinkle 2/3 c. slivered almonds on top of each loaf.",
+        "Bake 55 min. @ 375 degrees."
       ]
     },
     {
@@ -2247,12 +3273,26 @@
       "id": 139,
       "name": "Holly's Oatmeal Bread",
       "ingredients": [
-        "",
-        ""
+        "1 c. quick oats",
+        "1/2 c. brown sugar",
+        "2 T. margarine",
+        "1/2 c. whole wheat flour",
+        "1 T. salt",
+        "1 pkg. dry yeast",
+        "5 c. white flour"
       ],
       "instructions": [
-        "",
-        ""
+        "Sprinkle quick oats, whole wheat flour, brown sugar, salt and margarine over 2 c. boiling water.",
+        "Stir to combine.",
+        "Dissolve yeast in 1/2 c. warm water.",
+        "When batter is cooled to lukewarm, add yeast. ‘",
+        "Stir in white flour.",
+        "When dough is stiff enough to handle, turn onto floured board & knead 5-10 min.",
+        "Place in greased bowl, cover & let rise until doubled.",
+        "Punch down & let rise again.",
+        "Shape into 2 loaves & place in greased 9 x 5x 3” pans.",
+        "Bake 30 – 40 min. @ 350 degrees.",
+        "Cool on rack, brushing loaves with margarine for a soft crust."
       ]
     },
     {
@@ -2260,12 +3300,32 @@
       "id": 140,
       "name": "Blueberry Oatmeal Muffins",
       "ingredients": [
-        "",
-        ""
+        "1 2/3 c. quick-cooking oats",
+        "2/3 c. flour",
+        "1/2 c. whole wheat flour",
+        "3/4 c. brown sugar",
+        "2 t. cinnamon",
+        "1t. baking powder",
+        "1 t. baking soda",
+        "3/4 t, salt",
+        "1 1/2 c. buttermilk",
+        "1/4 c. canola oil",
+        "2 t. grated lemon rind",
+        "2 large eggs",
+        "2 cups frozen blueberries",
+        "2 T. flour",
+        "Cooking spray",
+        "2 T. sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "Place oats in a food processor; pulse 5-6 times until oats resemble coarse meal.",
+        "Place in a large bowl.",
+        "Lightly spoon flours into dry measuring cups; level with a knife.",
+        "Add flours & next 5 ingredients (through salt) to oats in bowl; stir well with a whisk.",
+        "Make a well in center of mixture.",
+        "Combine buttermilk, oil, rind & eggs in small bowl; stir well with a whisk.",
+        "Add to flour mixture, stirring just until moist.",
+        "Pour into lined muffin tins. Bake 12-15 min. @ 375 degrees."
       ]
     },
     {
@@ -2273,12 +3333,23 @@
       "id": 141,
       "name": "Breakfast Egg-Souffle",
       "ingredients": [
-        "",
-        ""
+        "1 1/2 lb. bulk pork sausage",
+        "8 slices bacon, chopped",
+        "6 slices bread, broken into small pieces",
+        "1 1/2 c. grated cheddar cheese",
+        "1 1/2 t. dry mustard",
+        "9 eggs",
+        "3 c. milk"
       ],
       "instructions": [
-        "",
-        ""
+        "In large skillet, cook sausage & bacon until brown & bacon is crisp 10-15 min.",
+        "Drain well.",
+        "In bowl, beat eggs & milk.",
+        "Stir in sausage & rest of ingredients.",
+        "Pour into greased 9 x 13 pan.",
+        "Cover and refrigerate over night.",
+        "Bake uncovered @ 350 50-60 min.",
+        "Serves 12-16"
       ]
     },
     {
@@ -2286,12 +3357,25 @@
       "id": 142,
       "name": "Sunny Frittata",
       "ingredients": [
-        "",
-        ""
+        "2 c. egg substitute",
+        "1/2 c. skim milk",
+        "1/4 t. salt",
+        "1/4 t. pepper",
+        "2/3 c. (4 oz) diced ham",
+        "1/2 c. orange bell pepper",
+        "1/2 c. thinly sliced green onions",
+        "1/4 c. (1 oz) reduced-fat shredded cheddar cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine eggs, milk, salt & pepper in a small bowl, stirring well with a whisk.",
+        "Heat a medium nonstick skillet over med-high heat.",
+        "Coat pan with spray.",
+        "Add ham, bell pepper & onions; sauté 2 min.",
+        "Stir in egg mixture.",
+        "Reduce heat to medium & cook 5 minutes, stirring occasionally for first 2 minutes.",
+        "Top mixture with cheese.",
+        "Slide mixture onto a cookie sheet",
+        "Place in 375 degree oven for 12 minutes or until center is set."
       ]
     },
     {
@@ -2299,12 +3383,24 @@
       "id": 143,
       "name": "Crepes",
       "ingredients": [
-        "",
-        ""
+        "1 1/2 c. flour",
+        "1 T. sugar",
+        "1/2 tsp. salt",
+        "2 cups milk",
+        "2 eggs",
+        "1/2 tsp. vanilla",
+        "2 tsp. butter or margarine, melted"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine & beat ingredients 'til smooth.",
+        "In a large frying pan over medium heat, pour ~1/4 cup of batter on the bottom & tilt the pan around to evenly coat the bottom.",
+        "Cook 'til light brown (makes around 12).",
+        "Add your filling and roll up to enjoy.",
+        "Variations:",
+        "I like to put butter, cinnamon & sugar on mine.",
+        "Evan puts peanut butter & sweetener.",
+        "Dylan puts lemon juice over his with cinnamon & sugar...the possibilities are endless!",
+        "They freeze well."
       ]
     },
     {
@@ -2312,12 +3408,21 @@
       "id": 144,
       "name": "Holly's Pancake Mix",
       "ingredients": [
-        "",
-        ""
+        "12 cups flour (may use some whole wheat or wheat germ)",
+        "2 T. salt",
+        "3/4 c. baking powder",
+        "3/4 c. sugar",
+        "4 c. powered milk"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix well and store in airtight container.",
+        "TO USE: Combine in bowl:",
+        "1 egg (beat with fork)",
+        "1 cup water",
+        "2 T. oil",
+        "1 1/2 c. pancake mix",
+        "Fry on hot ungreased griddle",
+        "Serves 3 - 4"
       ]
     },
     {
@@ -2325,12 +3430,19 @@
       "id": 145,
       "name": "Kathy's Whole Wheat Pancakes",
       "ingredients": [
-        "",
-        ""
+        "3 c. milk (buttermilk or sour fresh (by adding 2 T. vinegar or lemon juice & letting it set))",
+        "4 eggs",
+        "1/3 c. oil",
+        "1/4 c. brown sugar - packed",
+        "1 1/2 c. whole wheat flour",
+        "1 1/2 c. flour",
+        "4 t. baking powder",
+        "2 t. salt",
+        "2 t. baking soda"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix milk, eggs, oil and brown sugar",
+        "Then add whole wheat flour, flour, baking powder, salt and baking soda"
       ]
     },
     {
@@ -2338,12 +3450,20 @@
       "id": 146,
       "name": "Christmas Eggs",
       "ingredients": [
-        "",
-        ""
+        "10 eggs",
+        "1/2 c. flour",
+        "1/2 t. salt",
+        "1 t. baking powder",
+        "1/2 c. butter",
+        "chives to taste",
+        "1 1/2 pts. sour cream",
+        "3/4 lb. grated cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Beat eggs first.",
+        "Add flour, baking powder & salt.",
+        "By hand, add butter, sour cream, chives & cheese.",
+        "Bake @ 350 for 30-35 minutes."
       ]
     },
     {
@@ -2351,12 +3471,18 @@
       "id": 147,
       "name": "Scrambled Eggs and Noodles",
       "ingredients": [
-        "",
-        ""
+        "4 c. egg noodles",
+        "6 T. butter onion, chopped & cooked Worcestershire sauce",
+        "salt & pepper",
+        "6 beaten eggs",
+        "2/3 c. milk",
+        "1/3 c. Parmesan cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook egg noodles.",
+        "Melt butter in skillet; stir-fry cooked noodles & onions briefly.",
+        "Combine rest of ingredients & pour over noodles.",
+        "Stir slightly as eggs cook."
       ]
     },
     {
@@ -2364,12 +3490,18 @@
       "id": 148,
       "name": "Breakfast Casserole",
       "ingredients": [
-        "",
-        ""
+        "1 pkg. reduced fat crescent rolls",
+        "4-6 eggs",
+        "1 c. reduced fat shredded cheddar cheese",
+        "1 small pkg. frozen chopped broccoli",
+        "1 pkg. turkey bacon or regular"
       ],
       "instructions": [
-        "",
-        ""
+        "Layer crescent rolls in 8 or 9” square or round ungreased pan.",
+        "Mix eggs, cheese, frozen broccoli, cooked bacon & potatoes, milk, salt & pepper or seasoned salt to taste in a bowl.",
+        "Pour over rolls in pan.",
+        "Bake @ 350 degrees for 45-60 minutes. Check for doneness.",
+        "May add chopped onions if desired before baking."
       ]
     },
     {
@@ -2377,12 +3509,14 @@
       "id": 149,
       "name": "Coffee Cake Streusel",
       "ingredients": [
-        "",
-        ""
+        "1 c. flour",
+        "1 c. sugar",
+        "1/2 t. salt",
+        "1/2 c. butter"
       ],
       "instructions": [
-        "",
-        ""
+        "Cut ingredients together until crumbly.",
+        "Can be kept in refrigerator for weeks."
       ]
     },
     {
@@ -2390,12 +3524,21 @@
       "id": 150,
       "name": "Cake Cookies",
       "ingredients": [
-        "",
-        ""
+        "1 devils food cake mix",
+        "3 T. Vegetable oil",
+        "Rollo's",
+        "Crushed nuts (optional)",
+        "1 egg",
+        "1/4 cup water"        
       ],
       "instructions": [
-        "",
-        ""
+        "Mix cake, egg, oil, and water.",
+        "Put in freezer for about one hour.",
+        "Take a spoonful of dough and roll it around a Rollo.",
+        "Then roll in crushed nuts (Optional).",
+        "Works best if you keep dough in freezer between pans.",
+        "Bake at 350 degrees for 10-15min (or until it smells like chocolate cake).",
+        "Makes about 3 dozen."
       ]
     },
     {
@@ -2403,12 +3546,15 @@
       "id": 151,
       "name": "Christmas Jello",
       "ingredients": [
-        "",
-        ""
+        "2 pkg. Cherry jello",
+        "1 ½ c. boiling water",
+        "1 ½ c cold water",
+        "1 can cranberry sauce (jelly) mashed with fork",
+        "½ pt. Sour cream (beat with fork until smooth before adding)"
       ],
       "instructions": [
-        "",
-        ""
+        "Dissolve jello in hot water",
+        "Add cold water and let jell slightly"
       ]
     },
     {
@@ -2416,12 +3562,19 @@
       "id": 152,
       "name": "Cartwheel Desserts",
       "ingredients": [
-        "",
-        ""
+        "1 jelly roll",
+        "1 pkg. raspberry Jell-O",
+        "1 c. boiling water",
+        "1/2 c. sugar",
+        "1 pt. whipped whipping cream"
       ],
       "instructions": [
-        "",
-        ""
+        "Slice jelly roll & line spring form pan on sides, line bottom with remaining pieces. It will take about 8 slices around the sides.",
+        "Combine jello, water and suger then chill.",
+        "When it starts to congeal a little, beat it a little, then add 1 pt. whipped whipping cream.",
+        "Fill center & put in ice box over night.",
+        "You can decorate top with whipped cream & strawberries.",
+        "Just before serving, remove sides only of spring form pan."
       ]
     },
     {
@@ -2429,12 +3582,18 @@
       "id": 153,
       "name": "Key Lime Pie",
       "ingredients": [
-        "",
-        ""
+        "1 Graham Cracker Pie Crust",
+        "1 pkg. (40z) sugar free lime gelatin",
+        "1/4 c. boiling water",
+        "2 (6 oz) Key lime pie light yogurt",
+        "8 oz. Fat free cool whip, thawed"
       ],
       "instructions": [
-        "",
-        ""
+        "Dissolve gelatin in boiling water.",
+        "Stir in yogurt with wire whisk.",
+        "Fold in whipped topping.",
+        "Spread in crust.",
+        "Refrigerate overnight or at least 2 hours."
       ]
     },
     {
@@ -2442,12 +3601,14 @@
       "id": 154,
       "name": "Cherry or Blueberry Dessert",
       "ingredients": [
-        "",
-        ""
+        "1 can cherry pie filling or (Blueberry pie filling)",
+        "1 jiffy cake mix",
+        "1/4 c. butter melted",
+        "Chopped walnuts"
       ],
       "instructions": [
-        "",
-        ""
+        "Put into a greased 8 x 8 brownie pan in the order given above",
+        "Bake at 350 degrees for 1 hour & 15 minutes or until if feels quite firm."
       ]
     },
     {
@@ -2455,12 +3616,16 @@
       "id": 155,
       "name": "Fluffy Strawberry Frosting",
       "ingredients": [
-        "",
-        ""
+        "48 Large marshmallows",
+        "Juice of 1 lemon",
+        "1 - 10 OZ. pkg. frozen strawberries thawed & undrained",
+        "2 c. whipping cream or dream whip"
       ],
       "instructions": [
-        "",
-        ""
+        "Melt marshmallows",
+        "Add lemon juice, then strawberries.",
+        "Fold into cream.",
+        "Great on angel food or pound cake."
       ]
     },
     {
@@ -2468,12 +3633,24 @@
       "id": 156,
       "name": "Rhubarb Crunch",
       "ingredients": [
-        "",
-        ""
+        "5-7 cups rhubarb",
+        "2 c. flour",
+        "1/2 c. margarine",
+        "1 t. cinnamon",
+        "1 c. brown sugar",
+        "1/2 c. oatmeal",
+        "1 c. sugar",
+        "1 c. hot water",
+        "1 T. cornstarch",
+        "pinch of salt"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix like pie crust: flour, margarine, cinnamon, brown sugar and oatmeal",
+        "Boil until thick: sugar, hot water, corn starch and salt",
+        "Press 3/4 of crust mix into bottom of greased 9 x 13 pan.",
+        "Place a thick layer of chopped rhubarb on top; then pour boiled mixture over fruit.",
+        "Sprinkle with remaining crust on top.",
+        "Bake at 350 degrees for 1 hour."
       ]
     },
     {
@@ -2481,12 +3658,23 @@
       "id": 157,
       "name": "Linda's Pumpkin Pie Cake",
       "ingredients": [
-        "",
-        ""
+        "1 box yellow cake mix",
+        "3/4 c. oleo",
+        "4 eggs",
+        "1 - 16 oz. can pumpkin",
+        "3 eggs",
+        "2/3 c. evaporated milk",
+        "2 t. cinnamon",
+        "1 ½ c. sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine all but 1 1/2 c. cake mix, ½ c. oleo & 1 egg.",
+        "Press into bottom of 9 x 13 pan",
+        "Mix pumpkin, 3 eggs, milk, cinnamon and 1 c. sugar and Pour over cake mix layer",
+        "Mix 1 ½ c. cake mix, ½ c. sugar and ¼ c. oleo and crumble over filling",
+        "Top with walnuts or pecans if desired.",
+        "Bake 350 degrees for 1/2 hr.",
+        "Cool, or serve warm with cool whip"
       ]
     },
     {
@@ -2494,12 +3682,14 @@
       "id": 158,
       "name": "Schaum Torte",
       "ingredients": [
-        "",
-        ""
+        "6 egg whites",
+        "2 c. sugar",
+        "2 t. Vanilla (add last)",
+        "1 ½ t. lemon juice or vinegar"
       ],
       "instructions": [
-        "",
-        ""
+        "Bake 275 degrees 40-60 minutes",
+        "Makes 12 individual"
       ]
     },
     {
@@ -2507,12 +3697,19 @@
       "id": 159,
       "name": "Mexican Wedding Cake",
       "ingredients": [
-        "",
-        ""
+        "1 c. butter",
+        "1/4 t. salt",
+        "2 c. flour",
+        "1/2 c. powdered sugar",
+        "1 tsp. vanilla",
+        "chopped nuts (optional)"
       ],
       "instructions": [
-        "",
-        ""
+        "Cream butter & sugar; blend in salt, vanilla & flour. Mixture will be stiff.",
+        "Shape into balls & place in small paper candy liners.",
+        "Place liners on ungreased cookie sheets.",
+        "Bake at 375 degrees 12-15 minutes.",
+        "Cool & frost with Browned Butter Frosting."
       ]
     },
     {
@@ -2520,12 +3717,14 @@
       "id": 160,
       "name": "Browned Butter Frosting",
       "ingredients": [
-        "",
-        ""
+        "2 T. butter",
+        "1 T. hot water",
+        "1 1/2 c. powdered sugar"
       ],
       "instructions": [
-        "",
-        ""
+        "Brown butter, remove from heat & add powdered sugar.",
+        "Cream to make frosting of spreading consistency.",
+        "Sprinkle with chopped nuts if desired."
       ]
     },
     {
@@ -2533,12 +3732,24 @@
       "id": 161,
       "name": "Texas Sheet Cake",
       "ingredients": [
-        "",
-        ""
+        "2 c. sugar",
+        "2 c. flour",
+        "1 tsp. baking soda",
+        "1 tsp. salt",
+        "1 c. butter",
+        "4 T. cocoa",
+        "1 c. water",
+        "1/2 c. buttermilk",
+        "2 eggs",
+        "1 tsp. vanilla"
       ],
       "instructions": [
-        "",
-        ""
+        "Combine in bowl: sugar, flour soda, salt. Melt butter, add cocoa & water.",
+        "Bring to a rapid boil.",
+        "Let cool & add dry ingredients.",
+        "Add buttermilk, eggs & vanilla.",
+        "Bake in 11 x 17 pan at 300 degrees for 25 minutes.",
+        "When cool, frost."
       ]
     },
     {
@@ -2546,12 +3757,17 @@
       "id": 162,
       "name": "Frosting for Texas Sheet Cake",
       "ingredients": [
-        "",
-        ""
+        "1/2 c. butter",
+        "4 T. cocoa",
+        "6 T. buttermilk",
+        "1# powdered sugar",
+        "1 cups nuts, optional"
       ],
       "instructions": [
-        "",
-        ""
+        "Melt butter; add cocoa.",
+        "Bring to a rapid bowl.",
+        "Remove from heat & add powdered sugar & nuts.",
+        "Spread, on cake while warm."
       ]
     },
     {
@@ -2559,12 +3775,39 @@
       "id": 163,
       "name": "Self Frosted Chocolate Bundt Cake",
       "ingredients": [
-        "",
-        ""
+        "10 T. butter",
+        "1 3/4 c. cake flour",
+        "1/4 c. brown sugar",
+        "2 tsp. baking powder",
+        "2/3 c. light corn syrup",
+        "1/4 tsp. salt",
+        "1/4 c. heavy cream",
+        "1/2 c. sugar",
+        "1 c. broken walnuts",
+        "2 eggs-separated",
+        "1 tsp. vanilla",
+        "3 sq. chocolate, melted",
+        "1 c. milk"
       ],
       "instructions": [
-        "",
-        ""
+        "Melt 4 T. butter in saucepan, stir in brown sugar.",
+        "Heat 'till bubbly.",
+        "Stir in corn syrup & cream; heat stirring constantly just to boiling.",
+        "Add nuts.",
+        "Pour into a generously buttered 10 (12 cup) bundt pan.",
+        "Beat remaining butter (6T.) until soft in large bowl.",
+        "Gradually beat in granular sugar until well combined.",
+        "Beat in egg yolks, melted chocolate & vanilla until well combined.",
+        "Add flour, Baking powder & salt, alternately with milk, beginning & ending with flour.",
+        "Beat egg whites until soft in a small bowl.",
+        "Fold into bake batter.",
+        "Spoon batter evenly over nut mixture in pan.",
+        "Bake at 350 degrees for 45 minutes.",
+        "Cool only about 5 minutes.",
+        "Loosen cake from edge with a small knife.",
+        "Place pan over serving plate, invert & shake gentle, then lift pan off cake.",
+        "Scoop out any nuts or syrup with scrappers & put on cake.",
+        "Serve with whipped cream."
       ]
     },
     {
@@ -2572,25 +3815,33 @@
       "id": 164,
       "name": "Orange Tapioca Jello",
       "ingredients": [
-        "",
-        ""
+        "2-3 oz. Jell-O tapioca mixes",
+        "2 small vanilla pudding mixes - not instant",
+        "6 oz. orange Jell-O",
+        "5 3/4 c. hot water",
+        "2 envelopes of Dream Whip",
+        "2 lg. Cans mandarin oranges"
       ],
       "instructions": [
-        "",
-        ""
+        "Cook mixes in water until thick. Cool.",
+        "Add 2 envelopes Dream Whip, prepared as directed on package, & 2 large cans mandarin oranges, drained.",
+        "Mix well & refrigerate until firm.",
+        "This recipe can be cut in half."
       ]
     },
     {
       "category": 8,
       "id": 165,
-      "name": "Reese Peanut Bars",
+      "name": "Reese Peanut Bars (Incomplete)",
       "ingredients": [
-        "",
-        ""
+        "2 pkgs 48 single graham crackers crushed",
+        "2 c. powdered sugar",
+        "1 c. peanut butter",
+        "1 c. melted butter"
       ],
       "instructions": [
-        "",
-        ""
+        "Blend well and pat firmly into 9 by 13 pan",
+        "Melt 1 pkg ???"
       ]
     },
     {
@@ -2598,12 +3849,14 @@
       "id": 166,
       "name": "Orange Delight",
       "ingredients": [
-        "",
-        ""
+        "2 pkg. orange jello",
+        "2 c. boiling water",
+        "1 1/2 c. cold water"
       ],
       "instructions": [
-        "",
-        ""
+        "Dissolve jello in water. Let gel slightly.",
+        "Beat in: 1 pt. orange sherbet",
+        "Add: I can cut & drained mandarin oranges"
       ]
     },
     {
@@ -2611,12 +3864,20 @@
       "id": 167,
       "name": "Lemon-Lime Cream Jello",
       "ingredients": [
-        "",
-        ""
+        "3 oz. lime jello",
+        "3oz. lemon jello",
+        "1 c. boiling water",
+        "8 oz. undrained crushed pineapple",
+        "1/2 c. whipping cream or 1 c. cool whip",
+        "1- 3 oz. pkg. cream cheese"
       ],
       "instructions": [
-        "",
-        ""
+        "Dissolve lime jello in ½ c. water. Pour into jello mold. Refrigerate.",
+        "Dissolve lemon jello in ½ c. water. Let partially gel.",
+        "Beat 1/2 c. whipping cream or 1 c. cool whip",
+        "Beat 1- 3 oz. pkg. cream cheese",
+        "Fold together, then fold into lemon jello mixture.",
+        "Pour over lime jello & Refrigerate."
       ]
     },
     {
@@ -2624,12 +3885,21 @@
       "id": 168,
       "name": "Caramel Nutties",
       "ingredients": [
-        "",
-        ""
+        "3/4 c. butter",
+        "3/4 c. brown sugar",
+        "2 c. flour",
+        "1/2 t. baking powder",
+        "1 t. vanilla",
+        "1/2 lb or 28 candy Caramels",
+        "1/4 c. milk",
+        "1/2 c. pecans, finely chopped"
       ],
       "instructions": [
-        "",
-        ""
+        "Melt butter in saucepan, stir in brown sugar, flour, BP, & vanilla.",
+        "Press into bottom of un-greased 9 x 13 pan.",
+        "Bake 20 - 25 min @ 350 degrees until light golden brown.",
+        "Do not over bake.",
+        "Melt Caramels in milk & spread over bars, sprinkle with pecans."
       ]
     },
     {
@@ -2637,12 +3907,33 @@
       "id": 169,
       "name": "French Butter Horns",
       "ingredients": [
-        "",
-        ""
+        "4 c. flour",
+        "4 egg yolks beaten (save whites for filling)",
+        "1 1/4 c. butter",
+        "1/2 c. sour cream",
+        "1/2 t. salt",
+        "1 t. vanilla",
+        "1 small pkg. Yeast",
+        "(Filling ingredients below)"
       ],
       "instructions": [
-        "",
-        ""
+        "Cut butter into flour, salt & yeast.",
+        "Add beaten eggs yolks, sour cream & vanilla.",
+        "Divide dough into 6 balls.",
+        "Sprinkle board with powdered sugar.",
+        "Roll each ball thin.",
+        "Cut circle into 8 wedges (like a pie).",
+        "Put 1 T. of filling on each piece and roll, starting with the broad end, rolling towards the pointed tip. Bake 25 min. @ 350 degrees. Makes 48 horns",
+        "Frost.",
+        "Filling:",
+        "4 egg whites",
+        "1 c. sugar",
+        "2 c. finely chopped nuts",
+        "1 t. vanilla",
+        "Beat egg whites until very stiff.",
+        "Add sugar slowly.",
+        "Fold in nuts & vanilla.",
+        "This filling must be very stiff."
       ]
     },
     {
@@ -3534,12 +4825,19 @@
       "id": 238,
       "name": "Kathy's Play Dough",
       "ingredients": [
-        "",
-        ""
+        "1 cup flour",
+        "1 tbsp alum",
+        "¾ cup water",
+        "¼ cup salt",
+        "½ tbsp oil",
+        "food coloring"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix flour and alum together in a bowl",
+        "Heat the water, salt, oil and food coloring to boiling",
+        "Stir liquids into dry ingredients",
+        "Knead until smooth on floured surface",
+        "Store in airtight container"
       ]
     },
     {
@@ -3547,12 +4845,12 @@
       "id": 239,
       "name": "Mac's Window Cleaning Solution",
       "ingredients": [
-        "",
-        ""
+        "1/4 cup ammonia",
+        "⅛ cup vinegar",
+        "1 quart warm water"
       ],
       "instructions": [
-        "",
-        ""
+        "Mix all ingredients together"
       ]
      }
   ]
