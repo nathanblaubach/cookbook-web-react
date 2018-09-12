@@ -1,24 +1,3 @@
 .recipe svg {
   stroke: #00304E;
 }
-.notecard {
-  background-color: lightyellow;
-  border: 1px darkgray solid;
-  max-width: 768px;
-  margin: auto;
-}
-.notecard-title {
-  text-align: center;
-  border-bottom: 2px red solid;
-}
-.notecard-subtitle {
-  text-align: left;
-  font-weight: bold;
-  border-bottom: 1px darkgray solid;
-}
-.notecard-row {
-  border-bottom: 1px darkgray solid;
-}
-.notecard-title p, .notecard-subtitle p, .notecard-row p {
-  margin: .5rem;
-}

@@ -1,7 +1,7 @@
 import React      from 'react';
-import Search     from './Search.js';
-import Recipes    from './Recipes.js';
 import Categories from './Categories.js';
+import { Filter } from '../../Resources/Icons.js';
+import { Link } from 'react-router-dom';
 
 import './Cookbook.css';
 
@@ -17,6 +17,7 @@ class Cookbook extends React.Component {
       searchString: "",
       showCategories: false,
     }
+    this.updateSearchString = this.updateSearchString.bind(this);
   }
 
   toggleCategoryVisibility() {
@@ -24,9 +25,8 @@ class Cookbook extends React.Component {
     this.setState({ showCategories: shouldShow });
   }
 
-  handleSearchBarChange() {
-    const searchText = document.getElementById('searchText').value.toUpperCase();
-    this.setState({ searchString: searchText });
+  updateSearchString(event) {
+    this.setState({ searchString: event.target.value });
   }
 
   handleCategorySelectionChange(i) {
@@ -38,19 +38,32 @@ class Cookbook extends React.Component {
     });
   }
 
+  getFilteredResults() {
+    const searchBarFilter = recipe => recipe.name.toUpperCase().includes(this.state.searchString.toUpperCase());
+    const recipeTagFilter = recipe => this.state.checkedCategories.includes(recipe.category) || 
+                                      this.state.checkedCategories.length === 0;
+    return this.state.recipes.filter(searchBarFilter)
+                             .filter(recipeTagFilter);
+  }
+
   render() {
     return (
       <div>
-        <Search
-          onClick={() => this.toggleCategoryVisibility()}
-          onInput={() => this.handleSearchBarChange()}
-        />
-        <Recipes
-          recipes={this.state.recipes}
-          searchString={this.state.searchString}
-          checkedCategories={this.state.checkedCategories}
-          onClick={(recipeId) => this.handleRecipeClick(recipeId)}
-        />
+        <div className="searchArea">
+          <span onClick={() => this.toggleCategoryVisibility()}>
+            <Filter className="icon" />
+          </span>
+          <input type="textbox" placeholder="Search" value={this.state.searchString} onChange={this.updateSearchString} />
+        </div>
+        <div className="cookbook-grid">
+          {
+            this.getFilteredResults().map(recipe => 
+              <Link key={recipe.id} className='card card-clickable' to={'/recipeView/' + recipe.id}>
+                <h2 align='center'>{recipe.name}</h2>
+              </Link>
+            )
+          }
+        </div>
         <Categories
           categories={this.state.categories}
           checkedCategories={this.state.checkedCategories}
