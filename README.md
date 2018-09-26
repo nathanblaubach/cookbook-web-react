@@ -1,9 +1,18 @@
-# cookbook
+# Cookbook
+
 Cookbook application using node and react
 
-### Getting the project running
-* Install nodejs and npm
-* Clone/Download the repo
-* Navigate to the root directory of the project in terminal/cmd
-* `npm install`
-* `npm start`
+# Setup
+
+You will need to make sure that node.js and npm are installed, then run:
+
+```
+git clone https://github.com/blaubachn/cookbook.git
+cd cookbook
+npm install
+npm start
+```
+
+# License
+
+MIT
