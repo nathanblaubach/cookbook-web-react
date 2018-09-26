@@ -1,11 +1,10 @@
 import React from 'react';
-import Notecard from './Notecard';
-import './Recipe.css';
-import { LeftArrow } from '../../Resources/Icons.js';
+import Notecard from '../Resources/Notecard';
+import { LeftArrow } from '../Resources/Icons';
 import { Link } from 'react-router-dom';
 
 function RecipeView(props) {
-  const dataService = require('../../data/FileIO.js');
+  const dataService = require('../data/FileIO');
   const recipe = dataService.getRecipe(parseInt(props.match.params.number, 10));
   const rows = [
     'Ingredients:',
@@ -18,7 +17,11 @@ function RecipeView(props) {
 
   return (
     <div className="recipe">
-      <Link to='/'><LeftArrow /></Link>
+      <header>
+        <Link to={"/"}><LeftArrow /></Link>
+        <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
+        <span></span>
+      </header>
       <Notecard title={recipe.name} rows={rows} />
     </div>
   );

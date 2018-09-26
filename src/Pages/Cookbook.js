@@ -1,14 +1,13 @@
 import React      from 'react';
-import Categories from './Categories.js';
-import { Filter } from '../../Resources/Icons.js';
-import { Link } from 'react-router-dom';
-
-import './Cookbook.css';
+import { Link }   from 'react-router-dom';
+import { Menu }   from '../Resources/Icons';
+import Categories from '../Resources/Categories';
+import Notecard   from '../Resources/Notecard';
 
 class Cookbook extends React.Component {
   constructor(props) {
     super(props);
-    const dataService = require('../../data/FileIO.js');
+    const dataService = require('../data/FileIO');
     const cookbookData = dataService.data();
     this.state = {
       categories: cookbookData.categories,
@@ -49,21 +48,23 @@ class Cookbook extends React.Component {
   render() {
     return (
       <div>
-        <div className="searchArea">
-          <span onClick={() => this.toggleCategoryVisibility()}>
-            <Filter className="icon" />
-          </span>
+
+        <header>
+          <a onClick={() => this.toggleCategoryVisibility()} ><Menu /></a>
           <input type="textbox" placeholder="Search" value={this.state.searchString} onChange={this.updateSearchString} />
-        </div>
-        <div className="cookbook-grid">
+          <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
+        </header>
+
+        <main>
           {
             this.getFilteredResults().map(recipe => 
-              <Link key={recipe.id} className='card card-clickable' to={'/recipeView/' + recipe.id}>
-                <h2 align='center'>{recipe.name}</h2>
+              <Link key={recipe.id} to={'/recipeView/' + recipe.id}>
+                <Notecard title={recipe.name} rows={[' ']} />
               </Link>
             )
           }
-        </div>
+        </main>
+        
         <Categories
           categories={this.state.categories}
           checkedCategories={this.state.checkedCategories}
@@ -71,6 +72,7 @@ class Cookbook extends React.Component {
           backClick={() => this.toggleCategoryVisibility()}
           onChange={(i) => this.handleCategorySelectionChange(i)}
         />
+        
       </div>
     );
   }
