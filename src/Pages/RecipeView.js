@@ -16,14 +16,14 @@ function RecipeView(props) {
   ];
 
   return (
-    <div className="recipe">
+    <main className="recipe">
       <header>
         <Link to={"/"}><LeftArrow /></Link>
         <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
         <span></span>
       </header>
       <Notecard title={recipe.name} rows={rows} />
-    </div>
+    </main>
   );
 }
 

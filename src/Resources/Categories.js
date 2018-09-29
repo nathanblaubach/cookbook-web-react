@@ -10,7 +10,7 @@ function Categories(props) {
         <div>
           {
             props.categories.map(category =>
-              <div key={category.key}>
+              <div key={category.key} style={{marginBottom: '.5rem'}}>
                 <input type="checkbox" checked={props.checkedCategories.includes(category.key)} id={category.key} onChange={() => props.onChange(category.key)} />
                 <label htmlFor={category.key}>{category.name}</label>
               </div>
@@ -18,9 +18,7 @@ function Categories(props) {
           }
         </div>
         <hr style={{border: 'none', height: '1px', backgroundColor: 'white'}} />
-        <a href='https://blaubachn.github.io/cookbook.html'><p>Cookbook Website</p></a>
-        <a href='https://github.com/blaubachn/cookbook'><p>Source Code</p></a>
-        <a href='https://blaubachn.github.io'><p>My Website</p></a>
+        <a href='https://blaubachn.github.io/cookbook.html'><p>About</p></a>
       </div>
     </div>
   );

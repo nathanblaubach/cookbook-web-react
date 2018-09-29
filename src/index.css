@@ -2,12 +2,11 @@ svg {
   user-select: none;
 }
 
-body {
+html, body {
   font-family: Verdana, Geneva, sans-serif;
-  max-width: 768px;
-  margin: auto;
-  padding: 5rem 1rem;
   background: whitesmoke;
+  padding: 0;
+  margin: 0;
 }
 
 header {
@@ -37,16 +36,22 @@ header img {
 }
 
 main {
+  max-width: 768px;
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.grid {
   display: grid;
   grid-gap: .5rem;
   grid-template-columns: repeat(2, 1fr);
 }
 @media (max-width: 768px) {
-  main {
+  .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-main a {
+.grid a {
   color: black;
   text-decoration: none;
 }
@@ -72,4 +77,11 @@ main a {
 .sidebar a {
   color: white;
   text-decoration: none;
+}
+
+.selectable {
+  border: 1px darkgray solid;
+}
+.selectable:hover {
+  border: 1px #00304E solid;
 }

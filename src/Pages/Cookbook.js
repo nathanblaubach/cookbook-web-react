@@ -2,7 +2,7 @@ import React      from 'react';
 import { Link }   from 'react-router-dom';
 import { Menu }   from '../Resources/Icons';
 import Categories from '../Resources/Categories';
-import Notecard   from '../Resources/Notecard';
+import Card       from '../Resources/Card';
 
 class Cookbook extends React.Component {
   constructor(props) {
@@ -55,11 +55,11 @@ class Cookbook extends React.Component {
           <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
         </header>
 
-        <main>
+        <main className="grid">
           {
             this.getFilteredResults().map(recipe => 
               <Link key={recipe.id} to={'/recipeView/' + recipe.id}>
-                <Notecard title={recipe.name} rows={[' ']} />
+                <Card title={recipe.name} />
               </Link>
             )
           }
