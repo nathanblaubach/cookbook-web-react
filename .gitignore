@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+build
+.firebase
+.firebaserc
+firebase.json
