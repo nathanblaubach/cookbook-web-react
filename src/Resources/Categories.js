@@ -18,7 +18,7 @@ function Categories(props) {
           }
         </div>
         <hr style={{border: 'none', height: '1px', backgroundColor: 'white'}} />
-        <a href='https://blaubachn.github.io/cookbook.html'><p>About</p></a>
+        <a href='https://blaubachn.gitlab.io/cookbook.html'><p>About</p></a>
       </div>
     </div>
   );
