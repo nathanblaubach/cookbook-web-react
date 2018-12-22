@@ -46,11 +46,17 @@ class Cookbook extends React.Component {
   }
 
   render() {
+    const btn_style = {
+      margin: 0,
+      padding: 0,
+      background: 'transparent',
+      border: 'none'
+    };
     return (
       <div>
 
         <header>
-          <a onClick={() => this.toggleCategoryVisibility()} ><Menu /></a>
+          <button style={btn_style} onClick={() => this.toggleCategoryVisibility()} ><Menu /></button>
           <input type="textbox" placeholder="Search" value={this.state.searchString} onChange={this.updateSearchString} />
           <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
         </header>
