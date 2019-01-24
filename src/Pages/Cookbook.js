@@ -1,17 +1,17 @@
-import React      from 'react';
-import { Link }   from 'react-router-dom';
-import { Menu }   from '../Resources/Icons';
-import Categories from '../Resources/Categories';
-import Card       from '../Resources/Card';
+import React            from 'react';
+import { Link }         from 'react-router-dom';
+import { DataStore }    from '../Data/DataStore';
+import { SearchHeader } from '../Resources/Headers';
+import Categories       from '../Resources/Categories';
+import Card             from '../Resources/Card';
 
 class Cookbook extends React.Component {
   constructor(props) {
     super(props);
-    const dataService = require('../data/FileIO');
-    const cookbookData = dataService.data();
+    const dataStore = new DataStore();
     this.state = {
-      categories: cookbookData.categories,
-      recipes: cookbookData.recipes,
+      categories: dataStore.getCategories(),
+      recipes: dataStore.getRecipes(),
       checkedCategories: [],
       searchString: "",
       showCategories: false,
@@ -46,20 +46,14 @@ class Cookbook extends React.Component {
   }
 
   render() {
-    const btn_style = {
-      margin: 0,
-      padding: 0,
-      background: 'transparent',
-      border: 'none'
-    };
     return (
       <div>
 
-        <header>
-          <button style={btn_style} onClick={() => this.toggleCategoryVisibility()} ><Menu /></button>
-          <input type="textbox" placeholder="Search" value={this.state.searchString} onChange={this.updateSearchString} />
-          <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
-        </header>
+        <SearchHeader 
+          menu_btn_click={() => this.toggleCategoryVisibility()}
+          searchString={this.state.searchString}
+          updateSearchString={this.updateSearchString}
+        />
 
         <main className="grid">
           {

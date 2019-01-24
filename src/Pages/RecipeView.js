@@ -1,28 +1,19 @@
 import React from 'react';
-import Notecard from '../Resources/Notecard';
-import { LeftArrow } from '../Resources/Icons';
-import { Link } from 'react-router-dom';
+import { DataStore } from '../Data/DataStore';
+import { BackHeader } from '../Resources/Headers';
+import { NotecardTitle, NotecardSubtitle, NotecardViewSection } from '../Resources/Notecard';
 
 function RecipeView(props) {
-  const dataService = require('../data/FileIO');
-  const recipe = dataService.getRecipe(parseInt(props.match.params.number, 10));
-  const rows = [
-    'Ingredients:',
-    ...recipe.ingredients,
-    '',
-    'Instructions:',
-    ...recipe.instructions,
-    ''
-  ];
-
+  const dataStore = new DataStore();
+  const recipe = dataStore.getRecipe(parseInt(props.match.params.number, 10));
   return (
     <main className="recipe">
-      <header>
-        <Link to={"/"}><LeftArrow /></Link>
-        <img src={require("../Resources/logo/logo-white-small.png")} alt="logo"/>
-        <span></span>
-      </header>
-      <Notecard title={recipe.name} rows={rows} />
+      <BackHeader />
+      <NotecardTitle title={recipe.name} />
+      <NotecardSubtitle subtitle={'Ingredients:'} />
+      <NotecardViewSection rows={recipe.ingredients} />
+      <NotecardSubtitle subtitle={'Instructions:'} />
+      <NotecardViewSection rows={recipe.instructions} />
     </main>
   );
 }

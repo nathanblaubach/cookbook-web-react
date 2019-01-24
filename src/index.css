@@ -85,3 +85,13 @@ main {
 .selectable:hover {
   border: 1px #00304E solid;
 }
+
+.button, .text-box {
+  margin: .5rem 0;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  border-radius:2px;
+  border: none;
+  background-color: #00304E;
+  color: white;
+}

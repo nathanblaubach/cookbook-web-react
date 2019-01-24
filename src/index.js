@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 // My code
 import Cookbook   from './Pages/Cookbook';
 import RecipeView from './Pages/RecipeView';
+import RecipeEdit from './Pages/RecipeEdit';
 import                 './index.css';
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path='/' component={Cookbook}/>
         <Route path='/recipeView/:number' component={RecipeView}/>
+        <Route path='/RecipeEdit/:number' component={RecipeEdit}/>
       </Switch>
     </BrowserRouter>
   ), 
