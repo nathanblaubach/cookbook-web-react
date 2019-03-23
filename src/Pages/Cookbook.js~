@@ -84,7 +84,7 @@ class Cookbook extends React.Component {
               )
             }
           </div>
-          <p style={{textAlign: "center"}}>Recipes with "{this.state.searchString}" as an ingredient</p>
+          <p>Recipes with {this.state.searchString} as an ingredient</p>
           <div className="grid">
             {
               this.getFilteredIngredientResults().map(recipe => 

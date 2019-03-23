@@ -4,7 +4,7 @@ svg {
 
 html, body {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: whitesmoke;
+  background: whitesmoke;
   padding: 0;
   margin: 0;
 }
@@ -26,7 +26,7 @@ header svg {
 }
 header input {
   border: none;
-  border-radius: .5rem;
+  border-radius: 1rem;
   padding: .75rem;
   margin: .75rem 0;
 }
@@ -38,7 +38,7 @@ header img {
 main {
   max-width: 768px;
   margin: auto;
-  padding: 4.75rem .5rem;
+  padding: 5rem 1rem;
 }
 
 .grid {
@@ -80,7 +80,7 @@ main {
 }
 
 .selectable {
-  border-radius: .5rem;
+  border-radius: 1rem;
   box-shadow: #00304E 0 0 3px;
 }
 .selectable:hover {
