@@ -3,7 +3,7 @@ import { Filter } from './Icons';
 
 function Menu(props) {
   return !props.visible ? <div></div> : (
-    <div className="sidebar sidebar-left">
+    <div className="sidebar">
       <span onClick={props.backClick}><Filter /></span>
       <div className="sidebar-content">
         <h3>Recipes For</h3>
