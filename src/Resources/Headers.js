@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link }   from 'react-router-dom';
-import { Menu, LeftArrow } from './Icons';
+import { Filter, LeftArrow } from './Icons';
 
 function BackHeader(props) {
   return (
@@ -21,7 +21,7 @@ function SearchHeader(props) {
   };
   return (
     <header>
-      <button style={btn_style} onClick={ props.menu_btn_click } ><Menu /></button>
+      <button style={btn_style} onClick={ props.filter_btn_click } ><Filter /></button>
       <input type="textbox" placeholder="Search" value={props.searchString} onChange={props.updateSearchString} />
       <img src={require("./logo/logo-white-small.png")} alt="logo"/>
     </header>

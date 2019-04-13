@@ -2,7 +2,7 @@ import React            from 'react';
 import { Link }         from 'react-router-dom';
 import { DataStore }    from '../Data/DataStore';
 import { SearchHeader } from '../Resources/Headers';
-import Categories       from '../Resources/Categories';
+import Menu             from '../Resources/Menu';
 import Card             from '../Resources/Card';
 
 class Cookbook extends React.Component {
@@ -12,16 +12,17 @@ class Cookbook extends React.Component {
     this.state = {
       categories: dataStore.getCategories(),
       recipes: dataStore.getRecipes(),
+      links: dataStore.getLinks(),
       checkedCategories: [],
       searchString: "",
-      showCategories: false,
+      showMenu: false,
     }
     this.updateSearchString = this.updateSearchString.bind(this);
   }
 
-  toggleCategoryVisibility() {
-    const shouldShow = !this.state.showCategories;
-    this.setState({ showCategories: shouldShow });
+  toggleMenuVisibility() {
+    const shouldShow = !this.state.showMenu;
+    this.setState({ showMenu: shouldShow });
   }
 
   updateSearchString(event) {
@@ -37,31 +38,41 @@ class Cookbook extends React.Component {
     });
   }
 
-  getFilteredRecipeResults() {
-    const searchBarFilter = recipe => 
-      recipe.name
-            .toUpperCase()
-            .includes(this.state.searchString.toUpperCase());
+  searchStringContains(checkString) {
+    return checkString.toUpperCase().includes(this.state.searchString.toUpperCase())
+  }
 
-    const recipeTagFilter = recipe => 
+  getFilteredRecipeResults() {
+    const recipeMatchesSearchTerm = recipe => this.searchStringContains(recipe.name);
+
+    const recipeCategoryIsSelected = recipe => 
       this.state.checkedCategories.includes(recipe.category) ||
       this.state.checkedCategories.length === 0;
 
-    return this.state.recipes.filter(searchBarFilter)
-                             .filter(recipeTagFilter);
+    return this.state.recipes.filter(recipeMatchesSearchTerm)
+                             .filter(recipeCategoryIsSelected)
+                             .map(recipe => Object.create({
+                               id: recipe.id,
+                               name: recipe.name,
+                               relevantIngredients: []
+                             }));
   }
 
   getFilteredIngredientResults() {
-    const searchBarFilter = recipe => 
-      recipe.ingredients
-            .some(ingredient => ingredient.toUpperCase().includes(this.state.searchString.toUpperCase()));
+    const ingredientMatchesSearchTerm = ingredient => this.searchStringContains(ingredient);
+    const recipeIngredientMatchesSearchTerm = recipe => recipe.ingredients.some(ingredientMatchesSearchTerm);
 
-    const recipeTagFilter = recipe => 
+    const recipeCategoryIsSelected = recipe => 
       this.state.checkedCategories.includes(recipe.category) || 
       this.state.checkedCategories.length === 0;
 
-    return this.state.recipes.filter(searchBarFilter)
-                             .filter(recipeTagFilter);
+    return this.state.recipes.filter(recipeIngredientMatchesSearchTerm)
+                             .filter(recipeCategoryIsSelected)
+                             .map(recipe => Object.create({
+                               id: recipe.id,
+                               name: recipe.name,
+                               relevantIngredients: recipe.ingredients.filter(ingredientMatchesSearchTerm)
+                             }));
   }
 
   render() {
@@ -69,9 +80,19 @@ class Cookbook extends React.Component {
       <div>
 
         <SearchHeader 
-          menu_btn_click={() => this.toggleCategoryVisibility()}
+          filter_btn_click={() => this.toggleMenuVisibility()}
+          menu_btn_click={() => this.toggleMenuVisibility()}
           searchString={this.state.searchString}
           updateSearchString={this.updateSearchString}
+        />
+
+        <Menu
+          visible={this.state.showMenu}
+          backClick={() => this.toggleMenuVisibility()}
+          categories={this.state.categories}
+          checkedCategories={this.state.checkedCategories}
+          onChange={(i) => this.handleCategorySelectionChange(i)}
+          links={this.state.links}
         />
 
         <main>
@@ -79,31 +100,23 @@ class Cookbook extends React.Component {
             {
               this.getFilteredRecipeResults().map(recipe => 
                 <Link key={recipe.id} to={'/recipeView/' + recipe.id}>
-                  <Card title={recipe.name} />
+                  <Card title={recipe.name} relevantIngredients={recipe.relevantIngredients} />
                 </Link>
               )
             }
           </div>
-          <p style={{textAlign: "center"}}>Recipes with "{this.state.searchString}" as an ingredient</p>
+          <h5 style={{textAlign: "center"}}>Recipes with "{this.state.searchString}" as an ingredient</h5>
           <div className="grid">
             {
               this.getFilteredIngredientResults().map(recipe => 
                 <Link key={recipe.id} to={'/recipeView/' + recipe.id}>
-                  <Card title={recipe.name} />
+                  <Card title={recipe.name} relevantIngredients={recipe.relevantIngredients} />
                 </Link>
               )
             }
           </div>
         </main>
-        
-        <Categories
-          categories={this.state.categories}
-          checkedCategories={this.state.checkedCategories}
-          visible={this.state.showCategories}
-          backClick={() => this.toggleCategoryVisibility()}
-          onChange={(i) => this.handleCategorySelectionChange(i)}
-        />
-        
+
       </div>
     );
   }

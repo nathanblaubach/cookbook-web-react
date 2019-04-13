@@ -1,10 +1,10 @@
 import React    from 'react';
-import { Menu } from './Icons';
+import { Filter } from './Icons';
 
-function Categories(props) {
+function Menu(props) {
   return !props.visible ? <div></div> : (
-    <div className="sidebar">
-      <span onClick={props.backClick}><Menu /></span>
+    <div className="sidebar sidebar-left">
+      <span onClick={props.backClick}><Filter /></span>
       <div className="sidebar-content">
         <h3>Recipes For</h3>
         <div>
@@ -16,12 +16,16 @@ function Categories(props) {
               </div>
             )
           }
+          <hr style={{border: 'none', height: '1px', backgroundColor: 'white'}} />
+          {
+            props.links.map(link =>
+              <a href={link.url}><p>{link.description}</p></a>
+            )
+          }
         </div>
-        <hr style={{border: 'none', height: '1px', backgroundColor: 'white'}} />
-        <a href='https://blaubachn.com/cookbook.html'><p>About</p></a>
       </div>
     </div>
   );
 }
 
-export default Categories;
+export default Menu;
