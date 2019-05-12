@@ -41,6 +41,10 @@ class Cookbook extends React.Component {
   searchStringContains(checkString) {
     return checkString.toUpperCase().includes(this.state.searchString.toUpperCase())
   }
+  
+  searchStringIsEmpty() {
+    return this.state.searchString === ""
+  }
 
   getFilteredRecipeResults() {
     const recipeMatchesSearchTerm = recipe => this.searchStringContains(recipe.name);
@@ -59,7 +63,7 @@ class Cookbook extends React.Component {
   }
 
   getFilteredIngredientResults() {
-    const ingredientMatchesSearchTerm = ingredient => this.searchStringContains(ingredient);
+    const ingredientMatchesSearchTerm = ingredient => !this.searchStringIsEmpty() && this.searchStringContains(ingredient);
     const recipeIngredientMatchesSearchTerm = recipe => recipe.ingredients.some(ingredientMatchesSearchTerm);
 
     const recipeCategoryIsSelected = recipe => 
