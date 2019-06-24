@@ -9,6 +9,7 @@ function swap(arr, a, b) {
 // Styling
 const notecard_row_style = { 
   backgroundColor: 'lightyellow',
+  color: 'black',
   borderLeft: '1px darkgray solid',
   borderRight: '1px darkgray solid',
   borderBottom: '1px darkgray solid',
@@ -20,27 +21,33 @@ const notecard_title_style = Object.assign({}, notecard_row_style, {
   textAlign: 'center'
 });
 const notecard_subtitle_style = Object.assign({}, notecard_row_style, {
-  fontWeight: 'bold'
+  fontWeight: 'bold',
 });
 const notecard_grid_row_style = Object.assign({}, notecard_row_style, {
   display: 'grid',
   gridGap: '.5rem',
-  gridTemplateColumns: '1fr 20px 20px 20px',
-  gridTemplateRows: '20px'
+  gridTemplateColumns: '1fr 1.5rem 1.5rem 1.5rem',
+  gridTemplateRows: '1.5rem'
 });
 const notecard_input_style = {
   backgroundColor: 'transparent',
-  border: 'transparent',
   outline: 'transparent',
+  border: 'transparent',
+  color: 'black',
   fontSize: '1rem',
+  margin: 0,
   width: '100%'
 };
+const notecard_title_input_style = Object.assign({}, notecard_input_style, {
+  fontWeight: 'bold',
+  fontSize: '1.5rem'
+});
 
 //----------------------------------------------------------------------------------
 // SVGs
 //----------------------------------------------------------------------------------
 const svg_attr = {
-  xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 20 20",height:'20px',width:'20px',
+  xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 20 20",width:"100%",
   strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"3",stroke:"#333"
 };
 const up = React.createElement('svg', svg_attr,
@@ -56,11 +63,24 @@ const remove = React.createElement('svg', svg_attr,
   React.createElement('line', { x1:"5",  y1:"15", x2:"15", y2:"5"  })
 );
 
-function NotecardTitle(props) {
+function NotecardViewTitle(props) {
   return React.createElement('div', { style: notecard_title_style },
-    React.createElement('h3',  { style: { margin: '0 auto' } }, props.title)
+    React.createElement('h2',  { style: { margin: '0 auto' } }, props.title)
   );
 }
+function NotecardEditTitle(props) {
+  return React.createElement('div', { style: notecard_title_style },
+    React.createElement('input', {
+      style: notecard_title_input_style,
+      placeholder: props.placeholder,
+      value: props.title,
+      ref: input => input && input.focus(),
+      onChange: props.onNameChange
+    })
+  );
+}
+
+
 function NotecardSubtitle(props) {
   return React.createElement('div', { style: notecard_subtitle_style }, props.subtitle);
 }
@@ -74,14 +94,18 @@ class NotecardEditSection extends React.Component {
     super(props);
     this.state = {
       selected_index: -1,
-      items: props.rows
+      items: props.rows,
+      placeholder: props.placeholder
     };
     this.create = this.create.bind(this);
     this.update = this.update.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
+    this.handleEnterAndDelete = this.handleEnterAndDelete.bind(this);
   }
-  handleEnter(event) {
+  handleEnterAndDelete(event) {
     event = event || window.event;
+    if ((event.which === 8 || event.keyCode === 8) && event.target.value === ''){
+      this.delete(this.state.selected_index);
+    }
     if (event.which === 13 || event.keyCode === 13){
       this.create(this.state.selected_index + 1);
     }
@@ -102,6 +126,8 @@ class NotecardEditSection extends React.Component {
     this.setState({ items: all_items });
     if (this.state.items.length === 0) {
       this.create(0);
+    } else {
+      this.setState({selected_index: this.state.selected_index - 1});
     }
   }
   up(index) {
@@ -127,11 +153,13 @@ class NotecardEditSection extends React.Component {
         React.createElement('div', {key: index, style: notecard_grid_row_style},
           React.createElement('input', {
             style: notecard_input_style,
+            placeholder: this.state.placeholder,
             value: item,
             ref: input => this.state.selected_index === index && input && input.focus(),
+            onFocus: () => this.setSelectedIndex(index),
+            onBlur: () => this.setSelectedIndex(null),
             onChange: this.update,
-            onClick: () => this.setSelectedIndex(index),
-            onKeyDown: this.handleEnter
+            onKeyDown: this.handleEnterAndDelete
           }),
           React.createElement('div', { onClick: () => this.up(index) }, up),
           React.createElement('div', { onClick: () => this.down(index) }, down),
@@ -143,8 +171,10 @@ class NotecardEditSection extends React.Component {
 }
 
 export {
-  NotecardTitle,
+  NotecardViewTitle,
+  NotecardEditTitle,
   NotecardSubtitle,
   NotecardViewSection,
   NotecardEditSection
 };
+

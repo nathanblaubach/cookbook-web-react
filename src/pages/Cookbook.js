@@ -1,9 +1,9 @@
 import React            from 'react';
 import { Link }         from 'react-router-dom';
-import { DataStore }    from '../Data/DataStore';
-import { SearchHeader } from '../Resources/Headers';
-import Menu             from '../Resources/Menu';
-import Card             from '../Resources/Card';
+import { SearchHeader } from '../components/Headers';
+import Menu             from '../components/Menu';
+import Card             from '../components/Card';
+import { DataStore }    from '../repositories/DataStore';
 
 class Cookbook extends React.Component {
   constructor(props) {
@@ -99,6 +99,10 @@ class Cookbook extends React.Component {
           links={this.state.links}
         />
 
+        <Link to={'/recipeAdd'}>
+          <img className={'add-button'} src={require("../images/plus.svg")} alt={"Add Recipe"} />
+        </Link>
+
         <main>
           <div className="grid">
             {
@@ -109,7 +113,7 @@ class Cookbook extends React.Component {
               )
             }
           </div>
-          <h5 style={{textAlign: "center"}}>Recipes with "{this.state.searchString}" as an ingredient</h5>
+          <h5>Recipes with "{this.state.searchString}" as an ingredient</h5>
           <div className="grid">
             {
               this.getFilteredIngredientResults().map(recipe => 

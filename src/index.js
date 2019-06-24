@@ -5,18 +5,20 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 // My code
-import Cookbook   from './Pages/Cookbook';
-import RecipeView from './Pages/RecipeView';
-import RecipeEdit from './Pages/RecipeEdit';
-import                 './index.css';
+import Cookbook     from './pages/Cookbook';
+import RecipeView   from './pages/RecipeView';
+import RecipeEdit   from './pages/RecipeEdit';
+import RecipeAdd    from './pages/RecipeAdd';
+import                   './index.css';
 
 ReactDOM.render(
   (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={Cookbook}/>
-        <Route path='/recipeView/:number' component={RecipeView}/>
-        <Route path='/RecipeEdit/:number' component={RecipeEdit}/>
+        <Route exact path='/'             component={Cookbook}    />
+        <Route path='/recipeView/:number' component={RecipeView}  />
+        <Route path='/recipeEdit/:number' component={RecipeEdit}  />
+        <Route path='/recipeAdd'          component={RecipeAdd}   />
       </Switch>
     </BrowserRouter>
   ), 

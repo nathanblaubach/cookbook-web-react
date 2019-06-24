@@ -1,14 +1,38 @@
-svg {
-  user-select: none;
-}
-
 html, body {
   font-family: Verdana, Geneva, sans-serif;
   background-color: whitesmoke;
   padding: 0;
   margin: 0;
 }
+main {
+  max-width: 768px;
+  margin: auto;
+  padding: 5rem .5rem;
+}
+button {
+  margin: .5rem 0;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 2px;
+  border: none;
+  background-color: #00304E;
+  color: white;
+}
+select {
+  font-size: 1rem;
+  padding: .5rem;
+  margin: 1rem 0 .5rem 0;
+}
+.add-button {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
 
+/*
+  Headerbar
+*/
 header {
   padding: 0;
   margin: 0;
@@ -21,8 +45,12 @@ header {
   display: grid;
   grid-template-columns: 4rem 1fr 4rem;
 }
-header svg {
-  stroke: white;
+img {
+  max-width: 4rem;
+}
+.logo {
+  max-width: 3rem;
+  margin: .5rem;
 }
 header input {
   border: none;
@@ -30,17 +58,37 @@ header input {
   padding: .75rem;
   margin: .75rem 0;
 }
-header img {
-  height: 3rem; 
-  margin: auto;
+
+/*
+  Sidebar
+*/
+.sidebar {
+  position: fixed;
+  top:0;
+  left:0;
+  height: 100vh;
+  width: 80%;
+  max-width: 350px;
+  overflow: auto;
+  background-color: #00304E;
+  color: white;
+}
+.sidebar-content {
+  margin: 1rem;
+}
+.sidebar hr {
+  border: none;
+  height: 1px;
+  background-color: white;
+}
+.sidebar a {
+  color: white;
+  text-decoration: none;
 }
 
-main {
-  max-width: 768px;
-  margin: auto;
-  padding: 4.75rem .5rem;
-}
-
+/*
+  Card Grid
+*/
 .grid {
   display: grid;
   grid-gap: .5rem;
@@ -55,43 +103,14 @@ main {
   color: black;
   text-decoration: none;
 }
-.sidebar {
-  position: fixed;
-  top:0;
-  left:0;
-  height: 100vh;
-  width: 80%;
-  max-width: 350px;
-  overflow: auto;
-  background-color: #00304E;
-  color: white;
-}
-.sidebar svg {
-  stroke: white;
-  height: 4rem;
-}
-.sidebar-content {
-  margin: 1rem;
-}
-.sidebar a {
-  color: white;
-  text-decoration: none;
-}
-
-.selectable {
-  border-radius: .5rem;
+.card {
+  background-color: white;
   box-shadow: #00304E 0 0 3px;
+  text-align: center;
+  border-radius: .5rem;
+  padding: 1rem;
 }
-.selectable:hover {
+.card:hover {
   box-shadow: #00304E 0 0 10px;
 }
 
-.button, .text-box {
-  margin: .5rem 0;
-  padding: 1rem 1rem;
-  font-size: 1rem;
-  border-radius:2px;
-  border: none;
-  background-color: #00304E;
-  color: white;
-}
