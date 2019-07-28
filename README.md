@@ -6,8 +6,7 @@ This cookbook is a simple list of recipes that can be filtered and searched made
 
 ## Setup
 
-Install [git](https://git-scm.com/downloads), [node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm). Then, run the following commands in your terminal:
-
+Install [git](https://git-scm.com/downloads), [node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm). Then, if you understand them, run the following commands in your terminal:
 ```
 git clone https://github.com/nathanblaubach/cookbook.git
 cd cookbook
