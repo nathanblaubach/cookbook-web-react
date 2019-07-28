@@ -7,21 +7,19 @@ import registerServiceWorker from './registerServiceWorker';
 // My code
 import Cookbook     from './pages/Cookbook';
 import RecipeView   from './pages/RecipeView';
-import RecipeEdit   from './pages/RecipeEdit';
 import RecipeAdd    from './pages/RecipeAdd';
+import About        from './pages/About';
 import                   './index.css';
 
 ReactDOM.render(
-  (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path='/'             component={Cookbook}    />
-        <Route path='/recipeView/:number' component={RecipeView}  />
-        <Route path='/recipeEdit/:number' component={RecipeEdit}  />
-        <Route path='/recipeAdd'          component={RecipeAdd}   />
-      </Switch>
-    </BrowserRouter>
-  ), 
+  React.createElement(BrowserRouter, {},
+    React.createElement(Switch, {},
+      React.createElement(Route, {component: Cookbook,   path:'/', exact:true }),
+      React.createElement(Route, {component: RecipeView, path:'/recipeView/:number'}),
+      React.createElement(Route, {component: RecipeAdd,  path:'/recipeAdd'}),
+      React.createElement(Route, {component: About,      path:'/about'})
+    )
+  ),
   document.getElementById('root')
 );
 

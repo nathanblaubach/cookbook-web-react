@@ -104,9 +104,11 @@ class NotecardEditSection extends React.Component {
   handleEnterAndDelete(event) {
     event = event || window.event;
     if ((event.which === 8 || event.keyCode === 8) && event.target.value === ''){
+      event.preventDefault();
       this.delete(this.state.selected_index);
     }
     if (event.which === 13 || event.keyCode === 13){
+      event.preventDefault();
       this.create(this.state.selected_index + 1);
     }
   }

@@ -6,15 +6,13 @@ import { DataStore }                                                from '../rep
 function RecipeView(props) {
   const dataStore = new DataStore();
   const recipe = dataStore.getRecipe(parseInt(props.match.params.number, 10));
-  return (
-    <main>
-      <BackHeader />
-      <NotecardViewTitle title={recipe.name} />
-      <NotecardSubtitle subtitle={'Ingredients:'} />
-      <NotecardViewSection rows={recipe.ingredients} />
-      <NotecardSubtitle subtitle={'Instructions:'} />
-      <NotecardViewSection rows={recipe.instructions} />
-    </main>
+  return React.createElement('main', {},
+    React.createElement(BackHeader),
+    React.createElement(NotecardViewTitle,   { title: recipe.name }),
+    React.createElement(NotecardSubtitle,    { subtitle: 'Ingredients:' }),
+    React.createElement(NotecardViewSection, { rows: recipe.ingredients }),
+    React.createElement(NotecardSubtitle,    { subtitle: 'Instructions:' }),
+    React.createElement(NotecardViewSection, { rows: recipe.instructions })
   );
 }
 

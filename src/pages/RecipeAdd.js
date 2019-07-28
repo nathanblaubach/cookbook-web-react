@@ -29,23 +29,20 @@ class RecipeAdd extends React.Component {
     dataStore.saveRecipe(this.state.recipe);
   }
   render() {
-    return (
-      <main>
-        <BackHeader />
-        <NotecardEditTitle title={this.state.recipe.name} placeholder={"Enter Recipe Name Here"} onNameChange={this.handleNameChange} />
-        <NotecardSubtitle subtitle={'Ingredients:'} />
-        <NotecardEditSection rows={this.state.recipe.ingredients} placeholder={"1 Cup Sugar..."} />
-        <NotecardSubtitle subtitle={'Instructions:'} />
-        <NotecardEditSection rows={this.state.recipe.instructions} placeholder={"Mix the ingredients together..."} />
-        <select value={this.state.recipe.category} onChange={this.handleCategoryChange}>
-          {
-            this.state.categories.map(category =>
-              <option key={category.key} value={category.key}>{category.name}</option>
-            )
-          }
-        </select><br />
-        <button onClick={() => this.save()}>Save Changes</button>
-      </main>
+    return React.createElement('main', {},
+      React.createElement(BackHeader),
+      React.createElement(NotecardEditTitle,   { title: this.state.recipe.name,  placeholder: "Enter Recipe Name Here", onNameChange: this.handleNameChange }),
+      React.createElement(NotecardSubtitle,    { subtitle: 'Ingredients:' }),
+      React.createElement(NotecardEditSection, { rows: this.state.recipe.ingredients, placeholder: '1 Cup Sugar...' }),
+      React.createElement(NotecardSubtitle,    { subtitle: 'Instructions:' }),
+      React.createElement(NotecardEditSection, { rows: this.state.recipe.instructions, placeholder: 'Mix the ingredients together...' }),
+      React.createElement('select',            { subtitle: 'Ingredients:' },
+        this.state.categories.map(category =>
+          React.createElement('option', { key: category.key, value: category.key }, category.name)
+        )
+      ),
+      React.createElement('br'),
+      React.createElement('button', { className: "button", onClick: () => this.save() }, 'Save Changes')
     );
   }
 }

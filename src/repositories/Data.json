@@ -1,14 +1,4 @@
 {
-  "links": [
-    {
-      "description": "Source Code",
-      "url": "https://github.com/blaubachn/cookbook"
-    },
-    {
-      "description": "License: MIT",
-      "url": "https://github.com/blaubachn/cookbook/blob/master/LICENSE"
-    }
-  ],
   "categories": [
     { "key" : 0, "name" : "Beverage" },
     { "key" : 1, "name" : "Hors d'oeuvre" },

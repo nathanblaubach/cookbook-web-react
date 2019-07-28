@@ -2,9 +2,6 @@ class DataStore {
   constructor() {
     this.data = require("./Data.json");
   }
-  getLinks() {
-    return this.data.links;
-  }
   getCategories() {
     return this.data.categories;
   }
