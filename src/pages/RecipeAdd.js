@@ -1,5 +1,5 @@
 import React                                                        from 'react';
-import { BackHeader }                                               from '../components/Headers';
+import Header                                                       from '../components/Header';
 import { NotecardEditTitle, NotecardSubtitle, NotecardEditSection } from '../components/Notecard';
 import { DataStore }                                                from '../repositories/DataStore';
 
@@ -29,20 +29,22 @@ class RecipeAdd extends React.Component {
     dataStore.saveRecipe(this.state.recipe);
   }
   render() {
-    return React.createElement('main', {},
-      React.createElement(BackHeader),
-      React.createElement(NotecardEditTitle,   { title: this.state.recipe.name,  placeholder: "Enter Recipe Name Here", onNameChange: this.handleNameChange }),
-      React.createElement(NotecardSubtitle,    { subtitle: 'Ingredients:' }),
-      React.createElement(NotecardEditSection, { rows: this.state.recipe.ingredients, placeholder: '1 Cup Sugar...' }),
-      React.createElement(NotecardSubtitle,    { subtitle: 'Instructions:' }),
-      React.createElement(NotecardEditSection, { rows: this.state.recipe.instructions, placeholder: 'Mix the ingredients together...' }),
-      React.createElement('select',            { subtitle: 'Ingredients:' },
-        this.state.categories.map(category =>
-          React.createElement('option', { key: category.key, value: category.key }, category.name)
-        )
-      ),
-      React.createElement('br'),
-      React.createElement('button', { className: "button", onClick: () => this.save() }, 'Save Changes')
+    return React.createElement('div', {},
+      React.createElement(Header, { currentPath: this.props.location.pathname }),
+      React.createElement('main', {},
+        React.createElement(NotecardEditTitle,   { title: this.state.recipe.name,  placeholder: "Enter Recipe Name Here", onNameChange: this.handleNameChange }),
+        React.createElement(NotecardSubtitle,    { subtitle: 'Ingredients:' }),
+        React.createElement(NotecardEditSection, { rows: this.state.recipe.ingredients, placeholder: '1 Cup Sugar...' }),
+        React.createElement(NotecardSubtitle,    { subtitle: 'Instructions:' }),
+        React.createElement(NotecardEditSection, { rows: this.state.recipe.instructions, placeholder: 'Mix the ingredients together...' }),
+        React.createElement('select',            { subtitle: 'Ingredients:' },
+          this.state.categories.map(category =>
+            React.createElement('option', { key: category.key, value: category.key }, category.name)
+          )
+        ),
+        React.createElement('br'),
+        React.createElement('button', { className: "button", onClick: () => this.save() }, 'Save Changes')
+      )
     );
   }
 }

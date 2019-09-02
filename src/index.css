@@ -1,115 +1,101 @@
+:root {
+  --spacing: .75rem;
+  --border-radius: .75rem;
+  --color-background: whitesmoke;
+  --color-panel: #FFFFFF;
+  --color-primary: #000000;
+  --color-theme: #00304E; 
+}
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #121212;
+    --color-panel: #363636;
+    --color-primary: #FFFFFF;
+  }
+}
+*/
 html, body {
   font-family: Verdana, Geneva, sans-serif;
-  background-color: whitesmoke;
+  background-color: var(--color-background);
+  color: var(--color-primary);
   padding: 0;
   margin: 0;
 }
 main {
   max-width: 768px;
   margin: auto;
-  padding: 5rem .5rem;
+  padding: 0 var(--spacing) var(--spacing) var(--spacing);
 }
-.button {
-  margin: .5rem 0;
-  padding: 1rem;
-  font-size: 1rem;
-  border-radius: 2px;
-  border: none;
-  background-color: #00304E;
-  color: white;
+a {
+  color: var(--color-primary);
 }
-select {
-  font-size: 1rem;
-  padding: .5rem;
-  margin: 1rem 0 .5rem 0;
-}
-.add-button {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-}
-
-/*
-  Headerbar
-*/
-header {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  background-color: #00304E;
-  box-shadow: black 0px 5px 20px;
-  display: grid;
-  grid-template-columns: 4rem 1fr 4rem;
-}
-img {
-  max-width: 4rem;
+input, select, button {
+  margin-top: var(--spacing);
 }
 .logo {
   max-width: 3rem;
-  margin: .5rem;
-}
-header input {
-  border: none;
-  border-radius: .5rem;
-  padding: .75rem;
-  margin: .75rem 0;
 }
 
-/*
-  Sidebar
-*/
-.sidebar {
-  position: fixed;
-  top:0;
-  left:0;
-  height: 100vh;
-  width: 80%;
-  max-width: 350px;
-  overflow: auto;
-  background-color: #00304E;
-  color: white;
+.searchBar {
+  margin: 0 0 var(--spacing) 0;
+  box-shadow: var(--color-primary) 0 0 3px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-panel);
+  
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
 }
-.sidebar-content {
-  margin: 1rem;
-}
-.sidebar hr {
+.searchBar input {
+  background-color: var(--color-panel);
+  color: var(--color-primary);
+  border-radius: var(--border-radius);
   border: none;
-  height: 1px;
-  background-color: white;
+  padding: var(--spacing) 0;
+  margin: 0;
 }
-.sidebar a {
-  color: white;
-  text-decoration: none;
+.searchBar input:focus {
+  outline: none;
 }
 
 /*
   CardList
 */
-.grid {
-  display: grid;
-  grid-gap: .5rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-.grid a {
-  color: black;
+.cards a {
   text-decoration: none;
 }
 .card {
-  background-color: white;
-  box-shadow: #00304E 0 0 3px;
+  background-color: var(--color-panel);
+  box-shadow: var(--color-primary) 0 0 3px;
+  border-radius: var(--border-radius);
   text-align: center;
-  border-radius: .5rem;
-  padding: 1rem;
+  padding: var(--spacing);
 }
 .card:hover {
-  box-shadow: #00304E 0 0 10px;
+  box-shadow: var(--color-primary) 0 0 6px;
 }
+/*
+  Grid Setup
+*/
+.cards {
+  display: grid;
+  grid-gap: var(--spacing);
+  grid-template-columns: repeat(2, 1fr);
+}
+.categories {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  padding: var(--spacing);
 
+  display: grid;
+  grid-gap: var(--spacing);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 768px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
