@@ -1,6 +1,6 @@
 class DataStore {
   constructor() {
-    this.data = require("./Data.json");
+    this.data = require("./data.json");
   }
   getCategories() {
     return this.data.categories;
@@ -15,9 +15,9 @@ class DataStore {
     return this.data.recipes.filter(recipe => recipe.id === id)[0];
   }
   saveRecipe(recipe) {
-    alert('This is a readonly file');
     console.log(recipe);
+    alert('This is a readonly file');
   }
 }
 
-export { DataStore }
+export default DataStore;

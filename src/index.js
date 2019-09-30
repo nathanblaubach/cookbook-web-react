@@ -5,21 +5,21 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
 // My code
-import RecipeSearch from './pages/RecipeSearch';
-import RecipeView   from './pages/RecipeView';
-import RecipeAdd    from './pages/RecipeAdd';
-import About        from './pages/About';
-import                   './index.css';
+import Search     from './pages/search';
+import RecipeView from './pages/recipe/view';
+import RecipeAdd  from './pages/recipe/add';
+import About      from './pages/about';
+import                 './index.css';
 
 ReactDOM.render(
-  React.createElement(BrowserRouter, {},
-    React.createElement(Switch, {},
-      React.createElement(Route, {component: RecipeSearch, path:'/', exact:true }),
-      React.createElement(Route, {component: RecipeView,   path:'/recipe/view/:number'}),
-      React.createElement(Route, {component: RecipeAdd,    path:'/recipe/add'}),
-      React.createElement(Route, {component: About,        path:'/about'})
-    )
-  ),
+  <BrowserRouter>
+    <Switch>
+      <Route component={Search}     path={"/"} exact={true} />
+      <Route component={RecipeView} path={"/recipe/view/:number"} />
+      <Route component={RecipeAdd}  path={"/recipe/add"} />
+      <Route component={About}      path={"/about"} />
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
