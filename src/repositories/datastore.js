@@ -5,9 +5,6 @@ class DataStore {
   getCategories() {
     return this.data.categories;
   }
-  getRecipeDefaults() {
-    return this.data.recipeDefaults;
-  }
   getRecipes() {
     return this.data.recipes;
   }

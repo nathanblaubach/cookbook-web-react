@@ -11,13 +11,6 @@
     { "key" : 8, "name" : "Dessert" },
     { "key" : 9, "name" : "Miscellaneous" }
   ],
-  "recipeDefaults": {
-    "category": 0,
-    "id": null,
-    "name": "",
-    "ingredients": [""],
-    "instructions": [""]
-  },
   "recipes": [
     {
       "category": 0,

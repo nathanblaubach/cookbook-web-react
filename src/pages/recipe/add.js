@@ -11,8 +11,15 @@ class RecipeAdd extends React.Component {
   constructor(props) {
     super(props);
     const dataStore = new DataStore();
+    const defaults = {
+      category: 0,
+      id: null,
+      name: "",
+      ingredients: [""],
+      instructions: [""]
+    };
     this.state = {
-      recipe: dataStore.getRecipeDefaults(),
+      recipe: defaults,
       categories: dataStore.getCategories()
     }
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -25,7 +32,7 @@ class RecipeAdd extends React.Component {
   }
   handleCategoryChange(event) {
     let tempRecipe = this.state.recipe;
-    tempRecipe.category = event.target.value;
+    tempRecipe.category = parseInt(event.target.value);
     this.setState({ recipe: tempRecipe });
   }
   save() {
@@ -43,7 +50,7 @@ class RecipeAdd extends React.Component {
           <NotecardSubtitle    subtitle={"Instructions"} />
           <NotecardEditSection placeholder={"Mix the ingredients together..."} rows={this.state.recipe.instructions} />
           <p>Please select a Category:</p>
-          <select>
+          <select value={this.state.recipe.category} onChange={this.handleCategoryChange}>
             {
               this.state.categories.map(category =>
                 <option key={category.key} value={category.key}>{category.name}</option>
