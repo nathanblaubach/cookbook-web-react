@@ -7,7 +7,7 @@ const SearchResults = (props) => (
   <div className="cards">
     {
       props.recipeDetails.map(recipe =>
-        <Link key={recipe.id} to={`/recipe/view/${recipe.id}`}>
+        <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
           <div className="card">
             <h3>{recipe.name}</h3>
             {

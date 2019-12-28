@@ -6,8 +6,8 @@ import registerServiceWorker from './registerServiceWorker';
 
 // My code
 import Search     from './pages/search';
-import RecipeView from './pages/recipe/view';
-import RecipeAdd  from './pages/recipe/add';
+import RecipeView from './pages/recipes/view';
+import RecipeAdd  from './pages/recipes/add';
 import About      from './pages/about';
 import                 './index.css';
 
@@ -15,8 +15,9 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route component={Search}     path={"/"} exact={true} />
-      <Route component={RecipeView} path={"/recipe/view/:number"} />
-      <Route component={RecipeAdd}  path={"/recipe/add"} />
+      <Route component={Search}     path={"/recipes"} exact={true} />
+      <Route component={RecipeAdd}  path={"/recipes/add"} />
+      <Route component={RecipeView} path={"/recipes/:number"} />
       <Route component={About}      path={"/about"} />
     </Switch>
   </BrowserRouter>,
