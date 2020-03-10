@@ -1,23 +1,24 @@
 import React from 'react';
 
-function swap(arr, a, b) {
+function swapped(arr, a, b) {
   const temp = arr[a];
   arr[a] = arr[b];
   arr[b] = temp;
+  return arr;
 };
+
+/**
+ * Styles
+ */
 
 const text_spacing = '.5rem';
 
-// Styling
-const notecard_row_style = { 
-  // Colors
+const notecard_row_style = {
   backgroundColor: 'lightyellow',
   color: 'black',
   borderLeft: '1px darkgray solid',
   borderRight: '1px darkgray solid',
   borderBottom: '1px darkgray solid',
-  
-  // Spacing
   padding: text_spacing,
   margin: 0
 };
@@ -48,52 +49,51 @@ const notecard_title_input_style = Object.assign({}, notecard_input_style, {
   fontSize: '1.5rem'
 });
 
-//----------------------------------------------------------------------------------
-// SVGs
-//----------------------------------------------------------------------------------
-const svg_attr = {
-  xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 30 30",width:"100%",
-  strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"3",stroke:"#333"
-};
-const up = React.createElement('svg', svg_attr,
-  React.createElement('polyline', {points: '10,15 15,10 20,15', fill: 'none'}),
-  React.createElement('line', { x1:"15",  y1:"10",  x2:"15", y2:"20" })
-);
-const down = React.createElement('svg', svg_attr,
-  React.createElement('polyline', {points: '10,15 15,20 20,15', fill: 'none'}),
-  React.createElement('line', { x1:"15",  y1:"10",  x2:"15", y2:"20" })
-);
-const remove = React.createElement('svg', svg_attr,
-  React.createElement('line', { x1:"10",  y1:"10",  x2:"20", y2:"20" }),
-  React.createElement('line', { x1:"10",  y1:"20", x2:"20", y2:"10"  })
+/**
+ * SVG
+ */
+
+const up = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
+    <polyline points="10,15 15,10 20,15" fill="none" />
+    <line x1="15" y1="10" x2="15" y2="20" />
+  </svg>
 );
 
-function NotecardViewTitle(props) {
-  return React.createElement('div', { style: notecard_title_style },
-    React.createElement('h2',  { style: { margin: '0 auto' } }, props.title)
-  );
-}
-function NotecardEditTitle(props) {
-  return React.createElement('div', { style: notecard_title_style },
-    React.createElement('input', {
-      style: notecard_title_input_style,
-      placeholder: props.placeholder,
-      value: props.title,
-      ref: input => input && input.focus(),
-      onChange: props.onNameChange
-    })
-  );
-}
-function NotecardSubtitle(props) {
-  return React.createElement('div', { style: notecard_subtitle_style }, props.subtitle);
-}
-function NotecardViewSection(props) {
-  return props.rows.map((row, id) => 
-    React.createElement('div', { style: notecard_row_style, key: id }, 
-      row
-    )
-  )
-}
+const down = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
+    <polyline points="10,15 15,20 20,15" fill="none" />
+    <line x1="15" y1="10" x2="15" y2="20" />
+  </svg>
+);
+
+const remove = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
+    <line x1="10" y1="10" x2="20" y2="20" />
+    <line x1="10" y1="20" x2="20" y2="10" />
+  </svg>
+);
+
+const NotecardViewTitle = (props) => (
+  <div style={notecard_title_style}>
+    <h2 style={{ margin: '0 auto' }}>{props.title}</h2>
+  </div>
+);
+
+const NotecardEditTitle = (props) => (
+  <div style={notecard_title_style}>
+    <input style={notecard_title_input_style} placeholder={props.placeholder} value={props.title} ref={input => input && input.focus()} onChange={props.onNameChange}/>
+  </div>
+);
+
+const NotecardSubtitle = (props) => (
+  <div style={notecard_subtitle_style}>{props.subtitle}</div>
+);
+
+const NotecardViewSection = (props) => (
+  props.rows.map((row, id) => <div key={id} style={notecard_row_style}>{row}</div>)
+);
+
 class NotecardEditSection extends React.Component {
   constructor(props) {
     super(props);
@@ -150,16 +150,13 @@ class NotecardEditSection extends React.Component {
   }
   up(index) {
     if (index !== 0) {
-      let all_items = this.state.items;
-      swap(all_items, index, index - 1);
-      this.setState({ items: all_items });
+      this.setState({ items: swapped(this.state.items, index, index - 1) });
     }
   }
   down(index) {
-    let all_items = this.state.items;
+    const all_items = this.state.items;
     if (index !== all_items.length - 1) {
-      swap(all_items, index, index + 1);
-      this.setState({ items: all_items });
+      this.setState({ items: swapped(all_items, index, index + 1) });
     }
   }
   setSelectedIndex(index) {
@@ -171,24 +168,22 @@ class NotecardEditSection extends React.Component {
     return this.state.items[index];
   }
   render() {
-    return React.createElement('div', {},
-      this.state.items.map((item, index) => 
-        React.createElement('div', {key: index, style: notecard_grid_row_style},
-          React.createElement('input', {
-            style: notecard_input_style,
-            placeholder: this.state.placeholder,
-            value: item,
-            ref: input => this.state.selected_index === index && input && input.focus(),
-            onFocus: () => this.setSelectedIndex(index),
-            onBlur: () => this.setSelectedIndex(null),
-            onChange: this.update,
-            onKeyDown: this.handleSpecialCases
-          }),
-          React.createElement('div', { onClick: () => this.up(index) }, up),
-          React.createElement('div', { onClick: () => this.down(index) }, down),
-          React.createElement('div', { onClick: () => this.delete(index) }, remove)
-        )
-      )
+    return this.state.items.map((item, index) => 
+      <div key={index} style={notecard_grid_row_style}>
+        <input
+          style={notecard_input_style}
+          placeholder={this.state.placeholder}
+          value={item}
+          ref={input => this.state.selected_index === index && input && input.focus()}
+          onFocus={() => this.setSelectedIndex(index)}
+          onBlur={() => this.setSelectedIndex(null)}
+          onChange={this.update}
+          onKeyDown={this.handleSpecialCases}
+        />
+        <div onClick={() => this.up(index)}>{up}</div>
+        <div onClick={() => this.down(index)}>{down}</div>
+        <div onClick={() => this.delete(index)}>{remove}</div>
+      </div>
     );
   }
 }
