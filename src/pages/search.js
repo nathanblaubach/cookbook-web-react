@@ -40,90 +40,69 @@ class Search extends React.Component {
     this.containsSearchString = this.containsSearchString.bind(this);
   }
   
-  toggleCategoryVisibility() {
-    const showCategories = this.state.showCategories;
-    this.setState({ showCategories: !showCategories });
-  }
+  toggleCategoryVisibility = () => this.setState({ showCategories: !this.state.showCategories });
 
-  updateCategorySelections(i) {
-    const updatedCategories = this.state.checkedCategories.includes(i)
+  updateCategorySelections = (i) => this.setState({
+    checkedCategories: this.state.checkedCategories.includes(i)
       ? this.state.checkedCategories.filter(cat => cat !== i)
-      : this.state.checkedCategories.concat(i);
-    this.setState({
-      checkedCategories: updatedCategories
-    });
-  }
+      : this.state.checkedCategories.concat(i)
+  });
 
-  categoryIsSelected(category_id) {
-    return this.state.checkedCategories.includes(category_id) || this.state.checkedCategories.length === 0;
-  }
+  categoryIsSelected = (category_id) => this.state.checkedCategories.includes(category_id) || this.state.checkedCategories.length === 0;
+  updateSearchString = (event) => this.setState({ searchString: event.target.value });
+  containsSearchString = (checkString) => checkString.toUpperCase().includes(this.state.searchString.toUpperCase());
 
-  updateSearchString(event) {
-    this.setState({ searchString: event.target.value });
-  }
+  recipeSearchResults = () => this.state.recipes
+    .filter(recipe => this.categoryIsSelected(recipe.category))
+    .filter(recipe => this.containsSearchString(recipe.name))
+    .map(recipe => Object.create({
+      id: recipe.id,
+      name: recipe.name,
+      relevantIngredients: []
+    }));
 
-  containsSearchString(checkString) {
-    return checkString.toUpperCase().includes(this.state.searchString.toUpperCase());
-  }
+  ingredientSearchResults = () => this.state.searchString.length < 2 ? [] : this.state.recipes
+    .filter(recipe => this.categoryIsSelected(recipe.category))
+    .filter(recipe => recipe.ingredients.some(ingredient => this.containsSearchString(ingredient)))
+    .map(recipe => Object.create({
+      id: recipe.id,
+      name: recipe.name,
+      relevantIngredients: recipe.ingredients.filter(ingredient => this.containsSearchString(ingredient))
+    }));
 
-  render() {
+  render = () => (
+    <div>
+      <Header />
+      <main>
 
-    const recipeSearchResults = this.state.recipes
-      .filter(recipe => this.categoryIsSelected(recipe.category))
-      .filter(recipe => this.containsSearchString(recipe.name))
-      .map(recipe => Object.create({
-        id: recipe.id,
-        name: recipe.name,
-        relevantIngredients: []
-      }));
-
-    const ingredientSearchResults = this.state.searchString.length < 2 ? [] : this.state.recipes
-      .filter(recipe => this.categoryIsSelected(recipe.category))
-      .filter(recipe => recipe.ingredients.some(ingredient => this.containsSearchString(ingredient)))
-      .map(recipe => Object.create({
-        id: recipe.id,
-        name: recipe.name,
-        relevantIngredients: recipe.ingredients.filter(ingredient => this.containsSearchString(ingredient))
-      }));
-
-    const ingredientSearchHeader = ingredientSearchResults.length > 0 
-      ? `Recipes with "${this.state.searchString}" as an ingredient`
-      : '';
-
-    return (
-      <div>
-        <Header />
-        <main>
-
-          <div className="searchCriteria">
-            <img onClick={this.toggleCategoryVisibility} src={require("../images/filter.svg")} alt="filter" />
-            <input className="searchBar" type="textbox" placeholder="Search" value={this.state.searchString} onChange={this.updateSearchString} />
-            <div className="categories">
-              {
-                this.state.categories.filter(() => this.state.showCategories === true).map(category =>
-                  <div className="category" key={category.key} style={{marginBottom: '.5rem'}}>
-                    <input
-                      type="checkbox" 
-                      id={category.key} 
-                      checked={this.state.checkedCategories.includes(category.key)} 
-                      onChange={() => this.updateCategorySelections(category.key)} 
-                    />
-                    <label onClick={() => this.updateCategorySelections(category.key)}>{category.name}</label>
-                  </div>
-                )
-              }
-            </div>
+        <div className="searchCriteria">
+          <img onClick={this.toggleCategoryVisibility} src={require("../images/filter.svg")} alt="filter" />
+          <input className="searchBar" type="textbox" placeholder="Search" value={this.state.searchString} onChange={this.updateSearchString} />
+          <div className="categories">
+            {
+              this.state.categories.filter(() => this.state.showCategories === true).map(category =>
+                <div className="category" key={category.key} style={{marginBottom: '.5rem'}}>
+                  <input
+                    type="checkbox" 
+                    id={category.key} 
+                    checked={this.state.checkedCategories.includes(category.key)} 
+                    onChange={() => this.updateCategorySelections(category.key)} 
+                  />
+                  <label onClick={() => this.updateCategorySelections(category.key)}>{category.name}</label>
+                </div>
+              )
+            }
           </div>
+        </div>
 
-          <SearchResults recipeDetails={recipeSearchResults} />
-          <h5>{ingredientSearchHeader}</h5>
-          <SearchResults recipeDetails={ingredientSearchResults} />
+        <SearchResults recipeDetails={this.recipeSearchResults()} />
+        <h5>{`Recipes with "${this.state.searchString}" as an ingredient`}</h5>
+        <SearchResults recipeDetails={this.ingredientSearchResults()} />
 
-        </main>
-      </div>
+      </main>
+    </div>
 
-    );
-  }
+  );
 }
 
 export default Search;

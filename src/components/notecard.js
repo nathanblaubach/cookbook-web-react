@@ -1,6 +1,6 @@
 import React from 'react';
 
-function swapped(arr, a, b) {
+const swapped = (arr, a, b) => {
   const temp = arr[a];
   arr[a] = arr[b];
   arr[b] = temp;
@@ -10,7 +10,6 @@ function swapped(arr, a, b) {
 /**
  * Styles
  */
-
 const text_spacing = '.5rem';
 
 const notecard_row_style = {
@@ -52,7 +51,6 @@ const notecard_title_input_style = Object.assign({}, notecard_input_style, {
 /**
  * SVG
  */
-
 const up = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
     <polyline points="10,15 15,10 20,15" fill="none" />
@@ -94,6 +92,17 @@ const NotecardViewSection = (props) => (
   props.rows.map((row, id) => <div key={id} style={notecard_row_style}>{row}</div>)
 );
 
+const keys = {
+  backspace: 8,
+  enter: 13,
+  up_arrow: 38,
+  down_arrow: 40
+}
+const keyPressedIs = (event, value) => {
+  event = event || window.event;
+  return event.which === value || event.keyCode === value
+}
+
 class NotecardEditSection extends React.Component {
   constructor(props) {
     super(props);
@@ -104,70 +113,51 @@ class NotecardEditSection extends React.Component {
     };
     this.create = this.create.bind(this);
     this.update = this.update.bind(this);
-    this.handleSpecialCases = this.handleSpecialCases.bind(this);
+    this.handleKeys = this.handleKeys.bind(this);
   }
-  handleSpecialCases(event) {
-    event = event || window.event;
-    const currentlySelected = this.state.selected_index
-    
-    // Backspace Key: Delete line if it's empty
-    if ((event.which === 8 || event.keyCode === 8) && event.target.value === '' && currentlySelected > 0){
-      event.preventDefault();
-      this.delete(currentlySelected);
-    }
-    // Enter Key: Create a new line below the currently selected line
-    if (event.which === 13 || event.keyCode === 13){
-      this.create(currentlySelected + 1);
-    }
-    // Up Arrow Key: Go up one line
-    if (event.which === 38 || event.keyCode === 38){
-      this.setSelectedIndex(currentlySelected - 1);
-    }
-    // Down Arrow Key: Go down one line
-    if (event.which === 40 || event.keyCode === 40){
-      this.setSelectedIndex(currentlySelected + 1);
+  moveUp = (index) => this.setState({ items: swapped(this.state.items, index, Math.max(index - 1, 0)) });
+  moveDown = (index) => this.setState({ items: swapped(this.state.items, index, Math.min(index + 1, this.state.items.length - 1)) });
+  delete = (index) => {
+    this.setState({ items: this.state.items.filter((val, i) => i !== index) });
+    if (this.state.items.length > 0) {
+      this.setState({selected_index: this.state.selected_index - 1});
+    } else {
+      this.create(0);
     }
   }
-  create(index) {
-    let all_items = this.state.items;
+  create = (index) => {
+    const all_items = this.state.items;
     all_items.splice(index, 0, '');
     this.setState({ selected_index: index, items: all_items });
   }
-  update(event) {
-    let all_items = this.state.items;
+  update = (event) => {
+    const all_items = this.state.items;
     all_items[this.state.selected_index] = event.target.value;
     this.setState({ items: all_items });
   }
-  delete(index) {
-    let all_items = this.state.items;
-    all_items.splice(index, 1);
-    this.setState({ items: all_items });
-    if (this.state.items.length === 0) {
-      this.create(0);
-    } else {
-      this.setState({selected_index: this.state.selected_index - 1});
-    }
-  }
-  up(index) {
-    if (index !== 0) {
-      this.setState({ items: swapped(this.state.items, index, index - 1) });
-    }
-  }
-  down(index) {
-    const all_items = this.state.items;
-    if (index !== all_items.length - 1) {
-      this.setState({ items: swapped(all_items, index, index + 1) });
-    }
-  }
-  setSelectedIndex(index) {
+  setSelectedIndex = (index) => {
     if (-1 < index && index < this.state.items.length) {
       this.setState({selected_index: index});
     }
   }
-  getItemText(index) {
-    return this.state.items[index];
+  handleKeys = (event) => {
+    const currentlySelected = this.state.selected_index;
+    if (keyPressedIs(event, keys.backspace) && event.target.value === '' && currentlySelected > 0){
+      event.preventDefault();
+      this.delete(currentlySelected); // Delete the currently selected line
+    }
+    if (keyPressedIs(event, keys.enter)){
+      this.create(currentlySelected + 1); // Create a new line below the currently selected line
+    }
+    if (keyPressedIs(event, keys.up_arrow)){
+      this.setSelectedIndex(currentlySelected - 1); // Select the line above the currently selected line
+    }
+    if (keyPressedIs(event, keys.down_arrow)){
+      this.setSelectedIndex(currentlySelected + 1); // Select the line below the currently selected line
+    }
   }
-  render() {
+
+  render = () => {
     return this.state.items.map((item, index) => 
       <div key={index} style={notecard_grid_row_style}>
         <input
@@ -178,10 +168,10 @@ class NotecardEditSection extends React.Component {
           onFocus={() => this.setSelectedIndex(index)}
           onBlur={() => this.setSelectedIndex(null)}
           onChange={this.update}
-          onKeyDown={this.handleSpecialCases}
+          onKeyDown={this.handleKeys}
         />
-        <div onClick={() => this.up(index)}>{up}</div>
-        <div onClick={() => this.down(index)}>{down}</div>
+        <div onClick={() => this.moveUp(index)}>{up}</div>
+        <div onClick={() => this.moveDown(index)}>{down}</div>
         <div onClick={() => this.delete(index)}>{remove}</div>
       </div>
     );

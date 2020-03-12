@@ -10,11 +10,7 @@ const Header = () => (
   <header>
     <img src={require("../images/logo.svg")} alt="logo" />
     <nav>
-      {
-        links.map((link, i) => (
-          <Link key={i} to={link.to}>{link.label}</Link>
-        ))
-      }
+      { links.map((link, i) => <Link key={i} to={link.to}>{link.label}</Link>) }
     </nav>
   </header>
 );
