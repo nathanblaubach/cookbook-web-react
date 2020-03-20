@@ -7,27 +7,6 @@ body {
   background-color: whitesmoke;
   color: black;
 }
-header {
-  height: 4rem;
-  padding: .75rem;
-  display: flex;
-  justify-content: space-between;
-}
-header img {
-  width: 4rem;
-}
-header a {
-  color: #00304E;
-}
-nav {
-  margin: 1.5rem 0;
-}
-nav a {
-  margin-left: 1rem;
-  color: #00304E;
-  text-decoration: none;
-  font-weight: bold;
-}
 main {
   max-width: 768px;
   margin: 0 auto;
