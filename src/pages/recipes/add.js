@@ -2,7 +2,8 @@ import React     from 'react';
 import DataStore from '../../repositories/datastore';
 import Header    from '../../components/header';
 import { 
-  NotecardEditTitle, 
+  Notecard,
+  NotecardTitle, 
   NotecardSubtitle, 
   NotecardEditSection 
 } from '../../components/notecard';
@@ -43,11 +44,13 @@ class RecipeAdd extends React.Component {
     <div>
       <Header />
       <main>
-        <NotecardEditTitle   placeholder={"Enter Recipe Name Here"} title={this.state.recipe.name} onNameChange={this.handleNameChange} />
-        <NotecardSubtitle    subtitle={"Ingredients"} />
-        <NotecardEditSection placeholder={"1 Cup Sugar..."} rows={this.state.recipe.ingredients} />
-        <NotecardSubtitle    subtitle={"Instructions"} />
-        <NotecardEditSection placeholder={"Mix the ingredients together..."} rows={this.state.recipe.instructions} />
+        <Notecard>
+          <NotecardTitle       editable={true} placeholder={"Enter Recipe Name Here"} title={this.state.recipe.name} onNameChange={this.handleNameChange} />
+          <NotecardSubtitle    editable={false} subtitle={"Ingredients"} />
+          <NotecardEditSection editable={true} placeholder={"1 Cup Sugar..."} rows={this.state.recipe.ingredients} />
+          <NotecardSubtitle    editable={false} subtitle={"Instructions"} />
+          <NotecardEditSection editable={true} placeholder={"Mix the ingredients together..."} rows={this.state.recipe.instructions} />
+        </Notecard>
         <p>Please select a Category:</p>
         <select value={this.state.recipe.category} onChange={this.handleCategoryChange}>
           {

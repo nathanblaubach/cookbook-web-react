@@ -7,46 +7,7 @@ const swapped = (arr, a, b) => {
   return arr;
 };
 
-/**
- * Styles
- */
-const text_spacing = '.5rem';
-
-const notecard_row_style = {
-  backgroundColor: 'lightyellow',
-  color: 'black',
-  borderLeft: '1px darkgray solid',
-  borderRight: '1px darkgray solid',
-  borderBottom: '1px darkgray solid',
-  padding: text_spacing,
-  margin: 0
-};
-const notecard_title_style = Object.assign({}, notecard_row_style, {
-  borderTop: '1px darkgray solid',
-  borderBottom: '2px red solid'
-});
-const notecard_subtitle_style = Object.assign({}, notecard_row_style, {
-  fontWeight: 'bold',
-});
-const notecard_grid_row_style = Object.assign({}, notecard_row_style, {
-  display: 'grid',
-  gridTemplateColumns: '1fr 2rem 2rem 2rem',
-  padding: 0
-});
-const notecard_input_style = {
-  backgroundColor: 'transparent',
-  outline: 'transparent',
-  border: 'transparent',
-  color: 'black',
-  fontSize: '16px',
-  padding: text_spacing,
-  margin: 0,
-  width: '100%'
-};
-const notecard_title_input_style = Object.assign({}, notecard_input_style, {
-  fontWeight: 'bold',
-  fontSize: '1.5rem'
-});
+const coerceIntoRange = (min, max, value) => Math.max(min, Math.min(max, value));
 
 /**
  * SVG
@@ -72,25 +33,102 @@ const remove = (
   </svg>
 );
 
-const NotecardViewTitle = (props) => (
-  <div style={notecard_title_style}>
-    <h2 style={{ margin: '0 auto' }}>{props.title}</h2>
-  </div>
-);
+class NotecardStyler {
+  constructor() {
+    this.row_base = {
+      backgroundColor: 'transparent',
+      margin: 0,
+      padding: 0
+    };
+    this.text_base = {
+      backgroundColor: 'transparent',
+      outline: 'transparent',
+      border: 'transparent',
+      width: '100%',
+      margin: 0,
+      padding: '.5rem',
+      color: 'black',
+      fontFamily: 'sans-serif'
+    };
+  }
+  row = (extra_styles) => Object.assign({}, this.row_base, extra_styles)
+  text = (extra_styles) => Object.assign({}, this.text_base, extra_styles)
+}
+const styler = new NotecardStyler();
 
-const NotecardEditTitle = (props) => (
-  <div style={notecard_title_style}>
-    <input style={notecard_title_input_style} placeholder={props.placeholder} value={props.title} ref={input => input && input.focus()} onChange={props.onNameChange}/>
-  </div>
-);
+const Notecard = (props) => {
+  const styles = {
+    border: '1px darkgray solid',
+    backgroundColor: 'lightyellow',
+    color: 'black',
+    padding: 0,
+    margin: 0
+  };
+  return (
+    <div style={styles}>
+      {props.children}
+    </div>
+  );
+};
 
-const NotecardSubtitle = (props) => (
-  <div style={notecard_subtitle_style}>{props.subtitle}</div>
-);
+const NotecardTitle = (props) => {
+  const styles = {
+    row: styler.row({
+      borderBottom: '2px red solid'
+    }),
+    text: styler.text({
+      fontSize: '2rem',
+      fontWeight: 'bold'
+    })
+  };
+  return (
+    <div style={styles.row}>
+      {
+        props.editable === true
+          ? <input style={styles.text} placeholder={props.placeholder} value={props.title} ref={input => input && input.focus()} onChange={props.onNameChange}/>
+          : <p style={styles.text}>{props.title}</p>
+      }
+    </div>
+  )
+};
 
-const NotecardViewSection = (props) => (
-  props.rows.map((row, id) => <div key={id} style={notecard_row_style}>{row}</div>)
-);
+const NotecardSubtitle = (props) => {
+  const styles = {
+    row: styler.row({
+      borderBottom: '1px darkgray solid'
+    }),
+    text: styler.text({
+      fontSize: '1rem',
+      fontWeight: 'bold'
+    })
+  };
+  return (
+    <div style={styles.row}>
+      {
+        props.editable === true
+          ? <input style={styles.text} placeholder={props.placeholder} value={props.subtitle} ref={input => input && input.focus()} onChange={props.onNameChange}/>
+          : <p style={styles.text}>{props.subtitle}</p>
+      }
+    </div>
+  )
+};
+
+const NotecardViewSection = (props) => {
+  const styles = {
+    row:  styler.row({ 
+      borderBottom: '1px darkgray solid' 
+    }),
+    text: styler.text({ 
+      fontSize: '1rem' 
+    })
+  }
+  return (
+  props.rows.map((row, id) => 
+    <div key={id} style={styles.row}>
+      <p style={styles.text}>{row}</p>
+    </div>
+  )
+)};
 
 const keys = {
   backspace: 8,
@@ -115,6 +153,7 @@ class NotecardEditSection extends React.Component {
     this.update = this.update.bind(this);
     this.handleKeys = this.handleKeys.bind(this);
   }
+  setSelectedIndex = (index) => this.setState({ selected_index: coerceIntoRange(0, this.state.items.length -1, index) });
   moveUp = (index) => this.setState({ items: swapped(this.state.items, index, Math.max(index - 1, 0)) });
   moveDown = (index) => this.setState({ items: swapped(this.state.items, index, Math.min(index + 1, this.state.items.length - 1)) });
   delete = (index) => {
@@ -135,11 +174,6 @@ class NotecardEditSection extends React.Component {
     all_items[this.state.selected_index] = event.target.value;
     this.setState({ items: all_items });
   }
-  setSelectedIndex = (index) => {
-    if (-1 < index && index < this.state.items.length) {
-      this.setState({selected_index: index});
-    }
-  }
   handleKeys = (event) => {
     const currentlySelected = this.state.selected_index;
     if (keyPressedIs(event, keys.backspace) && event.target.value === '' && currentlySelected > 0){
@@ -158,10 +192,22 @@ class NotecardEditSection extends React.Component {
   }
 
   render = () => {
+    const styles = {
+      row: styler.row({
+        borderBottom: '1px darkgray solid',
+        display: 'grid',
+        gridTemplateColumns: '1fr 2rem 2rem 2rem',
+        padding: 0
+      }),
+      text: styler.text({
+        fontSize: '1rem'
+      })
+    };
+
     return this.state.items.map((item, index) => 
-      <div key={index} style={notecard_grid_row_style}>
+      <div key={index} style={styles.row}>
         <input
-          style={notecard_input_style}
+          style={styles.text}
           placeholder={this.state.placeholder}
           value={item}
           ref={input => this.state.selected_index === index && input && input.focus()}
@@ -179,8 +225,8 @@ class NotecardEditSection extends React.Component {
 }
 
 export {
-  NotecardViewTitle,
-  NotecardEditTitle,
+  Notecard,
+  NotecardTitle,
   NotecardSubtitle,
   NotecardViewSection,
   NotecardEditSection

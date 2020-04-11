@@ -2,7 +2,8 @@ import React     from 'react';
 import DataStore from '../../repositories/datastore';
 import Header    from '../../components/header';
 import {
-  NotecardViewTitle,
+  Notecard,
+  NotecardTitle,
   NotecardSubtitle,
   NotecardViewSection
 } from '../../components/notecard';
@@ -15,11 +16,13 @@ function RecipeView(props) {
     <div>
       <Header />
       <main>
-        <NotecardViewTitle   title={recipe.name} />
-        <NotecardSubtitle    subtitle={'Ingredients:'} />
-        <NotecardViewSection rows={recipe.ingredients} />
-        <NotecardSubtitle    subtitle={'Instructions:'} />
-        <NotecardViewSection rows={recipe.instructions} />
+        <Notecard>
+          <NotecardTitle       editable={false} title={recipe.name} />
+          <NotecardSubtitle    editable={false} subtitle={'Ingredients:'} />
+          <NotecardViewSection editable={false} rows={recipe.ingredients} />
+          <NotecardSubtitle    editable={false} subtitle={'Instructions:'} />
+          <NotecardViewSection editable={false} rows={recipe.instructions} />
+        </Notecard>
       </main>
     </div>
   );
