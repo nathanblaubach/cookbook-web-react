@@ -47,8 +47,7 @@ class NotecardStyler {
       width: '100%',
       margin: 0,
       padding: '.5rem',
-      color: 'black',
-      fontFamily: 'sans-serif'
+      color: 'black'
     };
   }
   row = (extra_styles) => Object.assign({}, this.row_base, extra_styles)

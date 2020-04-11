@@ -2,17 +2,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
-body {
-  font-family: Helvetica, sans-serif;
-  background-color: whitesmoke;
-  color: black;
-}
-main {
-  max-width: 768px;
-  margin: 0 auto;
-  padding: .75rem;
-}
-main a {
+body, input {
+  font-family: sans-serif;
+  background-color: white;
   color: black;
 }
 select, button {
@@ -80,17 +72,4 @@ select, button {
   .cards {
     grid-template-columns: repeat(1, 1fr);
   }
-}
-.cards a {
-  text-decoration: none;
-}
-.card {
-  box-shadow: black 0 0 3px;
-  border-radius: .5rem;
-  background-color: white;
-  text-align: center;
-  padding: 1rem;
-}
-.card:hover {
-  box-shadow: black 0 0 6px;
 }

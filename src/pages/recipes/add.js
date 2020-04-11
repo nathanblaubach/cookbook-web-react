@@ -1,12 +1,12 @@
 import React     from 'react';
+import Page      from '../../components/Page';
 import DataStore from '../../repositories/datastore';
-import Header    from '../../components/header';
 import { 
   Notecard,
-  NotecardTitle, 
-  NotecardSubtitle, 
-  NotecardEditSection 
-} from '../../components/notecard';
+  NotecardTitle,
+  NotecardSubtitle,
+  NotecardEditSection
+} from '../../components/Notecard';
 
 class RecipeAdd extends React.Component {
   constructor(props) {
@@ -41,28 +41,25 @@ class RecipeAdd extends React.Component {
     dataStore.saveRecipe(this.state.recipe);
   }
   render = () => (
-    <div>
-      <Header />
-      <main>
-        <Notecard>
-          <NotecardTitle       editable={true} placeholder={"Enter Recipe Name Here"} title={this.state.recipe.name} onNameChange={this.handleNameChange} />
-          <NotecardSubtitle    editable={false} subtitle={"Ingredients"} />
-          <NotecardEditSection editable={true} placeholder={"1 Cup Sugar..."} rows={this.state.recipe.ingredients} />
-          <NotecardSubtitle    editable={false} subtitle={"Instructions"} />
-          <NotecardEditSection editable={true} placeholder={"Mix the ingredients together..."} rows={this.state.recipe.instructions} />
-        </Notecard>
-        <p>Please select a Category:</p>
-        <select value={this.state.recipe.category} onChange={this.handleCategoryChange}>
-          {
-            this.state.categories.map(category =>
-              <option key={category.key} value={category.key}>{category.name}</option>
-            )
-          }
-        </select>
-        <br /><br />
-        <button className="button" onClick={() => this.save()}>Save Changes</button>
-      </main>
-    </div>
+    <Page>
+      <Notecard>
+        <NotecardTitle       editable={true} placeholder={"Enter Recipe Name Here"} title={this.state.recipe.name} onNameChange={this.handleNameChange} />
+        <NotecardSubtitle    editable={false} subtitle={"Ingredients"} />
+        <NotecardEditSection editable={true} placeholder={"1 Cup Sugar..."} rows={this.state.recipe.ingredients} />
+        <NotecardSubtitle    editable={false} subtitle={"Instructions"} />
+        <NotecardEditSection editable={true} placeholder={"Mix the ingredients together..."} rows={this.state.recipe.instructions} />
+      </Notecard>
+      <p>Please select a Category:</p>
+      <select value={this.state.recipe.category} onChange={this.handleCategoryChange}>
+        {
+          this.state.categories.map(category =>
+            <option key={category.key} value={category.key}>{category.name}</option>
+          )
+        }
+      </select>
+      <br /><br />
+      <button className="button" onClick={() => this.save()}>Save Changes</button>
+    </Page>
   );
 }
 
