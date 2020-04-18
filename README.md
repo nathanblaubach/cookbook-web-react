@@ -7,9 +7,10 @@ This cookbook is a simple list of recipes that can be filtered and searched made
 ## Setup
 
 Install [git](https://git-scm.com/downloads), [node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm). Then, if you understand them, run the following commands in your terminal:
-```
-git clone https://github.com/nathanblaubach/cookbook.git
-cd cookbook
+
+```bash
+git clone https://github.com/nathanblaubach/cookbook-web.git
+cd cookbook-web
 npm install
 npm start
 ```
@@ -27,4 +28,4 @@ npm start
 
 ## License
 
-[MIT](https://github.com/nathanblaubach/cookbook/blob/master/LICENSE)
+[MIT](https://github.com/nathanblaubach/cookbook-web/blob/master/LICENSE)
