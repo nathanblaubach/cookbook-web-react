@@ -2,7 +2,12 @@
 
 ## Purpose
 
-This cookbook is a simple list of recipes that can be filtered and searched made using react. I am writing the application for my mom's family's family cookbook, but I am writing it in a way that (I hope) is easily reusable. This repository contains the React application portion.
+This cookbook is a simple list of recipes. I am writing the application for my mom's family's family cookbook, but I am writing it in a way that (I hope) is easily reusable. 
+
+* This repository contains the web application.
+* The [cookbook-api](https://github.com/nathanblaubach/cookbook-api) repository contains the api.
+
+As of now, these applications do not interoperate. The web application currently contains a static JSON file, which will be removed when the api is developed.
 
 ## Setup
 
