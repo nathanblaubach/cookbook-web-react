@@ -8,7 +8,7 @@ The recipes seen when the application is launched are currently being pulled fro
 
 ## Setup
 
-You will need to have [node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) installed.
+You will need to have [node.js](https://nodejs.org) and [npm](https://www.npmjs.com) installed.
 
 Then, if you understand them, run the following commands in your terminal:
 
@@ -17,7 +17,7 @@ Then, if you understand them, run the following commands in your terminal:
 git clone https://github.com/nathanblaubach/cookbook.git
 
 -- Run the web application:
-cd cookbook/web
+cd cookbook
 npm install
 npm start
 ```
