@@ -1,0 +1,42 @@
+[
+    {
+        "key": 0,
+        "name": "Beverage"
+    },
+    {
+        "key": 1,
+        "name": "Hors d'oeuvre"
+    },
+    {
+        "key": 2,
+        "name": "Main Entree"
+    },
+    {
+        "key": 3,
+        "name": "Salad"
+    },
+    {
+        "key": 4,
+        "name": "Side Dish"
+    },
+    {
+        "key": 5,
+        "name": "Soup"
+    },
+    {
+        "key": 6,
+        "name": "Bread"
+    },
+    {
+        "key": 7,
+        "name": "Breakfast"
+    },
+    {
+        "key": 8,
+        "name": "Dessert"
+    },
+    {
+        "key": 9,
+        "name": "Miscellaneous"
+    }
+]

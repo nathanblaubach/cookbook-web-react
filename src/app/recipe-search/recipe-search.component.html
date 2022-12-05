@@ -1,0 +1,17 @@
+<div class="searchCriteria">
+    <svg (click)="this.showFilters = !this.showFilters" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="#00304E" fill="transparent">
+        <polygon points="15,16 10,10 20,10 15,16 15,20" />
+    </svg>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search" />
+    <div *ngIf="showFilters" class="categories">
+        <div class="category" *ngFor="let categoryFilter of categoryFilters">
+            <input type="checkbox" [checked]="categoryFilter.filterIsChecked" />
+            <label>{{ categoryFilter.filterCategory.name }}</label>
+        </div>
+    </div>
+</div>
+<div class="cards">
+    <a *ngFor="let recipe of recipes$ | async" routerLink="/recipe/{{recipe.id}}">
+        <h3 class="card">{{recipe.name}}</h3>
+    </a>
+</div>

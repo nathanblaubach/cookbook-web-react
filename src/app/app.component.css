@@ -1,0 +1,28 @@
+header {
+    height: 4rem;
+    padding: .75rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: .75rem;
+}
+
+nav {
+    margin: 1.5rem 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #00304E;
+    padding-left: 1rem;
+}
+
+svg {
+    color: white;
+    width: 4rem;
+}
