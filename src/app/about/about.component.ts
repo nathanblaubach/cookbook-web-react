@@ -16,7 +16,7 @@ export class AboutComponent {
     this.links = [
       {
         text: 'Source Code on GitHub (MIT)',
-        url: 'https://github.com/nathanblaubach/cookbook'
+        url: 'https://github.com/nathanblaubach/cookbook-web-angular'
       },
       {
         text: 'My Website',
