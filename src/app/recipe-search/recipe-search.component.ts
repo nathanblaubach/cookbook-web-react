@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Category } from '../category';
@@ -17,43 +17,33 @@ interface CategoryFilter {
   templateUrl: './recipe-search.component.html',
   styleUrls: ['./recipe-search.component.css']
 })
-export class RecipeSearchComponent {
+export class RecipeSearchComponent implements OnInit {
 
-  private recipeSearchTerms = new Subject<string>();
-  recipes$!: Observable<Recipe[]>;
+  recipeSearchTerm = "";
+  recipes: Recipe[] = [];
 
-  showFilters: boolean;
+  showFilters: boolean = false;
   categoryFilters: CategoryFilter[] = [];
 
   constructor(
     private recipeService: RecipeService,
     private categoryService: CategoryService
-  ) { 
-    this.showFilters = false;
+  ) { }
+
+  ngOnInit(): void {
+    this.recipeService.getRecipes().subscribe(recipes => this.recipes = recipes);
     this.categoryService.getCategories().subscribe(
       categories => this.categoryFilters = categories.map((category) => {
         return {
           filterCategory: category,
-          filterIsChecked: true
+          filterIsChecked: false
         }
       })
     );
   }
 
-  search(term: string): void {
-    this.recipeSearchTerms.next(term);
-  }
-
-  ngOnInit(): void {
-    this.recipes$ = this.recipeSearchTerms.pipe(
-      // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
-
-      // ignore new term if same as previous term
-      distinctUntilChanged(),
-
-      // switch to new search observable each time the term changes
-      switchMap((term: string) => this.recipeService.getMatchingRecipes(term, this.categoryFilters.filter(cf => cf.filterIsChecked).map(cf => cf.filterCategory.key))),
-    );
+  search(): void {
+    const checkedCategories = this.categoryFilters.filter(cf => cf.filterIsChecked).map(cf => cf.filterCategory.key)
+    this.recipeService.getMatchingRecipes(this.recipeSearchTerm, checkedCategories).subscribe(recipes => this.recipes = recipes);
   }
 }
