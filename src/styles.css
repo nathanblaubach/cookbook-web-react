@@ -21,3 +21,7 @@ button {
     padding: .5rem;
     width: 100%;
 }
+
+.clickable {
+    cursor: pointer;
+}

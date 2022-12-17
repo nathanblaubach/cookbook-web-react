@@ -1,17 +1,17 @@
-<div class="searchCriteria">
-    <svg (click)="this.showFilters = !this.showFilters" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="#00304E" fill="transparent">
+<div class="search-area">
+    <svg class="clickable" (click)="this.showFilters = !this.showFilters" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="#00304E" fill="transparent">
         <polygon points="15,16 10,10 20,10 15,16 15,20" />
     </svg>
-    <input class="search-box" [(ngModel)]="recipeSearchTerm" (input)="search()" placeholder="Search" />
-    <div *ngIf="showFilters" class="categories">
+    <input class="search-bar" [(ngModel)]="recipeSearchTerm" (input)="search()" placeholder="Search" />
+    <div class="category-grid" *ngIf="showFilters">
         <div class="category" *ngFor="let categoryFilter of categoryFilters">
             <input type="checkbox" [(ngModel)]="categoryFilter.filterIsChecked" (change)="search()" />
             <label>{{ categoryFilter.filterCategory.name }}</label>
         </div>
     </div>
 </div>
-<div class="cards">
-    <a *ngFor="let recipe of recipes" routerLink="/recipe/{{recipe.id}}">
-        <h3 class="card">{{recipe.name}}</h3>
-    </a>
+<div class="search-result-grid">
+    <div class="card clickable" *ngFor="let recipe of recipes" routerLink="/recipe/{{recipe.id}}">
+        <h3>{{recipe.name}}</h3>
+    </div>
 </div>
