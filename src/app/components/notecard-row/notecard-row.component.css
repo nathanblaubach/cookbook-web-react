@@ -1,0 +1,11 @@
+.notecard-row {
+    border-bottom: 1px darkgray solid;
+}
+
+.notecard-row-text {
+    font-size: 1rem;
+}
+
+.notecard-row-text-bold {
+    font-weight: bold;
+}

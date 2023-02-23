@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AboutComponent } from './about/about.component';
-import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
-import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { AboutComponent } from 'src/app/pages/about/about.component';
+import { RecipeSearchComponent } from 'src/app/pages/recipe-search/recipe-search.component';
+import { RecipeDetailComponent } from 'src/app/pages/recipe-detail/recipe-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/search', pathMatch: 'full' },
+  { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'search', component: RecipeSearchComponent },
+  { path: 'index', component: RecipeSearchComponent },
   { path: 'recipe/:id', component: RecipeDetailComponent },
 ];
 

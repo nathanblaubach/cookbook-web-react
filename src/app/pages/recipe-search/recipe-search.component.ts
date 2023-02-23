@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Category } from '../category';
 
-import { Recipe } from '../recipe';
-import { RecipeService } from '../recipe.service';
-import { CategoryService } from '../category.service';
+import { CategoryService } from 'src/app/services/category.service';
+import { RecipeService } from 'src/app/services/recipe.service';
+import { Category } from 'src/app/models/category';
+import { Recipe } from 'src/app/models/recipe';
 
-interface CategoryFilter {
-  filterCategory: Category,
-  filterIsChecked: boolean
+class CategoryFilter {
+  filterCategory: Category;
+  filterIsChecked: boolean;
+  constructor(category: Category, isChecked: boolean) {
+    this.filterCategory = category;
+    this.filterIsChecked = isChecked;
+  }
 }
 
 @Component({
@@ -31,18 +33,11 @@ export class RecipeSearchComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.recipeService.getRecipes().subscribe(recipes => this.recipes = recipes);
-    this.categoryService.getCategories().subscribe(
-      categories => this.categoryFilters = categories.map((category) => {
-        return {
-          filterCategory: category,
-          filterIsChecked: false
-        }
-      })
-    );
+    this.recipeService.getAllRecipes().subscribe(recipes => this.recipes = recipes);
+    this.categoryService.getCategories().subscribe(categories => this.categoryFilters = categories.map(category => new CategoryFilter(category, false)));
   }
 
-  search(): void {
+  searchAndFilter(): void {
     const checkedCategories = this.categoryFilters.filter(cf => cf.filterIsChecked).map(cf => cf.filterCategory.key)
     this.recipeService.getMatchingRecipes(this.recipeSearchTerm, checkedCategories).subscribe(recipes => this.recipes = recipes);
   }
