@@ -6,10 +6,10 @@ import { RecipeSearchComponent } from 'src/app/pages/recipe-search/recipe-search
 import { RecipeDetailComponent } from 'src/app/pages/recipe-detail/recipe-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/index', pathMatch: 'full' },
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'index', component: RecipeSearchComponent },
-  { path: 'recipe/:id', component: RecipeDetailComponent },
+  { path: 'recipes', component: RecipeSearchComponent },
+  { path: 'recipes/:id', component: RecipeDetailComponent },
 ];
 
 @NgModule({
