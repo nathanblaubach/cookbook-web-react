@@ -1,6 +1,6 @@
 <app-notecard [title]="name" [editable]="editable">
-    <app-notecard-row text="Ingredients" [bold]="true"></app-notecard-row>
+    <app-notecard-row text="Ingredients:" [bold]="true"></app-notecard-row>
     <app-notecard-row *ngFor="let ingredient of ingredients" [text]="ingredient" [bold]="false" [editable]="editable"></app-notecard-row>
-    <app-notecard-row text="Instructions" [bold]="true"></app-notecard-row>
+    <app-notecard-row text="Instructions:" [bold]="true"></app-notecard-row>
     <app-notecard-row *ngFor="let instruction of instructions" [text]="instruction" [bold]="false" [editable]="editable"></app-notecard-row>
 </app-notecard>

@@ -1,11 +1,26 @@
 .notecard-row {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
     border-bottom: 1px darkgray solid;
 }
 
-.notecard-row-text {
+.notecard-row-editable {
+    display: grid;
+    grid-template-columns: 1fr 2rem 2rem 2rem;
+}
+
+.notecard-text {
+    background-color: transparent;
+    outline: transparent;
+    border: transparent;
+    width: 100%;
+    margin: 0;
+    padding: .5rem;
+    color: black;
     font-size: 1rem;
 }
 
-.notecard-row-text-bold {
+.notecard-text-bold {
     font-weight: bold;
 }
