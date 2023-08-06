@@ -35,4 +35,4 @@ npm run dev
 
 ## License
 
-[MIT](https://github.com/nathanblaubach/cookbook/blob/master/LICENSE)
+[MIT](https://github.com/nathanblaubach/cookbook-web-react/blob/master/LICENSE)
