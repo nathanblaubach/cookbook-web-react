@@ -14,25 +14,25 @@ Then, if you understand them, run the following commands in your terminal:
 
 ```bash
 -- Clone this repository
-git clone https://github.com/nathanblaubach/cookbook.git
+git clone https://github.com/nathanblaubach/cookbook-web-react.git
 
 -- Run the web application:
-cd cookbook
+cd cookbook-web-react
 npm install
-npm start
+npm run dev
 ```
 
 ## Technologies
 
-* [React](https://reactjs.org/) UI library
+- [Vite react-swc-ts](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/en/main)
 
 ## Contributors
 
-* [Nathan Blaubach](https://github.com/nathanblaubach) - Source Code
-* Jeremy Slagle - Logo
+- [Nathan Blaubach](https://github.com/nathanblaubach) - Source Code
+- Jeremy Slagle - Logo
 
 ## License
 
 [MIT](https://github.com/nathanblaubach/cookbook/blob/master/LICENSE)
-
-
