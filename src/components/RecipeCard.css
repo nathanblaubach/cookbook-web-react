@@ -1,0 +1,12 @@
+.recipe-card-link {
+    text-decoration: none;
+}
+
+.card {
+    box-shadow: black 0 0 3px;
+    border-radius: .5rem;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+}
