@@ -1,7 +1,10 @@
 #binaries
 node_modules
-build
+dist
 
 #editors
 
-
+#firebase
+.firebase
+.firebaserc
+firebase.json
