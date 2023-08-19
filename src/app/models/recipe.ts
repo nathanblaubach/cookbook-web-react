@@ -1,5 +1,5 @@
 export interface Recipe {
-    category: number,
+    categoryId: number,
     id: number,
     name: string,
     ingredients: string[],

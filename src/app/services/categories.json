@@ -1,42 +1,42 @@
 [
     {
-        "key": 0,
+        "id": 0,
         "name": "Beverage"
     },
     {
-        "key": 1,
+        "id": 1,
         "name": "Hors d'oeuvre"
     },
     {
-        "key": 2,
+        "id": 2,
         "name": "Main Entree"
     },
     {
-        "key": 3,
+        "id": 3,
         "name": "Salad"
     },
     {
-        "key": 4,
+        "id": 4,
         "name": "Side Dish"
     },
     {
-        "key": 5,
+        "id": 5,
         "name": "Soup"
     },
     {
-        "key": 6,
+        "id": 6,
         "name": "Bread"
     },
     {
-        "key": 7,
+        "id": 7,
         "name": "Breakfast"
     },
     {
-        "key": 8,
+        "id": 8,
         "name": "Dessert"
     },
     {
-        "key": 9,
+        "id": 9,
         "name": "Miscellaneous"
     }
 ]

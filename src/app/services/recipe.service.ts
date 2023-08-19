@@ -18,7 +18,7 @@ export class RecipeService {
   getAllRecipes = (): Observable<Recipe[]> => of(this.recipes);
 
   getMatchingRecipes = (recipeSearchTerm: string, activeCategories: number[]): Observable<Recipe[]> => of(
-    this.recipes.filter(recipe => activeCategories.length === 0 || activeCategories.includes(recipe.category))
+    this.recipes.filter(recipe => activeCategories.length === 0 || activeCategories.includes(recipe.categoryId))
                 .filter(recipe => recipe.name.toUpperCase().includes(recipeSearchTerm.toUpperCase()))
   );
 

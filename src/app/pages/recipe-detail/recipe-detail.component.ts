@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from 'src/app/models/recipe';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -10,13 +11,8 @@ import { Recipe } from 'src/app/models/recipe';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  recipe: Recipe | undefined;
 
-  editable: boolean = false;
-
-  name: string = '';
-  ingredients: string[] = [];
-  instructions: string[] = [];
+  recipe$: Observable<Recipe> | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,15 +20,8 @@ export class RecipeDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getRecipe();
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    this.recipe$ = this.recipeService.getRecipe(id);
   }
 
-  getRecipe(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    this.recipeService.getRecipe(id).subscribe(recipe => {
-      this.name = recipe.name;
-      this.ingredients = recipe.ingredients;
-      this.instructions = recipe.instructions;
-    });
-  }
 }

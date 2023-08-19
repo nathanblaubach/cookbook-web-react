@@ -38,7 +38,7 @@ export class RecipeSearchComponent implements OnInit {
   }
 
   searchAndFilter(): void {
-    const checkedCategories = this.categoryFilters.filter(cf => cf.filterIsChecked).map(cf => cf.filterCategory.key)
+    const checkedCategories = this.categoryFilters.filter(cf => cf.filterIsChecked).map(cf => cf.filterCategory.id)
     this.recipeService.getMatchingRecipes(this.recipeSearchTerm, checkedCategories).subscribe(recipes => this.recipes = recipes);
   }
 }
