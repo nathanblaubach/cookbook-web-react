@@ -17,10 +17,25 @@ export class RecipeService {
 
   getAllRecipes = (): Observable<Recipe[]> => of(this.recipes);
 
-  getMatchingRecipes = (recipeSearchTerm: string, activeCategories: number[]): Observable<Recipe[]> => of(
-    this.recipes.filter(recipe => activeCategories.length === 0 || activeCategories.includes(recipe.categoryId))
-                .filter(recipe => recipe.name.toUpperCase().includes(recipeSearchTerm.toUpperCase()))
-  );
+  getMatchingRecipes(searchTerm: string, categoryIds: number[]): Observable<Recipe[]> {
+    if (searchTerm === '' && categoryIds.length === 0) {
+      return this.getAllRecipes();
+    } else {
+      const localeLowerCaseSearchTerm = searchTerm?.toLocaleLowerCase() ?? '';
+      return of(
+        this.recipes.filter(recipe => {
+          return (
+            localeLowerCaseSearchTerm.length === 0 ||
+            recipe.name.toLocaleLowerCase().includes(localeLowerCaseSearchTerm)
+          ) && (
+            categoryIds == null ||
+            categoryIds.length === 0 ||
+            categoryIds.includes(recipe.categoryId)
+          )
+        })
+      );
+    }
+  }
 
   getRecipe = (id: number): Observable<Recipe> => of(this.recipes.filter(recipe => recipe.id === id)[0]);
 }

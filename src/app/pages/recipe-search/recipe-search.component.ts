@@ -1,18 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, combineLatest, distinctUntilChanged, switchMap } from 'rxjs';
 
 import { CategoryService } from 'src/app/services/category.service';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Category } from 'src/app/models/category';
 import { Recipe } from 'src/app/models/recipe';
-
-class CategoryFilter {
-  filterCategory: Category;
-  filterIsChecked: boolean;
-  constructor(category: Category, isChecked: boolean) {
-    this.filterCategory = category;
-    this.filterIsChecked = isChecked;
-  }
-}
 
 @Component({
   selector: 'app-recipe-search',
@@ -21,11 +13,15 @@ class CategoryFilter {
 })
 export class RecipeSearchComponent implements OnInit {
 
-  recipeSearchTerm = "";
-  recipes: Recipe[] = [];
+  // Display data
+  categories$: Observable<Category[]> | undefined;
+  recipes$: Observable<Recipe[]> | undefined;
 
-  showFilters: boolean = false;
-  categoryFilters: CategoryFilter[] = [];
+  // Filter Controls
+  searchTerms = new BehaviorSubject<string>('');
+  categorySelections = new BehaviorSubject<number[]>([]);
+  combinedFilters = combineLatest([this.searchTerms, this.categorySelections]);
+  showFilters: boolean = false; // This needs to be done in a much better way
 
   constructor(
     private recipeService: RecipeService,
@@ -33,12 +29,30 @@ export class RecipeSearchComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.recipeService.getAllRecipes().subscribe(recipes => this.recipes = recipes);
-    this.categoryService.getCategories().subscribe(categories => this.categoryFilters = categories.map(category => new CategoryFilter(category, false)));
+    this.categories$ = this.categoryService.getCategories();
+    this.recipes$ = this.combinedFilters.pipe(
+      distinctUntilChanged(),
+      switchMap(([searchTerm, categorySelection]) => this.recipeService.getMatchingRecipes(searchTerm, categorySelection))
+    );
   }
 
-  searchAndFilter(): void {
-    const checkedCategories = this.categoryFilters.filter(cf => cf.filterIsChecked).map(cf => cf.filterCategory.id)
-    this.recipeService.getMatchingRecipes(this.recipeSearchTerm, checkedCategories).subscribe(recipes => this.recipes = recipes);
+  onSearchTermChange(searchTerm: string): void {
+    this.searchTerms.next(searchTerm);
   }
+
+  onCategorySelectionChange(categoryIdToToggle: number): void {
+    const categorySelection = this.categorySelections.getValue();
+    const categorySelectionIndexToToggle = categorySelection.indexOf(categoryIdToToggle);
+    if (categorySelectionIndexToToggle === -1) {
+      categorySelection.push(categoryIdToToggle);
+    } else {
+      categorySelection.splice(categorySelectionIndexToToggle, 1);
+    }
+    this.categorySelections.next(categorySelection);
+  }
+
+  categoryIsChecked(categoryId: number): boolean {
+    return this.categorySelections.getValue().includes(categoryId);
+  }
+
 }
