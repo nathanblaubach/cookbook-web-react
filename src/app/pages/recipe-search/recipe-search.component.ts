@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, combineLatest, distinctUntilChanged, switchMap } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest, distinctUntilChanged, switchMap, of } from 'rxjs';
 
 import { CategoryService } from 'src/app/services/category.service';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Category } from 'src/app/models/category';
 import { Recipe } from 'src/app/models/recipe';
+
+interface SelectableCategory extends Category {
+  selected: boolean;
+}
 
 @Component({
   selector: 'app-recipe-search',
@@ -13,15 +17,14 @@ import { Recipe } from 'src/app/models/recipe';
 })
 export class RecipeSearchComponent implements OnInit {
 
-  // Display data
-  categories$: Observable<Category[]> | undefined;
-  recipes$: Observable<Recipe[]> | undefined;
+  showFilters: boolean = false;
 
-  // Filter Controls
-  searchTerms = new BehaviorSubject<string>('');
-  categorySelections = new BehaviorSubject<number[]>([]);
-  combinedFilters = combineLatest([this.searchTerms, this.categorySelections]);
-  showFilters: boolean = false; // This needs to be done in a much better way
+  searchTerms: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  categoryIdSelections: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
+  categories$: Observable<Category[]> | undefined;
+  categoryFilters$: Observable<SelectableCategory[]> | undefined;
+  recipes$: Observable<Recipe[]> | undefined;
 
   constructor(
     private recipeService: RecipeService,
@@ -29,11 +32,38 @@ export class RecipeSearchComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     this.categories$ = this.categoryService.getCategories();
-    this.recipes$ = this.combinedFilters.pipe(
-      distinctUntilChanged(),
-      switchMap(([searchTerm, categorySelection]) => this.recipeService.getMatchingRecipes(searchTerm, categorySelection))
-    );
+
+    this.categoryFilters$ = combineLatest([this.categories$, this.categoryIdSelections])
+      .pipe(switchMap(([categories$, categoryIdSelection]) => of(
+        categories$.map(category => {
+          const selectableCategory: SelectableCategory = {
+            id: category.id,
+            name: category.name,
+            selected: categoryIdSelection.includes(category.id)
+          };
+          return selectableCategory;
+        })
+      )));
+
+    this.recipes$ = combineLatest([this.searchTerms, this.categoryIdSelections])
+      .pipe(
+        distinctUntilChanged(),
+        switchMap(([searchTerm, categoryIdSelection]) => this.recipeService.getMatchingRecipes(searchTerm, categoryIdSelection))
+      );
+
+  }
+
+  private getCategoriesAsSelectable(categories: Category[], selectedCategories: number[]): SelectableCategory[] {
+    return categories.map(category => {
+      const selectableCategory: SelectableCategory = {
+        id: category.id,
+        name: category.name,
+        selected: selectedCategories.includes(category.id)
+      };
+      return selectableCategory;
+    });
   }
 
   onSearchTermChange(searchTerm: string): void {
@@ -41,18 +71,18 @@ export class RecipeSearchComponent implements OnInit {
   }
 
   onCategorySelectionChange(categoryIdToToggle: number): void {
-    const categorySelection = this.categorySelections.getValue();
+    const categorySelection = this.categoryIdSelections.getValue();
     const categorySelectionIndexToToggle = categorySelection.indexOf(categoryIdToToggle);
     if (categorySelectionIndexToToggle === -1) {
       categorySelection.push(categoryIdToToggle);
     } else {
       categorySelection.splice(categorySelectionIndexToToggle, 1);
     }
-    this.categorySelections.next(categorySelection);
+    this.categoryIdSelections.next(categorySelection);
   }
 
   categoryIsChecked(categoryId: number): boolean {
-    return this.categorySelections.getValue().includes(categoryId);
+    return this.categoryIdSelections.getValue().includes(categoryId);
   }
 
 }

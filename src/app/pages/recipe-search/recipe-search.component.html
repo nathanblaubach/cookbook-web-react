@@ -4,9 +4,9 @@
     </svg>
     <input #searchBox class="search-bar" (input)="onSearchTermChange(searchBox.value)" placeholder="Search" />
     <div class="category-grid" *ngIf="showFilters">
-        <div class="category" *ngFor="let category of categories$ | async">
-            <input type="checkbox" [ngModel]="categoryIsChecked(category.id)" (change)="onCategorySelectionChange(category.id)" />
-            <label>{{ category.name }}</label>
+        <div class="category" *ngFor="let categoryFilter of categoryFilters$ | async">
+            <input type="checkbox" [ngModel]="categoryFilter.selected" (change)="onCategorySelectionChange(categoryFilter.id)" />
+            <label>{{ categoryFilter.name }}</label>
         </div>
     </div>
 </div>
