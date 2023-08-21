@@ -11,21 +11,18 @@ interface ExternalLink {
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  links: ExternalLink[]
-  constructor(){
-    this.links = [
-      {
-        text: 'Source Code on GitHub (MIT)',
-        url: 'https://github.com/nathanblaubach/cookbook-web-angular'
-      },
-      {
-        text: 'My Website',
-        url: 'https://nathanblaubach.com'
-      },
-      {
-        text: 'RealFaviconGenerator',
-        url: 'https://realfavicongenerator.net/'
-      }
-    ]
-  }
+  links: ExternalLink[] = [
+    {
+      text: 'Source Code on GitHub (MIT)',
+      url: 'https://github.com/nathanblaubach/cookbook-web-angular'
+    },
+    {
+      text: 'My Website',
+      url: 'https://nathanblaubach.com'
+    },
+    {
+      text: 'RealFaviconGenerator',
+      url: 'https://realfavicongenerator.net/'
+    }
+  ];
 }

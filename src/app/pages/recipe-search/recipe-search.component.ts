@@ -33,7 +33,7 @@ export class RecipeSearchComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.categories$ = this.categoryService.getCategories();
+    this.categories$ = this.categoryService.getAll();
 
     this.categoryFilters$ = combineLatest([this.categories$, this.categoryIdSelections])
       .pipe(switchMap(([categories$, categoryIdSelection]) => of(
@@ -50,20 +50,9 @@ export class RecipeSearchComponent implements OnInit {
     this.recipes$ = combineLatest([this.searchTerms, this.categoryIdSelections])
       .pipe(
         distinctUntilChanged(),
-        switchMap(([searchTerm, categoryIdSelection]) => this.recipeService.getMatchingRecipes(searchTerm, categoryIdSelection))
+        switchMap(([searchTerm, categoryIdSelection]) => this.recipeService.getByQuery(searchTerm, categoryIdSelection))
       );
 
-  }
-
-  private getCategoriesAsSelectable(categories: Category[], selectedCategories: number[]): SelectableCategory[] {
-    return categories.map(category => {
-      const selectableCategory: SelectableCategory = {
-        id: category.id,
-        name: category.name,
-        selected: selectedCategories.includes(category.id)
-      };
-      return selectableCategory;
-    });
   }
 
   onSearchTermChange(searchTerm: string): void {
@@ -79,10 +68,6 @@ export class RecipeSearchComponent implements OnInit {
       categorySelection.splice(categorySelectionIndexToToggle, 1);
     }
     this.categoryIdSelections.next(categorySelection);
-  }
-
-  categoryIsChecked(categoryId: number): boolean {
-    return this.categoryIdSelections.getValue().includes(categoryId);
   }
 
 }

@@ -14,7 +14,9 @@ export class CategoryService {
     this.categories = require("./categories.json");
   }
 
-  getCategories(): Observable<Category[]> {
+  getAll(): Observable<Category[]> {
+    console.log("CategoryService.getAll called");
     return of(this.categories);
-  }
+  } 
+
 }

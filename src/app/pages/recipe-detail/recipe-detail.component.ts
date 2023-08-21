@@ -21,7 +21,7 @@ export class RecipeDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    this.recipe$ = this.recipeService.getRecipe(id);
+    this.recipe$ = this.recipeService.getById(id);
   }
 
 }
