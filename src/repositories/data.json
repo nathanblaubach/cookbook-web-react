@@ -872,30 +872,6 @@
     },
     {
       "categoryid": 2,
-      "id":  240,
-      "name": "Beef Stroganoff",
-      "ingredients": [
-        "2 pound round steak",
-        "5 cubes beef bouillon",
-        "1/4 cup catsup",
-        "2 tsp salt",
-        "2 cups sour cream",
-        "2 onions, chopped",
-        "2 cups boiling water",
-        "2 garlic cloves",
-        "6-8 cups egg noodles",
-        "6 tbsp flour or 3 tbsp corn starch"
-      ],
-      "instructions": [
-        "Brown meat and onion",
-        "Add rest of ingredients except for sour cream",
-        "Cook noodles",
-        "Thicken sauce with flour or corn starch",
-        "Just before serving, add sour cream"
-      ]
-    },
-    {
-      "categoryid": 2,
       "id":  42,
       "name": "Tater Tot Casserole",
       "ingredients": [
@@ -5750,6 +5726,85 @@
       "instructions": [
         "Mix all ingredients together"
       ]
-     }
+    },
+    {
+      "categoryid": 2,
+      "id":  240,
+      "name": "Beef Stroganoff",
+      "ingredients": [
+        "2 pound round steak",
+        "5 cubes beef bouillon",
+        "1/4 cup catsup",
+        "2 tsp salt",
+        "2 cups sour cream",
+        "2 onions, chopped",
+        "2 cups boiling water",
+        "2 garlic cloves",
+        "6-8 cups egg noodles",
+        "6 tbsp flour or 3 tbsp corn starch"
+      ],
+      "instructions": [
+        "Brown meat and onion",
+        "Add rest of ingredients except for sour cream",
+        "Cook noodles",
+        "Thicken sauce with flour or corn starch",
+        "Just before serving, add sour cream"
+      ]
+    },
+    {
+      "categoryid": 8,
+      "id": 241,
+      "name": "Lemon Cream Cake",
+      "ingredients": [
+        "1 box white cake mix",
+        "Filling",
+        "12 oz cream cheese",
+        "3 c powdered sugar",
+        "1/4 c lemon juice from 1 lemon (do not use bottled lemon juice)",
+        "1 pint whipping cream",
+        "Topping",
+        "3/4 c flour",
+        "1/2 c powdered sugar",
+        "1/4 c cold butter",
+        "1/2 t vanilla"
+      ],
+      "instructions": [
+        "Bake cake mix into 2 layers and cool",
+        "Cream softened cream cheese and powdered sugar together",
+        "Mix in lemon juice",
+        "Whip whipping cream until stiff and fold into cream cheese mixture",
+        "Using pastry blender (or 2 knives) cut butter into topping ingredients until small lumps",
+        "To assemble, place one layer on plate then thick layer of filling",
+        "Sprinkle half of topping over that",
+        "Repeat and frost sides with filling",
+        "Refrigerate at least 8 hours before serving"
+      ]
+    },
+    {
+      "categoryid": 8,
+      "id": 242,
+      "name": "Blueberry Bumble",
+      "ingredients": [
+        "3/4 c sugar",
+        "1/4 c butter",
+        "1 egg",
+        "3/4 c milk of choice",
+        "2 c flour (may use gluten free)",
+        "1/2 t salt",
+        "2 t BP",
+        "2 c blueberries (have also used blackberries)"
+      ],
+      "instructions": [
+        "Cream butter and sugar",
+        "Add egg and mix",
+        "Add milk and mix",
+        "In separate bowl, mix flour, BP and salt",
+        "Fold dry ingredients into wet mix",
+        "Fold in berries.",
+        "Spread batter in greased 8x8” or 9x9” pan",
+        "Crumble topping over it",
+        "Bake 50-55 minutes in 375 degree oven until toothpick inserted comes out clean"
+      ]
+    }
   ]
 }
