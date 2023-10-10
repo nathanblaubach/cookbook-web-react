@@ -40,7 +40,7 @@ export default class DataStore {
       this.categories.find(category => category.id === recipe.categoryid)!, 
       recipe.ingredients, 
       recipe.instructions)
-    );
+    ).sort((a: Recipe, b: Recipe) => a.name < b.name ? -1 : 1);
   }
 
   getCategories = (): Array<Category> => this.categories;
