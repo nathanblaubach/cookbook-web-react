@@ -1,0 +1,25 @@
+.notecard {
+    border: 1px darkgray solid;
+    background-color: lightyellow;
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.notecard-title-row {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px red solid;
+}
+
+.notecard-title-text {    background-color: transparent;
+    outline: transparent;
+    border: transparent;
+    width: 100%;
+    margin: 0;
+    padding: .5rem;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}

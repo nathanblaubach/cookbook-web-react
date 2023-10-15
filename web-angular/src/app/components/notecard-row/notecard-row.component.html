@@ -1,0 +1,4 @@
+<div class="notecard-row" [ngClass]="{ 'notecard-row-editable' : editable }">
+    <input *ngIf="editable" class="notecard-text" [ngClass]="{ 'notecard-text-bold' : bold }" [(ngModel)]="text" />
+    <p *ngIf="!editable" class="notecard-text" [ngClass]="{ 'notecard-text-bold' : bold }">{{text}}</p>
+</div>

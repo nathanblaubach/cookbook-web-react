@@ -1,0 +1,8 @@
+<ng-container *ngIf="recipe$ | async as recipe">
+    <app-notecard [title]="recipe.name" [editable]="false">
+        <app-notecard-row text="Ingredients:" [bold]="true"></app-notecard-row>
+        <app-notecard-row *ngFor="let ingredient of recipe.ingredients" [text]="ingredient" [bold]="false" [editable]="false"></app-notecard-row>
+        <app-notecard-row text="Instructions:" [bold]="true"></app-notecard-row>
+        <app-notecard-row *ngFor="let instruction of recipe.instructions" [text]="instruction" [bold]="false" [editable]="false"></app-notecard-row>
+    </app-notecard>
+</ng-container>
