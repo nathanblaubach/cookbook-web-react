@@ -20,7 +20,7 @@ export default function About(): React.JSX.Element {
           [
             {
               text: 'Source Code on GitHub (MIT)',
-              url: 'https://github.com/nathanblaubach/cookbook-web-react'
+              url: 'https://github.com/nathanblaubach/cookbook'
             },
             {
               text: 'My Website',

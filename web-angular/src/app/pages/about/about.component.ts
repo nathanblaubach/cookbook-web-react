@@ -14,7 +14,7 @@ export class AboutComponent {
   links: ExternalLink[] = [
     {
       text: 'Source Code on GitHub (MIT)',
-      url: 'https://github.com/nathanblaubach/cookbook-web-angular'
+      url: 'https://github.com/nathanblaubach/cookbook'
     },
     {
       text: 'My Website',

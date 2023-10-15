@@ -14,10 +14,10 @@ Then, if you understand them, run the following commands in your terminal:
 
 ```bash
 -- Clone this repository
-git clone https://github.com/nathanblaubach/cookbook-web-react.git
+git clone https://github.com/nathanblaubach/cookbook.git
 
 -- Run the web application:
-cd cookbook-web-react
+cd cookbook/web-react
 npm install
 npm run dev
 ```
