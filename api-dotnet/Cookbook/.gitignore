@@ -1,0 +1,55 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+obj/
+
+# Visual Studio
+.vs/
+bin/obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Tests
+*.xunit.runner.json
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet packages
+**/nupkg/
+
+# Temporary files
+*.tmp
+*.cache
+
+# Logs
+*.log
+
+# Local settings
+appsettings.local.json
+local-*
+
+# Miscellaneous
+*.db
+*.lock
+*.DS_Store
+*.swp
+*~
