@@ -1,9 +1,8 @@
-using System.Collections;
 using Cookbook.Domain.Entities;
 using Cookbook.Domain.Interfaces;
 using MediatR;
 
-namespace Cookbook.Api.Queries;
+namespace Cookbook.Application.Queries;
 
 public class GetRecipesBySearchTermAndCategories(string? searchTerm, IEnumerable<long>? categoryIds) : IRequest<IEnumerable<Recipe>>
 {

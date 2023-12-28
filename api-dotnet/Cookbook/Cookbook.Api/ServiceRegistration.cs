@@ -7,7 +7,6 @@ public static class ServiceRegistration
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddControllers();
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
         return services;
     }
 

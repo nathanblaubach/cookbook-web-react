@@ -2,7 +2,7 @@ using Cookbook.Domain.Entities;
 using Cookbook.Domain.Interfaces;
 using MediatR;
 
-namespace Cookbook.Api.Queries;
+namespace Cookbook.Application.Queries;
 
 public class GetRecipeById(long recipeId) : IRequest<Recipe?>
 {

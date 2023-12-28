@@ -1,4 +1,4 @@
-using Cookbook.Api.Queries;
+using Cookbook.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
