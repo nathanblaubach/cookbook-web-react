@@ -1,23 +1,15 @@
+using Cookbook.Domain;
 using Cookbook.Infrastructure;
+using Cookbook.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services
+    .ConfigureDomain()
+    .ConfigureInfrastructure()
+    .ConfigureApi();
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-builder.Services.AddInfrastructure();
-
-builder.Services.AddControllers();
-
-var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-app.UseHttpsRedirection();
-app.MapControllers();
-app.Run();
+builder
+    .Build()
+    .Configure()
+    .Run();
