@@ -4,22 +4,30 @@ using MediatR;
 
 namespace Cookbook.Application.Queries;
 
-public class GetRecipesBySearchTermAndCategories(string? searchTerm, IEnumerable<long>? categoryIds) : IRequest<IEnumerable<Recipe>>
-{
-    public string? SearchTerm { get; init; } = searchTerm;
-    public IEnumerable<long>? CategoryIds { get; init; } = categoryIds;
-}
+public record GetRecipesBySearchTermAndCategories(
+    string? SearchTerm, 
+    IEnumerable<long>? CategoryIds
+) : IRequest<IEnumerable<Recipe>>;
 
 public class GetRecipesBySearchTermAndCategoriesHandler(IRecipeRepository recipeRepository) : IRequestHandler<GetRecipesBySearchTermAndCategories, IEnumerable<Recipe>>
 {
     public async Task<IEnumerable<Recipe>> Handle(GetRecipesBySearchTermAndCategories request, CancellationToken cancellationToken)
     {
-        var lowercaseSearchString = request.SearchTerm?.ToLowerInvariant();
-        var categoryIdList = request.CategoryIds?.ToList();
+        var recipes = (await recipeRepository.GetAllAsync()).AsQueryable();
 
-        return (await recipeRepository.GetAllAsync())
-            .Where(recipe => string.IsNullOrWhiteSpace(lowercaseSearchString) || SearchStringMatchesRecipeOrIngredientName(recipe, lowercaseSearchString))
-            .Where(recipe => categoryIdList is null || categoryIdList.Count == 0 || categoryIdList.Contains(recipe.CategoryId));
+        var lowercaseSearchString = request.SearchTerm?.ToLowerInvariant();
+        if (!string.IsNullOrWhiteSpace(lowercaseSearchString))
+        {
+            recipes = recipes.Where(recipe => SearchStringMatchesRecipeOrIngredientName(recipe, lowercaseSearchString));
+        }
+        
+        var categoryIdList = request.CategoryIds?.ToList();
+        if (categoryIdList is not null && categoryIdList.Count > 0)
+        {
+            recipes = recipes.Where(recipe => categoryIdList.Contains(recipe.CategoryId));
+        }
+
+        return recipes;
     }
 
     private static bool SearchStringMatchesRecipeOrIngredientName(Recipe recipe, string lowercaseSearchString)
