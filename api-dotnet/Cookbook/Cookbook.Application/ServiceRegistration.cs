@@ -5,9 +5,6 @@ namespace Cookbook.Application;
 
 public static class ServiceRegistration
 {
-    public static IServiceCollection ConfigureApplication(this IServiceCollection services)
-    {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-        return services;
-    }
+    public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services) => services
+        .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 }

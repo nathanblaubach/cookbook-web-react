@@ -1,4 +1,3 @@
-using Cookbook.Domain;
 using Cookbook.Infrastructure;
 using Cookbook.Api;
 using Cookbook.Application;
@@ -6,12 +5,11 @@ using Cookbook.Application;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .ConfigureDomain()
-    .ConfigureApplication()
-    .ConfigureInfrastructure()
-    .ConfigureApi();
+    .ConfigureApplicationServices()
+    .ConfigureInfrastructureServices()
+    .ConfigureApiServices();
 
 builder
     .Build()
-    .Configure()
+    .ConfigureApi()
     .Run();

@@ -6,16 +6,21 @@ namespace Cookbook.Api;
 
 public static class ServiceRegistration
 {
-    public static IServiceCollection ConfigureApi(this IServiceCollection services)
+    public static IServiceCollection ConfigureApiServices(this IServiceCollection services)
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddControllers();
-        services.AddProblemDetails(ConfigureProblemDetails);
+        services.AddProblemDetails(options =>
+        {
+            options.MapToStatusCode<ValidationException>(StatusCodes.Status400BadRequest);
+            options.MapToStatusCode<NotFoundException>(StatusCodes.Status404NotFound);
+            options.MapToStatusCode<Exception>(StatusCodes.Status500InternalServerError);
+        });
         return services;
     }
 
-    public static WebApplication Configure(this WebApplication app)
+    public static WebApplication ConfigureApi(this WebApplication app)
     {
         if (app.Environment.IsDevelopment())
         {
@@ -27,14 +32,5 @@ public static class ServiceRegistration
         app.MapControllers();
         app.UseProblemDetails();
         return app;
-    }
-
-    private static void ConfigureProblemDetails(Hellang.Middleware.ProblemDetails.ProblemDetailsOptions options)
-    {
-        //options.MapFluentValidationException();
-        options.Rethrow<NotSupportedException>();
-        options.MapToStatusCode<ValidationException>(StatusCodes.Status400BadRequest);
-        options.MapToStatusCode<NotFoundException>(StatusCodes.Status404NotFound);
-        options.MapToStatusCode<Exception>(StatusCodes.Status500InternalServerError);
     }
 }
