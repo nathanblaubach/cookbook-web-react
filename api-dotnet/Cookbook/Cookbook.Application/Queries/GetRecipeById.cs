@@ -1,5 +1,4 @@
 using Cookbook.Domain.Entities;
-using Cookbook.Domain.Exceptions;
 using Cookbook.Domain.Interfaces;
 using MediatR;
 
@@ -10,5 +9,5 @@ public record GetRecipeById(long RecipeId) : IRequest<Recipe>;
 public class GetRecipeByIdHandler(IRecipeRepository recipeRepository) : IRequestHandler<GetRecipeById, Recipe>
 {
     public async Task<Recipe> Handle(GetRecipeById request, CancellationToken cancellationToken)
-        => await recipeRepository.GetByIdAsync(request.RecipeId) ?? throw new NotFoundException();
+        => await recipeRepository.GetByIdAsync(request.RecipeId);
 }

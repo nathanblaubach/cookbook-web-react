@@ -15,5 +15,5 @@ public interface IRecipeRepository
     /// </summary>
     /// <param name="recipeId">The id of the recipe to get</param>
     /// <returns>The recipe with the given id</returns>
-    Task<Recipe?> GetByIdAsync(long recipeId);
+    Task<Recipe> GetByIdAsync(long recipeId);
 }
