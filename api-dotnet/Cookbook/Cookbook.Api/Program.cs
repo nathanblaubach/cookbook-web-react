@@ -1,12 +1,12 @@
-using Cookbook.Infrastructure;
 using Cookbook.Api;
 using Cookbook.Application;
+using Cookbook.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .ConfigureApplicationServices()
     .ConfigureInfrastructureServices()
+    .ConfigureApplicationServices()
     .ConfigureApiServices();
 
 builder

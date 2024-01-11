@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Cookbook.Application.Interfaces;
+using Cookbook.Application.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Cookbook.Application;
@@ -6,5 +7,6 @@ namespace Cookbook.Application;
 public static class ServiceRegistration
 {
     public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services) => services
-        .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+        .AddScoped<ICategoryQueries, CategoryQueries>()
+        .AddScoped<IRecipeQueries, RecipeQueries>();
 }
