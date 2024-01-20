@@ -20,8 +20,9 @@ public class Recipe : BaseEntity
     /// <returns>True if matches or term is empty, false otherwise</returns>
     public bool MatchesSearchTerm(string searchTerm)
     {
+        ArgumentNullException.ThrowIfNull(searchTerm);
         var lowercaseSearchString = searchTerm.ToLowerInvariant();
-        return string.IsNullOrEmpty(lowercaseSearchString)
+        return string.IsNullOrWhiteSpace(lowercaseSearchString)
             || Name.ToLowerInvariant().Contains(lowercaseSearchString)
             || Ingredients.Any(ingredient => ingredient.ToLowerInvariant().Contains(lowercaseSearchString));
     }
