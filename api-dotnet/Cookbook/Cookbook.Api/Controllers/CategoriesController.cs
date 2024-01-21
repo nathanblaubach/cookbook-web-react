@@ -8,7 +8,7 @@ namespace Cookbook.Api.Controllers;
 public class CategoriesController(ICategoryQueries categoryQueries) : Controller
 {
     [HttpGet]
-    [ProducesResponseType(typeof(IEnumerable<Category>), StatusCodes.Status202Accepted)]
+    [ProducesResponseType(typeof(IEnumerable<Category>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Index()
         => Ok(await categoryQueries.GetAllAsync());
