@@ -6,7 +6,7 @@ namespace Cookbook.Application.Queries;
 
 public class RecipeQueries(IRecipeRepository recipeRepository) : IRecipeQueries
 {
-    public async Task<IEnumerable<Recipe>> GetBySearchTermAndCategoriesAsync(string searchTerm, IEnumerable<long> categoryIds)
+    public async Task<IEnumerable<Recipe>> GetBySearchTermAndCategoriesAsync(string? searchTerm, IEnumerable<long>? categoryIds)
     {
         var recipes = (await recipeRepository.GetAllAsync()).AsQueryable();
 
