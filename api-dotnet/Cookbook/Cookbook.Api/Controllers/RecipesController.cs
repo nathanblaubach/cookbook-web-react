@@ -1,8 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Cookbook.Application.Interfaces;
-using Cookbook.Application.Queries;
 using Cookbook.Domain.Entities;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cookbook.Api.Controllers;
