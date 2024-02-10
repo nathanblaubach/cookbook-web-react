@@ -5,21 +5,13 @@ using Cookbook.Domain.Interfaces;
 
 namespace Cookbook.Infrastructure.Repositories;
 
-public class RecipeRepository : IRecipeRepository
+public class RecipeRepository(IDatabase database) : IRecipeRepository
 {
-    private readonly IEnumerable<Recipe> recipes;
-    
-    public RecipeRepository()
-    {
-        recipes = JsonFileLoader.Load<IEnumerable<Recipe>>("recipes")
-            ?? throw new DataException("Could not read recipes from file");
-    }
-
     /// <inheritdoc />
     public async Task<IEnumerable<Recipe>> GetAllAsync()
-        => recipes;
+        => database.Recipes;
     
     /// <inheritdoc />
     public async Task<Recipe> GetByIdAsync(long recipeId)
-        => recipes.SingleOrDefault(recipe => recipe.RecipeId == recipeId) ?? throw new NotFoundException();
+        => database.Recipes.SingleOrDefault(recipe => recipe.Id == recipeId) ?? throw new NotFoundException();
 }

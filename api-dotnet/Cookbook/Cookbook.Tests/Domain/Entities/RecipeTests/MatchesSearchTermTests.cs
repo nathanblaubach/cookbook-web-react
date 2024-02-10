@@ -32,7 +32,7 @@ public class MatchesSearchTermTests
 
     private static Recipe GetBaseRecipe() => new()
     {
-        RecipeId = 1234L,
+        Id = 1234L,
         Name = "TestRecipe",
         Ingredients = new List<string>(),
         Instructions = new List<string>(),

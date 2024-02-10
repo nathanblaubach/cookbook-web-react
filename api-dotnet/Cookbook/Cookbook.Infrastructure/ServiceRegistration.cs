@@ -9,6 +9,7 @@ namespace Cookbook.Infrastructure;
 public static class InfrastructureConfiguration
 {
     public static IServiceCollection ConfigureInfrastructureServices(this IServiceCollection services) => services
+        .AddSingleton<IDatabase, Database>()
         .AddSingleton<ICategoryRepository, CategoryRepository>()
         .AddSingleton<IRecipeRepository, RecipeRepository>();
 }
