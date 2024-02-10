@@ -1,11 +1,12 @@
 using Cookbook.Domain.Interfaces;
+using Cookbook.Infrastructure;
 using Cookbook.Infrastructure.Repositories;
 
 namespace Cookbook.Tests.Infrastructure.Repositories.RecipeRepositoryTests;
 
 public class GetRecipesAsyncTests
 {
-    private readonly IRecipeRepository _recipeRepository = new RecipeRepository();
+    private readonly IRecipeRepository _recipeRepository = new RecipeRepository(new Database());
     
     [Fact]
     public async Task SuccessfullyLoadsRecipes()
