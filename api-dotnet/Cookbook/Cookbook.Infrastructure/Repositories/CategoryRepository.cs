@@ -1,5 +1,4 @@
-﻿using System.Data;
-using Cookbook.Domain.Entities;
+﻿using Cookbook.Domain.Entities;
 using Cookbook.Domain.Interfaces;
 
 namespace Cookbook.Infrastructure.Repositories;
