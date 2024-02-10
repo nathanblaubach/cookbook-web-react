@@ -21,5 +21,5 @@ public class RecipeRepository : IRecipeRepository
     
     /// <inheritdoc />
     public async Task<Recipe> GetByIdAsync(long recipeId)
-        => recipes.SingleOrDefault(recipe => recipe.Id == recipeId) ?? throw new NotFoundException();
+        => recipes.SingleOrDefault(recipe => recipe.RecipeId == recipeId) ?? throw new NotFoundException();
 }

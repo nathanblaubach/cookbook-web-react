@@ -1,7 +1,9 @@
 namespace Cookbook.Domain.Entities;
 
-public class Recipe : BaseEntity
+public class Recipe
 {
+    public required long RecipeId { get; set; }
+    
     public required string Name { get; set; }
 
     public required IEnumerable<string> Ingredients { get; set; }
