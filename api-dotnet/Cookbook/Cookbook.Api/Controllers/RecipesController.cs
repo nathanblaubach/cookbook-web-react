@@ -12,7 +12,7 @@ public class RecipesController(IRecipeQueries recipeQueries) : Controller
     [ProducesResponseType(typeof(IEnumerable<Recipe>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Index(string? searchTerm, long[]? categoryIds)
-        => Ok(await recipeQueries.GetBySearchTermAndCategoriesAsync(searchTerm, categoryIds));
+        => Ok(await recipeQueries.GetByParamsAsync(searchTerm, categoryIds));
     
     [HttpGet("{recipeId}")]
     [ProducesResponseType(typeof(Recipe), StatusCodes.Status200OK)]
