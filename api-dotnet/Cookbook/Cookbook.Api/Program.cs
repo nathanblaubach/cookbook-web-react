@@ -1,15 +1,18 @@
 using Cookbook.Api;
-using Cookbook.Application;
-using Cookbook.Infrastructure;
+using Cookbook.Application.Interfaces;
 
-var builder = WebApplication.CreateBuilder(args);
+var app = WebApplication.CreateBuilder(args).BuildCookbookApiApplication();
 
-builder.Services
-    .ConfigureInfrastructureServices()
-    .ConfigureApplicationServices()
-    .ConfigureApiServices();
+app.MapGet("/recipes",
+    async (IRecipeQueries queries, string? searchTerm, long[]? categoryIds)
+        => await queries.GetByParamsAsync(searchTerm, categoryIds));
 
-builder
-    .Build()
-    .ConfigureApi()
-    .Run();
+app.MapGet("/recipes/{recipeId}",
+    async (IRecipeQueries queries, long recipeId)
+        => await queries.GetByIdAsync(recipeId));
+
+app.MapGet("/categories",
+    async (ICategoryQueries queries)
+        => await queries.GetAllAsync());
+
+app.Run();
