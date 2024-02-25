@@ -1,6 +1,5 @@
 ﻿using Cookbook.Application.Interfaces;
 using Cookbook.Application.Queries;
-using Cookbook.Infrastructure.Repositories;
 
 namespace Cookbook.Tests;
 
@@ -10,7 +9,7 @@ public class GetByParams
 
     public GetByParams()
     {
-        queries = new RecipeQueries(new RecipeRepository(new TestDatabase()));
+        queries = new RecipeQueries(new TestDatabase());
     }
 
     [Fact]

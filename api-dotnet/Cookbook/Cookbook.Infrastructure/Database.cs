@@ -1,6 +1,7 @@
 using System.Data;
 using System.Text.Json;
 using Cookbook.Domain.Entities;
+using Cookbook.Domain.Interfaces;
 
 namespace Cookbook.Infrastructure;
 

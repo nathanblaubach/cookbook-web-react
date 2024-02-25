@@ -1,14 +1,15 @@
 using Cookbook.Application.Interfaces;
 using Cookbook.Domain.Entities;
+using Cookbook.Domain.Exceptions;
 using Cookbook.Domain.Interfaces;
 
 namespace Cookbook.Application.Queries;
 
-public class RecipeQueries(IRecipeRepository recipeRepository) : IRecipeQueries
+public class RecipeQueries(IDatabase database) : IRecipeQueries
 {
     public async Task<IEnumerable<Recipe>> GetByParamsAsync(string? searchTerm, IEnumerable<long>? categoryIds)
     {
-        var recipes = (await recipeRepository.GetAllAsync()).AsQueryable();
+        var recipes = database.Recipes.AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(searchTerm))
         {
@@ -24,5 +25,5 @@ public class RecipeQueries(IRecipeRepository recipeRepository) : IRecipeQueries
     }
 
     public async Task<Recipe> GetByIdAsync(long recipeId)
-        => await recipeRepository.GetByIdAsync(recipeId);
+        => database.Recipes.SingleOrDefault(recipe => recipe.Id == recipeId) ?? throw new NotFoundException();
 }

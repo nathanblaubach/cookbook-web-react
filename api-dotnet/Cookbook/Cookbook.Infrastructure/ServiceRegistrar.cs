@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using Cookbook.Domain.Interfaces;
-using Cookbook.Infrastructure.Repositories;
+using Cookbook.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Cookbook.Infrastructure;
@@ -9,7 +9,5 @@ namespace Cookbook.Infrastructure;
 public static class ServiceRegistrar
 {
     public static IServiceCollection ConfigureInfrastructureServices(this IServiceCollection services) => services
-        .AddSingleton<IDatabase, Database>()
-        .AddSingleton<ICategoryRepository, CategoryRepository>()
-        .AddSingleton<IRecipeRepository, RecipeRepository>();
+        .AddSingleton<IDatabase, Database>();
 }

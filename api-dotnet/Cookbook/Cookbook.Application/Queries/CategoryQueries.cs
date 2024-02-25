@@ -4,8 +4,8 @@ using Cookbook.Domain.Interfaces;
 
 namespace Cookbook.Application.Queries;
 
-public class CategoryQueries(ICategoryRepository categoryRepository) : ICategoryQueries
+public class CategoryQueries(IDatabase database) : ICategoryQueries
 {
     public async Task<IEnumerable<Category>> GetAllAsync()
-        => await categoryRepository.GetAllAsync();
+        => database.Categories;
 }
