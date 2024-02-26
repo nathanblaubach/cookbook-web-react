@@ -7,7 +7,7 @@ app.MapGet("/recipes",
     async (IRecipeQueries queries, string? searchTerm, long[]? categoryIds)
         => await queries.GetByParamsAsync(searchTerm, categoryIds));
 
-app.MapGet("/recipes/{recipeId}",
+app.MapGet("/recipes/{recipeId:long}",
     async (IRecipeQueries queries, long recipeId)
         => await queries.GetByIdAsync(recipeId));
 
