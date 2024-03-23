@@ -1,11 +1,25 @@
-using System.ComponentModel.DataAnnotations;
+﻿using Cookbook.Application;
 using Cookbook.Domain.Exceptions;
+using Cookbook.Infrastructure;
 using Hellang.Middleware.ProblemDetails;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cookbook.Api;
 
-public static class ServiceRegistrar
+public static class ApplicationConfiguration
 {
+    public static WebApplication BuildCookbook(this WebApplicationBuilder builder)
+    {
+        builder.Services
+            .ConfigureInfrastructureServices()
+            .ConfigureApplicationServices()
+            .ConfigureApiServices();
+
+        return builder
+            .Build()
+            .ConfigureApiApplication();
+    }
+
     public static IServiceCollection ConfigureApiServices(this IServiceCollection services)
     {
         services.AddMvc();

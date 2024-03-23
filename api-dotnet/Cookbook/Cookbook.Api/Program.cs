@@ -1,7 +1,7 @@
 using Cookbook.Api;
 using Cookbook.Application.Interfaces;
 
-var app = WebApplication.CreateBuilder(args).BuildCookbookApiApplication();
+var app = ApplicationConfiguration.BuildCookbook(WebApplication.CreateBuilder(args));
 
 app.MapGet("/recipes",
     async (IRecipeQueries queries, string? searchTerm, long[]? categoryIds)
