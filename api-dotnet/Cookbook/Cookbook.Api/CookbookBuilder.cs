@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cookbook.Api;
 
-public static class ApplicationConfiguration
+public static class CookbookBuilder
 {
-    public static WebApplication BuildCookbook(this WebApplicationBuilder builder)
+    public static WebApplication Build(this WebApplicationBuilder builder)
     {
         builder.Services
             .ConfigureInfrastructureServices()
