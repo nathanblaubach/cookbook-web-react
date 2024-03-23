@@ -1,5 +1,5 @@
 using Cookbook.Api;
-using Cookbook.Application.Interfaces;
+using Cookbook.Domain.Interfaces;
 
 var app = CookbookBuilder.Build(WebApplication.CreateBuilder(args));
 

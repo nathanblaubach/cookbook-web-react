@@ -1,4 +1,4 @@
-﻿using Cookbook.Application.Interfaces;
+﻿using Cookbook.Domain.Interfaces;
 using Cookbook.Application.Queries;
 using Microsoft.Extensions.DependencyInjection;
 

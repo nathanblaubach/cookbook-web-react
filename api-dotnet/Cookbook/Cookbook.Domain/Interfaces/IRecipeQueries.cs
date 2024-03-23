@@ -1,6 +1,6 @@
 ﻿using Cookbook.Domain.Entities;
 
-namespace Cookbook.Application.Interfaces;
+namespace Cookbook.Domain.Interfaces;
 
 public interface IRecipeQueries
 {

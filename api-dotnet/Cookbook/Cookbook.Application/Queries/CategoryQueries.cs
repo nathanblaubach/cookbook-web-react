@@ -1,4 +1,3 @@
-using Cookbook.Application.Interfaces;
 using Cookbook.Domain.Entities;
 using Cookbook.Domain.Interfaces;
 
