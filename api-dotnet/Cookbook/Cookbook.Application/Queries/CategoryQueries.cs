@@ -6,5 +6,5 @@ namespace Cookbook.Application.Queries;
 public class CategoryQueries(IDatabase database) : ICategoryQueries
 {
     public async Task<IEnumerable<Category>> GetAllAsync()
-        => database.Categories;
+        => await Task.FromResult(database.Categories);
 }

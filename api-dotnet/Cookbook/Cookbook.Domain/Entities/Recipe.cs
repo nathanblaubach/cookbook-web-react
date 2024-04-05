@@ -14,28 +14,37 @@ public class Recipe
 
     /// <summary>
     /// Determines whether the Name or Ingredients of the recipe contain a given search term
+    /// and the CategoryId of the recipe is in a given selection
     /// </summary>
-    /// <remarks>
-    /// Case Insensitive
-    /// </remarks>
+    /// <remarks>Search term is Case Insensitive</remarks>
+    /// <param name="searchTerm">The term to match</param>
+    /// <param name="categoryIds">The categories to match</param>
+    /// <returns>True if matches or term is empty, false otherwise</returns>
+    public bool MatchesSearchTermAndCategories(string? searchTerm, IEnumerable<long>? categoryIds)
+    {
+        return MatchesSearchTerm(searchTerm)
+            && MatchesCategoryList(categoryIds);
+    }
+
+    /// <summary>
+    /// Determines whether the Name or Ingredients of the recipe contain a given search term
+    /// </summary>
+    /// <remarks>Case Insensitive</remarks>
     /// <param name="searchTerm">The term to match</param>
     /// <returns>True if matches or term is empty, false otherwise</returns>
-    public bool MatchesSearchTerm(string searchTerm)
+    public bool MatchesSearchTerm(string? searchTerm)
     {
-        ArgumentNullException.ThrowIfNull(searchTerm);
-        var lowercaseSearchString = searchTerm.ToLowerInvariant();
-        return string.IsNullOrWhiteSpace(lowercaseSearchString)
-            || Name.ToLowerInvariant().Contains(lowercaseSearchString)
-            || Ingredients.Any(ingredient => ingredient.ToLowerInvariant().Contains(lowercaseSearchString));
+        return string.IsNullOrWhiteSpace(searchTerm)
+            || Name.Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase)
+            || Ingredients.Any(ingredient => ingredient.Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase));
     }
 
     /// <summary>
     /// Determines whether the CategoryId of the recipe is in a given selection
     /// </summary>
-    /// <remarks>Case Insensitive</remarks>
-    /// <param name="searchTerm">The term to match</param>
+    /// <param name="categoryIds">The categories to match</param>
     /// <returns>True if matches or list is empty, false otherwise</returns>
-    public bool MatchesCategoryList(IEnumerable<long> categoryIds)
+    public bool MatchesCategoryList(IEnumerable<long>? categoryIds)
     {
         var categoryIdList = categoryIds?.ToList();
         return categoryIdList is null

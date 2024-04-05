@@ -4,17 +4,8 @@ namespace Cookbook.Tests;
 
 public class MatchesSearchTermTests
 {
-    [Fact]
-    public void ThrowsArgumentNullException_WhenSearchTermIsNull()
-    {
-        // Arrange
-        var recipe = GetBaseRecipe();
-
-        // Act and Assert
-        Assert.Throws<ArgumentNullException>(() => recipe.MatchesSearchTerm(null!));
-    }
-
     [Theory]
+    [InlineData(null)]
     [InlineData("")]
     [InlineData("  ")]
     [InlineData(" \n  ")]
@@ -30,12 +21,45 @@ public class MatchesSearchTermTests
         Assert.True(matched);
     }
 
+    [Theory]
+    [InlineData("ipe Na")]
+    [InlineData("ipe na")]
+    [InlineData("gredient 1")]
+    [InlineData("ingred")]
+    public void ReturnsMatched_WhenSearchTermIsInName(string searchTerm)
+    {
+        // Arrange
+        var recipe = GetBaseRecipe();
+
+        // Act
+        var matched = recipe.MatchesSearchTerm(searchTerm);
+
+        // Assert
+        Assert.True(matched);
+    }
+
+    [Theory]
+    [InlineData("struc")]
+    [InlineData("chocolate")]
+    [InlineData("hello")]
+    public void ReturnsNotMatched_WhenSearchTermIsNotInName(string searchTerm)
+    {
+        // Arrange
+        var recipe = GetBaseRecipe();
+
+        // Act
+        var matched = recipe.MatchesSearchTerm(searchTerm);
+
+        // Assert
+        Assert.False(matched);
+    }
+
     private static Recipe GetBaseRecipe() => new()
     {
         Id = 1234L,
-        Name = "TestRecipe",
-        Ingredients = new List<string>(),
-        Instructions = new List<string>(),
-        CategoryId = 1234L,
+        Name = "Recipe Name",
+        Ingredients = [ "Ingredient 1", "Ingredient 2" ],
+        Instructions = [ "Instruction 1", "Instruction 2" ],
+        CategoryId = 2468L,
     };
 }
