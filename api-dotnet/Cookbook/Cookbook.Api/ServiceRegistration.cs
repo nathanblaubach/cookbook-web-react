@@ -1,9 +1,9 @@
-﻿namespace Cookbook.Api;
-
-using Cookbook.Domain.Exceptions;
+﻿using Cookbook.Domain.Exceptions;
 using Hellang.Middleware.ProblemDetails;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
+[ExcludeFromCodeCoverage]
 public static class ServiceRegistration
 {
     public static IServiceCollection AddApi(this IServiceCollection services)

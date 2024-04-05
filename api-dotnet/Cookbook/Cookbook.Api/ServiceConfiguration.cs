@@ -1,12 +1,8 @@
-﻿using Cookbook.Application;
-using Cookbook.Domain.Exceptions;
-using Cookbook.Infrastructure;
-using Hellang.Middleware.ProblemDetails;
-using System.ComponentModel.DataAnnotations;
+﻿using Hellang.Middleware.ProblemDetails;
+using System.Diagnostics.CodeAnalysis;
 
-namespace Cookbook.Api;
-
-public static class CookbookBuilder
+[ExcludeFromCodeCoverage]
+public static class ServiceConfiguration
 {
     public static WebApplication ConfigureApi(this WebApplication app)
     {

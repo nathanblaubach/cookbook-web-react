@@ -1,4 +1,3 @@
-using Cookbook.Api;
 using Cookbook.Application;
 using Cookbook.Domain.Interfaces;
 using Cookbook.Infrastructure;
