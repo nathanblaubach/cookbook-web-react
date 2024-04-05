@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
 using Cookbook.Domain.Interfaces;
-using Cookbook.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Cookbook.Infrastructure;

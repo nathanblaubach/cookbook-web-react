@@ -1,6 +1,8 @@
 ﻿using Hellang.Middleware.ProblemDetails;
 using System.Diagnostics.CodeAnalysis;
 
+namespace Cookbook.Api;
+
 [ExcludeFromCodeCoverage]
 public static class ServiceConfiguration
 {

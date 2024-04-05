@@ -3,6 +3,8 @@ using Hellang.Middleware.ProblemDetails;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
+namespace Cookbook.Api;
+
 [ExcludeFromCodeCoverage]
 public static class ServiceRegistration
 {
