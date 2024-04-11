@@ -23,6 +23,7 @@ bin/obj/
 
 # Visual Studio Code
 .vscode/
+.mono/
 
 # Tests
 *.xunit.runner.json
