@@ -1,41 +1,34 @@
 ﻿using Cookbook.Domain.Entities;
 
-namespace Cookbook.Tests;
+namespace Cookbook.Tests.Domain.Entities.RecipeTests;
 
 public class MatchesSearchTermTests
 {
+    private static Recipe GetBaseRecipe() => new()
+    {
+        Id = 1234L,
+        Name = "Recipe Name",
+        Ingredients = [ "Ingredient 1", "Ingredient 2" ],
+        Instructions = [ "Instruction 1", "Instruction 2" ],
+        CategoryId = 2468L,
+    };
+
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("  ")]
     [InlineData(" \n  ")]
-    public void ReturnsMatched_WhenSearchTermIsEmptyOrWhitespace(string searchTerm)
-    {
-        // Arrange
-        var recipe = GetBaseRecipe();
-
-        // Act
-        var matched = recipe.MatchesSearchTerm(searchTerm);
-
-        // Assert
-        Assert.True(matched);
-    }
-
-    [Theory]
     [InlineData("ipe Na")]
     [InlineData("ipe na")]
     [InlineData("gredient 1")]
     [InlineData("ingred")]
-    public void ReturnsMatched_WhenSearchTermIsInName(string searchTerm)
+    public void ReturnsMatched_WhenSearchTermIsEmptyOrWhitespaceOrIncludedInRecipeNameOrIngredient(string searchTerm)
     {
         // Arrange
         var recipe = GetBaseRecipe();
 
-        // Act
-        var matched = recipe.MatchesSearchTerm(searchTerm);
-
-        // Assert
-        Assert.True(matched);
+        // Act and Assert
+        Assert.True(recipe.MatchesSearchTerm(searchTerm));
     }
 
     [Theory]
@@ -47,19 +40,7 @@ public class MatchesSearchTermTests
         // Arrange
         var recipe = GetBaseRecipe();
 
-        // Act
-        var matched = recipe.MatchesSearchTerm(searchTerm);
-
-        // Assert
-        Assert.False(matched);
+        // Act and Assert
+        Assert.False(recipe.MatchesSearchTerm(searchTerm));
     }
-
-    private static Recipe GetBaseRecipe() => new()
-    {
-        Id = 1234L,
-        Name = "Recipe Name",
-        Ingredients = [ "Ingredient 1", "Ingredient 2" ],
-        Instructions = [ "Instruction 1", "Instruction 2" ],
-        CategoryId = 2468L,
-    };
 }

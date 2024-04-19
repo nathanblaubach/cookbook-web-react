@@ -1,40 +1,19 @@
 ﻿using Cookbook.Domain.Interfaces;
-using Cookbook.Application.Queries;
 
-namespace Cookbook.Tests;
+namespace Cookbook.Tests.UseCases.Recipes;
 
-public class RecipeQueryTests
+public class RecipeQueryTests 
 {
-    private readonly IRecipeQueries recipeQueries;
-
-    public RecipeQueryTests()
-    {
-        recipeQueries = new RecipeQueries(new TestDatabase());
-    }
+    private readonly IRecipeQueries recipeQueries = CookbookServiceProvider.Get<IRecipeQueries>();
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("  \n ")]
-    public async Task NullCategoriesWithNullOrWhitespaceStringsDoNotLimitResults(string searchTerm)
+    public async Task NullOrEmptyCategoriesAndNullOrWhitespaceStringsDoNotLimitResults(string searchTerm)
     {
-        // Act
-        var results = await recipeQueries.GetByParamsAsync(searchTerm, null);
-
-        // Assert
-        Assert.NotEmpty(results);
-    }
-    
-    [Theory]
-    [InlineData(null)]
-    [InlineData("")]
-    [InlineData("  \n ")]
-    public async Task EmptyCategoriesWithNullOrWhitespaceStringsDoNotLimitResults(string searchTerm)
-    {
-        // Act
-        var results = await recipeQueries.GetByParamsAsync(searchTerm, []);
-
-        // Assert
-        Assert.NotEmpty(results);
+        // Act and Assert
+        Assert.NotEmpty(await recipeQueries.GetByParamsAsync(searchTerm, null));
+        Assert.NotEmpty(await recipeQueries.GetByParamsAsync(searchTerm, []));
     }
 }

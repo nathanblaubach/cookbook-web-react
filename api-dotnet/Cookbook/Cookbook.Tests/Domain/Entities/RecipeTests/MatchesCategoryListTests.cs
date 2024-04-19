@@ -1,48 +1,33 @@
 ﻿using Cookbook.Domain.Entities;
 
-namespace Cookbook.Tests;
+namespace Cookbook.Tests.Domain.Entities.RecipeTests;
 
 public class MatchesCategoryListTests
 {
+    private static Recipe GetBaseRecipe() => new()
+    {
+        Id = 1234L,
+        Name = "Recipe Name",
+        Ingredients = [ "Ingredient 1", "Ingredient 2" ],
+        Instructions = [ "Instruction 1", "Instruction 2" ],
+        CategoryId = 2468L,
+    };
+
     [Fact]
-    public void ReturnsMatched_WhenCategoryListIsNull()
+    public void ReturnsMatched_WhenCategoryListIsNullOrEmptyOrContainsRecipeCategoryId()
     {
         // Arrange
         var recipe = GetBaseRecipe();
 
         // Act
-        var matched = recipe.MatchesCategoryList(null);
+        var whenNull = recipe.MatchesCategoryList(null);
+        var whenEmpty = recipe.MatchesCategoryList([]);
+        var whenContainsRecipeCategoryId = recipe.MatchesCategoryList([123, 342, 545, 2468]);
 
         // Assert
-        Assert.True(matched);
-    }
-
-    [Fact]
-    public void ReturnsMatched_WhenCategoryListIsEmpty()
-    {
-        // Arrange
-        var recipe = GetBaseRecipe();
-
-        // Act
-        var matched = recipe.MatchesCategoryList([]);
-
-        // Assert
-        Assert.True(matched);
-    }
-
-    
-
-    [Fact]
-    public void ReturnsMatched_WhenCategoryListContainsId()
-    {
-        // Arrange
-        var recipe = GetBaseRecipe();
-
-        // Act
-        var matched = recipe.MatchesCategoryList([123, 342, 545, 2468]);
-
-        // Assert
-        Assert.True(matched);
+        Assert.True(whenNull);
+        Assert.True(whenEmpty);
+        Assert.True(whenContainsRecipeCategoryId);
     }
 
     [Fact]
@@ -52,18 +37,9 @@ public class MatchesCategoryListTests
         var recipe = GetBaseRecipe();
 
         // Act
-        var matched = recipe.MatchesCategoryList([123, 342, 545]);
+        var whenDoesNotContainRecipeCategoryId = recipe.MatchesCategoryList([123, 342, 545]);
 
         // Assert
-        Assert.False(matched);
+        Assert.False(whenDoesNotContainRecipeCategoryId);
     }
-
-    private static Recipe GetBaseRecipe() => new()
-    {
-        Id = 1234L,
-        Name = "Recipe Name",
-        Ingredients = [ "Ingredient 1", "Ingredient 2" ],
-        Instructions = [ "Instruction 1", "Instruction 2" ],
-        CategoryId = 2468L,
-    };
 }
