@@ -26,7 +26,7 @@ class RecipeRepository {
   }
 }
 
-export default class DataStore {
+export class DataStore {
 
   categories: Array<Category>;
   recipes: Array<Recipe>;

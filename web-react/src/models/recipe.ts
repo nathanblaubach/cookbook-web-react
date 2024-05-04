@@ -14,14 +14,3 @@ export class Recipe {
         this.instructions = instructions;
     }
 }
-
-export class RecipeCardDetails {
-    public id: number;
-    public name: string;
-    public relevantIngredients: Array<string>;
-    constructor(id: number, name: string, relevantIngredients: Array<string>) {
-        this.id = id;
-        this.name = name;
-        this.relevantIngredients = relevantIngredients;
-    }
-}

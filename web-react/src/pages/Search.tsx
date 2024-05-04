@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Page       from '../components/Page';
-import RecipeCard from '../components/RecipeCard';
-import DataStore  from '../repositories/datastore';
+import { Page } from '../components/Page';
+import { RecipeCard } from '../components/RecipeCard';
+import { DataStore } from '../repositories/datastore';
 import cookbookLogo from '../assets/filter.svg';
-import { Recipe, RecipeCardDetails } from '../models/recipe';
+import { Recipe } from '../models/recipe';
 import { Category } from '../models/category';
 
-export default function Search(): React.JSX.Element {
+export const Search = (): React.JSX.Element => {
   const [dataStore] = useState<DataStore>(new DataStore());
   const [recipes] = useState<Array<Recipe>>(dataStore.getRecipes());
   const [categories] = useState<Array<Category>>(dataStore.getCategories());
@@ -17,7 +17,7 @@ export default function Search(): React.JSX.Element {
   const categoryIsSelected = (categoryId: number): boolean => checkedCategories.length === 0 || checkedCategories.includes(categoryId);
   const containsSearchString = (checkString: string): boolean => checkString.toUpperCase().includes(searchString.toUpperCase());
 
-  function toggleCategorySelected(categoryIdToToggle: number): void {
+  const toggleCategorySelected = (categoryIdToToggle: number): void => {
     if (checkedCategories.includes(categoryIdToToggle)) {
       setCheckedCategories(checkedCategories.filter(categoryId => categoryId !== categoryIdToToggle));
     } else {
@@ -52,7 +52,7 @@ export default function Search(): React.JSX.Element {
         {
           recipes
             .filter(recipe => categoryIsSelected(recipe.category?.id ?? -1) && (containsSearchString(recipe.name) || (searchString.length > 2 && recipe.ingredients.some(ingredient => containsSearchString(ingredient)))))
-            .map(recipe => <RecipeCard key={recipe.id} recipe={new RecipeCardDetails(recipe.id, recipe.name, searchString.length > 2 ? recipe.ingredients.filter(ingredient => containsSearchString(ingredient)) : [])} />)
+            .map(recipe => <RecipeCard key={recipe.id} id={recipe.id} name={recipe.name} relevantIngredients={searchString.length > 2 ? recipe.ingredients.filter(ingredient => containsSearchString(ingredient)) : []} />)
         }
       </div>
     </Page>

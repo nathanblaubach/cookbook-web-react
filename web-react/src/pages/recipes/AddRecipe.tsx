@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
-import Page      from '../../components/Page';
-import DataStore from '../../repositories/datastore';
+import { Page } from '../../components/Page';
+import { DataStore } from '../../repositories/datastore';
 import { 
   Notecard,
   ViewableNotecardRow,
@@ -9,7 +9,7 @@ import {
 } from '../../components/Notecard';
 import { Recipe } from '../../models/recipe';
 
-export default function AddRecipe(): React.JSX.Element {
+export const AddRecipe = (): React.JSX.Element => {
   const [dataStore] = useState<DataStore>(new DataStore());
   const [recipe, setRecipe] = useState<Recipe>({
     id: -1,
@@ -19,19 +19,19 @@ export default function AddRecipe(): React.JSX.Element {
     ingredients: []
   } as Recipe);
 
-  function handleNameChange(event: ChangeEvent<HTMLInputElement>): void {
+  const handleNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
     let tempRecipe = recipe;
     tempRecipe.name = event.target.value;
     setRecipe(tempRecipe);
   }
 
-  function handleCategoryChange(event: ChangeEvent<HTMLSelectElement>): void {
+  const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     let tempRecipe = recipe;
     tempRecipe.category = dataStore.getCategories().find(category => category.id === parseInt(event.target.value));
     setRecipe(tempRecipe);
   }
 
-  function saveRecipe(): void {
+  const saveRecipe = (): void => {
     dataStore.saveRecipe(recipe);
   }
 

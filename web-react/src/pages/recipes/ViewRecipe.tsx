@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'
-import Page      from '../../components/Page';
-import DataStore from '../../repositories/datastore';
+import { Page } from '../../components/Page';
+import { DataStore } from '../../repositories/datastore';
 import {
   Notecard,
   ViewableNotecardRow,
   NotecardRowType
 } from '../../components/Notecard';
 
-export default function ViewRecipe(): React.JSX.Element {
+export const ViewRecipe = (): React.JSX.Element => {
   const [dataStore] = useState<DataStore>(new DataStore());
   const { id } = useParams();
   const recipe = dataStore.getRecipe(parseInt(id!, 10));

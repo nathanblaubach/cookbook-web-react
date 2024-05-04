@@ -32,7 +32,7 @@ const remove = (
   </svg>
 );
 
-interface NotecardProps {
+type NotecardProps = {
   children: React.ReactNode,
   title: string,
   titleEditable: boolean,
@@ -40,27 +40,25 @@ interface NotecardProps {
   onTitleChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function Notecard({ children, title, titleEditable, titlePlaceholder, onTitleChange }: NotecardProps): React.JSX.Element {
-  return (
-    <div className='notecard'>
-      <div className='notecard-row notecard-row-title'>
-        {
-          titleEditable === true
-            ? <input className='notecard-text notecard-text-title' placeholder={titlePlaceholder} value={title} ref={input => input && input.focus()} onChange={onTitleChange}/>
-            : <p className='notecard-text notecard-text-title'>{title}</p>
-        }
-      </div>
-      {children}
+export const Notecard = ({ children, title, titleEditable, titlePlaceholder, onTitleChange }: NotecardProps): React.JSX.Element => (
+  <div className='notecard'>
+    <div className='notecard-row notecard-row-title'>
+      {
+        titleEditable === true
+          ? <input className='notecard-text notecard-text-title' placeholder={titlePlaceholder} value={title} ref={input => input && input.focus()} onChange={onTitleChange}/>
+          : <p className='notecard-text notecard-text-title'>{title}</p>
+      }
     </div>
-  )
-} 
+    {children}
+  </div>
+);
 
 export enum NotecardRowType {
   Heading,
   Normal
 }
 
-function fontWeight(rowType: NotecardRowType): string {
+const fontWeight = (rowType: NotecardRowType): string => {
   switch (rowType) {
     case NotecardRowType.Heading: return 'bold';
     case NotecardRowType.Normal: return 'normal';
@@ -68,42 +66,38 @@ function fontWeight(rowType: NotecardRowType): string {
   }
 }
 
-interface ViewableNotecardRowProps {
+type ViewableNotecardRowProps = {
   text: string,
   textType: NotecardRowType
 }
 
-export function ViewableNotecardRow({ text, textType }: ViewableNotecardRowProps): React.JSX.Element {
-  return (
-    <div className='notecard-row notecard-row-border'>
-      <p className='notecard-text notecard-text-font' style={{ fontWeight: fontWeight(textType) }}>
-        {text}
-      </p>
-    </div>
-  );
-}
+export const ViewableNotecardRow = ({ text, textType }: ViewableNotecardRowProps): React.JSX.Element => (
+  <div className='notecard-row notecard-row-border'>
+    <p className='notecard-text notecard-text-font' style={{ fontWeight: fontWeight(textType) }}>
+      {text}
+    </p>
+  </div>
+);
 
-interface EditableNotecardRowProps {
+type EditableNotecardRowProps = {
   text: string,
   textType: NotecardRowType,
   textPlaceholder: string,
   onTextChange: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function EditableNotecardRow({ text, textType, textPlaceholder, onTextChange }: EditableNotecardRowProps): React.JSX.Element {
-  return (
-    <div className='notecard-row notecard-row-border'>
-      <input 
-        className='notecard-text notecard-text-font'
-        style={{ fontWeight: fontWeight(textType) }}
-        placeholder={textPlaceholder} 
-        value={text}
-        ref={input => input && input.focus()}
-        onChange={onTextChange}
-      />
-    </div>
-  );
-}
+export const EditableNotecardRow = ({ text, textType, textPlaceholder, onTextChange }: EditableNotecardRowProps): React.JSX.Element => (
+  <div className='notecard-row notecard-row-border'>
+    <input 
+      className='notecard-text notecard-text-font'
+      style={{ fontWeight: fontWeight(textType) }}
+      placeholder={textPlaceholder} 
+      value={text}
+      ref={input => input && input.focus()}
+      onChange={onTextChange}
+    />
+  </div>
+);
 
 const keyPressedIs = (event: KeyboardEvent<HTMLInputElement>, value: number): boolean => {
   event = event || window.event;
@@ -114,41 +108,41 @@ const isEnterPress = (event: KeyboardEvent<HTMLInputElement>): boolean => keyPre
 const isUpArrowPress = (event: KeyboardEvent<HTMLInputElement>): boolean => keyPressedIs(event, 38);
 const isDownArrowPress = (event: KeyboardEvent<HTMLInputElement>): boolean => keyPressedIs(event, 40);
 
-interface EditableNotecardSectionParams {
+type EditableNotecardSectionParams = {
   rows: Array<string>,
   placeholder: string
 }
 
-export function EditableNotecardSection({ rows, placeholder }: EditableNotecardSectionParams): React.JSX.Element {
+export const EditableNotecardSection = ({ rows, placeholder }: EditableNotecardSectionParams): React.JSX.Element => {
   const [items, setItems] = useState<Array<string>>(rows);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
-  function moveUp(index: number): void {
+  const moveUp = (index: number): void => {
     if (index > 0) {
       setItems(swapArrayValuesAtIndices(items, index, index - 1));
       setSelectedIndex(index - 1);
     }
   }
   
-  function moveDown(index: number): void {
+  const moveDown = (index: number): void => {
     if (index < items.length - 1) {
       setItems(swapArrayValuesAtIndices(items, index, index + 1));
       setSelectedIndex(index + 1);
     }
   }
 
-  function createAtIndex(index: number, item: string): void {
+  const createAtIndex = (index: number, item: string): void => {
     setItems([...items.slice(0, index), item, ...items.slice(index, items.length)]);
     setSelectedIndex(index);
   }
 
-  function updateAtSelectedIndex(event: ChangeEvent<HTMLInputElement>): void {
+  const updateAtSelectedIndex = (event: ChangeEvent<HTMLInputElement>): void => {
     const allItems = items;
     allItems[selectedIndex] = event.target.value;
     setItems(allItems);
   }
 
-  function deleteAtIndex(index: number): void {
+  const deleteAtIndex = (index: number): void => {
     setItems([...items.slice(0, index), ...items.slice(index + 1, items.length)]);
     if (items.length === 0) {
       createAtIndex(0, '');
@@ -157,7 +151,7 @@ export function EditableNotecardSection({ rows, placeholder }: EditableNotecardS
     }
   }
 
-  function handleKeysAtSelectedIndex(event: KeyboardEvent<HTMLInputElement>): void {
+  const handleKeysAtSelectedIndex = (event: KeyboardEvent<HTMLInputElement>): void =>  {
 
     // Backspace: Delete the currently selected line on if it is empty
     if (isBackspacePress(event) && items[selectedIndex] === '' && selectedIndex > 0){
@@ -186,22 +180,22 @@ export function EditableNotecardSection({ rows, placeholder }: EditableNotecardS
     <React.Fragment>
       {
         items.map((item, index) => 
-        <div key={index} className='notecard-row notecard-row-edit'>
-          <input
-            className='notecard-text notecard-text-edit'
-            placeholder={placeholder}
-            value={item}
-            ref={input => selectedIndex === index && input && input.focus()}
-            onFocus={() => setSelectedIndex(index)}
-            onBlur={() => setSelectedIndex(-1)}
-            onChange={updateAtSelectedIndex}
-            onKeyDown={handleKeysAtSelectedIndex}
-          />
-          <div onClick={() => moveUp(index)}>{up}</div>
-          <div onClick={() => moveDown(index)}>{down}</div>
-          <div onClick={() => deleteAtIndex(index)}>{remove}</div>
-        </div>
-      )
+          <div key={index} className='notecard-row notecard-row-edit'>
+            <input
+              className='notecard-text notecard-text-edit'
+              placeholder={placeholder}
+              value={item}
+              ref={input => selectedIndex === index && input && input.focus()}
+              onFocus={() => setSelectedIndex(index)}
+              onBlur={() => setSelectedIndex(-1)}
+              onChange={updateAtSelectedIndex}
+              onKeyDown={handleKeysAtSelectedIndex}
+            />
+            <div onClick={() => moveUp(index)}>{up}</div>
+            <div onClick={() => moveDown(index)}>{down}</div>
+            <div onClick={() => deleteAtIndex(index)}>{remove}</div>
+          </div>
+        )
       }
     </React.Fragment>
   );
