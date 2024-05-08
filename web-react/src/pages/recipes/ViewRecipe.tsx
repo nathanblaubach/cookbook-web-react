@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page';
-import { DataStore } from '../../repositories/datastore';
+import { CookbookRepository } from '../../data/cookbook-repository';
 import {
   Notecard,
   ViewableNotecardRow,
   NotecardRowType
 } from '../../components/Notecard';
 
-export const ViewRecipe = (): React.JSX.Element => {
-  const [dataStore] = useState<DataStore>(new DataStore());
+type ViewRecipePageProps = {
+  repository: CookbookRepository;
+};
+
+export const ViewRecipe = ({ repository }: ViewRecipePageProps): React.JSX.Element => {
   const { id } = useParams();
-  const recipe = dataStore.getRecipe(parseInt(id!, 10));
+  const recipe = repository.getRecipe(parseInt(id!, 10));
   window.scrollTo(0, 0);
   return (
     <Page>

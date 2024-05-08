@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Page } from '../components/Page';
 import { RecipeCard } from '../components/RecipeCard';
-import { DataStore } from '../repositories/datastore';
+import { CookbookRepository, Recipe, Category } from '../data/cookbook-repository';
 import cookbookLogo from '../assets/filter.svg';
-import { Recipe } from '../models/recipe';
-import { Category } from '../models/category';
 
-export const Search = (): React.JSX.Element => {
-  const [dataStore] = useState<DataStore>(new DataStore());
-  const [recipes] = useState<Array<Recipe>>(dataStore.getRecipes());
-  const [categories] = useState<Array<Category>>(dataStore.getCategories());
+type SearchPageProps = {
+  repository: CookbookRepository;
+};
+
+export const Search = ({ repository }: SearchPageProps): React.JSX.Element => {
+  const [recipes] = useState<Array<Recipe>>(repository.getRecipes());
+  const [categories] = useState<Array<Category>>(repository.getCategories());
   const [checkedCategories, setCheckedCategories] = useState<Array<number>>([]);
   const [searchString, setSearchString] = useState<string>('');
   const [showCategories, setShowCategories] = useState<boolean>(false);

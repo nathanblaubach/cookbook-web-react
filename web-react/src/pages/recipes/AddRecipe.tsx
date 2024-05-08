@@ -1,23 +1,27 @@
 import React, { useState, ChangeEvent } from 'react';
 import { Page } from '../../components/Page';
-import { DataStore } from '../../repositories/datastore';
+import { CookbookRepository, Recipe } from '../../data/cookbook-repository';
 import { 
   Notecard,
   ViewableNotecardRow,
   EditableNotecardSection,
   NotecardRowType
 } from '../../components/Notecard';
-import { Recipe } from '../../models/recipe';
 
-export const AddRecipe = (): React.JSX.Element => {
-  const [dataStore] = useState<DataStore>(new DataStore());
-  const [recipe, setRecipe] = useState<Recipe>({
+type AddRecipePageProps = {
+  repository: CookbookRepository;
+};
+
+export const AddRecipe = ({ repository }: AddRecipePageProps): React.JSX.Element => {
+  const defaultRecipe: Recipe = {
     id: -1,
     name: '',
     category: undefined,
     instructions: [],
     ingredients: []
-  } as Recipe);
+  };
+
+  const [recipe, setRecipe] = useState<Recipe>(defaultRecipe);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
     let tempRecipe = recipe;
@@ -27,15 +31,15 @@ export const AddRecipe = (): React.JSX.Element => {
 
   const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     let tempRecipe = recipe;
-    tempRecipe.category = dataStore.getCategories().find(category => category.id === parseInt(event.target.value));
+    tempRecipe.category = repository.getCategory(parseInt(event.target.value));
     setRecipe(tempRecipe);
   }
 
   const saveRecipe = (): void => {
-    dataStore.saveRecipe(recipe);
+    repository.saveRecipe(recipe);
   }
 
-  const categoryOptions = dataStore.getCategories().map(category =>
+  const categoryOptions = repository.getCategories().map(category =>
     <option key={category.id} value={category.id}>{category.name}</option>
   );
 
