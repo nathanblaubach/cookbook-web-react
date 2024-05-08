@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Page } from '../components/Page';
-import { RecipeCard } from '../components/RecipeCard';
+import { RecipeCard, RecipeCardProps } from '../components/RecipeCard';
 import { CookbookRepository, Recipe, Category } from '../data/cookbook-repository';
 import cookbookLogo from '../assets/filter.svg';
 
@@ -26,6 +26,14 @@ export const Search = ({ repository }: SearchPageProps): React.JSX.Element => {
     }
   }
 
+  const recipeCards: RecipeCardProps[] = recipes
+    .filter(recipe => categoryIsSelected(recipe.category?.id ?? -1) && (containsSearchString(recipe.name) || (searchString.length > 2 && recipe.ingredients.some(ingredient => containsSearchString(ingredient)))))
+    .map(recipe => ({
+      id: recipe.id,
+      name: recipe.name,
+      relevantIngredients: searchString.length > 2 ? recipe.ingredients.filter(ingredient => containsSearchString(ingredient)) : []
+    }));
+
   return (
     <Page>
       <div className="searchCriteria">
@@ -50,11 +58,7 @@ export const Search = ({ repository }: SearchPageProps): React.JSX.Element => {
       </div>
 
       <div className="cards">
-        {
-          recipes
-            .filter(recipe => categoryIsSelected(recipe.category?.id ?? -1) && (containsSearchString(recipe.name) || (searchString.length > 2 && recipe.ingredients.some(ingredient => containsSearchString(ingredient)))))
-            .map(recipe => <RecipeCard key={recipe.id} id={recipe.id} name={recipe.name} relevantIngredients={searchString.length > 2 ? recipe.ingredients.filter(ingredient => containsSearchString(ingredient)) : []} />)
-        }
+        { recipeCards.map(recipeCard => <RecipeCard key={recipeCard.id} {...recipeCard} />) }
       </div>
     </Page>
   );

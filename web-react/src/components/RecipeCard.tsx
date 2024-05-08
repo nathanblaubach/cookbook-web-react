@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './RecipeCard.css';
 
-type RecipeCardProps = {
+export type RecipeCardProps = {
   id: number;
   name: string;
   relevantIngredients: Array<string>;
