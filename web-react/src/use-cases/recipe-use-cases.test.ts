@@ -1,9 +1,15 @@
 import { describe, it, expect } from 'vitest';
-import { Recipe } from '../data/cookbook-repository';
+import { Category, CookbookRepository, Recipe } from '../data/cookbook-repository';
 import { RecipeUseCases } from './recipe-use-cases';
 
 describe('getFilteredRecipeCards', () => {
-  const recipeUseCases: RecipeUseCases = new RecipeUseCases();
+
+  const categories: Category[] = [
+    { id: 1, name: 'Dessert' },
+    { id: 2, name: 'Beverage' },
+    { id: 3, name: 'Main Course' }
+  ];
+
   const recipes: Recipe[] = [
     {
       id: 1,
@@ -42,13 +48,15 @@ describe('getFilteredRecipeCards', () => {
     }
   ];
 
+  const recipeUseCases: RecipeUseCases = new RecipeUseCases(new CookbookRepository(categories, recipes));
+
   it('should contain all recipes when search term and category ids do not limit them', () => {
     // Arrange
     const searchTerm = '';
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(recipes, searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.length).toBe(recipes.length);
@@ -60,7 +68,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(recipes, searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
 
     // Assert
     const idOfRecipeWithChocolateIngredient = 1;
@@ -74,7 +82,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(recipes, searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
 
     // Assert
     const idOfRecipeWithChocolateIngredient = 1;
@@ -88,7 +96,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(recipes, searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(3);
@@ -100,7 +108,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(recipes, searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(4);
@@ -112,10 +120,37 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(recipes, searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(5);
+  });
+
+  it('should display recipes with categories in the selected list', () => {
+    // Arrange
+    const searchTerm = '';
+    const categoryIds: number[] = [1, 3];
+
+    // Act
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+
+    // Assert
+    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(1);
+    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(2);
+    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(5);
+  });
+
+  it('should not display recipes with categories not in the selected list', () => {
+    // Arrange
+    const searchTerm = '';
+    const categoryIds: number[] = [1, 3];
+
+    // Act
+    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+
+    // Assert
+    expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(3);
+    expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(4);
   });
 
 });

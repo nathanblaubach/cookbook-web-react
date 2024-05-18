@@ -1,38 +1,28 @@
 import React, { useState } from 'react';
 import { Page } from '../components/Page';
 import { RecipeCard, RecipeCardProps } from '../components/RecipeCard';
-import { CookbookRepository, Recipe, Category } from '../data/cookbook-repository';
+import { Category } from '../data/cookbook-repository';
+import { RecipeUseCases } from '../use-cases/recipe-use-cases';
 import cookbookLogo from '../assets/filter.svg';
 
 type SearchPageProps = {
-  repository: CookbookRepository;
+  recipeUseCases: RecipeUseCases;
 };
 
-export const Search = ({ repository }: SearchPageProps): React.JSX.Element => {
-  const [recipes] = useState<Array<Recipe>>(repository.getRecipes());
-  const [categories] = useState<Array<Category>>(repository.getCategories());
+export const Search = ({ recipeUseCases }: SearchPageProps): React.JSX.Element => {
   const [checkedCategories, setCheckedCategories] = useState<Array<number>>([]);
   const [searchString, setSearchString] = useState<string>('');
   const [showCategories, setShowCategories] = useState<boolean>(false);
 
-  const categoryIsSelected = (categoryId: number): boolean => checkedCategories.length === 0 || checkedCategories.includes(categoryId);
-  const containsSearchString = (checkString: string): boolean => checkString.toUpperCase().includes(searchString.toUpperCase());
-
-  const toggleCategorySelected = (categoryIdToToggle: number): void => {
-    if (checkedCategories.includes(categoryIdToToggle)) {
-      setCheckedCategories(checkedCategories.filter(categoryId => categoryId !== categoryIdToToggle));
-    } else {
-      setCheckedCategories(checkedCategories.concat(categoryIdToToggle));
-    }
+  const toggleChecked = (categoryId: number): void => {
+    const newCheckedCategories = checkedCategories.includes(categoryId)
+      ? checkedCategories.filter(categoryId => categoryId !== categoryId)
+      : checkedCategories.concat(categoryId);
+    setCheckedCategories(newCheckedCategories);
   }
 
-  const recipeCards: RecipeCardProps[] = recipes
-    .filter(recipe => categoryIsSelected(recipe.category?.id ?? -1) && (containsSearchString(recipe.name) || (searchString.length > 2 && recipe.ingredients.some(ingredient => containsSearchString(ingredient)))))
-    .map(recipe => ({
-      id: recipe.id,
-      name: recipe.name,
-      relevantIngredients: searchString.length > 2 ? recipe.ingredients.filter(ingredient => containsSearchString(ingredient)) : []
-    }));
+  const categories: Category[] = recipeUseCases.getAllCategories();
+  const recipeCards: RecipeCardProps[] = recipeUseCases.getFilteredRecipeCards(searchString, checkedCategories);
 
   return (
     <Page>
@@ -46,11 +36,11 @@ export const Search = ({ repository }: SearchPageProps): React.JSX.Element => {
                 <div className="category" key={category.id} style={{marginBottom: '.5rem'}}>
                   <input
                     type="checkbox"
-                    id={category.id.toString()} 
-                    checked={checkedCategories.includes(category.id)} 
-                    onChange={() => toggleCategorySelected(category.id)} 
+                    id={category.id.toString()}
+                    checked={checkedCategories.includes(category.id)}
+                    onChange={() => toggleChecked(category.id)}
                   />
-                  <label onClick={() => toggleCategorySelected(category.id)}>{category.name}</label>
+                  <label onClick={() => toggleChecked(category.id)}>{category.name}</label>
                 </div>
               )
           }

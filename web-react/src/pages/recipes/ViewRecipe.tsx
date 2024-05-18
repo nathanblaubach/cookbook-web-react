@@ -1,21 +1,22 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page';
-import { CookbookRepository } from '../../data/cookbook-repository';
 import {
   Notecard,
   ViewableNotecardRow,
   NotecardRowType
 } from '../../components/Notecard';
+import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
 
 type ViewRecipePageProps = {
-  repository: CookbookRepository;
+  recipeUseCases: RecipeUseCases;
 };
 
-export const ViewRecipe = ({ repository }: ViewRecipePageProps): React.JSX.Element => {
-  const { id } = useParams();
-  const recipe = repository.getRecipe(parseInt(id!, 10));
+export const ViewRecipe = ({ recipeUseCases }: ViewRecipePageProps): React.JSX.Element => {
+
+  const recipe = recipeUseCases.getRecipe(parseInt(useParams().id!, 10));
   window.scrollTo(0, 0);
+  
   return (
     <Page>
       <Notecard title={recipe?.name ?? ''} titleEditable={false} titlePlaceholder='' onTitleChange={() => {}}>

@@ -1,22 +1,23 @@
 import React, { useState, ChangeEvent } from 'react';
 import { Page } from '../../components/Page';
-import { CookbookRepository, Recipe } from '../../data/cookbook-repository';
+import { Recipe } from '../../data/cookbook-repository';
 import { 
   Notecard,
   ViewableNotecardRow,
   EditableNotecardSection,
   NotecardRowType
 } from '../../components/Notecard';
+import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
 
 type AddRecipePageProps = {
-  repository: CookbookRepository;
+  recipeUseCases: RecipeUseCases;
 };
 
-export const AddRecipe = ({ repository }: AddRecipePageProps): React.JSX.Element => {
+export const AddRecipe = ({ recipeUseCases }: AddRecipePageProps): React.JSX.Element => {
   const defaultRecipe: Recipe = {
     id: -1,
     name: '',
-    category: undefined,
+    category: { id: -1, name: '' },
     instructions: [],
     ingredients: []
   };
@@ -31,15 +32,11 @@ export const AddRecipe = ({ repository }: AddRecipePageProps): React.JSX.Element
 
   const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>): void => {
     let tempRecipe = recipe;
-    tempRecipe.category = repository.getCategory(parseInt(event.target.value));
+    tempRecipe.category = recipeUseCases.getCategory(parseInt(event.target.value))!;
     setRecipe(tempRecipe);
   }
 
-  const saveRecipe = (): void => {
-    repository.saveRecipe(recipe);
-  }
-
-  const categoryOptions = repository.getCategories().map(category =>
+  const categoryOptions = recipeUseCases.getAllCategories().map(category =>
     <option key={category.id} value={category.id}>{category.name}</option>
   );
 
@@ -54,7 +51,7 @@ export const AddRecipe = ({ repository }: AddRecipePageProps): React.JSX.Element
       <p>Please select a Category:</p>
       <select value={recipe.category?.id} onChange={handleCategoryChange}>{ categoryOptions }</select>
       <br /><br />
-      <button className="button" onClick={() => saveRecipe()}>Save Changes</button>
+      <button className="button" onClick={() => alert("Not Implemented")}>Save Changes</button>
     </Page>
   );
 }

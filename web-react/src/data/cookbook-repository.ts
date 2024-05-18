@@ -21,7 +21,7 @@ type CategoryData = {
 export type Recipe = {
   id: number;
   name: string;
-  category: Category | undefined;
+  category: Category;
   ingredients: Array<string>;
   instructions: Array<string>;
 }
@@ -64,14 +64,6 @@ export class CookbookRepository {
 
   public getRecipes = (): Array<Recipe> => this.recipes;
 
-  public getRecipe = (id: number): Recipe | undefined => this.recipes.find(recipe => recipe.id === id);
-
   public getCategories = (): Array<Category> => this.categories;
-
-  public getCategory = (id: number): Category | undefined => this.categories.find(category => category.id === id);
   
-  public saveRecipe = (recipe: Recipe): void => {
-    console.log(recipe);
-    alert('This is a readonly file');
-  }
 }
