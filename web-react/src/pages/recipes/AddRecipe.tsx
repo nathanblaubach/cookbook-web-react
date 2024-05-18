@@ -1,13 +1,12 @@
 import React, { useState, ChangeEvent } from 'react';
 import { Page } from '../../components/Page';
-import { Recipe } from '../../data/cookbook-repository';
 import { 
   Notecard,
   ViewableNotecardRow,
   EditableNotecardSection,
   NotecardRowType
 } from '../../components/Notecard';
-import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
+import { RecipeUseCases, Recipe } from '../../use-cases/recipe-use-cases';
 
 type AddRecipePageProps = {
   recipeUseCases: RecipeUseCases;

@@ -1,4 +1,5 @@
 import * as jsonFileCookbookData from './data.json';
+import { Category, Recipe } from '../use-cases/recipe-use-cases';
 
 type CookbookData = {
   categories: Array<CategoryData>;
@@ -18,30 +19,15 @@ type CategoryData = {
   name: string;
 }
 
-export type Recipe = {
-  id: number;
-  name: string;
-  category: Category;
-  ingredients: Array<string>;
-  instructions: Array<string>;
-}
-
-export type Category = {
-  id: number;
-  name: string;
-}
-
 export class CookbookRepository {
 
-  private categories: Array<Category>;
-  private recipes: Array<Recipe>;
+  constructor(private categories: Array<Category> = [], private recipes: Array<Recipe> = []) {}
 
-  constructor(categories: Array<Category> = [], recipes: Array<Recipe> = []) {
-    this.categories = categories;
-    this.recipes = recipes;
-  }
+  public getRecipes = (): Array<Recipe> => this.recipes;
 
-  static loadFromJson = (): CookbookRepository => {
+  public getCategories = (): Array<Category> => this.categories;
+
+  public static loadFromJson = (): CookbookRepository => {
     const data: CookbookData = jsonFileCookbookData as CookbookData;
 
     const categories: Category[] = data.categories
@@ -54,16 +40,11 @@ export class CookbookRepository {
       .map(recipe => ({
         id: recipe.id,
         name: recipe.name,
-        category: data.categories.find(category => category.id === recipe.categoryid)!,
+        category: categories.find(category => category.id === recipe.categoryid)!,
         ingredients: recipe.ingredients,
         instructions: recipe.instructions
       })).sort((a: Recipe, b: Recipe) => a.name < b.name ? -1 : 1);
 
     return new CookbookRepository(categories, recipes);
   }
-
-  public getRecipes = (): Array<Recipe> => this.recipes;
-
-  public getCategories = (): Array<Category> => this.categories;
-  
 }

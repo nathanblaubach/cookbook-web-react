@@ -11,8 +11,7 @@ import { About } from './pages/About';
 import { CookbookRepository } from './data/cookbook-repository';
 import { RecipeUseCases } from './use-cases/recipe-use-cases';
 
-const repository: CookbookRepository = CookbookRepository.loadFromJson();
-const recipeUseCases: RecipeUseCases = new RecipeUseCases(repository);
+const recipeUseCases: RecipeUseCases = new RecipeUseCases(CookbookRepository.loadFromJson());
 
 const router = createBrowserRouter([
   { path: "/", element: <Search recipeUseCases={recipeUseCases} /> },
@@ -20,6 +19,6 @@ const router = createBrowserRouter([
   { path: "recipes/add", element: <AddRecipe recipeUseCases={recipeUseCases} /> },
   { path: "recipes/:id", element: <ViewRecipe recipeUseCases={recipeUseCases} /> },
   { path: "about", element: <About /> }
-])
+]);
 
 export const App = () => (<RouterProvider router={router} />);

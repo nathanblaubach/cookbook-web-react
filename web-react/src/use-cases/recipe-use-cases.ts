@@ -1,11 +1,24 @@
 import { RecipeCardProps } from "../components/RecipeCard";
-import { Category, CookbookRepository, Recipe } from "../data/cookbook-repository";
+import { CookbookRepository } from "../data/cookbook-repository";
+
+export type Recipe = {
+  id: number;
+  name: string;
+  category: Category;
+  ingredients: Array<string>;
+  instructions: Array<string>;
+}
+
+export type Category = {
+  id: number;
+  name: string;
+}
 
 export class RecipeUseCases {
 
   constructor(private repository: CookbookRepository) {}
 
-  getFilteredRecipeCards = (searchTerm: string, categoryIds: number[]): RecipeCardProps[] => this.repository.getRecipes().reduce(
+  public getFilteredRecipeCards = (searchTerm: string, categoryIds: number[]): RecipeCardProps[] => this.repository.getRecipes().reduce(
     (recipeCards: RecipeCardProps[], recipe: Recipe) => {
 
       const matchesRecipeName: boolean = this.includesCaseInsensitive(recipe.name, searchTerm);
@@ -31,11 +44,11 @@ export class RecipeUseCases {
     []
   );
 
-  getRecipe = (id: number): Recipe | undefined => this.repository.getRecipes().find(recipe => recipe.id === id);
+  public getRecipe = (id: number): Recipe | undefined => this.repository.getRecipes().find(recipe => recipe.id === id);
 
-  getAllCategories = (): Category[] => this.repository.getCategories();
+  public getAllCategories = (): Category[] => this.repository.getCategories();
 
-  getCategory = (id: number): Category | undefined => this.repository.getCategories().find(category => category.id === id);
+  public getCategory = (id: number): Category | undefined => this.repository.getCategories().find(category => category.id === id);
 
-  includesCaseInsensitive = (checkString: string, searchString: string): boolean => checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
+  private includesCaseInsensitive = (checkString: string, searchString: string): boolean => checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
 }

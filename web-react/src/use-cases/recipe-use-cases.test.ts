@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { Category, CookbookRepository, Recipe } from '../data/cookbook-repository';
-import { RecipeUseCases } from './recipe-use-cases';
+import { CookbookRepository } from '../data/cookbook-repository';
+import { Category, Recipe, RecipeUseCases } from './recipe-use-cases';
 
 describe('getFilteredRecipeCards', () => {
 

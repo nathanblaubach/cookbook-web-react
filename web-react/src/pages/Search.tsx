@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Page } from '../components/Page';
 import { RecipeCard, RecipeCardProps } from '../components/RecipeCard';
-import { Category } from '../data/cookbook-repository';
-import { RecipeUseCases } from '../use-cases/recipe-use-cases';
+import { RecipeUseCases, Category } from '../use-cases/recipe-use-cases';
 import cookbookLogo from '../assets/filter.svg';
 
 type SearchPageProps = {
@@ -10,9 +9,10 @@ type SearchPageProps = {
 };
 
 export const Search = ({ recipeUseCases }: SearchPageProps): React.JSX.Element => {
-  const [checkedCategories, setCheckedCategories] = useState<Array<number>>([]);
+
   const [searchString, setSearchString] = useState<string>('');
   const [showCategories, setShowCategories] = useState<boolean>(false);
+  const [checkedCategories, setCheckedCategories] = useState<Array<number>>([]);
 
   const toggleChecked = (categoryId: number): void => {
     const newCheckedCategories = checkedCategories.includes(categoryId)
@@ -52,4 +52,5 @@ export const Search = ({ recipeUseCases }: SearchPageProps): React.JSX.Element =
       </div>
     </Page>
   );
+
 }
