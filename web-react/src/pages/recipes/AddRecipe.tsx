@@ -1,11 +1,11 @@
 import React, { useState, ChangeEvent } from 'react';
-import { Page } from '../../components/Page';
+import { Page } from '../../components/Page/Page';
 import { 
   Notecard,
   ViewableNotecardRow,
   EditableNotecardSection,
   NotecardRowType
-} from '../../components/Notecard';
+} from '../../components/Notecard/Notecard';
 import { RecipeUseCases, Recipe } from '../../use-cases/recipe-use-cases';
 
 type AddRecipePageProps = {

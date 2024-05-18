@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'
-import { Page } from '../../components/Page';
+import { Page } from '../../components/Page/Page';
 import {
   Notecard,
   ViewableNotecardRow,
   NotecardRowType
-} from '../../components/Notecard';
+} from '../../components/Notecard/Notecard';
 import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
 
 type ViewRecipePageProps = {
@@ -16,7 +16,7 @@ export const ViewRecipe = ({ recipeUseCases }: ViewRecipePageProps): React.JSX.E
 
   const recipe = recipeUseCases.getRecipe(parseInt(useParams().id!, 10));
   window.scrollTo(0, 0);
-  
+
   return (
     <Page>
       <Notecard title={recipe?.name ?? ''} titleEditable={false} titlePlaceholder='' onTitleChange={() => {}}>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Page } from '../components/Page';
-import { RecipeCard, RecipeCardProps } from '../components/RecipeCard';
+import { Page } from '../components/Page/Page';
+import { RecipeCard, RecipeCardProps } from '../components/RecipeCard/RecipeCard';
 import { RecipeUseCases, Category } from '../use-cases/recipe-use-cases';
 import cookbookLogo from '../assets/filter.svg';
 

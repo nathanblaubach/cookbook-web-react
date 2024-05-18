@@ -1,4 +1,4 @@
-import { RecipeCardProps } from "../components/RecipeCard";
+import { RecipeCardProps } from "../components/RecipeCard/RecipeCard";
 import { CookbookRepository } from "../data/cookbook-repository";
 
 export type Recipe = {
