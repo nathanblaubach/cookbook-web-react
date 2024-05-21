@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Cookbook.Infrastructure;
 
 [ExcludeFromCodeCoverage]
-public static class ServiceRegistrar
+public static class ServiceRegistration
 {
     public static IServiceCollection AddExternalFakes(this IServiceCollection services) => services
         .AddSingleton<IDatabase, TestDatabase>();
