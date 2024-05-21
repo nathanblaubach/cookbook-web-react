@@ -1,4 +1,4 @@
-﻿namespace Cookbook.Domain.Exceptions;
+﻿namespace Cookbook.Exceptions;
 
 public class NotFoundException : Exception
 { 

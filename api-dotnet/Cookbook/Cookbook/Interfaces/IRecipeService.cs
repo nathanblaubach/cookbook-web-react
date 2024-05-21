@@ -1,8 +1,8 @@
-﻿using Cookbook.Domain.Entities;
+﻿using Cookbook.Entities;
 
-namespace Cookbook.Domain.Interfaces;
+namespace Cookbook.Interfaces;
 
-public interface IRecipeQueries
+public interface IRecipeService
 {
     Task<IEnumerable<Recipe>> GetByParamsAsync(string? searchTerm, IEnumerable<long>? categoryIds);
     Task<Recipe> GetByIdAsync(long recipeId);

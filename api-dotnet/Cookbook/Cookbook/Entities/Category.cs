@@ -1,4 +1,4 @@
-namespace Cookbook.Domain.Entities;
+namespace Cookbook.Entities;
 
 public class Category
 {

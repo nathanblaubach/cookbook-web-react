@@ -1,10 +1,10 @@
-using Cookbook.Domain.Entities;
-using Cookbook.Domain.Exceptions;
-using Cookbook.Domain.Interfaces;
+using Cookbook.Entities;
+using Cookbook.Exceptions;
+using Cookbook.Interfaces;
 
-namespace Cookbook.Application.Queries;
+namespace Cookbook.Services;
 
-public class RecipeQueries(IDatabase database) : IRecipeQueries
+public class RecipeService(IDatabase database) : IRecipeService
 {
     public async Task<IEnumerable<Recipe>> GetByParamsAsync(string? searchTerm, IEnumerable<long>? categoryIds)
         => await Task.FromResult(database.Recipes.Where(recipe => recipe.MatchesSearchTermAndCategories(searchTerm, categoryIds)));

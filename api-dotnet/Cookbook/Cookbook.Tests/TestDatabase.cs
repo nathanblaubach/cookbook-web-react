@@ -1,5 +1,5 @@
-﻿using Cookbook.Domain.Entities;
-using Cookbook.Domain.Interfaces;
+﻿using Cookbook.Entities;
+using Cookbook.Interfaces;
 
 namespace Cookbook.Tests;
 

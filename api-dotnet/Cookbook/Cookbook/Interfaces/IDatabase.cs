@@ -1,6 +1,6 @@
-﻿using Cookbook.Domain.Entities;
+﻿using Cookbook.Entities;
 
-namespace Cookbook.Domain.Interfaces;
+namespace Cookbook.Interfaces;
 
 public interface IDatabase
 {

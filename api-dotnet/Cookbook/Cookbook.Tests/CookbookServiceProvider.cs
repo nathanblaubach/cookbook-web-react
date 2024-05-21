@@ -1,5 +1,5 @@
-using Cookbook.Application;
-using Cookbook.Domain.Interfaces;
+using Cookbook;
+using Cookbook.Interfaces;
 using Cookbook.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,8 +9,8 @@ public static class CookbookServiceProvider
 {
     private static IServiceProvider provider = new ServiceCollection()
         // Default mappings to match application
-        .AddInfrastructure()
-        .AddApplication()
+        .AddInternalServices()
+        .AddExternalServices()
         // Overwrite mappings to stub external systems
         .AddSingleton<IDatabase, TestDatabase>()
         // Generate the service provider

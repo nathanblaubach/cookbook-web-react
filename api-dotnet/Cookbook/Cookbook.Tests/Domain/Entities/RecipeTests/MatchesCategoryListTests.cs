@@ -1,6 +1,6 @@
-﻿using Cookbook.Domain.Entities;
+﻿using Cookbook.Entities;
 
-namespace Cookbook.Tests.Domain.Entities.RecipeTests;
+namespace Cookbook.Tests.Entities.RecipeTests;
 
 public class MatchesCategoryListTests
 {

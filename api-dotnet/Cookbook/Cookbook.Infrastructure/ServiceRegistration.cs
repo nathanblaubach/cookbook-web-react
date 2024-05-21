@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Cookbook.Domain.Interfaces;
+using Cookbook.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Cookbook.Infrastructure;
@@ -7,6 +7,6 @@ namespace Cookbook.Infrastructure;
 [ExcludeFromCodeCoverage]
 public static class ServiceRegistrar
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services) => services
+    public static IServiceCollection AddExternalServices(this IServiceCollection services) => services
         .AddSingleton<IDatabase, Database>();
 }

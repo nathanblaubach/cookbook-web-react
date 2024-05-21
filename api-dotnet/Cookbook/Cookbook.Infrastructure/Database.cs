@@ -1,7 +1,7 @@
 using System.Data;
 using System.Text.Json;
-using Cookbook.Domain.Entities;
-using Cookbook.Domain.Interfaces;
+using Cookbook.Entities;
+using Cookbook.Interfaces;
 
 namespace Cookbook.Infrastructure;
 
