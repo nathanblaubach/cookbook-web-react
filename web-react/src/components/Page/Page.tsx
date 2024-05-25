@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
-import cookbookLogo from '../assets/logo.svg';
+import cookbookLogo from '../../assets/logo.svg';
 import './Page.css';
 
 type PageProps = {
