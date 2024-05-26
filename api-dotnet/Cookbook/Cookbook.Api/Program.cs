@@ -5,10 +5,6 @@ var app = WebApplication
     .CreateBuilder(args)
     .BuildCookbookApi();
 
-app.MapGet("/exception", async () =>
-{
-    throw new Exception("Sadie!");
-});
 app.MapGet("/recipes", async (IRecipeService service, string? searchTerm, long[]? categoryIds) =>
 {
     return await service.GetByParamsAsync(searchTerm, categoryIds);
