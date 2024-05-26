@@ -8,7 +8,7 @@ namespace Cookbook;
 [ExcludeFromCodeCoverage]
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddInternalServices(this IServiceCollection services)
+    public static IServiceCollection AddServices(this IServiceCollection services)
     {
         return services
             .AddScoped<IRecipeService, RecipeService>()

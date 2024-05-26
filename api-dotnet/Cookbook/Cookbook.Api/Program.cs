@@ -1,29 +1,28 @@
-using Cookbook.Api;
-using Cookbook;
+using System.ComponentModel.DataAnnotations;
 using Cookbook.Interfaces;
-using Cookbook.Infrastructure;
 
-var builder = WebApplication.CreateBuilder(args);
+var app = WebApplication
+    .CreateBuilder(args)
+    .BuildCookbookApi();
 
-builder.Services
-    .AddInternalServices()
-    .AddExternalServices()
-    .AddApiServices();
+app.MapGet("/exception", async () =>
+{
+    throw new Exception("Sadie!");
+});
+app.MapGet("/recipes", async (IRecipeService service, string? searchTerm, long[]? categoryIds) =>
+{
+    return await service.GetByParamsAsync(searchTerm, categoryIds);
+});
 
-var app = builder
-    .Build()
-    .ConfigureApi();
+app.MapGet("/recipes/{recipeId:long}", async (IRecipeService service, long recipeId) => 
+{
+    var recipe = await service.GetByIdAsync(recipeId);
+    return recipe is null ? Results.NotFound() : Results.Ok(recipe);
+});
 
-app.MapGet("/recipes",
-    async (IRecipeService service, string? searchTerm, long[]? categoryIds)
-        => await service.GetByParamsAsync(searchTerm, categoryIds));
-
-app.MapGet("/recipes/{recipeId:long}",
-    async (IRecipeService service, long recipeId)
-        => await service.GetByIdAsync(recipeId));
-
-app.MapGet("/categories",
-    async (ICategoryService service)
-        => await service.GetAllAsync());
+app.MapGet("/categories", async (ICategoryService service) =>
+{
+    return await service.GetAllAsync();
+});
 
 app.Run();
