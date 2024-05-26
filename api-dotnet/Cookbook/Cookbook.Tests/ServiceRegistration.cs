@@ -8,6 +8,6 @@ namespace Cookbook.Infrastructure;
 [ExcludeFromCodeCoverage]
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddExternalFakes(this IServiceCollection services) => services
+    public static IServiceCollection AddInfrastructureFakes(this IServiceCollection services) => services
         .AddSingleton<IDatabase, TestDatabase>();
 }

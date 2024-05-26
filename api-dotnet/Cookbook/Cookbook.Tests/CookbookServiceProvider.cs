@@ -9,7 +9,7 @@ public static class CookbookServiceProvider
 {
     private static IServiceProvider provider = new ServiceCollection()
         .AddServices()
-        .AddExternalFakes()
+        .AddInfrastructureFakes()
         .BuildServiceProvider();
 
     public static T Get<T>() => provider.GetService<T>()!;

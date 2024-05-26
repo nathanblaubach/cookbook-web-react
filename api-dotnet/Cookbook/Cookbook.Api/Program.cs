@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Cookbook.Interfaces;
 
 var app = WebApplication
