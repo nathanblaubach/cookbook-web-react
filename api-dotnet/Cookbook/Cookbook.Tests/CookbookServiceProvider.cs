@@ -1,5 +1,3 @@
-using Cookbook;
-using Cookbook.Interfaces;
 using Cookbook.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
