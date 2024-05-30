@@ -4,19 +4,26 @@ import { describe, expect, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('RecipeCard', () => {
-  const recipe: RecipeCardProps = {
-    id: 1,
-    name: 'Pasta Carbonara',
-    relevantIngredients: ['Pasta', 'Eggs', 'Bacon', 'Parmesan Cheese'],
-  };
 
   it('renders recipe name, ingredients and link correctly', () => {
+
+    // Arrange
+    const recipe: RecipeCardProps = {
+      id: 1,
+      name: 'Pasta Carbonara',
+      relevantIngredients: ['Pasta', 'Eggs', 'Bacon', 'Parmesan Cheese'],
+    };
+  
     // Act
-    render(<BrowserRouter><RecipeCard {...recipe} /></BrowserRouter>);
+    render(
+      <BrowserRouter>
+        <RecipeCard {...recipe} />
+      </BrowserRouter>
+    );
 
     // Assert
-    
-    expect(screen.getByRole('heading').innerHTML).toBe(recipe.name);
+    const headingText = screen.getByRole('heading').innerHTML;
+    expect(headingText).toBe(recipe.name);
 
     const paragraphTexts = screen
       .getAllByRole('paragraph')
@@ -27,6 +34,8 @@ describe('RecipeCard', () => {
       expect(paragraphTexts).toContain(ingredient);
     });
 
-    expect(screen.getByRole('link').innerHTML).toContain(recipe.name);
+    const linkText = screen.getByRole('link').innerHTML;
+    expect(linkText).toContain(recipe.name);
+
   });
 });
