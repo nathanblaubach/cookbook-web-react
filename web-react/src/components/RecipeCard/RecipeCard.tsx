@@ -12,7 +12,7 @@ export const RecipeCard = ({ id, name, relevantIngredients }: RecipeCardProps): 
   <Link className='recipe-card-link' key={id} to={`/recipes/${id}`}>
     <div className='card'>
       <h3>{name}</h3>
-      { relevantIngredients.map((ingredient, i) => <h5 key={i}>{ingredient}</h5>) }
+      { relevantIngredients.map((ingredient, i) => <p key={i}>{ingredient}</p>) }
     </div>
   </Link>
 );
