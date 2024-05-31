@@ -1,5 +1,5 @@
 import * as jsonFileCookbookData from './data.json';
-import { Category, Recipe } from '../use-cases/recipe-use-cases';
+import { Category, Recipe } from '../types/recipe';
 
 type CookbookData = {
   categories: Array<CategoryData>;
@@ -12,20 +12,24 @@ type RecipeData = {
   categoryid: number;
   ingredients: Array<string>;
   instructions: Array<string>;
-}
+};
 
 type CategoryData = {
   id: number;
   name: string;
-}
+};
 
 export class CookbookRepository {
 
   constructor(private categories: Array<Category> = [], private recipes: Array<Recipe> = []) {}
 
-  public getRecipes = (): Array<Recipe> => this.recipes;
+  public getRecipes(): Array<Recipe> {
+    return this.recipes;
+  }
 
-  public getCategories = (): Array<Category> => this.categories;
+  public getCategories(): Array<Category> {
+    return this.categories;
+  }
 
   public static loadFromJson = (): CookbookRepository => {
     const data: CookbookData = jsonFileCookbookData as CookbookData;

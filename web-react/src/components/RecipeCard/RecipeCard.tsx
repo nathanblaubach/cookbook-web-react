@@ -8,11 +8,13 @@ export type RecipeCardProps = {
   relevantIngredients: Array<string>;
 };
 
-export const RecipeCard = ({ id, name, relevantIngredients }: RecipeCardProps): React.JSX.Element => (
-  <Link className='recipe-card-link' key={id} to={`/recipes/${id}`}>
-    <div className='card'>
-      <h3>{name}</h3>
-      { relevantIngredients.map((ingredient, i) => <p key={i}>{ingredient}</p>) }
-    </div>
-  </Link>
-);
+export function RecipeCard({ id, name, relevantIngredients }: RecipeCardProps): React.JSX.Element {
+  return (
+    <Link className='recipe-card-link' key={id} to={`/recipes/${id}`}>
+      <div className='card'>
+        <h3>{name}</h3>
+        { relevantIngredients.map((ingredient, i) => <p key={i}>{ingredient}</p>) }
+      </div>
+    </Link>
+  );
+}

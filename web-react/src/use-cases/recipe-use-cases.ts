@@ -1,54 +1,78 @@
 import { RecipeCardProps } from "../components/RecipeCard/RecipeCard";
 import { CookbookRepository } from "../data/cookbook-repository";
-
-export type Recipe = {
-  id: number;
-  name: string;
-  category: Category;
-  ingredients: Array<string>;
-  instructions: Array<string>;
-}
-
-export type Category = {
-  id: number;
-  name: string;
-}
+import { Category, Recipe } from "../types/recipe";
 
 export class RecipeUseCases {
 
   constructor(private repository: CookbookRepository) {}
 
-  public getFilteredRecipeCards = (searchTerm: string, categoryIds: number[]): RecipeCardProps[] => this.repository.getRecipes().reduce(
-    (recipeCards: RecipeCardProps[], recipe: Recipe) => {
+  private includesCaseInsensitive(checkString: string, searchString: string): boolean {
+    return checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
+  }
 
-      const matchesRecipeName: boolean = this.includesCaseInsensitive(recipe.name, searchTerm);
-      const matchesAnyRecipeIngredient: boolean = recipe.ingredients.some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
-      const matchesRecipeCategory: boolean = categoryIds.length === 0 || categoryIds.includes(recipe.category.id);
+  /**
+   * Returns recipes that match the given search term and category ids.
+   * 
+   * @remarks
+   * This search is case-insensitive.
+   * 
+   * @param searchTerm - The search term to filter recipes and ingredients by
+   * @param categoryIds - The categories to filter recipes by
+   * @returns List of matching RecipeCardProps
+   */
+  public getFilteredRecipeCards(searchTerm: string, categoryIds: number[]): RecipeCardProps[] {
+    return this.repository
+    .getRecipes()
+    .reduce(
+      (recipeCards: RecipeCardProps[], recipe: Recipe) => {
+        const matchesRecipeName: boolean = this.includesCaseInsensitive(recipe.name, searchTerm);
+        const matchesAnyRecipeIngredient: boolean = recipe.ingredients.some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
+        const matchesRecipeCategory: boolean = categoryIds.length === 0 || categoryIds.includes(recipe.category.id);
 
-      if ((matchesRecipeName || matchesAnyRecipeIngredient) && matchesRecipeCategory) {
+        if ((matchesRecipeName || matchesAnyRecipeIngredient) && matchesRecipeCategory) {
 
-        // If the search term is 3 or more characters long, we want to display the ingredients that match the search term
-        const relevantIngredients: string[] = searchTerm.length >= 3
-          ? recipe.ingredients.filter(ingredient => this.includesCaseInsensitive(ingredient, searchTerm))
-          : [];
+          // If the search term is 3 or more characters long, we want to display the ingredients that match the search term
+          const relevantIngredients: string[] = searchTerm.length >= 3
+            ? recipe.ingredients.filter(ingredient => this.includesCaseInsensitive(ingredient, searchTerm))
+            : [];
 
-        recipeCards.push({
-          id: recipe.id,
-          name: recipe.name,
-          relevantIngredients: relevantIngredients
-        });
-      }
+          recipeCards.push({
+            id: recipe.id,
+            name: recipe.name,
+            relevantIngredients: relevantIngredients
+          });
+        }
 
-      return recipeCards;
-    },
-    []
-  );
+        return recipeCards;
+      },
+      []
+    )
+  }
 
-  public getRecipe = (id: number): Recipe | undefined => this.repository.getRecipes().find(recipe => recipe.id === id);
+  /**
+   * Returns the recipe with the given id
+   * @param id The recipe id
+   * @returns Recipe
+   */
+  public getRecipe(id: number): Recipe | undefined {
+    return this.repository.getRecipes().find(recipe => recipe.id === id);
+  }
+  
+  /**
+   * Returns all categories
+   * @returns List of all categories
+   */
+  public getAllCategories(): Category[] {
+    return this.repository.getCategories();
+  }
 
-  public getAllCategories = (): Category[] => this.repository.getCategories();
+  /**
+   * Returns the category with the given id
+   * @param id The category id
+   * @returns Category
+   */
+  public getCategory(id: number): Category | undefined {
+    return this.repository.getCategories().find(category => category.id === id);
+  }
 
-  public getCategory = (id: number): Category | undefined => this.repository.getCategories().find(category => category.id === id);
-
-  private includesCaseInsensitive = (checkString: string, searchString: string): boolean => checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
 }

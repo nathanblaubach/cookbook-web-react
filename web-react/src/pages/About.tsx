@@ -4,9 +4,9 @@ import { Page } from '../components/Page/Page';
 type Link = {
   text: string;
   url: string;
-}
+};
 
-export const About = (): React.JSX.Element => {
+export function About(): React.JSX.Element {
 
   const links: Link[] = [
     { text: 'Source Code on GitHub (MIT)', url: 'https://github.com/nathanblaubach/cookbook' },

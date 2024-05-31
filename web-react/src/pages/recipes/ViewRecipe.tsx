@@ -12,7 +12,7 @@ type ViewRecipePageProps = {
   recipeUseCases: RecipeUseCases;
 };
 
-export const ViewRecipe = ({ recipeUseCases }: ViewRecipePageProps): React.JSX.Element => {
+export function ViewRecipe({ recipeUseCases }: ViewRecipePageProps): React.JSX.Element {
 
   const recipe = recipeUseCases.getRecipe(parseInt(useParams().id!, 10));
   window.scrollTo(0, 0);

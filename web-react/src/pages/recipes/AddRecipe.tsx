@@ -6,13 +6,14 @@ import {
   EditableNotecardSection,
   NotecardRowType
 } from '../../components/Notecard/Notecard';
-import { RecipeUseCases, Recipe } from '../../use-cases/recipe-use-cases';
+import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
+import { Recipe } from '../../types/recipe';
 
 type AddRecipePageProps = {
   recipeUseCases: RecipeUseCases;
 };
 
-export const AddRecipe = ({ recipeUseCases }: AddRecipePageProps): React.JSX.Element => {
+export function AddRecipe({ recipeUseCases }: AddRecipePageProps): React.JSX.Element {
   const defaultRecipe: Recipe = {
     id: -1,
     name: '',
