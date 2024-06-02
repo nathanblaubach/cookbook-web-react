@@ -31,7 +31,7 @@ export class CookbookRepository {
     return this.categories;
   }
 
-  public static loadFromJson = (): CookbookRepository => {
+  public static loadFromJson(): CookbookRepository {
     const data: CookbookData = jsonFileCookbookData as CookbookData;
 
     const categories: Category[] = data.categories

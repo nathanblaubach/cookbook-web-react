@@ -15,7 +15,7 @@ export function Search({ recipeUseCases }: SearchPageProps): React.JSX.Element {
   const [showCategories, setShowCategories] = useState<boolean>(false);
   const [checkedCategories, setCheckedCategories] = useState<Array<number>>([]);
 
-  const toggleChecked = (categoryId: number): void => {
+  function toggleChecked(categoryId: number): void {
     const newCheckedCategories = checkedCategories.includes(categoryId)
       ? checkedCategories.filter(categoryId => categoryId !== categoryId)
       : checkedCategories.concat(categoryId);

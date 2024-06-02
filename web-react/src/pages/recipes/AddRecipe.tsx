@@ -24,13 +24,13 @@ export function AddRecipe({ recipeUseCases }: AddRecipePageProps): React.JSX.Ele
 
   const [recipe, setRecipe] = useState<Recipe>(defaultRecipe);
 
-  const handleNameChange = (event: ChangeEvent<HTMLInputElement>): void => {
+  function handleNameChange(event: ChangeEvent<HTMLInputElement>): void {
     let tempRecipe = recipe;
     tempRecipe.name = event.target.value;
     setRecipe(tempRecipe);
   }
 
-  const handleCategoryChange = (event: ChangeEvent<HTMLSelectElement>): void => {
+  function handleCategoryChange(event: ChangeEvent<HTMLSelectElement>): void {
     let tempRecipe = recipe;
     tempRecipe.category = recipeUseCases.getCategory(parseInt(event.target.value))!;
     setRecipe(tempRecipe);

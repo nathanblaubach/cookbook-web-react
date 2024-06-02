@@ -135,32 +135,32 @@ export function EditableNotecardSection({ rows, placeholder }: EditableNotecardS
   const [items, setItems] = useState<Array<string>>(rows);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
-  const moveUp = (index: number): void => {
+  function moveUp(index: number): void {
     if (index > 0) {
       setItems(swapArrayValuesAtIndices(items, index, index - 1));
       setSelectedIndex(index - 1);
     }
   }
   
-  const moveDown = (index: number): void => {
+  function moveDown(index: number): void {
     if (index < items.length - 1) {
       setItems(swapArrayValuesAtIndices(items, index, index + 1));
       setSelectedIndex(index + 1);
     }
   }
 
-  const createAtIndex = (index: number, item: string): void => {
+  function createAtIndex(index: number, item: string): void {
     setItems([...items.slice(0, index), item, ...items.slice(index, items.length)]);
     setSelectedIndex(index);
   }
 
-  const updateAtSelectedIndex = (event: ChangeEvent<HTMLInputElement>): void => {
+  function updateAtSelectedIndex(event: ChangeEvent<HTMLInputElement>): void {
     const allItems = items;
     allItems[selectedIndex] = event.target.value;
     setItems(allItems);
   }
 
-  const deleteAtIndex = (index: number): void => {
+  function deleteAtIndex(index: number): void {
     setItems([...items.slice(0, index), ...items.slice(index + 1, items.length)]);
     if (items.length === 0) {
       createAtIndex(0, '');
@@ -169,7 +169,7 @@ export function EditableNotecardSection({ rows, placeholder }: EditableNotecardS
     }
   }
 
-  const handleKeysAtSelectedIndex = (event: KeyboardEvent<HTMLInputElement>): void =>  {
+  function handleKeysAtSelectedIndex(event: KeyboardEvent<HTMLInputElement>): void {
     if (isBackspacePress(event) && items[selectedIndex] === '' && selectedIndex > 0){
       event.preventDefault();
       deleteAtIndex(selectedIndex); // Delete the currently selected line
