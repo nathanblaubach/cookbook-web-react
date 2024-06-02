@@ -23,7 +23,7 @@ export function Search({ recipeUseCases }: SearchPageProps): React.JSX.Element {
   }
 
   const categories: Category[] = recipeUseCases.getAllCategories();
-  const recipeCards: RecipeCardProps[] = recipeUseCases.getFilteredRecipeCards(searchString, checkedCategories);
+  const recipeCards: RecipeCardProps[] = recipeUseCases.getRecipeCards(searchString, checkedCategories);
 
   return (
     <Page>

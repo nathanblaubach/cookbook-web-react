@@ -20,33 +20,27 @@ export class RecipeUseCases {
    * @param categoryIds - The categories to filter recipes by
    * @returns List of matching RecipeCardProps
    */
-  public getFilteredRecipeCards(searchTerm: string, categoryIds: number[]): RecipeCardProps[] {
+  public getRecipeCards(searchTerm: string, categoryIds: number[]): RecipeCardProps[] {
+    const ingredientSearchActive: boolean = searchTerm.length >= 3;
     return this.repository
-    .getRecipes()
-    .reduce(
-      (recipeCards: RecipeCardProps[], recipe: Recipe) => {
+      .getRecipes()
+      .filter(recipe => {
         const matchesRecipeName: boolean = this.includesCaseInsensitive(recipe.name, searchTerm);
-        const matchesAnyRecipeIngredient: boolean = recipe.ingredients.some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
-        const matchesRecipeCategory: boolean = categoryIds.length === 0 || categoryIds.includes(recipe.category.id);
+        const matchesAnyRecipeIngredient: boolean = ingredientSearchActive && recipe.ingredients.some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
+        const matchesCategorySelection: boolean = categoryIds.length === 0 || categoryIds.includes(recipe.category.id);
 
-        if ((matchesRecipeName || matchesAnyRecipeIngredient) && matchesRecipeCategory) {
+        return (matchesRecipeName || matchesAnyRecipeIngredient) && matchesCategorySelection;
+      })
+      .map(recipe => {
+        var relevantIngredients = !ingredientSearchActive ? [] : recipe.ingredients
+          .filter(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
 
-          // If the search term is 3 or more characters long, we want to display the ingredients that match the search term
-          const relevantIngredients: string[] = searchTerm.length >= 3
-            ? recipe.ingredients.filter(ingredient => this.includesCaseInsensitive(ingredient, searchTerm))
-            : [];
-
-          recipeCards.push({
-            id: recipe.id,
-            name: recipe.name,
-            relevantIngredients: relevantIngredients
-          });
+        return {
+          id: recipe.id,
+          name: recipe.name,
+          relevantIngredients: relevantIngredients
         }
-
-        return recipeCards;
-      },
-      []
-    )
+      });
   }
 
   /**

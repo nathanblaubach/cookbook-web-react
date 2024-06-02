@@ -50,7 +50,7 @@ const repositoryRecipes: Recipe[] = [
 const testRepository = new CookbookRepository(repositoryCategories, repositoryRecipes);
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(testRepository);
 
-describe('getFilteredRecipeCards', () => {
+describe('getRecipeCards', () => {
 
   it('should contain all recipes when search term and category ids do not limit them', () => {
     // Arrange
@@ -58,7 +58,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.length).toBe(repositoryRecipes.length);
@@ -70,7 +70,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     const idOfRecipeWithChocolateIngredient = 1;
@@ -84,7 +84,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     const idOfRecipeWithChocolateIngredient = 1;
@@ -98,7 +98,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(3);
@@ -110,7 +110,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(4);
@@ -122,7 +122,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(5);
@@ -134,7 +134,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [1, 3];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(1);
@@ -148,7 +148,7 @@ describe('getFilteredRecipeCards', () => {
     const categoryIds: number[] = [1, 3];
 
     // Act
-    const recipeCards = recipeUseCases.getFilteredRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(3);
