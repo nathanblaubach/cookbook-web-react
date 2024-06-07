@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { RecipeCard, RecipeCardProps } from './RecipeCard';
 import { describe, expect, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
@@ -15,17 +15,18 @@ describe('RecipeCard', () => {
     };
   
     // Act
-    render(
+    const component = render(
       <BrowserRouter>
         <RecipeCard {...recipe} />
       </BrowserRouter>
     );
 
     // Assert
-    const headingText = screen.getByRole('heading').innerHTML;
+    const headingText = component.getByRole('heading').innerHTML;
     expect(headingText).toBe(recipe.name);
+    expect(component.getByRole('heading')).toBe
 
-    const paragraphTexts = screen
+    const paragraphTexts = component
       .getAllByRole('paragraph')
       .map(element => element.innerHTML);
     
@@ -34,7 +35,7 @@ describe('RecipeCard', () => {
       expect(paragraphTexts).toContain(ingredient);
     });
 
-    const linkText = screen.getByRole('link').innerHTML;
+    const linkText = component.getByRole('link').innerHTML;
     expect(linkText).toContain(recipe.name);
 
   });
