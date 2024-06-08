@@ -24,7 +24,6 @@ describe('RecipeCard', () => {
     // Assert
     const headingText = component.getByRole('heading').innerHTML;
     expect(headingText).toBe(recipe.name);
-    expect(component.getByRole('heading')).toBe
 
     const paragraphTexts = component
       .getAllByRole('paragraph')
