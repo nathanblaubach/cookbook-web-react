@@ -4,12 +4,11 @@ import { describe, expect, it } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('RecipeCard', () => {
-
   it('renders recipe name, ingredients and link correctly', () => {
 
     // Arrange
     const recipe: RecipeCardProps = {
-      id: 1,
+      id: 736,
       name: 'Pasta Carbonara',
       relevantIngredients: ['Pasta', 'Eggs', 'Bacon', 'Parmesan Cheese'],
     };
@@ -22,20 +21,20 @@ describe('RecipeCard', () => {
     );
 
     // Assert
-    const headingText = component.getByRole('heading').innerHTML;
-    expect(headingText).toBe(recipe.name);
+    const displayedName = component
+      .getByRole('heading')
+      .textContent;
+    expect(displayedName).toBe(recipe.name);
 
-    const paragraphTexts = component
+    const displayedIngredients = component
       .getAllByRole('paragraph')
-      .map(element => element.innerHTML);
+      .map(element => element.textContent);
+    expect(displayedIngredients).toEqual(recipe.relevantIngredients);
     
-    expect(paragraphTexts.length).toEqual(recipe.relevantIngredients.length);
-    recipe.relevantIngredients.forEach((ingredient) => {
-      expect(paragraphTexts).toContain(ingredient);
-    });
-
-    const linkText = component.getByRole('link').innerHTML;
-    expect(linkText).toContain(recipe.name);
+    const displayedUrl = component
+      .getByRole('link')
+      .getAttribute('href');
+    expect(displayedUrl).toContain(recipe.id);
 
   });
 });
