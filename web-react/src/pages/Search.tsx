@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Page } from '../components/Page/Page';
 import { RecipeCard, RecipeCardProps } from '../components/RecipeCard/RecipeCard';
 import { RecipeUseCases } from '../use-cases/recipe-use-cases';
-import { Category } from '../types/recipe';
+import { Category } from '../types';
 import cookbookLogo from '../assets/filter.svg';
 
 type SearchPageProps = {

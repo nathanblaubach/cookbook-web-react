@@ -7,7 +7,7 @@ import {
   NotecardRowType
 } from '../../components/Notecard/Notecard';
 import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
-import { Recipe } from '../../types/recipe';
+import { Recipe } from '../../types';
 
 type AddRecipePageProps = {
   recipeUseCases: RecipeUseCases;

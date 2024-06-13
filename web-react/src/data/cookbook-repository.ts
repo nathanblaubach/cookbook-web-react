@@ -1,5 +1,5 @@
 import * as jsonFileCookbookData from './data.json';
-import { Category, Recipe } from '../types/recipe';
+import { Category, Recipe } from '../types';
 
 type CookbookData = {
   categories: Array<CategoryData>;

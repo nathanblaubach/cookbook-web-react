@@ -1,7 +1,4 @@
-export type Category = {
-  id: number;
-  name: string;
-};
+import { Category } from "./category";
 
 export type Recipe = {
   id: number;

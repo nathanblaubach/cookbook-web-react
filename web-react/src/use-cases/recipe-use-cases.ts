@@ -1,6 +1,6 @@
 import { RecipeCardProps } from "../components/RecipeCard/RecipeCard";
 import { CookbookRepository } from "../data/cookbook-repository";
-import { Category, Recipe } from "../types/recipe";
+import { Category, Recipe } from "../types";
 
 export class RecipeUseCases {
 

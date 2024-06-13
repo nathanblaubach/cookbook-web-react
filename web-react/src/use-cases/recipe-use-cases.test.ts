@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { CookbookRepository } from '../data/cookbook-repository';
 import { RecipeUseCases } from './recipe-use-cases';
-import { Category, Recipe } from '../types/recipe';
+import { Category, Recipe } from '../types';
 
 const repositoryCategories: Category[] = [
   { id: 1, name: 'Dessert' },
