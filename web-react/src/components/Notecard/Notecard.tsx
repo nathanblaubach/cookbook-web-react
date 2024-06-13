@@ -55,28 +55,15 @@ export function Notecard({ children, title, titleEditable, titlePlaceholder, onT
   );
 }
 
-export enum NotecardRowType {
-  Heading,
-  Normal
-}
-
-function fontWeight(rowType: NotecardRowType): string {
-  switch (rowType) {
-    case NotecardRowType.Heading: return 'bold';
-    case NotecardRowType.Normal: return 'normal';
-    default: return '';
-  }
-}
-
 type ViewableNotecardRowProps = {
   text: string,
-  textType: NotecardRowType
+  isBold: boolean
 };
 
-export function ViewableNotecardRow({ text, textType }: ViewableNotecardRowProps): React.JSX.Element { 
+export function ViewableNotecardRow({ text, isBold }: ViewableNotecardRowProps): React.JSX.Element { 
   return (
     <div className='notecard-row notecard-row-border'>
-      <p className='notecard-text notecard-text-font' style={{ fontWeight: fontWeight(textType) }}>
+      <p className='notecard-text notecard-text-font' style={{ fontWeight: isBold ? 'bold' : 'normal' }}>
         {text}
       </p>
     </div>
@@ -85,17 +72,17 @@ export function ViewableNotecardRow({ text, textType }: ViewableNotecardRowProps
 
 type EditableNotecardRowProps = {
   text: string,
-  textType: NotecardRowType,
+  isBold: boolean,
   textPlaceholder: string,
   onTextChange: (event: ChangeEvent<HTMLInputElement>) => void
 };
 
-export function EditableNotecardRow({ text, textType, textPlaceholder, onTextChange }: EditableNotecardRowProps): React.JSX.Element {
+export function EditableNotecardRow({ text, isBold, textPlaceholder, onTextChange }: EditableNotecardRowProps): React.JSX.Element {
   return (
     <div className='notecard-row notecard-row-border'>
       <input 
         className='notecard-text notecard-text-font'
-        style={{ fontWeight: fontWeight(textType) }}
+        style={{ fontWeight: isBold ? 'bold' : 'normal' }}
         placeholder={textPlaceholder} 
         value={text}
         ref={input => input && input.focus()}

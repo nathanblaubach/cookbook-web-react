@@ -1,11 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { Page } from '../../components/Page/Page';
-import { 
-  Notecard,
-  ViewableNotecardRow,
-  EditableNotecardSection,
-  NotecardRowType
-} from '../../components/Notecard/Notecard';
+import { Notecard, ViewableNotecardRow, EditableNotecardSection } from '../../components/Notecard/Notecard';
 import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
 import { Recipe } from '../../types';
 
@@ -43,9 +38,9 @@ export function AddRecipe({ recipeUseCases }: AddRecipePageProps): React.JSX.Ele
   return (
     <Page>
       <Notecard title={recipe.name} titleEditable={true} titlePlaceholder='Enter Recipe Name Here' onTitleChange={handleNameChange}>
-        <ViewableNotecardRow text={"Ingredients:"} textType={NotecardRowType.Heading} />
+        <ViewableNotecardRow text={"Ingredients:"} isBold={true} />
         <EditableNotecardSection rows={recipe.ingredients} placeholder={"1 Cup Sugar..."} />
-        <ViewableNotecardRow text={"Instructions:"} textType={NotecardRowType.Heading}/>
+        <ViewableNotecardRow text={"Instructions:"} isBold={true} />
         <EditableNotecardSection rows={recipe.instructions} placeholder={"Mix the ingredients together..."} />
       </Notecard>
       <p>Please select a Category:</p>
