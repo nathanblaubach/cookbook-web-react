@@ -9,7 +9,6 @@ This cookbook is a simple list of recipes. I am writing the application for my m
 There are a few projects in this repository
 
 - [A React application](https://github.com/nathanblaubach/cookbook/tree/main/web-react/README.md) built with Vite and hosted on firebase
-- [An Angular application](https://github.com/nathanblaubach/cookbook/tree/main/web-angular/README.md) built with the angular cli, but not hosted
 - [A .NET Core API](https://github.com/nathanblaubach/cookbook/tree/main/api-dotnet/README.md) built with the dotnet cli, but not hosted
 
 ## Contributors

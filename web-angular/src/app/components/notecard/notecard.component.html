@@ -1,7 +1,0 @@
-<div class="notecard">
-    <div class="notecard-title-row">
-        <input *ngIf="editable" class="notecard-title-text" placeholder={props.placeholder} [(ngModel)]="title" />
-        <p *ngIf="!editable" class="notecard-title-text">{{ title }}</p>
-    </div>
-    <ng-content></ng-content>
-</div>
