@@ -286,6 +286,26 @@ describe('Recipe Card Grid Search and Filter', () => {
 
 });
 
+describe('Get categories as filter items', () => {
+
+  it('should return filter items for all categories', () => {
+    // Act
+    const filterItems = recipeUseCases.getCategoryFilterItems();
+
+    // Assert
+    expect(filterItems.length).toBe(repositoryCategories.length);
+  });
+
+  it('should return filter items as unchecked', () => {
+    // Act
+    const filterItems = recipeUseCases.getCategoryFilterItems();
+
+    // Assert
+    filterItems.forEach(item => expect(item.checked).toBe(false));
+  });
+
+});
+
 describe('getRecipe', () => {
 
   it('should find recipe when it exists', () => {
