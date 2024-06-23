@@ -1,4 +1,5 @@
-import { RecipeCardProps } from "../components/RecipeCard/RecipeCard";
+import { CardContent } from "../components/CardGrid/CardGrid";
+import { FilterItem } from "../components/Filter/Filter";
 import { CookbookRepository } from "../data/cookbook-repository";
 import { Category, Recipe } from "../types";
 
@@ -10,6 +11,12 @@ export class RecipeUseCases {
     return checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
   }
 
+  private getActiveFilterIds(filters: FilterItem[]): number[] {
+    return filters
+      .filter(filter => filter.checked)
+      .map(filter => filter.id);
+  }
+
   /**
    * Returns recipes that match the given search term and category ids.
    * 
@@ -18,16 +25,17 @@ export class RecipeUseCases {
    * 
    * @param searchTerm - The search term to filter recipes and ingredients by
    * @param categoryIds - The categories to filter recipes by
-   * @returns List of matching RecipeCardProps
+   * @returns CardContent array with the recipe details
    */
-  public getRecipeCards(searchTerm: string, categoryIds: number[]): RecipeCardProps[] {
+  public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
+    const activeCategoryIds: number[] = this.getActiveFilterIds(categoryFilters);
     const ingredientSearchActive: boolean = searchTerm.length >= 3;
     return this.repository
       .getRecipes()
       .filter(recipe => {
         const matchesRecipeName: boolean = this.includesCaseInsensitive(recipe.name, searchTerm);
         const matchesAnyRecipeIngredient: boolean = ingredientSearchActive && recipe.ingredients.some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
-        const matchesCategorySelection: boolean = categoryIds.length === 0 || categoryIds.includes(recipe.category.id);
+        const matchesCategorySelection: boolean = activeCategoryIds.length === 0 || activeCategoryIds.includes(recipe.category.id);
 
         return (matchesRecipeName || matchesAnyRecipeIngredient) && matchesCategorySelection;
       })
@@ -37,10 +45,19 @@ export class RecipeUseCases {
 
         return {
           id: recipe.id,
-          name: recipe.name,
-          relevantIngredients: relevantIngredients
+          link: `/recipes/${recipe.id}`,
+          title: recipe.name,
+          contentLines: relevantIngredients
         }
       });
+  }
+
+  public getCategoryFilterItems(): FilterItem[] {
+    return this.repository.getCategories().map(category => ({
+      id: category.id,
+      name: category.name,
+      checked: false
+    }));
   }
 
   /**

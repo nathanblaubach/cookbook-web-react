@@ -1,5 +1,6 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
+import { LinkData } from '../../types';
 import cookbookLogo from '../../assets/logo.svg';
 import './Page.css';
 
@@ -7,13 +8,8 @@ type PageProps = {
   children: React.ReactNode;
 };
 
-type Link = {
-  text: string;
-  url: string;
-};
-
 export function Page({ children }: PageProps): React.JSX.Element {
-  const links: Link[] = [
+  const links: LinkData[] = [
     { text: 'Search', url: '/recipes' },
     { text: 'About', url: '/about' },
   ];

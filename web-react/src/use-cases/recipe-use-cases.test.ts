@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { CookbookRepository } from '../data/cookbook-repository';
 import { RecipeUseCases } from './recipe-use-cases';
 import { Category, Recipe } from '../types';
+import { FilterItem } from '../components/Filter/Filter';
 
 const repositoryCategories: Category[] = [
   { id: 1, name: 'Dessert' },
@@ -50,15 +51,31 @@ const repositoryRecipes: Recipe[] = [
 const testRepository = new CookbookRepository(repositoryCategories, repositoryRecipes);
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(testRepository);
 
-describe('getRecipeCards', () => {
+describe('Recipe Card Grid Search and Filter', () => {
 
   it('should contain all recipes when search term and category ids do not limit them', () => {
     // Arrange
     const searchTerm = '';
-    const categoryIds: number[] = [];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: false
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: false
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     expect(recipeCards.length).toBe(repositoryRecipes.length);
@@ -67,38 +84,86 @@ describe('getRecipeCards', () => {
   it('should not display ingredients with search term when search term is less than 3 characters long', () => {
     // Arrange
     const searchTerm = 'ch';
-    const categoryIds: number[] = [];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: false
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: false
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     const idOfRecipeWithChocolateIngredient = 1;
     const recipeCard = recipeCards.find((recipeCard) => recipeCard.id === idOfRecipeWithChocolateIngredient)!;
-    expect(recipeCard.relevantIngredients.length).toBe(0);
+    expect(recipeCard.contentLines.length).toBe(0);
   });
 
   it('should display ingredients with search term when search term is 3 or more characters long', () => {
     // Arrange
     const searchTerm = 'cho';
-    const categoryIds: number[] = [];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: false
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: false
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     const idOfRecipeWithChocolateIngredient = 1;
     const recipeCard = recipeCards.find((recipeCard) => recipeCard.id === idOfRecipeWithChocolateIngredient)!;
-    expect(recipeCard.relevantIngredients.length).toBe(1);
+    expect(recipeCard.contentLines.length).toBe(1);
   });
 
   it('should display recipes when the search term matches only the recipe name', () => {
     // Arrange
     const searchTerm = 'chocolate';
-    const categoryIds: number[] = [];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: false
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: false
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(3);
@@ -107,10 +172,26 @@ describe('getRecipeCards', () => {
   it('should display recipes when the search term matches only the recipe ingredients', () => {
     // Arrange
     const searchTerm = 'chocolate';
-    const categoryIds: number[] = [];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: false
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: false
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(4);
@@ -119,10 +200,26 @@ describe('getRecipeCards', () => {
   it('should not display recipes that do not have a name or ingredient that contains the search term', () => {
     // Arrange
     const searchTerm = 'chocolate';
-    const categoryIds: number[] = [];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: false
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: false
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(5);
@@ -131,10 +228,26 @@ describe('getRecipeCards', () => {
   it('should display recipes with categories in the selected list', () => {
     // Arrange
     const searchTerm = '';
-    const categoryIds: number[] = [1, 3];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: true
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: true
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(1);
@@ -145,10 +258,26 @@ describe('getRecipeCards', () => {
   it('should not display recipes with categories not in the selected list', () => {
     // Arrange
     const searchTerm = '';
-    const categoryIds: number[] = [1, 3];
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 1,
+        name: 'Dessert',
+        checked: true
+      },
+      {
+        id: 2,
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 3,
+        name: 'Main Course',
+        checked: true
+      }
+    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryIds);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
 
     // Assert
     expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(3);

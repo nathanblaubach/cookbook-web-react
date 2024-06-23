@@ -1,66 +1,54 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
+import React, { KeyboardEvent, useState } from 'react';
 import './Notecard.css';
-
-function swapArrayValuesAtIndices(arrayValues: Array<string>, leftIndex: number, rightIndex: number): Array<string> {
-  const temp: string = arrayValues[leftIndex];
-  arrayValues[leftIndex] = arrayValues[rightIndex];
-  arrayValues[rightIndex] = temp;
-  return arrayValues;
-}
-
-/**
- * SVG
- */
-const up = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
-    <polyline points="10,15 15,10 20,15" fill="none" />
-    <line x1="15" y1="10" x2="15" y2="20" />
-  </svg>
-);
-
-const down = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
-    <polyline points="10,15 15,20 20,15" fill="none" />
-    <line x1="15" y1="10" x2="15" y2="20" />
-  </svg>
-);
-
-const remove = (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
-    <line x1="10" y1="10" x2="20" y2="20" />
-    <line x1="10" y1="20" x2="20" y2="10" />
-  </svg>
-);
 
 type NotecardProps = {
   children: React.ReactNode,
-  title: string,
-  titleEditable: boolean,
-  titlePlaceholder: string,
-  onTitleChange: (event: ChangeEvent<HTMLInputElement>) => void
+  label: string,
+  text: string,
+  onTextChange?: (event: string) => void | undefined,
 };
 
-export function Notecard({ children, title, titleEditable, titlePlaceholder, onTitleChange }: NotecardProps): React.JSX.Element {
+export function Notecard({ children, label, text }: NotecardProps): React.JSX.Element {
   return (
     <div className='notecard'>
       <div className='notecard-row notecard-row-title'>
-        {
-          titleEditable === true
-            ? <input className='notecard-text notecard-text-title' placeholder={titlePlaceholder} value={title} ref={input => input && input.focus()} onChange={onTitleChange}/>
-            : <p className='notecard-text notecard-text-title'>{title}</p>
-        }
+        <h1 aria-label={label} className='notecard-text notecard-text-title'>{text}</h1>
       </div>
       {children}
     </div>
   );
 }
 
-type ViewableNotecardRowProps = {
+type NotecardFormProps = {
+  children: React.ReactNode,
+  label: string,
   text: string,
-  isBold: boolean
+  onTextChange: (event: string) => void,
 };
 
-export function ViewableNotecardRow({ text, isBold }: ViewableNotecardRowProps): React.JSX.Element { 
+export function NotecardForm({ children, label, text, onTextChange }: NotecardFormProps): React.JSX.Element {
+  return (
+    <div className='notecard'>
+      <div className='notecard-row notecard-row-title'>
+        <input
+          className='notecard-text notecard-text-title'
+          aria-label={label}
+          placeholder={label}
+          value={text}
+          ref={input => input && input.focus()}
+          onInput={(event) => onTextChange(event.currentTarget.value)}/>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+type NotecardRowProps = {
+  text: string,
+  isBold?: boolean,
+};
+
+export function NotecardRow({ text, isBold = false }: NotecardRowProps): React.JSX.Element { 
   return (
     <div className='notecard-row notecard-row-border'>
       <p className='notecard-text notecard-text-font' style={{ fontWeight: isBold ? 'bold' : 'normal' }}>
@@ -70,26 +58,17 @@ export function ViewableNotecardRow({ text, isBold }: ViewableNotecardRowProps):
   );
 }
 
-type EditableNotecardRowProps = {
-  text: string,
-  isBold: boolean,
-  textPlaceholder: string,
-  onTextChange: (event: ChangeEvent<HTMLInputElement>) => void
+type NotecardListFieldParams = {
+  rows: Array<string>,
+  placeholder: string,
+  onRowsChange: (rows: Array<string>) => void,
 };
 
-export function EditableNotecardRow({ text, isBold, textPlaceholder, onTextChange }: EditableNotecardRowProps): React.JSX.Element {
-  return (
-    <div className='notecard-row notecard-row-border'>
-      <input 
-        className='notecard-text notecard-text-font'
-        style={{ fontWeight: isBold ? 'bold' : 'normal' }}
-        placeholder={textPlaceholder} 
-        value={text}
-        ref={input => input && input.focus()}
-        onChange={onTextChange}
-      />
-    </div>
-  );
+function swapArrayValuesAtIndices(arrayValues: Array<string>, leftIndex: number, rightIndex: number): Array<string> {
+  const temp: string = arrayValues[leftIndex];
+  arrayValues[leftIndex] = arrayValues[rightIndex];
+  arrayValues[rightIndex] = temp;
+  return arrayValues;
 }
 
 function keyPressedIs(event: KeyboardEvent<HTMLInputElement>, value: number): boolean {
@@ -113,46 +92,71 @@ function isDownArrowPress(event: KeyboardEvent<HTMLInputElement>): boolean {
   return keyPressedIs(event, 40);
 }
 
-type EditableNotecardSectionParams = {
-  rows: Array<string>,
-  placeholder: string
-};
+const UpArrow = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
+    <polyline points="10,15 15,10 20,15" fill="none" />
+    <line x1="15" y1="10" x2="15" y2="20" />
+  </svg>
+);
 
-export function EditableNotecardSection({ rows, placeholder }: EditableNotecardSectionParams): React.JSX.Element {
+const DownArrow = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
+    <polyline points="10,15 15,20 20,15" fill="none" />
+    <line x1="15" y1="10" x2="15" y2="20" />
+  </svg>
+);
+
+const Remove = (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
+    <line x1="10" y1="10" x2="20" y2="20" />
+    <line x1="10" y1="20" x2="20" y2="10" />
+  </svg>
+);
+
+export function NotecardListField({ rows, placeholder, onRowsChange }: NotecardListFieldParams): React.JSX.Element {
   const [items, setItems] = useState<Array<string>>(rows);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
   function moveUp(index: number): void {
     if (index > 0) {
-      setItems(swapArrayValuesAtIndices(items, index, index - 1));
+      const newItems = swapArrayValuesAtIndices(items, index, index - 1);
       setSelectedIndex(index - 1);
+      setItems(newItems);
+      onRowsChange(newItems);
     }
   }
   
   function moveDown(index: number): void {
     if (index < items.length - 1) {
-      setItems(swapArrayValuesAtIndices(items, index, index + 1));
+      const newItems = swapArrayValuesAtIndices(items, index, index + 1);
       setSelectedIndex(index + 1);
+      setItems(newItems);
+      onRowsChange(newItems);
     }
   }
 
   function createAtIndex(index: number, item: string): void {
-    setItems([...items.slice(0, index), item, ...items.slice(index, items.length)]);
+    const newItems = [...items.slice(0, index), item, ...items.slice(index, items.length)];
     setSelectedIndex(index);
+    setItems(newItems);
+    onRowsChange(newItems);
   }
 
-  function updateAtSelectedIndex(event: ChangeEvent<HTMLInputElement>): void {
-    const allItems = items;
-    allItems[selectedIndex] = event.target.value;
-    setItems(allItems);
+  function updateAtSelectedIndex(value: string): void {
+    const newItems = items;
+    newItems[selectedIndex] = value;
+    setItems(newItems);
+    onRowsChange(newItems);
   }
 
   function deleteAtIndex(index: number): void {
-    setItems([...items.slice(0, index), ...items.slice(index + 1, items.length)]);
+    const newItems = [...items.slice(0, index), ...items.slice(index + 1, items.length)];
+    setItems(newItems);
     if (items.length === 0) {
       createAtIndex(0, '');
     } else if (selectedIndex > 0) {
       setSelectedIndex(selectedIndex - 1);
+      onRowsChange(newItems);
     }
   }
 
@@ -169,27 +173,21 @@ export function EditableNotecardSection({ rows, placeholder }: EditableNotecardS
     }
   }
 
-  return (
-    <React.Fragment>
-      {
-        items.map((item, index) => 
-          <div key={index} className='notecard-row notecard-row-edit'>
-            <input
-              className='notecard-text notecard-text-edit'
-              placeholder={placeholder}
-              value={item}
-              ref={input => selectedIndex === index && input && input.focus()}
-              onFocus={() => setSelectedIndex(index)}
-              onBlur={() => setSelectedIndex(-1)}
-              onChange={updateAtSelectedIndex}
-              onKeyDown={handleKeysAtSelectedIndex}
-            />
-            <div onClick={() => moveUp(index)}>{up}</div>
-            <div onClick={() => moveDown(index)}>{down}</div>
-            <div onClick={() => deleteAtIndex(index)}>{remove}</div>
-          </div>
-        )
-      }
-    </React.Fragment>
-  );
+  return (<> { items.map((item, index) => 
+    <div key={index} className='notecard-row notecard-row-edit'>
+      <input
+        className='notecard-text notecard-text-edit'
+        placeholder={placeholder}
+        value={item}
+        ref={input => selectedIndex === index && input && input.focus()}
+        onFocus={() => setSelectedIndex(index)}
+        onBlur={() => setSelectedIndex(-1)}
+        onInput={(event) => updateAtSelectedIndex(event.currentTarget.value)}
+        onKeyDown={handleKeysAtSelectedIndex}
+      />
+      <div onClick={() => moveUp(index)}>{UpArrow}</div>
+      <div onClick={() => moveDown(index)}>{DownArrow}</div>
+      <div onClick={() => deleteAtIndex(index)}>{Remove}</div>
+    </div>
+  ) } </>);
 }

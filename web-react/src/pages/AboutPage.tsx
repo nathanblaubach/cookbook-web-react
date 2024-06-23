@@ -1,14 +1,10 @@
 import React from 'react';
 import { Page } from '../components/Page/Page';
+import { LinkData } from '../types';
 
-type Link = {
-  text: string;
-  url: string;
-};
+export function AboutPage(): React.JSX.Element {
 
-export function About(): React.JSX.Element {
-
-  const links: Link[] = [
+  const links: LinkData[] = [
     { text: 'Source Code on GitHub (MIT)', url: 'https://github.com/nathanblaubach/cookbook' },
     { text: 'My Website', url: 'https://nathanblaubach.com' },
     { text: 'RealFaviconGenerator', url: 'https://realfavicongenerator.net/' }

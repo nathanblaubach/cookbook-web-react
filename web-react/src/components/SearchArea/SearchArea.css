@@ -1,0 +1,27 @@
+.search-area {
+  background-color: white;
+  margin: 0 0 .75rem 0;
+  border-radius: .5rem;
+  box-shadow: black 0 0 3px;
+
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+}
+
+.search-area img {
+  width: 3.5rem;
+}
+
+.search-bar {
+  border-radius: .5rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  padding: .5rem 0;
+  margin: 0;
+}
+
+.search-bar:focus {
+  outline: none;
+}
