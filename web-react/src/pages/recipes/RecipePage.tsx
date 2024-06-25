@@ -24,9 +24,9 @@ export function RecipePage({ recipeUseCases }: RecipePageProps): React.JSX.Eleme
     <Page>
       <Notecard label={'Recipe Name'} text={recipe.name}>
         <NotecardRow text={'Ingredients:'} isBold={true} />
-        { recipe.ingredients.map(ingredient => <NotecardRow text={ingredient} />) }
+        { recipe.ingredients.map(ingredient => <NotecardRow key={ingredient} text={ingredient} />) }
         <NotecardRow text={'Instructions:'} isBold={true} />
-        { recipe.instructions.map(instruction => <NotecardRow text={instruction} />) }
+        { recipe.instructions.map(instruction => <NotecardRow key={instruction} text={instruction} />) }
       </Notecard>
     </Page>
   );
