@@ -17,7 +17,7 @@ main {
 nav {
     margin: 1.5rem 0;
 }
-nav .link {
+.nav-link {
     margin-left: 1rem;
     color: #00304E;
     text-decoration: none;

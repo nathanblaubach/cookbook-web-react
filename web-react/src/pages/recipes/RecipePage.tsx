@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page/Page';
 import { Notecard, NotecardRow } from '../../components/Notecard/Notecard';
 import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
-import { Recipe } from '../../types/recipe';
+import { Recipe } from '../../types';
 
 type RecipePageProps = {
   recipeUseCases: RecipeUseCases;
@@ -30,4 +30,4 @@ export function RecipePage({ recipeUseCases }: RecipePageProps): React.JSX.Eleme
       </Notecard>
     </Page>
   );
-};
+}

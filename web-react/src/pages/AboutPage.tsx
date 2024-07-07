@@ -28,4 +28,4 @@ export function AboutPage(): React.JSX.Element {
       </ul>
     </Page>
   );
-};
+}

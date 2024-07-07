@@ -36,9 +36,6 @@
 .notecard-text-font {
     font-size: 1rem;
 }
-.notecard-text-font-bold {
-    font-weight: bold;
-}
 
 .notecard-row-edit {
     display: grid;

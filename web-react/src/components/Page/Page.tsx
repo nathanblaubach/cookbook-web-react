@@ -20,7 +20,7 @@ export function Page({ children }: PageProps): React.JSX.Element {
         <img src={cookbookLogo} className="cookbook-logo" alt="McClain Family Cookbook Logo" />
         <nav>
           {
-            links.map((link, i) => <Link key={i} to={link.url} className='link'>{link.text}</Link>)
+            links.map((link, i) => <Link key={i} to={link.url} className='nav-link'>{link.text}</Link>)
           }
         </nav>
       </header>

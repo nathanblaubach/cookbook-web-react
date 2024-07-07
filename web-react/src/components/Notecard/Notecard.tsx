@@ -84,14 +84,6 @@ function isEnterPress(event: KeyboardEvent<HTMLInputElement>): boolean {
   return keyPressedIs(event, 13);
 }
 
-function isUpArrowPress(event: KeyboardEvent<HTMLInputElement>): boolean {
-  return keyPressedIs(event, 38);
-}
-
-function isDownArrowPress(event: KeyboardEvent<HTMLInputElement>): boolean {
-  return keyPressedIs(event, 40);
-}
-
 const UpArrow = (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="100%" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" stroke="#333">
     <polyline points="10,15 15,10 20,15" fill="none" />
@@ -166,10 +158,6 @@ export function NotecardListField({ rows, placeholder, onRowsChange }: NotecardL
       deleteAtIndex(selectedIndex); // Delete the currently selected line
     } else if (isEnterPress(event)) {
       createAtIndex(selectedIndex + 1, ''); // Create a new line below
-    } else if (isUpArrowPress(event) && selectedIndex > 0) {
-      setSelectedIndex(selectedIndex - 1); // Select the row above
-    } else if (isDownArrowPress(event) && selectedIndex < items.length - 1) {
-      setSelectedIndex(selectedIndex + 1); // Select the row below
     }
   }
 

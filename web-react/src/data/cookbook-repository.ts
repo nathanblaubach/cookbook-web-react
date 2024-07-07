@@ -9,7 +9,7 @@ type CookbookData = {
 type RecipeData = {
   id: number;
   name: string;
-  categoryid: number;
+  categoryId: number;
   ingredients: Array<string>;
   instructions: Array<string>;
 };
@@ -44,7 +44,7 @@ export class CookbookRepository {
       .map(recipe => ({
         id: recipe.id,
         name: recipe.name,
-        category: categories.find(category => category.id === recipe.categoryid)!,
+        category: categories.find(category => category.id === recipe.categoryId)!,
         ingredients: recipe.ingredients,
         instructions: recipe.instructions
       })).sort((a: Recipe, b: Recipe) => a.name < b.name ? -1 : 1);

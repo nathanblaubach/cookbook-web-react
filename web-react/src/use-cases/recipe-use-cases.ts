@@ -24,7 +24,7 @@ export class RecipeUseCases {
    * This search is case-insensitive.
    * 
    * @param searchTerm - The search term to filter recipes and ingredients by
-   * @param categoryIds - The categories to filter recipes by
+   * @param categoryFilters - The categories to filter recipes by
    * @returns CardContent array with the recipe details
    */
   public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
@@ -40,7 +40,7 @@ export class RecipeUseCases {
         return (matchesRecipeName || matchesAnyRecipeIngredient) && matchesCategorySelection;
       })
       .map(recipe => {
-        var relevantIngredients = !ingredientSearchActive ? [] : recipe.ingredients
+        const relevantIngredients = !ingredientSearchActive ? [] : recipe.ingredients
           .filter(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
 
         return {
