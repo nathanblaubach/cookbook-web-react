@@ -11,14 +11,8 @@ export class RecipeUseCases {
     return checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
   }
 
-  private getActiveFilterIds(filters: FilterItem[]): number[] {
-    return filters
-      .filter(filter => filter.checked)
-      .map(filter => filter.id);
-  }
-
   /**
-   * Returns recipes that match the given search term and category ids.
+   * Returns recipes that match the given search term and category ids
    * 
    * @remarks
    * This search is case-insensitive.
@@ -28,8 +22,12 @@ export class RecipeUseCases {
    * @returns CardContent array with the recipe details
    */
   public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
-    const activeCategoryIds: number[] = this.getActiveFilterIds(categoryFilters);
     const ingredientSearchActive: boolean = searchTerm.length >= 3;
+
+    const activeCategoryIds: number[] = categoryFilters
+      .filter(filter => filter.checked)
+      .map(filter => filter.id);
+
     return this.repository
       .getRecipes()
       .filter(recipe => {
@@ -52,6 +50,10 @@ export class RecipeUseCases {
       });
   }
 
+  /**
+   * Returns filter categories as filter items for the search area
+   * @returns FilterItem array with the categories
+   */
   public getCategoryFilterItems(): FilterItem[] {
     return this.repository.getCategories().map(category => ({
       id: category.id,
