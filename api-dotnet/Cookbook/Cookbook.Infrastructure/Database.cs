@@ -19,7 +19,7 @@ public class Database : IDatabase
             ?? throw new DataException("Could not read categories from file");
     }
 
-    private const string Directory = "../../../web-angular/src/app/services/";
+    private const string Directory = "../Cookbook.Infrastructure/";
     private static T? Load<T>(string fileName)
     {
         using var streamReader = new StreamReader($"{Directory}{fileName}.json");
