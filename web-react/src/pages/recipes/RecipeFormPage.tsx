@@ -25,7 +25,7 @@ export function RecipeFormPage({ recipeUseCases }: RecipeFormPageProps): React.J
       <p>Please select a Category:</p>
       <select value={category} onChange={(event) => setCategory(parseInt(event.target.value))}>
         { recipeUseCases.getAllCategories().map(category =>
-          <option key={category.id} value={category.id}>{category.name}</option>
+          <option key={category} value={category}>{category}</option>
         ) }
       </select>
       <br /><br />

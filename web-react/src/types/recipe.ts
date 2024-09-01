@@ -1,9 +1,7 @@
-import { Category } from "./category";
-
 export type Recipe = {
   id: number;
   name: string;
-  category: Category;
+  category: string;
   ingredients: Array<string>;
   instructions: Array<string>;
 };

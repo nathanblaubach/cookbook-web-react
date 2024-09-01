@@ -1,54 +1,48 @@
 import { describe, it, expect } from 'vitest';
 import { CookbookRepository } from '../data/cookbook-repository';
 import { RecipeUseCases } from './recipe-use-cases';
-import { Category, Recipe } from '../types';
+import { Recipe } from '../types';
 import { FilterItem } from '../components/Filter/Filter';
-
-const repositoryCategories: Category[] = [
-  { id: 1, name: 'Dessert' },
-  { id: 2, name: 'Beverage' },
-  { id: 3, name: 'Main Course' }
-];
 
 const repositoryRecipes: Recipe[] = [
   {
     id: 1,
     name: 'Chocolate Cake',
-    category: { id: 1, name: 'Dessert' },
+    category: 'Dessert',
     ingredients: ['flour', 'sugar', 'chocolate', 'eggs'],
     instructions: []
   },
   {
     id: 2,
     name: 'Chocolate Chip Cookies',
-    category: { id: 1, name: 'Dessert' },
+    category: 'Dessert',
     ingredients: ['flour', 'sugar', 'chocolate chips', 'eggs'],
     instructions: []
   },
   {
     id: 3,
     name: 'Hot Chocolate',
-    category: { id: 2, name: 'Beverage' },
+    category: 'Beverage',
     ingredients: ['cocoa'],
     instructions: []
   },
   {
     id: 4,
     name: 'Hot Cocoa',
-    category: { id: 2, name: 'Beverage' },
+    category: 'Beverage',
     ingredients: ['chocolate'],
     instructions: []
   },
   {
     id: 5,
     name: 'Chicken Alfredo',
-    category: { id: 3, name: 'Main Course' },
+    category: 'Main Course',
     ingredients: ['chicken', 'pasta', 'alfredo sauce'],
     instructions: []
   }
 ];
 
-const testRepository = new CookbookRepository(repositoryCategories, repositoryRecipes);
+const testRepository = new CookbookRepository(repositoryRecipes);
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(testRepository);
 
 describe('Recipe Card Grid Search and Filter', () => {
@@ -58,17 +52,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = '';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: false
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: false
       }
@@ -86,17 +80,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = 'ch';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: false
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: false
       }
@@ -116,17 +110,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = 'cho';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: false
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: false
       }
@@ -146,17 +140,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = 'chocolate';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: false
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: false
       }
@@ -174,17 +168,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = 'chocolate';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: false
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: false
       }
@@ -202,17 +196,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = 'chocolate';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: false
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: false
       }
@@ -230,17 +224,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = '';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: true
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: true
       }
@@ -260,17 +254,17 @@ describe('Recipe Card Grid Search and Filter', () => {
     const searchTerm = '';
     const categoryFilters: FilterItem[] = [
       {
-        id: 1,
+        id: 'Dessert',
         name: 'Dessert',
         checked: true
       },
       {
-        id: 2,
+        id: 'Beverage',
         name: 'Beverage',
         checked: false
       },
       {
-        id: 3,
+        id: 'Main Course',
         name: 'Main Course',
         checked: true
       }
@@ -293,7 +287,7 @@ describe('Get categories as filter items', () => {
     const filterItems = recipeUseCases.getCategoryFilterItems();
 
     // Assert
-    expect(filterItems.length).toBe(repositoryCategories.length);
+    expect(filterItems.length).toBe(testRepository.getCategories().length);
   });
 
   it('should return filter items as unchecked', () => {
@@ -339,33 +333,7 @@ describe('getAllCategories', () => {
     const categories = recipeUseCases.getAllCategories();
 
     // Assert
-    expect(categories.length).toBe(repositoryCategories.length);
+    expect(categories.length).toBe(testRepository.getCategories().length);
   });
-
-});
-
-describe('getCategory', () => {
-
-  it('should find category when it exists', () => {
-    // Arrange
-    const categoryId = 3;
-
-    // Act
-    const category = recipeUseCases.getCategory(categoryId);
-
-    // Assert
-    expect(category).not.toBeUndefined();
-  });
-
-  it('should not find category when it does not exist', () => {
-    // Arrange
-    const categoryId = -1;
-
-    // Act
-    const category = recipeUseCases.getCategory(categoryId);
-
-    // Assert
-    expect(category).toBeUndefined();
-  });
-
+  
 });

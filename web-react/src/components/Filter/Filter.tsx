@@ -2,7 +2,7 @@ import React from "react";
 import './Filter.css';
 
 export type FilterItem = {
-  id: number,
+  id: string,
   name: string,
   checked: boolean
 };
@@ -15,7 +15,7 @@ export type FilterProps = {
 
 export function Filter({ items, type, onItemsUpdate }: FilterProps): React.JSX.Element {
 
-  function alertParentOfFilterToggle(filterItemId: number): void {
+  function alertParentOfFilterToggle(filterItemId: string): void {
     const filterItemsAfterToggle = items.map(item => {
       return item.id !== filterItemId ? item : {
         ...item,
