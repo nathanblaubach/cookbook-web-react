@@ -2,19 +2,19 @@ import React from 'react';
 import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page/Page';
 import { Notecard, NotecardRow } from '../../components/Notecard/Notecard';
-import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
 import { Recipe } from '../../types';
+import { RecipeRepository } from '../../data/recipe-repository';
 
 type RecipePageProps = {
-  recipeUseCases: RecipeUseCases;
+  recipeRepository: RecipeRepository;
 };
 
-export function RecipePage({ recipeUseCases }: RecipePageProps): React.JSX.Element {
+export function RecipePage({ recipeRepository }: RecipePageProps): React.JSX.Element {
 
   window.scrollTo(0, 0);
 
   const recipeId: number = parseInt(useParams().id!, 10);
-  const recipe: Recipe | undefined = recipeUseCases.getRecipe(recipeId);
+  const recipe: Recipe | undefined = recipeRepository.getRecipeById(recipeId);
 
   return recipe === undefined ? (
     <Page>

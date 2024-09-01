@@ -1,11 +1,10 @@
 import { CardContent } from "../components/CardGrid/CardGrid";
 import { FilterItem } from "../components/Filter/Filter";
-import { CookbookRepository } from "../data/cookbook-repository";
-import { Recipe } from "../types";
+import { RecipeRepository } from "../data/recipe-repository";
 
 export class RecipeUseCases {
 
-  constructor(private repository: CookbookRepository) {}
+  constructor(private repository: RecipeRepository) {}
 
   private includesCaseInsensitive(checkString: string, searchString: string): boolean {
     return checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
@@ -62,15 +61,6 @@ export class RecipeUseCases {
     }));
   }
 
-  /**
-   * Returns the recipe with the given id
-   * @param id The recipe id
-   * @returns Recipe
-   */
-  public getRecipe(id: number): Recipe | undefined {
-    return this.repository.getRecipes().find(recipe => recipe.id === id);
-  }
-  
   /**
    * Returns all categories
    * @returns List of all categories

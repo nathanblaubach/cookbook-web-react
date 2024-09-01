@@ -1,11 +1,15 @@
 import data from './data.json';
 import { Recipe } from '../types';
 
-export class CookbookRepository {
+export class RecipeRepository {
   constructor(private recipes: Array<Recipe> = []) {}
 
   public getRecipes(): Array<Recipe> {
     return this.recipes;
+  }
+
+  public getRecipeById(id: number): Recipe | undefined {
+    return this.recipes.find(recipe => recipe.id === id);
   }
 
   public getCategories(): Array<string> {
@@ -14,11 +18,11 @@ export class CookbookRepository {
       if (!categories.includes(recipe.category)) {
         categories.push(recipe.category);
       }
-    })
+    });
     return categories;
   }
 
-  public static loadFromJson(): CookbookRepository {
-    return new CookbookRepository(data.recipes as Array<Recipe>);
+  public static loadFromJson(): RecipeRepository {
+    return new RecipeRepository(data.recipes as Array<Recipe>);
   }
 }

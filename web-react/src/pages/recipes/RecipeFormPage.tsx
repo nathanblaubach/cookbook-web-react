@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Page } from '../../components/Page/Page';
 import { NotecardForm, NotecardRow, NotecardListField } from '../../components/Notecard/Notecard';
-import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
+import { RecipeRepository } from '../../data/recipe-repository';
 
 type RecipeFormPageProps = {
-  recipeUseCases: RecipeUseCases;
+  recipeRepository: RecipeRepository;
 };
 
-export function RecipeFormPage({ recipeUseCases }: RecipeFormPageProps): React.JSX.Element {
+export function RecipeFormPage({ recipeRepository }: RecipeFormPageProps): React.JSX.Element {
 
   const [name, setName] = useState<string>('');
   const [category, setCategory] = useState<number>(-1);
@@ -24,7 +24,7 @@ export function RecipeFormPage({ recipeUseCases }: RecipeFormPageProps): React.J
       </NotecardForm>
       <p>Please select a Category:</p>
       <select value={category} onChange={(event) => setCategory(parseInt(event.target.value))}>
-        { recipeUseCases.getAllCategories().map(category =>
+        { recipeRepository.getCategories().map(category =>
           <option key={category} value={category}>{category}</option>
         ) }
       </select>

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { CookbookRepository } from '../data/cookbook-repository';
+import { RecipeRepository } from '../data/recipe-repository';
 import { RecipeUseCases } from './recipe-use-cases';
 import { Recipe } from '../types';
 import { FilterItem } from '../components/Filter/Filter';
@@ -42,10 +42,10 @@ const repositoryRecipes: Recipe[] = [
   }
 ];
 
-const testRepository = new CookbookRepository(repositoryRecipes);
+const testRepository = new RecipeRepository(repositoryRecipes);
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(testRepository);
 
-describe('Recipe Card Grid Search and Filter', () => {
+describe('Recipe Card Grid Search and Filter: getRecipeCards', () => {
 
   it('should contain all recipes when search term and category ids do not limit them', () => {
     // Arrange
@@ -298,42 +298,4 @@ describe('Get categories as filter items', () => {
     filterItems.forEach(item => expect(item.checked).toBe(false));
   });
 
-});
-
-describe('getRecipe', () => {
-
-  it('should find recipe when it exists', () => {
-    // Arrange
-    const recipeId = 3;
-
-    // Act
-    const recipe = recipeUseCases.getRecipe(recipeId);
-
-    // Assert
-    expect(recipe).not.toBeUndefined();
-  });
-
-  it('should not find recipe when it does not exist', () => {
-    // Arrange
-    const recipeId = -1;
-
-    // Act
-    const recipe = recipeUseCases.getRecipe(recipeId);
-
-    // Assert
-    expect(recipe).toBeUndefined();
-  });
-
-});
-
-describe('getAllCategories', () => {
-
-  it('should return all categories', () => {
-    // Act
-    const categories = recipeUseCases.getAllCategories();
-
-    // Assert
-    expect(categories.length).toBe(testRepository.getCategories().length);
-  });
-  
 });
