@@ -1,6 +1,5 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
-import { LinkData } from '../../types';
 import cookbookLogo from '../../assets/logo.svg';
 import './Page.css';
 
@@ -9,19 +8,13 @@ type PageProps = {
 };
 
 export function Page({ children }: PageProps): React.JSX.Element {
-  const links: LinkData[] = [
-    { text: 'Search', url: '/recipes' },
-    { text: 'About', url: '/about' },
-  ];
-
   return (
     <React.Fragment>
       <header>
         <img src={cookbookLogo} className="cookbook-logo" alt="McClain Family Cookbook Logo" />
         <nav>
-          {
-            links.map((link, i) => <Link key={i} to={link.url} className='nav-link'>{link.text}</Link>)
-          }
+          <Link to='/recipes' className='nav-link'>Search</Link>
+          <Link to='/about' className='nav-link'>About</Link>
         </nav>
       </header>
       <main>{ children }</main>

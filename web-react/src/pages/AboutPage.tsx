@@ -1,15 +1,7 @@
 import React from 'react';
 import { Page } from '../components/Page/Page';
-import { LinkData } from '../types';
 
 export function AboutPage(): React.JSX.Element {
-
-  const links: LinkData[] = [
-    { text: 'Source Code on GitHub (MIT)', url: 'https://github.com/nathanblaubach/cookbook' },
-    { text: 'My Website', url: 'https://nathanblaubach.com' },
-    { text: 'RealFaviconGenerator', url: 'https://realfavicongenerator.net/' }
-  ];
-
   return (
     <Page>
       <h1>The McClain Family Cookbook</h1>
@@ -24,7 +16,9 @@ export function AboutPage(): React.JSX.Element {
       </p>
       <h2>Development</h2>
       <ul>
-        { links.map(link => <li key={link.url}><a href={link.url}>{link.text}</a></li>) }
+        <li><a href='https://github.com/nathanblaubach/cookbook'>Source Code on GitHub (MIT)</a></li>
+        <li><a href='https://nathanblaubach.com'>My Website</a></li>
+        <li><a href='https://realfavicongenerator.net/'>RealFaviconGenerator</a></li>
       </ul>
     </Page>
   );
