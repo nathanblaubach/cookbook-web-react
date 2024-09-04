@@ -11,7 +11,7 @@ public static class ServiceRegistration
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
         return services
-            .AddScoped<IRecipeService, RecipeService>()
-            .AddScoped<ICategoryService, CategoryService>();
+            .AddScoped<RecipeService>()
+            .AddScoped<CategoryService>();
     }
 }

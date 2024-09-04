@@ -3,7 +3,7 @@ using Cookbook.Interfaces;
 
 namespace Cookbook.Services;
 
-public class RecipeService(IDatabase database) : IRecipeService
+public class RecipeService(IDatabase database)
 {
     public async Task<IEnumerable<Recipe>> GetByParamsAsync(string? searchTerm, IEnumerable<long>? categoryIds)
         => await Task.FromResult(database.Recipes.Where(recipe => recipe.MatchesSearchTermAndCategories(searchTerm, categoryIds)));

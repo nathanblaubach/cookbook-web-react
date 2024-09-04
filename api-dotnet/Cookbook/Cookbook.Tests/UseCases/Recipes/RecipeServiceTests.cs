@@ -1,10 +1,10 @@
-﻿using Cookbook.Interfaces;
+﻿using Cookbook.Services;
 
 namespace Cookbook.Tests.UseCases.Recipes;
 
 public class RecipeServiceTests 
 {
-    private readonly IRecipeService service = CookbookServiceProvider.Get<IRecipeService>();
+    private readonly RecipeService service = CookbookServiceProvider.Get<RecipeService>();
 
     [Theory]
     [InlineData(null)]
