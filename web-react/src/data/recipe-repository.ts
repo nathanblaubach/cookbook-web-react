@@ -1,4 +1,4 @@
-import data from './data.json';
+import data from './recipe-repository.json';
 import { Recipe } from '../types';
 
 export class RecipeRepository {
