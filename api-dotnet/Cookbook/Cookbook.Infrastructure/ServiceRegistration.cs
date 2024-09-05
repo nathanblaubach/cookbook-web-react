@@ -8,5 +8,5 @@ namespace Cookbook.Infrastructure;
 public static class ServiceRegistration
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services) => services
-        .AddSingleton<IDatabase, Database>();
+        .AddScoped<IRecipeRepository, JsonFileRecipeRepository>();
 }

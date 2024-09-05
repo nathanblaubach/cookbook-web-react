@@ -3,13 +3,13 @@ using Cookbook.Interfaces;
 
 namespace Cookbook.Tests;
 
-public class TestDatabase : IDatabase
+public class FakeRecipeService : IRecipeRepository
 {
-    public IEnumerable<Recipe> Recipes => 
+    public IEnumerable<Recipe> GetRecipes() => 
     [
         new Recipe
         { 
-            CategoryId = 0,
+            Category = "Beverage",
             Id = 0,
             Name = "Hot Mulled Cider",
             Ingredients =
@@ -30,6 +30,4 @@ public class TestDatabase : IDatabase
             ]
         }
     ];
-
-    public IEnumerable<Category> Categories => throw new NotImplementedException();
 }

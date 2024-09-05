@@ -8,10 +8,9 @@ namespace Cookbook;
 [ExcludeFromCodeCoverage]
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddServices(this IServiceCollection services)
+    public static IServiceCollection AddCookbookServices(this IServiceCollection services)
     {
         return services
-            .AddScoped<RecipeService>()
-            .AddScoped<CategoryService>();
+            .AddScoped<RecipeService>();
     }
 }

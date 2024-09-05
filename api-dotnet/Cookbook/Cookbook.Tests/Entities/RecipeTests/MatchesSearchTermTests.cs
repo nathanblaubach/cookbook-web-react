@@ -10,7 +10,7 @@ public class MatchesSearchTermTests
         Name = "Recipe Name",
         Ingredients = [ "Ingredient 1", "Ingredient 2" ],
         Instructions = [ "Instruction 1", "Instruction 2" ],
-        CategoryId = 2468L,
+        Category = "Category",
     };
 
     [Theory]

@@ -4,9 +4,9 @@ var app = WebApplication
     .CreateBuilder(args)
     .BuildCookbookApi();
 
-app.MapGet("/recipes", async (RecipeService service, string? searchTerm, long[]? categoryIds) =>
+app.MapGet("/recipes", async (RecipeService service, string? searchTerm, string[]? categories) =>
 {
-    return await service.GetByParamsAsync(searchTerm, categoryIds);
+    return await service.GetByParamsAsync(searchTerm, categories);
 });
 
 app.MapGet("/recipes/{recipeId:long}", async (RecipeService service, long recipeId) => 
@@ -15,7 +15,7 @@ app.MapGet("/recipes/{recipeId:long}", async (RecipeService service, long recipe
     return recipe is null ? Results.NotFound() : Results.Ok(recipe);
 });
 
-app.MapGet("/categories", async (CategoryService service) =>
+app.MapGet("/categories", async (RecipeService service) =>
 {
     return await service.GetAllAsync();
 });

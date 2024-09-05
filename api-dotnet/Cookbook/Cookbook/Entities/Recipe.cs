@@ -10,28 +10,14 @@ public class Recipe
     
     public required IEnumerable<string> Instructions { get; set; }
 
-    public required long CategoryId { get; set; }
+    public required string Category { get; set; }
 
-    /// <summary>
-    /// Determines whether the Name or Ingredients of the recipe contain a given search term
-    /// and the CategoryId of the recipe is in a given selection
-    /// </summary>
-    /// <remarks>Search term is Case Insensitive</remarks>
-    /// <param name="searchTerm">The term to match</param>
-    /// <param name="categoryIds">The categories to match</param>
-    /// <returns>True if matches or term is empty, false otherwise</returns>
-    public bool MatchesSearchTermAndCategories(string? searchTerm, IEnumerable<long>? categoryIds)
+    public bool MatchesSearchTermAndCategories(string? searchTerm, IEnumerable<string>? categories)
     {
         return MatchesSearchTerm(searchTerm)
-            && MatchesCategoryList(categoryIds);
+            && MatchesCategoryList(categories);
     }
 
-    /// <summary>
-    /// Determines whether the Name or Ingredients of the recipe contain a given search term
-    /// </summary>
-    /// <remarks>Case Insensitive</remarks>
-    /// <param name="searchTerm">The term to match</param>
-    /// <returns>True if matches or term is empty, false otherwise</returns>
     public bool MatchesSearchTerm(string? searchTerm)
     {
         return string.IsNullOrWhiteSpace(searchTerm)
@@ -39,16 +25,11 @@ public class Recipe
             || Ingredients.Any(ingredient => ingredient.Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase));
     }
 
-    /// <summary>
-    /// Determines whether the CategoryId of the recipe is in a given selection
-    /// </summary>
-    /// <param name="categoryIds">The categories to match</param>
-    /// <returns>True if matches or list is empty, false otherwise</returns>
-    public bool MatchesCategoryList(IEnumerable<long>? categoryIds)
+    public bool MatchesCategoryList(IEnumerable<string>? categories)
     {
-        var categoryIdList = categoryIds?.ToList();
-        return categoryIdList is null
-            || categoryIdList.Count == 0
-            || categoryIdList.Contains(CategoryId);
+        var categoryList = categories?.ToList();
+        return categoryList is null
+            || categoryList.Count == 0
+            || categoryList.Contains(Category);
     }
 }

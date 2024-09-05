@@ -8,7 +8,7 @@ public static class Configuration
     public static WebApplication BuildCookbookApi(this WebApplicationBuilder builder)
     {
         builder.Services
-            .AddServices()
+            .AddCookbookServices()
             .AddInfrastructure()
             .AddProblemDetails();
 

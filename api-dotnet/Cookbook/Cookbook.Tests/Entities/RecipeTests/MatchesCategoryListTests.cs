@@ -10,7 +10,7 @@ public class MatchesCategoryListTests
         Name = "Recipe Name",
         Ingredients = [ "Ingredient 1", "Ingredient 2" ],
         Instructions = [ "Instruction 1", "Instruction 2" ],
-        CategoryId = 2468L,
+        Category = "Category",
     };
 
     [Fact]
@@ -22,7 +22,7 @@ public class MatchesCategoryListTests
         // Act
         var whenNull = recipe.MatchesCategoryList(null);
         var whenEmpty = recipe.MatchesCategoryList([]);
-        var whenContainsRecipeCategoryId = recipe.MatchesCategoryList([123, 342, 545, 2468]);
+        var whenContainsRecipeCategoryId = recipe.MatchesCategoryList(["Hello", "Goodbye", "Category"]);
 
         // Assert
         Assert.True(whenNull);
@@ -37,7 +37,7 @@ public class MatchesCategoryListTests
         var recipe = GetBaseRecipe();
 
         // Act
-        var whenDoesNotContainRecipeCategoryId = recipe.MatchesCategoryList([123, 342, 545]);
+        var whenDoesNotContainRecipeCategoryId = recipe.MatchesCategoryList(["Hello", "Goodbye"]);
 
         // Assert
         Assert.False(whenDoesNotContainRecipeCategoryId);

@@ -9,5 +9,5 @@ namespace Cookbook.Infrastructure;
 public static class ServiceRegistration
 {
     public static IServiceCollection AddInfrastructureFakes(this IServiceCollection services) => services
-        .AddSingleton<IDatabase, TestDatabase>();
+        .AddSingleton<IRecipeRepository, FakeRecipeService>();
 }
