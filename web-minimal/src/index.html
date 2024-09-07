@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Recipes</title>
+    <link rel="stylesheet" type="text/css" href="styles/page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles/index.css" media="screen" />
+</head>
+
+<body>
+    <header>
+        <img src="./img/logo.svg" class="cookbook-logo" alt="McClain Family Cookbook Logo" />
+        <nav>
+            <a href="index.html" class='nav-link'>Search</a>
+            <a href="about.html" class='nav-link'>About</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Recipes</h1>
+        <div class="search-area">
+            <img src="img/filter.svg" alt="Filter Area Expansion Button" />
+            <input aria-label="Recipe Search Bar" placeholder="Search" type="text" class="search-bar" name="search-bar"
+                id="search-bar" oninput="updateRecipeList()" />
+        </div>
+
+        <ul id="recipe-list"></ul>
+    </main>
+</body>
+
+</html>
+
+<script src="js/browser-utilities.js"></script>
+<script src="js/data.js"></script>
+<script src="js/use-cases.js"></script>
+<script>
+
+    const recipes = getRecipes();
+    recipes.sort((a, b) => a.name.localeCompare(b.name));
+
+    /**
+     * Display the list of recipes on the page
+     * @param {Object[]} recipes The list of recipes
+     */
+    function displayRecipeList(recipes) {
+        const recipeListElement = document.getElementById("recipe-list");
+
+        recipeListElement.innerHTML = "";
+
+        recipes.forEach(function (recipe) {
+            const recipeListItemElement = document.createElement("li");
+            const recipeLinkElement = document.createElement("a");
+            const recipeNameElement = document.createElement("h2");
+            recipeNameElement.textContent = recipe.name;
+            recipeLinkElement.href = `recipe.html?recipeId=${recipe.id}`;
+            recipeLinkElement.appendChild(recipeNameElement);
+            recipeListItemElement.appendChild(recipeLinkElement);
+            recipeListElement.appendChild(recipeListItemElement);
+        });
+    }
+
+    function updateRecipeList() {
+        const searchTerm = document.getElementById("search-bar").value;
+        const filteredRecipes = filterRecipes(recipes, searchTerm);
+        displayRecipeList(filteredRecipes);
+    }
+
+    window.onload = function () {
+        displayRecipeList(recipes);
+    };
+</script>

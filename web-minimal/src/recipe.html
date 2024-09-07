@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title id="title-name"></title>
+    <link rel="stylesheet" type="text/css" href="styles/page.css" media="screen" />
+</head>
+
+<body>
+    <header>
+        <img src="./img/logo.svg" class="cookbook-logo" alt="McClain Family Cookbook Logo" />
+        <nav>
+            <a href="index.html" class='nav-link'>Search</a>
+            <a href="about.html" class='nav-link'>About</a>
+        </nav>
+    </header>
+    <main>
+        <h1 id="recipe-name"></h1>
+        <p id="recipe-category"></p>
+        <h2>Ingredients</h2>
+        <ul id="recipe-ingredients-list"></ul>
+        <h2>Instructions</h2>
+        <ol id="recipe-instructions-list"></ol>
+    </main>
+</body>
+
+</html>
+
+<script src="js/browser-utilities.js"></script>
+<script src="js/data.js"></script>
+<script>
+    /**
+     * Display the recipe on the page
+     * @param {Object} recipe The recipe to display
+     */
+    function displayRecipe(recipe) {
+        document.getElementById("recipe-name").textContent = recipe.name;
+        document.getElementById("recipe-category").textContent =
+            recipe.category;
+
+        const recipeIngredientsList = document.getElementById(
+            "recipe-ingredients-list",
+        );
+        recipe.ingredients.forEach((ingredient) => {
+            const ingredientListItem = document.createElement("li");
+            ingredientListItem.textContent = ingredient;
+            recipeIngredientsList.appendChild(ingredientListItem);
+        });
+
+        const recipeInstructionsList = document.getElementById(
+            "recipe-instructions-list",
+        );
+        recipe.instructions.forEach((instruction) => {
+            const instructionListItem = document.createElement("li");
+            instructionListItem.textContent = instruction;
+            recipeInstructionsList.appendChild(instructionListItem);
+        });
+    }
+
+    window.onload = function () {
+        const recipeId = getQueryParamOrNull(
+            window.location.search,
+            "recipeId",
+        );
+        const recipe = getRecipes().find((recipe) => recipe.id == recipeId);
+        document.getElementById("title-name").textContent = recipe.name;
+        displayRecipe(recipe);
+    };
+</script>
