@@ -1,6 +1,4 @@
-﻿using Cookbook.Entities;
-
-namespace Cookbook.Tests.Entities.RecipeTests;
+﻿namespace Cookbook.Tests.RecipeTests;
 
 public class MatchesSearchTermTests
 {

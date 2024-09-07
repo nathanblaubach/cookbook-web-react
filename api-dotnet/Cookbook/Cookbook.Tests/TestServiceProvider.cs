@@ -5,9 +5,9 @@ namespace Cookbook.Tests;
 
 public static class CookbookServiceProvider
 {
-    private static IServiceProvider provider = new ServiceCollection()
+    private static readonly IServiceProvider provider = new ServiceCollection()
         .AddCookbookServices()
-        .AddInfrastructureFakes()
+        .AddFakeInfrastructure()
         .BuildServiceProvider();
 
     public static T Get<T>() => provider.GetService<T>()!;

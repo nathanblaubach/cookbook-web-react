@@ -9,7 +9,7 @@ public static class Configuration
     {
         builder.Services
             .AddCookbookServices()
-            .AddInfrastructure()
+            .AddLocalInfrastructure()
             .AddProblemDetails();
 
         var app = builder

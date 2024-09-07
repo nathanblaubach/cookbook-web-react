@@ -1,7 +1,4 @@
-using Cookbook.Entities;
-using Cookbook.Interfaces;
-
-namespace Cookbook.Services;
+namespace Cookbook;
 
 public class RecipeService(IRecipeRepository repository)
 {

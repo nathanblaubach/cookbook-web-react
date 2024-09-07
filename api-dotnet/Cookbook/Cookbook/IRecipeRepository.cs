@@ -1,6 +1,4 @@
-﻿using Cookbook.Entities;
-
-namespace Cookbook.Interfaces;
+﻿namespace Cookbook;
 
 public interface IRecipeRepository
 {

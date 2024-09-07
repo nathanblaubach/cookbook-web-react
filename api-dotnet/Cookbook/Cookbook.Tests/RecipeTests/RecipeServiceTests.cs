@@ -1,8 +1,6 @@
-﻿using Cookbook.Services;
+﻿namespace Cookbook.Tests.RecipeTests;
 
-namespace Cookbook.Tests.UseCases.Recipes;
-
-public class RecipeServiceTests 
+public class RecipeServiceTests
 {
     private readonly RecipeService service = CookbookServiceProvider.Get<RecipeService>();
 

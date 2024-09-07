@@ -1,6 +1,4 @@
-﻿using Cookbook.Interfaces;
-using Cookbook.Services;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Cookbook;

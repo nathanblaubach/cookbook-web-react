@@ -1,4 +1,4 @@
-using Cookbook.Services;
+using Cookbook;
 
 var app = WebApplication
     .CreateBuilder(args)

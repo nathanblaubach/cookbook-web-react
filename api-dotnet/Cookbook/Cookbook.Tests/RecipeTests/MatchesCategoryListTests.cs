@@ -1,6 +1,4 @@
-﻿using Cookbook.Entities;
-
-namespace Cookbook.Tests.Entities.RecipeTests;
+﻿namespace Cookbook.Tests.RecipeTests;
 
 public class MatchesCategoryListTests
 {
@@ -8,8 +6,8 @@ public class MatchesCategoryListTests
     {
         Id = 1234L,
         Name = "Recipe Name",
-        Ingredients = [ "Ingredient 1", "Ingredient 2" ],
-        Instructions = [ "Instruction 1", "Instruction 2" ],
+        Ingredients = ["Ingredient 1", "Ingredient 2"],
+        Instructions = ["Instruction 1", "Instruction 2"],
         Category = "Category",
     };
 

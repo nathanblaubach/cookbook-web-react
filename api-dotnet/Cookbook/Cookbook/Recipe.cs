@@ -1,4 +1,4 @@
-namespace Cookbook.Entities;
+namespace Cookbook;
 
 public class Recipe
 {

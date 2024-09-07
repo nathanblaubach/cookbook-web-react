@@ -1,14 +1,11 @@
-﻿using Cookbook.Entities;
-using Cookbook.Interfaces;
+﻿namespace Cookbook.Infrastructure.Fake;
 
-namespace Cookbook.Tests;
-
-public class FakeRecipeService : IRecipeRepository
+public class FakeRecipeRepository : IRecipeRepository
 {
-    public IEnumerable<Recipe> GetRecipes() => 
+    public IEnumerable<Recipe> GetRecipes() =>
     [
         new Recipe
-        { 
+        {
             Category = "Beverage",
             Id = 0,
             Name = "Hot Mulled Cider",

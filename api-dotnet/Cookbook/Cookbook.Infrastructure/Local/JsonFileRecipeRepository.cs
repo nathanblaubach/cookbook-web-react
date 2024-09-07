@@ -1,10 +1,7 @@
 using System.Data;
-using System.Runtime.ConstrainedExecution;
 using System.Text.Json;
-using Cookbook.Entities;
-using Cookbook.Interfaces;
 
-namespace Cookbook.Infrastructure;
+namespace Cookbook.Infrastructure.Local;
 
 public class JsonFileRecipeRepository : IRecipeRepository
 {
@@ -17,7 +14,7 @@ public class JsonFileRecipeRepository : IRecipeRepository
     {
         public required IEnumerable<Recipe> Recipes { get; set; }
     }
-    
+
     private readonly JsonFileRecipeRepositorySchema data;
 
     public JsonFileRecipeRepository()
