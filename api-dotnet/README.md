@@ -1,5 +1,7 @@
 # Cookbook (.NET Api)
 
+This api is meant to be a backend service that could be used for managing cookbook data using modern .NET.
+
 ## Environment
 
 - [.NET](https://dotnet.microsoft.com/en-us/)
