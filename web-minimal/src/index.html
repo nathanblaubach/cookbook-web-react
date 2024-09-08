@@ -19,10 +19,12 @@
     <main>
         <h1>Recipes</h1>
         <div class="search-area">
-            <img src="img/filter.svg" alt="Filter Area Expansion Button" />
+            <button class="button-area" aria-label="Expand filter area" onclick="toggleFilterArea()">
+                <img src="img/filter.svg" alt="Filter icon" />
+            </button>
             <input aria-label="Recipe Search Bar" placeholder="Search" type="text" class="search-bar" name="search-bar"
                 id="search-bar" oninput="updateRecipeList()" />
-            <div class="filters" id="filters"></div>
+            <div class="filters hidden" id="filters"></div>
         </div>
 
         <ul id="recipe-list" class="recipes"></ul>
@@ -40,6 +42,10 @@
     recipes.sort((a, b) => a.name.localeCompare(b.name));
     const categories = getCategories();
     const selectedCategories = [];
+
+    function toggleFilterArea() {
+        document.getElementById("filters").classList.toggle("hidden");
+    }
 
     /**
      * Display the list of recipes on the page
