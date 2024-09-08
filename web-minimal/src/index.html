@@ -22,9 +22,10 @@
             <img src="img/filter.svg" alt="Filter Area Expansion Button" />
             <input aria-label="Recipe Search Bar" placeholder="Search" type="text" class="search-bar" name="search-bar"
                 id="search-bar" oninput="updateRecipeList()" />
+            <div class="filters" id="filters"></div>
         </div>
 
-        <ul id="recipe-list"></ul>
+        <ul id="recipe-list" class="recipes"></ul>
     </main>
 </body>
 
@@ -37,6 +38,8 @@
 
     const recipes = getRecipes();
     recipes.sort((a, b) => a.name.localeCompare(b.name));
+    const categories = getCategories();
+    const selectedCategories = [];
 
     /**
      * Display the list of recipes on the page
@@ -49,23 +52,62 @@
 
         recipes.forEach(function (recipe) {
             const recipeListItemElement = document.createElement("li");
+            recipeListItemElement.class = "recipe";
+
             const recipeLinkElement = document.createElement("a");
+            recipeLinkElement.href = `recipe.html?recipeId=${recipe.id}`;
+
             const recipeNameElement = document.createElement("h2");
             recipeNameElement.textContent = recipe.name;
-            recipeLinkElement.href = `recipe.html?recipeId=${recipe.id}`;
+
             recipeLinkElement.appendChild(recipeNameElement);
             recipeListItemElement.appendChild(recipeLinkElement);
             recipeListElement.appendChild(recipeListItemElement);
         });
     }
 
+    /**
+     * Display the list of filters on the page
+     * @param {string[]} categories The list of categories
+     */
+    function displayFilters(categories) {
+        const filtersElement = document.getElementById("filters");
+
+        categories.forEach(function (category) {
+            const filterElement = document.createElement("div");
+            filterElement.className = "filter";
+
+            const filterInput = document.createElement("input");
+            filterInput.id = category;
+            filterInput.type = "checkbox";
+            filterInput.ariaLabel = `Category Filter: ${category}`;
+            filterInput.onchange = () => {
+                if (filterInput.checked) {
+                    selectedCategories.push(category);
+                } else {
+                    selectedCategories.splice(selectedCategories.indexOf(category), 1);
+                }
+                updateRecipeList();
+            }
+
+            const filterLabel = document.createElement("label");
+            filterLabel.htmlFor = category;
+            filterLabel.textContent = category;
+
+            filterElement.appendChild(filterInput);
+            filterElement.appendChild(filterLabel);
+            filtersElement.appendChild(filterElement);
+        });
+    }
+
     function updateRecipeList() {
         const searchTerm = document.getElementById("search-bar").value;
-        const filteredRecipes = filterRecipes(recipes, searchTerm);
+        const filteredRecipes = filterRecipes(recipes, searchTerm, selectedCategories);
         displayRecipeList(filteredRecipes);
     }
 
     window.onload = function () {
         displayRecipeList(recipes);
+        displayFilters(categories);
     };
 </script>
