@@ -21,6 +21,6 @@ git clone https://github.com/nathanblaubach/cookbook.git
 -- Open any of the html files in a browser
 
 -- Run the tests:
-cd cookbook/web-minimal/Cookbook
+cd cookbook/web-minimal
 ./test.sh -- Note: You may need to give permission to run this script
 ```

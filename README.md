@@ -8,9 +8,9 @@ This cookbook is a simple list of recipes. I am writing the application for my m
 
 There are a few projects in this repository. They do not work in tandem with each other. Rather, they are different implementations of the cookbook for different purposes. Drill into their READMEs to find more details:
 
-- [A React application](https://github.com/nathanblaubach/cookbook/tree/main/web-react/README.md)
-- [A Minimal HTML/CSS/JS application](https://github.com/nathanblaubach/cookbook/tree/main/web-minimal/README.md)
-- [A .NET Core application](https://github.com/nathanblaubach/cookbook/tree/main/api-dotnet/README.md)
+- [A React application](./web-react/)
+- [A Minimal HTML/CSS/JS application](./web-minimal/)
+- [A .NET Core application](./api-dotnet/)
 
 ## Contributors
 
