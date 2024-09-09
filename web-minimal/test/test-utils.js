@@ -31,7 +31,7 @@ function it(description, testFunction) {
 
 /**
  * Asserts that a condition is true
- * Use this to verify somehting in a test case
+ * Use this to verify something in a test case
  * @param {boolean} condition The condition to test
  */
 function assert(condition) {
@@ -41,8 +41,8 @@ function assert(condition) {
 }
 
 function getIndentation(callingFromDescribe = false) {
-    const gumberOfDescribesInStackTrace = Error().stack.split("\n").filter(line => line.includes("at describe")).length;
-    const numberOfIndents = callingFromDescribe ? gumberOfDescribesInStackTrace - 1 : gumberOfDescribesInStackTrace;
+    const numberOfDescribesInStackTrace = Error().stack.split("\n").filter(line => line.includes("at describe")).length;
+    const numberOfIndents = callingFromDescribe ? numberOfDescribesInStackTrace - 1 : numberOfDescribesInStackTrace;
     let padding = "";
     for (let i = 0; i < numberOfIndents; i++) {
         padding += "   ";
