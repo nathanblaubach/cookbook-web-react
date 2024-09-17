@@ -66,6 +66,67 @@ describe('getRecipes', () => {
 
 });
 
+describe('getRecipesBySearchTermAndCategories', () => {
+
+  it('should get all recipes when searchTerm and categories are empty', () => {
+    // Act
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', []);
+
+    // Assert
+    expect(recipes.length).toBe(repositoryRecipes.length);
+  });
+
+  it('should only return recipes with given categories', () => {
+    // Arrange
+    const categories = ['Dessert', 'Main Course'];
+
+    // Act
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', categories);
+
+    // Assert
+    recipes.forEach(recipe => expect(categories).toContain(recipe.category));
+  });
+
+  it('should only return recipes that match the given search term', () => {
+    // Arrange
+    const searchTerm = 'chocolate';
+
+    // Act
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, []);
+
+    // Assert
+    recipes.forEach(recipe => {
+      const matchedNames = [
+        recipe.name.toLocaleLowerCase(),
+        ...recipe.ingredients.map(ingredient => ingredient.toLocaleLowerCase())
+      ].filter(name => name.includes(searchTerm))
+      expect(matchedNames.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('should include ingredient search results when the search term length is 3 or greater', () => {
+    // Arrange
+    const searchTerm = 'cho';
+
+    // Act
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, []);
+
+    // Assert
+    expect(recipes.map(recipe => recipe.name)).toContain('Hot Cocoa');
+  });
+
+  it('should include ingredient search results when the search term length is less than 3', () => {
+    // Arrange
+    const searchTerm = 'ch';
+
+    // Act
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, []);
+
+    // Assert
+    expect(recipes.map(recipe => recipe.name)).not.toContain('Hot Cocoa');
+  });
+
+});
 
 describe('getRecipeById', () => {
 
