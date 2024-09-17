@@ -23,9 +23,15 @@ export class RecipeUseCases {
   public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
     const ingredientSearchActive: boolean = searchTerm.length >= 3;
 
-    const activeCategories: string[] = categoryFilters
-      .filter(filter => filter.checked)
-      .map(filter => filter.id);
+    const activeCategories: string[] = categoryFilters.reduce(
+      (acc: string[], filter: FilterItem): string[] => {
+        if (filter.checked) {
+          acc.push(filter.id);
+        }
+        return acc; 
+      },
+      []
+    );
 
     return this.repository
       .getRecipesBySearchTermAndCategories(searchTerm, activeCategories)
