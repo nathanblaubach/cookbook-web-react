@@ -28,14 +28,7 @@ export class RecipeUseCases {
       .map(filter => filter.id);
 
     return this.repository
-      .getRecipes()
-      .filter(recipe => {
-        const matchesRecipeName: boolean = this.includesCaseInsensitive(recipe.name, searchTerm);
-        const matchesAnyRecipeIngredient: boolean = ingredientSearchActive && recipe.ingredients.some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
-        const matchesCategorySelection: boolean = activeCategories.length === 0 || activeCategories.includes(recipe.category);
-
-        return (matchesRecipeName || matchesAnyRecipeIngredient) && matchesCategorySelection;
-      })
+      .getRecipesBySearchTermAndCategories(searchTerm, activeCategories)
       .map(recipe => {
         const relevantIngredients = !ingredientSearchActive ? [] : recipe.ingredients
           .filter(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
