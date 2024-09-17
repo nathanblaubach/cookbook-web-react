@@ -4,10 +4,6 @@ import { Recipe } from '../types';
 export class RecipeRepository {
   constructor(private recipes: Array<Recipe> = []) {}
 
-  public getRecipes(): Array<Recipe> {
-    return this.recipes;
-  }
-
   public getRecipesBySearchTermAndCategories(searchTerm: string, categories: Array<string>): Array<Recipe> {
     return this.recipes.filter(recipe => {
       const recipeNameMatched = this.includesCaseInsensitive(recipe.name, searchTerm);

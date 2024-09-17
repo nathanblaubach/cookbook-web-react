@@ -42,30 +42,6 @@ const repositoryRecipes: Recipe[] = [
 
 const recipeRepository = new RecipeRepository(repositoryRecipes);
 
-describe('getRecipes', () => {
-
-  it('should get all recipes', () => {
-    // Act
-    const recipes = recipeRepository.getRecipes();
-
-    // Assert
-    expect(recipes.length).toBe(repositoryRecipes.length);
-  });
-
-  it('should return all recipe fields', () => {
-    // Act
-    const firstRecipe = recipeRepository.getRecipes()[0];
-
-    // Assert
-    expect(firstRecipe.id).toBe(1);
-    expect(firstRecipe.name).toBe('Chocolate Cake');
-    expect(firstRecipe.category).toBe('Dessert');
-    expect(firstRecipe.ingredients).toEqual(['flour', 'sugar', 'chocolate', 'eggs']);
-    expect(firstRecipe.instructions).toEqual(['Preheat oven to 350 degrees', 'Mix ingredients', 'Bake for 30 minutes']);
-  });
-
-});
-
 describe('getRecipesBySearchTermAndCategories', () => {
 
   it('should get all recipes when searchTerm and categories are empty', () => {
