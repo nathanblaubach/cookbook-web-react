@@ -17,10 +17,10 @@ Then, if you understand them, run the following commands in your terminal:
 -- Clone this repository
 git clone https://github.com/nathanblaubach/cookbook.git
 
--- Run the web application:
+-- Run the web application
 -- Open any of the html files in a browser
 
 -- Run the tests:
 cd cookbook/web-minimal
-./test.sh -- Note: You may need to give permission to run this script
+npm run test
 ```
