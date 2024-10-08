@@ -27,10 +27,7 @@ public static class Configuration
         return app;
     }
 
-    public static IServiceCollection AddCommonServices(this IServiceCollection services) => services
-        .AddScoped<RecipeService>();
-
     public static IServiceCollection AddLocalServices(this IServiceCollection services) => services
-        .AddCommonServices()
+        .AddScoped<RecipeService>()
         .AddScoped<IRecipeRepository, JsonFileRecipeRepository>();
 }
