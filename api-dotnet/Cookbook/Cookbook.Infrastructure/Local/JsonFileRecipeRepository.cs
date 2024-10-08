@@ -4,9 +4,9 @@ public class JsonFileRecipeRepository : IRecipeRepository
 {
     private readonly FileReader fileReader = new("../Cookbook.Infrastructure/Local/recipes.json");
 
-    public IEnumerable<Recipe> GetRecipes()
+    public async Task<IEnumerable<Recipe>> GetRecipesAsync()
     {
-        return JsonParser.Parse<JsonRecipe[]>(fileReader.Read())
-            .Select(JsonRecipeToRecipeMapper.Map);
+        var jsonRecipes = JsonParser.Parse<JsonRecipe[]>(fileReader.Read());
+        return await Task.FromResult(jsonRecipes.Select(JsonRecipeToRecipeMapper.Map));
     }
 }

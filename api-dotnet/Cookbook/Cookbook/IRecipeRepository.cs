@@ -2,5 +2,5 @@
 
 public interface IRecipeRepository
 {
-    IEnumerable<Recipe> GetRecipes();
+    Task<IEnumerable<Recipe>> GetRecipesAsync();
 }

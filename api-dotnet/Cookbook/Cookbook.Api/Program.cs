@@ -6,18 +6,18 @@ var app = WebApplication
 
 app.MapGet("/recipes", async (RecipeService service, string? searchTerm, string[]? categories) =>
 {
-    return await service.GetByParamsAsync(searchTerm, categories);
+    return await service.GetRecipesBySearchTermAndCategoriesAsync(searchTerm, categories);
 });
 
 app.MapGet("/recipes/{recipeId:long}", async (RecipeService service, long recipeId) => 
 {
-    var recipe = await service.GetByIdAsync(recipeId);
+    var recipe = await service.GetRecipeByIdAsync(recipeId);
     return recipe is null ? Results.NotFound() : Results.Ok(recipe);
 });
 
 app.MapGet("/categories", async (RecipeService service) =>
 {
-    return await service.GetAllAsync();
+    return await service.GetCategoriesAsync();
 });
 
 app.Run();
