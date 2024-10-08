@@ -6,11 +6,11 @@ public class Recipe
     
     public required string Name { get; set; }
 
+    public required string Category { get; set; }
+
     public required IEnumerable<string> Ingredients { get; set; }
     
     public required IEnumerable<string> Instructions { get; set; }
-
-    public required string Category { get; set; }
 
     public bool MatchesSearchTermAndCategories(string? searchTerm, IEnumerable<string>? categories)
     {

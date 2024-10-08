@@ -1,31 +1,34 @@
-using System.Data;
-using System.Text.Json;
-
 namespace Cookbook.Infrastructure.Local;
 
 public class JsonFileRecipeRepository : IRecipeRepository
 {
-    private static readonly JsonSerializerOptions options = new()
+    private class JsonRecipe
     {
-        PropertyNameCaseInsensitive = true
-    };
+        public required long Id { get; set; }
+        public required string Name { get; set; }
+        public required string Category { get; set; }
+        public required IEnumerable<string> Ingredients { get; set; }
+        public required IEnumerable<string> Instructions { get; set; }
+    }
 
     private class JsonFileRecipeRepositorySchema
     {
-        public required IEnumerable<Recipe> Recipes { get; set; }
+        public required IEnumerable<JsonRecipe> Recipes { get; set; }
     }
 
-    private readonly JsonFileRecipeRepositorySchema data;
-
-    public JsonFileRecipeRepository()
-    {
-        using var streamReader = new StreamReader($"../Cookbook.Infrastructure/Local/recipe-repository.json");
-        data = JsonSerializer.Deserialize<JsonFileRecipeRepositorySchema>(streamReader.ReadToEnd(), options)
-            ?? throw new DataException("Could not read data from file");
-    }
+    private readonly FileReader fileReader = new("../Cookbook.Infrastructure/Local/recipe-repository.json");
 
     public IEnumerable<Recipe> GetRecipes()
     {
-        return data?.Recipes ?? [];
+        return JsonParser.Parse<JsonFileRecipeRepositorySchema>(this.fileReader.Read())
+            .Recipes
+            .Select(recipe => new Recipe
+            {
+                Id = recipe.Id,
+                Name = recipe.Name,
+                Category = recipe.Category,
+                Ingredients = recipe.Ingredients,
+                Instructions = recipe.Instructions
+            });
     }
 }
