@@ -1,4 +1,3 @@
-using Cookbook;
 using Cookbook.Api;
 
 var app = WebApplication
