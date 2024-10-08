@@ -1,4 +1,4 @@
-﻿namespace Cookbook.Infrastructure.Fake;
+﻿namespace Cookbook.Tests.Fakes;
 
 public class FakeRecipeRepository : IRecipeRepository
 {

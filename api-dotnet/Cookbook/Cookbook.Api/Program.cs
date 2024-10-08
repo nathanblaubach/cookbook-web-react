@@ -1,4 +1,5 @@
 using Cookbook;
+using Cookbook.Api;
 
 var app = WebApplication
     .CreateBuilder(args)
@@ -20,4 +21,4 @@ app.MapGet("/categories", async (RecipeService service) =>
     return await service.GetCategoriesAsync();
 });
 
-app.Run();
+await app.RunAsync();

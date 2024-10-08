@@ -1,8 +1,6 @@
-using System;
+namespace Cookbook.Infrastructure.Local.Recipes;
 
-namespace Cookbook.Infrastructure.Local;
-
-public class JsonRecipeToRecipeMapper
+public static class JsonRecipeToRecipeMapper
 {
     public static Recipe Map(JsonRecipe jsonRecipe)
     {
