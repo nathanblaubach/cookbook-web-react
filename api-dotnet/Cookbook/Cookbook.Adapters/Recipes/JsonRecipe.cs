@@ -1,4 +1,4 @@
-namespace Cookbook.Infrastructure.Local.Recipes;
+namespace Cookbook.Adapters.Recipes;
 
 public class JsonRecipe
 {

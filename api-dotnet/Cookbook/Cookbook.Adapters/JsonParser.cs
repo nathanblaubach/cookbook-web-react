@@ -1,7 +1,7 @@
 using System.Data;
 using System.Text.Json;
 
-namespace Cookbook.Infrastructure.Local;
+namespace Cookbook.Adapters;
 
 public static class JsonParser
 {

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Api", "Cookbook.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Tests", "Cookbook.Tests\Cookbook.Tests.csproj", "{91E38F90-F756-436C-8CBE-26B38BBDC162}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cookbook.Adapters", "Cookbook.Adapters\Cookbook.Adapters.csproj", "{22103B5B-E53F-443F-BA52-A454718BF19E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{91E38F90-F756-436C-8CBE-26B38BBDC162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E38F90-F756-436C-8CBE-26B38BBDC162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E38F90-F756-436C-8CBE-26B38BBDC162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22103B5B-E53F-443F-BA52-A454718BF19E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22103B5B-E53F-443F-BA52-A454718BF19E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22103B5B-E53F-443F-BA52-A454718BF19E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22103B5B-E53F-443F-BA52-A454718BF19E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

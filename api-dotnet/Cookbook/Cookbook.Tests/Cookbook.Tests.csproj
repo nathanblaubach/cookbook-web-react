@@ -26,6 +26,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Cookbook.Api\Cookbook.Api.csproj" />
       <ProjectReference Include="..\Cookbook.Infrastructure\Cookbook.Infrastructure.csproj" />
+      <ProjectReference Include="..\Cookbook.Adapters\Cookbook.Adapters.csproj" />
     </ItemGroup>
 
 </Project>

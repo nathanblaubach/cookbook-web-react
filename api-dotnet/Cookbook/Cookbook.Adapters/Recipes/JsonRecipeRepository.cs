@@ -1,9 +1,7 @@
-namespace Cookbook.Infrastructure.Local.Recipes;
+namespace Cookbook.Adapters.Recipes;
 
-public class JsonFileRecipeRepository : IRecipeRepository
+public class JsonRecipeRepository(IReader fileReader) : IRecipeRepository
 {
-    private readonly FileReader fileReader = new("../Cookbook.Infrastructure/Local/recipes.json");
-
     public async Task<IEnumerable<Recipe>> GetRecipesAsync()
     {
         var jsonRecipes = JsonParser.Parse<JsonRecipe[]>(fileReader.Read());

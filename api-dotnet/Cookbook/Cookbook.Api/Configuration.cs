@@ -1,4 +1,5 @@
-using Cookbook.Infrastructure.Local.Recipes;
+using Cookbook.Adapters.Recipes;
+using Cookbook.Infrastructure.Local;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Cookbook.Api;
@@ -9,7 +10,6 @@ public static class Configuration
     public static WebApplication BuildCookbookApi(this WebApplicationBuilder builder)
     {
         builder.Services
-            .AddLocalServices()
             .AddProblemDetails();
 
         var app = builder
@@ -27,7 +27,10 @@ public static class Configuration
         return app;
     }
 
-    public static IServiceCollection AddLocalServices(this IServiceCollection services) => services
-        .AddScoped<RecipeService>()
-        .AddScoped<IRecipeRepository, JsonFileRecipeRepository>();
+    public static RecipeService GetLocalRecipeService()
+    {
+        var filePath = Path.Combine(Environment.CurrentDirectory, "../recipes.json");
+        var repository = new JsonRecipeRepository(new FileReader(filePath));
+        return new RecipeService(repository);
+    }
 }
