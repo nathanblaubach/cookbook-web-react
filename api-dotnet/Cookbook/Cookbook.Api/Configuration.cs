@@ -29,7 +29,7 @@ public static class Configuration
 
     public static RecipeService GetLocalRecipeService()
     {
-        var filePath = Path.Combine(Environment.CurrentDirectory, "../recipes.json");
+        var filePath = Path.Combine(Environment.CurrentDirectory, "..", "recipes.json");
         var repository = new JsonRecipeRepository(new FileReader(filePath));
         return new RecipeService(repository);
     }
