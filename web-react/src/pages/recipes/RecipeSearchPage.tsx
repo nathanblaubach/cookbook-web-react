@@ -9,7 +9,7 @@ type RecipeSearchPageProps = {
   recipeUseCases: RecipeUseCases;
 };
 
-export function RecipeSearchPage({ recipeUseCases }: RecipeSearchPageProps): React.JSX.Element {
+export function RecipeSearchPage({ recipeUseCases }: Readonly<RecipeSearchPageProps>): React.JSX.Element {
 
   const [searchString, setSearchString] = useState<string>('');
   const [categoryFilters, setCategoryFilters] = useState<FilterItem[]>(recipeUseCases.getCategoryFilterItems());

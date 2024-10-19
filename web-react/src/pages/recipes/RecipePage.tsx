@@ -9,7 +9,7 @@ type RecipePageProps = {
   recipeRepository: RecipeRepository;
 };
 
-export function RecipePage({ recipeRepository }: RecipePageProps): React.JSX.Element {
+export function RecipePage({ recipeRepository }: Readonly<RecipePageProps>): React.JSX.Element {
 
   window.scrollTo(0, 0);
 

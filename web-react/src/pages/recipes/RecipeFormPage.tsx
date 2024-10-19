@@ -7,7 +7,7 @@ type RecipeFormPageProps = {
   recipeRepository: RecipeRepository;
 };
 
-export function RecipeFormPage({ recipeRepository }: RecipeFormPageProps): React.JSX.Element {
+export function RecipeFormPage({ recipeRepository }: Readonly<RecipeFormPageProps>): React.JSX.Element {
 
   const [name, setName] = useState<string>('');
   const [category, setCategory] = useState<number>(-1);
