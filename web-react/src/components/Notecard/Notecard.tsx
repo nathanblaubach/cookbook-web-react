@@ -173,9 +173,9 @@ export function NotecardListField({ rows, placeholder, onRowsChange }: Readonly<
         onInput={(event) => updateAtSelectedIndex(event.currentTarget.value)}
         onKeyDown={handleKeysAtSelectedIndex}
       />
-      <div onClick={() => moveUp(index)}>{UpArrow}</div>
-      <div onClick={() => moveDown(index)}>{DownArrow}</div>
-      <div onClick={() => deleteAtIndex(index)}>{Remove}</div>
+      <button onClick={() => moveUp(index)}>{UpArrow}</button>
+      <button onClick={() => moveDown(index)}>{DownArrow}</button>
+      <button onClick={() => deleteAtIndex(index)}>{Remove}</button>
     </div>
   ) } </>);
 }
