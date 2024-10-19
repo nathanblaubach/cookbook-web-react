@@ -2,7 +2,7 @@ import data from '../../data/recipe-repository.json';
 import { Recipe } from './recipe';
 
 export class RecipeRepository {
-  constructor(private recipes: Array<Recipe> = []) {}
+  constructor(private readonly recipes: Array<Recipe> = []) {}
 
   public getRecipesBySearchTermAndCategories(searchTerm: string, categories: Array<string>): Array<Recipe> {
     return this.recipes.filter(recipe => {
