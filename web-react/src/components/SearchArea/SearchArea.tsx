@@ -14,10 +14,9 @@ export function SearchArea({ children, searchString, onSearchStringChange }: Rea
 
   return (
     <div className="search-area">
-      <img
-        src={filterImage}
-        alt="Filter Area Expansion Button"
-        onClick={() => setShowFilters(!showFilters)} />
+      <button onClick={() => setShowFilters(!showFilters)}>
+        <img src={filterImage} alt="Filter Area Expansion Button" />
+      </button>
       <input
         className="search-bar"
         type="textbox"
