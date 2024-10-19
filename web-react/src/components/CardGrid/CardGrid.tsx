@@ -13,7 +13,7 @@ export type CardGridProps = {
   cards: CardContent[];
 };
 
-export function CardGrid({ cards }: CardGridProps): React.JSX.Element {
+export function CardGrid({ cards }: Readonly<CardGridProps>): React.JSX.Element {
   return (
     <div className="cards">
       {
@@ -21,7 +21,7 @@ export function CardGrid({ cards }: CardGridProps): React.JSX.Element {
           <Link className='card-link' key={card.id} to={card.link}>
             <div className='card'>
               <h2>{card.title}</h2>
-              { card.contentLines.map((line, i) => <p key={i}>{line}</p>) }
+              { card.contentLines.map(line => <p key={card.id}>{line}</p>) }
             </div>
           </Link>
         ))

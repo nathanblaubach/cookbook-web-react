@@ -4,7 +4,7 @@ import { RecipeRepository } from "../data/recipe-repository";
 
 export class RecipeUseCases {
 
-  constructor(private repository: RecipeRepository) {}
+  constructor(private readonly repository: RecipeRepository) {}
 
   public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
     const ingredientSearchActive: boolean = searchTerm.length >= 3;
@@ -23,7 +23,7 @@ export class RecipeUseCases {
       .getRecipesBySearchTermAndCategories(searchTerm, activeCategories)
       .map(recipe => {
         const relevantIngredients = !ingredientSearchActive ? [] : recipe.ingredients
-          .filter(ingredient => ingredient.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
+          .filter((ingredient: string) => ingredient.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
 
         return {
           id: recipe.id,

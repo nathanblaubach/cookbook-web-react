@@ -8,7 +8,7 @@ type NotecardProps = {
   onTextChange?: (event: string) => void | undefined,
 };
 
-export function Notecard({ children, label, text }: NotecardProps): React.JSX.Element {
+export function Notecard({ children, label, text }: Readonly<NotecardProps>): React.JSX.Element {
   return (
     <div className='notecard'>
       <div className='notecard-row notecard-row-title'>
@@ -26,7 +26,7 @@ type NotecardFormProps = {
   onTextChange: (event: string) => void,
 };
 
-export function NotecardForm({ children, label, text, onTextChange }: NotecardFormProps): React.JSX.Element {
+export function NotecardForm({ children, label, text, onTextChange }: Readonly<NotecardFormProps>): React.JSX.Element {
   return (
     <div className='notecard'>
       <div className='notecard-row notecard-row-title'>
@@ -48,7 +48,7 @@ type NotecardRowProps = {
   isBold?: boolean,
 };
 
-export function NotecardRow({ text, isBold = false }: NotecardRowProps): React.JSX.Element { 
+export function NotecardRow({ text, isBold = false }: Readonly<NotecardRowProps>): React.JSX.Element { 
   return (
     <div className='notecard-row notecard-row-border'>
       <p className='notecard-text notecard-text-font' style={{ fontWeight: isBold ? 'bold' : 'normal' }}>
@@ -105,7 +105,7 @@ const Remove = (
   </svg>
 );
 
-export function NotecardListField({ rows, placeholder, onRowsChange }: NotecardListFieldParams): React.JSX.Element {
+export function NotecardListField({ rows, placeholder, onRowsChange }: Readonly<NotecardListFieldParams>): React.JSX.Element {
   const [items, setItems] = useState<Array<string>>(rows);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 

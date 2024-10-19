@@ -7,7 +7,7 @@ type PageProps = {
   children: React.ReactNode;
 };
 
-export function Page({ children }: PageProps): React.JSX.Element {
+export function Page({ children }: Readonly<PageProps>): React.JSX.Element {
   return (
     <React.Fragment>
       <header>

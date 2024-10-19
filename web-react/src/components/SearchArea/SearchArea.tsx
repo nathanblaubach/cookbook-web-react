@@ -8,7 +8,7 @@ type SearchAreaProps = {
   onSearchStringChange: (searchString: string) => void,
 };
 
-export function SearchArea({ children, searchString, onSearchStringChange }: SearchAreaProps): React.JSX.Element {
+export function SearchArea({ children, searchString, onSearchStringChange }: Readonly<SearchAreaProps>): React.JSX.Element {
 
   const [showFilters, setShowFilters] = useState<boolean>(false);
 

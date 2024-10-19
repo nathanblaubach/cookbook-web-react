@@ -13,7 +13,7 @@ export type FilterProps = {
   onItemsUpdate: (filterItems: FilterItem[]) => void,
 }
 
-export function Filter({ items, type, onItemsUpdate }: FilterProps): React.JSX.Element {
+export function Filter({ items, type, onItemsUpdate }: Readonly<FilterProps>): React.JSX.Element {
 
   function alertParentOfFilterToggle(filterItemId: string): void {
     const filterItemsAfterToggle = items.map(item => {
