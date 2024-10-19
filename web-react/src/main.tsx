@@ -8,7 +8,6 @@ import { RecipeFormPage } from './pages/recipes/RecipeFormPage.tsx';
 import { RecipePage } from './pages/recipes/RecipePage.tsx';
 import { RecipeSearchPage } from './pages/recipes/RecipeSearchPage.tsx';
 import { RecipeUseCases } from './use-cases/recipe-use-cases.ts';
-import './main.css';
 
 const recipeRepository: RecipeRepository = RecipeRepository.loadFromJson();
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(recipeRepository);
