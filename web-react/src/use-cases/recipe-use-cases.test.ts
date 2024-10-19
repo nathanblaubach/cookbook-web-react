@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { RecipeRepository } from '../data/recipe-repository';
 import { RecipeUseCases } from './recipe-use-cases';
-import { Recipe } from '../types';
+import { Recipe } from '../types/recipe';
 import { FilterItem } from '../components/Filter/Filter';
 
 const repositoryRecipes: Recipe[] = [

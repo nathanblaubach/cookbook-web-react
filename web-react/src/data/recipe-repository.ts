@@ -1,5 +1,5 @@
 import data from './recipe-repository.json';
-import { Recipe } from '../types';
+import { Recipe } from '../types/recipe';
 
 export class RecipeRepository {
   constructor(private recipes: Array<Recipe> = []) {}
@@ -9,7 +9,7 @@ export class RecipeRepository {
       const recipeNameMatched = this.includesCaseInsensitive(recipe.name, searchTerm);
 
       const recipeIngredientMatched = searchTerm.length >= 3 && recipe.ingredients
-        .some(ingredient => this.includesCaseInsensitive(ingredient, searchTerm));
+        .some((ingredient: string) => this.includesCaseInsensitive(ingredient, searchTerm));
 
       const categoryMatched = categories.length === 0 || categories.includes(recipe.category);
 

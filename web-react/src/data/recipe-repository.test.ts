@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { Recipe } from "../types";
+import { Recipe } from "../types/recipe";
 import { RecipeRepository } from "./recipe-repository";
 
 const repositoryRecipes: Recipe[] = [
