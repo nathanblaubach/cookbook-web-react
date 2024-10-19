@@ -7,11 +7,3 @@ body, input {
   background-color: white;
   color: black;
 }
-select, button {
-  box-shadow: black 0 0 3px;
-  background-color: white;
-  border: none;
-  border-radius: .5rem;
-  padding: .5rem;
-  width: 100%;
-}

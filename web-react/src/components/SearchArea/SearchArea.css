@@ -11,8 +11,8 @@
 .search-area button {
   width: 3.5rem;
   background-color: white;
+  border-radius: .5rem;
   border: 0px;
-  box-shadow: none;
   margin: 0;
   padding: 0;
 }
