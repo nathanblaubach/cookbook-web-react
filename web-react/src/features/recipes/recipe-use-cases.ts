@@ -1,6 +1,6 @@
-import { CardContent } from "../components/CardGrid/CardGrid";
-import { FilterItem } from "../components/Filter/Filter";
-import { RecipeRepository } from "../data/recipe-repository";
+import { CardContent } from "../../components/CardGrid/CardGrid";
+import { FilterItem } from "../../components/Filter/Filter";
+import { RecipeRepository } from "./recipe-repository";
 
 export class RecipeUseCases {
 

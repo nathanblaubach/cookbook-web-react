@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
-import { RecipeRepository } from './data/recipe-repository.ts';
+import { RecipeRepository } from './features/recipes/recipe-repository.ts';
 import { AboutPage } from './pages/AboutPage.tsx';
 import { RecipeFormPage } from './pages/recipes/RecipeFormPage.tsx';
 import { RecipePage } from './pages/recipes/RecipePage.tsx';
 import { RecipeSearchPage } from './pages/recipes/RecipeSearchPage.tsx';
-import { RecipeUseCases } from './use-cases/recipe-use-cases.ts';
+import { RecipeUseCases } from './features/recipes/recipe-use-cases.ts';
 
 const recipeRepository: RecipeRepository = RecipeRepository.loadFromJson();
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(recipeRepository);

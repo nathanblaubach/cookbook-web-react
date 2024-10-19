@@ -2,8 +2,8 @@ import React from 'react';
 import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page/Page';
 import { Notecard, NotecardRow } from '../../components/Notecard/Notecard';
-import { Recipe } from '../../types/recipe';
-import { RecipeRepository } from '../../data/recipe-repository';
+import { Recipe } from '../../features/recipes/recipe';
+import { RecipeRepository } from '../../features/recipes/recipe-repository';
 
 type RecipePageProps = {
   recipeRepository: RecipeRepository;

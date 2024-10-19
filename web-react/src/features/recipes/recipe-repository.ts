@@ -1,5 +1,5 @@
-import data from './recipe-repository.json';
-import { Recipe } from '../types/recipe';
+import data from '../../data/recipe-repository.json';
+import { Recipe } from './recipe';
 
 export class RecipeRepository {
   constructor(private recipes: Array<Recipe> = []) {}

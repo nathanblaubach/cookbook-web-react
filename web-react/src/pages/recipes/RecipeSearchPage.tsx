@@ -3,7 +3,7 @@ import { Page } from '../../components/Page/Page';
 import { SearchArea } from '../../components/SearchArea/SearchArea';
 import { Filter, FilterItem } from '../../components/Filter/Filter';
 import { CardGrid } from '../../components/CardGrid/CardGrid';
-import { RecipeUseCases } from '../../use-cases/recipe-use-cases';
+import { RecipeUseCases } from '../../features/recipes/recipe-use-cases';
 
 type RecipeSearchPageProps = {
   recipeUseCases: RecipeUseCases;
