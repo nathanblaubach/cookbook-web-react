@@ -10,14 +10,12 @@ namespace Cookbook.Tests.Integration
         {
             // Arrange
             var recipeJsonFilePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "recipes.json");
-            var reader = new FileReader(recipeJsonFilePath);
-            var repository = new JsonRecipeRepository(reader);
+            var repository = new JsonRecipeRepository(new FileReader(recipeJsonFilePath));
 
             // Act
-            var recipes = await repository.GetRecipesAsync();
+            var recipes = await repository.GetRecipesBySearchTermAndCategoriesAsync(null, null);
 
             // Assert
-            Assert.NotNull(recipes);
             Assert.NotEmpty(recipes);
             Assert.All(recipes, recipe =>
             {

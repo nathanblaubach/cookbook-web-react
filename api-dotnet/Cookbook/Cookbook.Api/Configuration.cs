@@ -27,10 +27,10 @@ public static class Configuration
         return app;
     }
 
-    public static RecipeService GetLocalRecipeService()
+    public static IRecipeRepository GetLocalRecipeRepository()
     {
-        var filePath = Path.Combine(Environment.CurrentDirectory, "..", "recipes.json");
-        var repository = new JsonRecipeRepository(new FileReader(filePath));
-        return new RecipeService(repository);
+        var jsonRecipesFilePath = Path.Combine(Environment.CurrentDirectory, "..", "recipes.json");
+        var localJsonRecipeRepository = new JsonRecipeRepository(new FileReader(jsonRecipesFilePath));
+        return localJsonRecipeRepository;
     }
 }

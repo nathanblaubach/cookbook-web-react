@@ -1,6 +1,9 @@
-﻿namespace Cookbook.Tests.Fakes;
+﻿using System.Text.Json;
+using Cookbook.Adapters;
 
-public class FakeRecipeRepository : IRecipeRepository
+namespace Cookbook.Tests.Unit.JsonRecipeRepositoryTests;
+
+public class FakeJsonRecipeFileReader : IReader
 {
     private readonly IEnumerable<Recipe> _recipes =
     [
@@ -98,8 +101,7 @@ public class FakeRecipeRepository : IRecipeRepository
         },
     ];
 
-    public async Task<IEnumerable<Recipe>> GetRecipesAsync()
-    {
-        return await Task.FromResult(this._recipes);
-    }
+    public IEnumerable<Recipe> GetRecipes() => _recipes;
+
+    public string Read() => JsonSerializer.Serialize(_recipes);
 }
