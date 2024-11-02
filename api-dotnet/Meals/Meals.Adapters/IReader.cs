@@ -1,4 +1,4 @@
-namespace Cookbook.Adapters;
+namespace Meals.Adapters;
 
 public interface IReader
 {

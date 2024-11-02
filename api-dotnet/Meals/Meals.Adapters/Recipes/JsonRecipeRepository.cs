@@ -1,7 +1,7 @@
 using System.Data;
 using System.Text.Json;
 
-namespace Cookbook.Adapters.Recipes;
+namespace Meals.Adapters.Recipes;
 
 public class JsonRecipeRepository(IReader jsonReader) : IRecipeRepository
 {

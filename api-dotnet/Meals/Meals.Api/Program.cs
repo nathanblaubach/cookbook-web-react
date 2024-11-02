@@ -1,9 +1,9 @@
-using Cookbook;
-using Cookbook.Api;
+using Meals;
+using Meals.Api;
 
 var app = WebApplication
     .CreateBuilder(args)
-    .BuildCookbookApi();
+    .BuildMealsApi();
 
 IRecipeRepository repository = Configuration.GetLocalRecipeRepository();
 

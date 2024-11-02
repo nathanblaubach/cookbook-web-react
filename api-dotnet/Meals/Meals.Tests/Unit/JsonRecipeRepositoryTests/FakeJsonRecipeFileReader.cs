@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
-using Cookbook.Adapters;
+using Meals.Adapters;
 
-namespace Cookbook.Tests.Unit.JsonRecipeRepositoryTests;
+namespace Meals.Tests.Unit.JsonRecipeRepositoryTests;
 
 public class FakeJsonRecipeFileReader : IReader
 {

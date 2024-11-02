@@ -1,7 +1,7 @@
-using Cookbook.Adapters.Recipes;
-using Cookbook.Infrastructure.Local;
+using Meals.Adapters.Recipes;
+using Meals.Infrastructure.Local;
 
-namespace Cookbook.Tests.Integration
+namespace Meals.Tests.Integration
 {
     public class JsonRecipeRepositoryTests
     {

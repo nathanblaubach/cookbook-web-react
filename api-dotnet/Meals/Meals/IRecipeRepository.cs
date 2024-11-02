@@ -1,4 +1,4 @@
-﻿namespace Cookbook;
+﻿namespace Meals;
 
 public interface IRecipeRepository
 {

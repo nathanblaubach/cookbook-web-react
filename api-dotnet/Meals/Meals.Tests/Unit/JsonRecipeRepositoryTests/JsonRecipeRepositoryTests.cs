@@ -1,6 +1,6 @@
-﻿using Cookbook.Adapters.Recipes;
+﻿using Meals.Adapters.Recipes;
 
-namespace Cookbook.Tests.Unit.JsonRecipeRepositoryTests;
+namespace Meals.Tests.Unit.JsonRecipeRepositoryTests;
 
 public class JsonRecipeRepositoryTests
 {

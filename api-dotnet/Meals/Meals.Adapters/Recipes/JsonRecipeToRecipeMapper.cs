@@ -1,4 +1,4 @@
-namespace Cookbook.Adapters.Recipes;
+namespace Meals.Adapters.Recipes;
 
 public static class JsonRecipeToRecipeMapper
 {

@@ -1,6 +1,6 @@
-using Cookbook.Adapters;
+using Meals.Adapters;
 
-namespace Cookbook.Infrastructure.Local;
+namespace Meals.Infrastructure.Local;
 
 public class FileReader(string path) : IReader
 {

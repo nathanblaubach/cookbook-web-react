@@ -1,6 +1,6 @@
-namespace Cookbook.Adapters.Recipes;
+namespace Meals;
 
-public class JsonRecipe
+public class Recipe
 {
     public required long Id { get; set; }
     public required string Name { get; set; }

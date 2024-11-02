@@ -1,13 +1,13 @@
-using Cookbook.Adapters.Recipes;
-using Cookbook.Infrastructure.Local;
+using Meals.Adapters.Recipes;
+using Meals.Infrastructure.Local;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Cookbook.Api;
+namespace Meals.Api;
 
 [ExcludeFromCodeCoverage]
 public static class Configuration
 {
-    public static WebApplication BuildCookbookApi(this WebApplicationBuilder builder)
+    public static WebApplication BuildMealsApi(this WebApplicationBuilder builder)
     {
         builder.Services
             .AddProblemDetails();
