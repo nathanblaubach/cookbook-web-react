@@ -1,26 +1,23 @@
-using Meals;
 using Meals.Api;
 
-var app = WebApplication
-    .CreateBuilder(args)
-    .BuildMealsApi();
+var builder = WebApplication.CreateBuilder(args);
 
-IRecipeRepository repository = Configuration.GetLocalRecipeRepository();
+builder.Services
+    .RegisterLocalServices()
+    .AddProblemDetails()
+    .AddControllers();
 
-app.MapGet("/recipes", async (string? searchTerm, string[]? categories) =>
-{
-    return await repository.GetRecipesBySearchTermAndCategoriesAsync(searchTerm, categories);
-});
+var app = builder.Build();
 
-app.MapGet("/recipes/{recipeId:long}", async (long recipeId) => 
-{
-    var recipe = await repository.GetRecipeByIdAsync(recipeId);
-    return recipe is null ? Results.NotFound() : Results.Ok(recipe);
-});
+app.UseHttpsRedirection();
 
-app.MapGet("/categories", async () =>
-{
-    return await repository.GetCategoriesAsync();
-});
+app.MapControllers();
+
+app.UseExceptionHandler(handler => handler
+    .Run(async context => await Results.Problem().ExecuteAsync(context)));
+
+app.UseStatusCodePages(async statusCodeContext => await Results
+    .Problem(statusCode: statusCodeContext.HttpContext.Response.StatusCode)
+    .ExecuteAsync(statusCodeContext.HttpContext));
 
 await app.RunAsync();
