@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { JsonRecipeRepository } from './json-recipe-repository.ts';
+import { JsonRecipeRepository } from './adapters/json-recipe-repository.ts';
 import { RecipeUseCases } from './recipe-use-cases';
 import { Recipe } from './recipe';
 import { FilterItem } from '../../components/Filter/Filter';

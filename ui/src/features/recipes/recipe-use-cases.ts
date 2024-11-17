@@ -1,8 +1,8 @@
 import { CardContent } from "../../components/CardGrid/CardGrid";
 import { FilterItem } from "../../components/Filter/Filter";
 import { RecipeRepository } from "./recipe-repository.ts";
-import {mapRecipeToCardContent} from "./mappers/mapRecipeToCardContent.ts";
-import {mapCategoryToFilterItem} from "./mappers/mapCategoryToFilterItem.ts";
+import {mapRecipeToCardContent} from "./adapters/mapRecipeToCardContent.ts";
+import {mapCategoryToFilterItem} from "./adapters/mapCategoryToFilterItem.ts";
 import {getCheckedFilterItemIds} from "../../common/getCheckedFilterItemIds.ts";
 
 export class RecipeUseCases {

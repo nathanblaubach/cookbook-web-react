@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
-import { JsonRecipeRepository } from './features/recipes/json-recipe-repository.ts';
+import { JsonRecipeRepository } from './features/recipes/adapters/json-recipe-repository.ts';
 import { AboutPage } from './pages/AboutPage.tsx';
 import { RecipeFormPage } from './pages/recipes/RecipeFormPage.tsx';
 import { RecipePage } from './pages/recipes/RecipePage.tsx';

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { Recipe } from "./recipe";
+import { Recipe } from "../recipe.ts";
 import { JsonRecipeRepository } from "./json-recipe-repository.ts";
 
 const repositoryRecipes: Recipe[] = [

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page/Page';
 import { Notecard, NotecardRow } from '../../components/Notecard/Notecard';
 import { Recipe } from '../../features/recipes/recipe';
-import { JsonRecipeRepository } from '../../features/recipes/json-recipe-repository.ts';
+import { JsonRecipeRepository } from '../../features/recipes/adapters/json-recipe-repository.ts';
 
 type RecipePageProps = {
   recipeRepository: JsonRecipeRepository;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Page } from '../../components/Page/Page';
 import { NotecardForm, NotecardRow, NotecardListField } from '../../components/Notecard/Notecard';
-import { JsonRecipeRepository } from '../../features/recipes/json-recipe-repository.ts';
+import { JsonRecipeRepository } from '../../features/recipes/adapters/json-recipe-repository.ts';
 
 type RecipeFormPageProps = {
   recipeRepository: JsonRecipeRepository;

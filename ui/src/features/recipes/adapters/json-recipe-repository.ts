@@ -1,6 +1,6 @@
-import recipes from '../../assets/recipes.json';
-import { Recipe } from './recipe';
-import {RecipeRepository} from "./recipe-repository.ts";
+import recipes from '../../../assets/recipes.json';
+import { Recipe } from '../recipe.ts';
+import {RecipeRepository} from "../recipe-repository.ts";
 
 export class JsonRecipeRepository implements RecipeRepository{
   constructor(private readonly recipes: Recipe[] = []) {}
