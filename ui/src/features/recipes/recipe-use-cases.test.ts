@@ -42,6 +42,24 @@ const repositoryRecipes: Recipe[] = [
   }
 ];
 
+const uncheckedCategoryFilters: FilterItem[] = [
+  {
+    id: 'Dessert',
+    name: 'Dessert',
+    checked: false
+  },
+  {
+    id: 'Beverage',
+    name: 'Beverage',
+    checked: false
+  },
+  {
+    id: 'Main Course',
+    name: 'Main Course',
+    checked: false
+  }
+];
+
 const testRepository = new JsonRecipeRepository(repositoryRecipes);
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(testRepository);
 
@@ -50,232 +68,77 @@ describe('Recipe Card Grid Search and Filter: getRecipeCards', () => {
   it('should contain all recipes when search term and category ids do not limit them', () => {
     // Arrange
     const searchTerm = '';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: false
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: false
-      }
-    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, uncheckedCategoryFilters);
 
     // Assert
     expect(recipeCards.length).toBe(repositoryRecipes.length);
   });
 
-  it('should not display ingredients with search term when search term is less than 3 characters long', () => {
+  it('should limit recipes by checked categories', () => {
+    // Arrange
+    const searchTerm = '';
+    const categoryFilters: FilterItem[] = [
+      {
+        id: 'Dessert',
+        name: 'Dessert',
+        checked: true
+      },
+      {
+        id: 'Beverage',
+        name: 'Beverage',
+        checked: false
+      },
+      {
+        id: 'Main Course',
+        name: 'Main Course',
+        checked: true
+      }
+    ];
+
+    // Act
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
+
+    // Assert
+    expect(recipeCards.map(recipeCard => recipeCard.id)).toEqual([1, 2, 5]);
+  });
+
+  const chocolateIngredientRecipeId = 1;
+  const chocolateIngredientNonChocolateNameRecipeId = 4;
+
+  it('should not activate ingredient search when search term is less than 3 characters long', () => {
     // Arrange
     const searchTerm = 'ch';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: false
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: false
-      }
-    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, uncheckedCategoryFilters);
 
-    // Assert
-    const idOfRecipeWithChocolateIngredient = 1;
-    const recipeCard = recipeCards.find((recipeCard) => recipeCard.id === idOfRecipeWithChocolateIngredient)!;
-    expect(recipeCard.contentLines.length).toBe(0);
+    // Assert: Ingredients that match the search term are not displayed
+    const chocolateIngredientRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientRecipeId);
+    expect(chocolateIngredientRecipeCard).not.toBeUndefined();
+    expect(chocolateIngredientRecipeCard!.contentLines.length).toBe(0);
+
+    // Assert: Recipes that have ingredient matches without name matches are not displayed
+    const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientNonChocolateNameRecipeId);
+    expect(chocolateIngredientNonChocolateNameRecipeCard).toBeUndefined();
   });
 
-  it('should display ingredients with search term when search term is 3 or more characters long', () => {
+  it('should activate ingredient search when search term is 3 or more characters long', () => {
     // Arrange
     const searchTerm = 'cho';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: false
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: false
-      }
-    ];
 
     // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
+    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, uncheckedCategoryFilters);
 
-    // Assert
-    const idOfRecipeWithChocolateIngredient = 1;
-    const recipeCard = recipeCards.find((recipeCard) => recipeCard.id === idOfRecipeWithChocolateIngredient)!;
-    expect(recipeCard.contentLines.length).toBe(1);
-  });
+    // Assert: Ingredients that match the search term are displayed
+    const chocolateIngredientRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientRecipeId);
+    expect(chocolateIngredientRecipeCard).not.toBeUndefined();
+    expect(chocolateIngredientRecipeCard!.contentLines.length).greaterThan(0);
 
-  it('should display recipes when the search term matches only the recipe name', () => {
-    // Arrange
-    const searchTerm = 'chocolate';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: false
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: false
-      }
-    ];
-
-    // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
-
-    // Assert
-    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(3);
-  });
-
-  it('should display recipes when the search term matches only the recipe ingredients', () => {
-    // Arrange
-    const searchTerm = 'chocolate';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: false
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: false
-      }
-    ];
-
-    // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
-
-    // Assert
-    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(4);
-  });
-
-  it('should not display recipes that do not have a name or ingredient that contains the search term', () => {
-    // Arrange
-    const searchTerm = 'chocolate';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: false
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: false
-      }
-    ];
-
-    // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
-
-    // Assert
-    expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(5);
-  });
-
-  it('should display recipes with categories in the selected list', () => {
-    // Arrange
-    const searchTerm = '';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: true
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: true
-      }
-    ];
-
-    // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
-
-    // Assert
-    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(1);
-    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(2);
-    expect(recipeCards.map(recipeCard => recipeCard.id)).toContain(5);
-  });
-
-  it('should not display recipes with categories not in the selected list', () => {
-    // Arrange
-    const searchTerm = '';
-    const categoryFilters: FilterItem[] = [
-      {
-        id: 'Dessert',
-        name: 'Dessert',
-        checked: true
-      },
-      {
-        id: 'Beverage',
-        name: 'Beverage',
-        checked: false
-      },
-      {
-        id: 'Main Course',
-        name: 'Main Course',
-        checked: true
-      }
-    ];
-
-    // Act
-    const recipeCards = recipeUseCases.getRecipeCards(searchTerm, categoryFilters);
-
-    // Assert
-    expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(3);
-    expect(recipeCards.map(recipeCard => recipeCard.id)).not.toContain(4);
+    // Assert: Recipes that have ingredient matches without name matches are displayed
+    const chocolateIngredientNonChocolateNameRecipeCard = recipeCards.find(recipeCard => recipeCard.id === chocolateIngredientNonChocolateNameRecipeId);
+    expect(chocolateIngredientNonChocolateNameRecipeCard).not.toBeUndefined();
   });
 
 });
