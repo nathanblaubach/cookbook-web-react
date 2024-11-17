@@ -6,7 +6,7 @@ export type CardContent = {
   id: number;
   link: string;
   title: string;
-  contentLines: Array<string>;
+  contentLines: string[];
 };
 
 export type CardGridProps = {

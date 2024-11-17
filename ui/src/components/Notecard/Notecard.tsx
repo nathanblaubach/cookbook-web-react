@@ -59,12 +59,12 @@ export function NotecardRow({ text, isBold = false }: Readonly<NotecardRowProps>
 }
 
 type NotecardListFieldParams = {
-  rows: Array<string>,
+  rows: string[],
   placeholder: string,
-  onRowsChange: (rows: Array<string>) => void,
+  onRowsChange: (rows: string[]) => void,
 };
 
-function swapArrayValuesAtIndices(arrayValues: Array<string>, leftIndex: number, rightIndex: number): Array<string> {
+function swapArrayValuesAtIndices(arrayValues: string[], leftIndex: number, rightIndex: number): string[] {
   const temp: string = arrayValues[leftIndex];
   arrayValues[leftIndex] = arrayValues[rightIndex];
   arrayValues[rightIndex] = temp;
@@ -106,7 +106,7 @@ const Remove = (
 );
 
 export function NotecardListField({ rows, placeholder, onRowsChange }: Readonly<NotecardListFieldParams>): React.JSX.Element {
-  const [items, setItems] = useState<Array<string>>(rows);
+  const [items, setItems] = useState<string[]>(rows);
   const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
   function moveUp(index: number): void {

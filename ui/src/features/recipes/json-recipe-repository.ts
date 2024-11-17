@@ -2,9 +2,9 @@ import recipes from '../../assets/recipes.json';
 import { Recipe } from './recipe';
 
 export class JsonRecipeRepository {
-  constructor(private readonly recipes: Array<Recipe> = []) {}
+  constructor(private readonly recipes: Recipe[] = []) {}
 
-  public getRecipesBySearchTermAndCategories(searchTerm: string, categories: Array<string>): Array<Recipe> {
+  public getRecipesBySearchTermAndCategories(searchTerm: string, categories: string[]): Recipe[] {
     return this.recipes.filter(recipe => {
       const recipeNameMatched = this.includesCaseInsensitive(recipe.name, searchTerm);
 
@@ -25,8 +25,8 @@ export class JsonRecipeRepository {
     return this.recipes.find(recipe => recipe.id === id);
   }
 
-  public getCategories(): Array<string> {
-    const categories: Array<string> = [];
+  public getCategories(): string[] {
+    const categories: string[] = [];
     this.recipes.forEach(recipe => {
       if (!categories.includes(recipe.category)) {
         categories.push(recipe.category);
@@ -36,6 +36,6 @@ export class JsonRecipeRepository {
   }
 
   public static loadFromJson(): JsonRecipeRepository {
-    return new JsonRecipeRepository(recipes as Array<Recipe>);
+    return new JsonRecipeRepository(recipes as Recipe[]);
   }
 }
