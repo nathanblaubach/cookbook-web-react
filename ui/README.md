@@ -1,9 +1,9 @@
 # Cookbook (React Web Application)
 
-This react service is a standalone cookbook application that retrieves recipes from a simple json file.
+This React service is a standalone cookbook application that retrieves recipes from a simple json file.
 
 - Dependencies are kept to a relative minimum to minimize impact on the application
-- The react components are intentionally "[Humble](https://martinfowler.com/bliki/HumbleObject.html)": They don't contain any business logic
+- The React components are intentionally "[Humble](https://martinfowler.com/bliki/HumbleObject.html)": They don't contain any business logic
 - Behavioral tests ensure that the business logic does what is required of it (TDD)
 
 ## Environment
