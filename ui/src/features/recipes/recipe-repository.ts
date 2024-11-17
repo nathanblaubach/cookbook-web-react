@@ -1,4 +1,4 @@
-import data from '../../data/recipe-repository.json';
+import recipes from '../../assets/recipes.json';
 import { Recipe } from './recipe';
 
 export class RecipeRepository {
@@ -36,6 +36,6 @@ export class RecipeRepository {
   }
 
   public static loadFromJson(): RecipeRepository {
-    return new RecipeRepository(data.recipes as Array<Recipe>);
+    return new RecipeRepository(recipes as Array<Recipe>);
   }
 }
