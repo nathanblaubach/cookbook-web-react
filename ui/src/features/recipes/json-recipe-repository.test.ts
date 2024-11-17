@@ -43,65 +43,46 @@ const repositoryRecipes: Recipe[] = [
 const recipeRepository = new JsonRecipeRepository(repositoryRecipes);
 
 describe('getRecipesBySearchTermAndCategories', () => {
-
-  it('should get all recipes when searchTerm and categories are empty', () => {
+  it.each([true, false])('should get all recipes when searchTerm and categories are empty', (includeCategoryMatches) => {
     // Act
-    const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', []);
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', [], includeCategoryMatches);
 
     // Assert
     expect(recipes.length).toBe(repositoryRecipes.length);
   });
 
-  it('should only return recipes with given categories', () => {
+  it.each([true, false])('should only return recipes with given categories', (includeCategoryMatches) => {
     // Arrange
     const categories = ['Dessert', 'Main Course'];
 
     // Act
-    const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', categories);
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories('', categories, includeCategoryMatches);
 
     // Assert
     recipes.forEach(recipe => expect(categories).toContain(recipe.category));
   });
 
-  it('should only return recipes that match the given search term', () => {
+  it('should only return recipes that match their name or ingredients with the given search term', () => {
     // Arrange
     const searchTerm = 'chocolate';
 
     // Act
-    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, []);
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, [], true);
 
     // Assert
-    recipes.forEach(recipe => {
-      const matchedNames = [
-        recipe.name.toLocaleLowerCase(),
-        ...recipe.ingredients.map(ingredient => ingredient.toLocaleLowerCase())
-      ].filter(name => name.includes(searchTerm))
-      expect(matchedNames.length).toBeGreaterThan(0);
-    });
+    expect(recipes.map(recipe => recipe.id)).toEqual([1,2,3,4])
   });
 
-  it('should include ingredient search results when the search term length is 3 or greater', () => {
+  it('should only return recipes that match their name with the given search term', () => {
     // Arrange
-    const searchTerm = 'cho';
+    const searchTerm = 'chocolate';
 
     // Act
-    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, []);
+    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, [], false);
 
     // Assert
-    expect(recipes.map(recipe => recipe.name)).toContain('Hot Cocoa');
+    expect(recipes.map(recipe => recipe.id)).toEqual([1,2,3])
   });
-
-  it('should include ingredient search results when the search term length is less than 3', () => {
-    // Arrange
-    const searchTerm = 'ch';
-
-    // Act
-    const recipes = recipeRepository.getRecipesBySearchTermAndCategories(searchTerm, []);
-
-    // Assert
-    expect(recipes.map(recipe => recipe.name)).not.toContain('Hot Cocoa');
-  });
-
 });
 
 describe('getRecipeById', () => {

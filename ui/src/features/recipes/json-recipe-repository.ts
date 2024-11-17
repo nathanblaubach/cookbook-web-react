@@ -1,14 +1,15 @@
 import recipes from '../../assets/recipes.json';
 import { Recipe } from './recipe';
+import {RecipeRepository} from "./recipe-repository.ts";
 
-export class JsonRecipeRepository {
+export class JsonRecipeRepository implements RecipeRepository{
   constructor(private readonly recipes: Recipe[] = []) {}
 
-  public getRecipesBySearchTermAndCategories(searchTerm: string, categories: string[]): Recipe[] {
+  public getRecipesBySearchTermAndCategories(searchTerm: string, categories: string[], includeIngredientMatches: boolean): Recipe[] {
     return this.recipes.filter(recipe => {
       const recipeNameMatched = this.includesCaseInsensitive(recipe.name, searchTerm);
 
-      const recipeIngredientMatched = searchTerm.length >= 3 && recipe.ingredients
+      const recipeIngredientMatched = includeIngredientMatches && recipe.ingredients
         .some((ingredient: string) => this.includesCaseInsensitive(ingredient, searchTerm));
 
       const categoryMatched = categories.length === 0 || categories.includes(recipe.category);

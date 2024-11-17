@@ -13,7 +13,7 @@ export class RecipeUseCases {
         const checkedCategories: string[] = getCheckedFilterItemIds(categoryFilters);
         const ingredientSearchIsActive: boolean = searchTerm.length >= 3;
         return this.repository
-            .getRecipesBySearchTermAndCategories(searchTerm, checkedCategories)
+            .getRecipesBySearchTermAndCategories(searchTerm, checkedCategories, ingredientSearchIsActive)
             .map(recipe => mapRecipeToCardContent(recipe, ingredientSearchIsActive ? searchTerm : undefined));
     }
 
