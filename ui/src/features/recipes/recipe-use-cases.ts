@@ -10,9 +10,11 @@ export class RecipeUseCases {
     constructor(private readonly repository: RecipeRepository) {}
 
     public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
+        const checkedCategories: string[] = getCheckedFilterItemIds(categoryFilters);
+        const ingredientSearchIsActive: boolean = searchTerm.length >= 3;
         return this.repository
-            .getRecipesBySearchTermAndCategories(searchTerm, getCheckedFilterItemIds(categoryFilters))
-            .map(recipe => mapRecipeToCardContent(recipe, searchTerm.length >= 3 ? searchTerm : undefined));
+            .getRecipesBySearchTermAndCategories(searchTerm, checkedCategories)
+            .map(recipe => mapRecipeToCardContent(recipe, ingredientSearchIsActive ? searchTerm : undefined));
     }
 
     public getCategoryFilterItems(): FilterItem[] {
