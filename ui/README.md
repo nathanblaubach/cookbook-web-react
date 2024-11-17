@@ -23,7 +23,7 @@ Then, if you understand them, run the following commands in your terminal:
 git clone https://github.com/nathanblaubach/cookbook.git
 
 -- Run the web application:
-cd cookbook/web-react
+cd cookbook/ui
 npm install
 npm run dev
 ```
