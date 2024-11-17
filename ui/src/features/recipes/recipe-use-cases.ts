@@ -1,13 +1,13 @@
 import { CardContent } from "../../components/CardGrid/CardGrid";
 import { FilterItem } from "../../components/Filter/Filter";
-import { JsonRecipeRepository } from "./json-recipe-repository.ts";
+import { RecipeRepository } from "./recipe-repository.ts";
 import {mapRecipeToCardContent} from "./mappers/mapRecipeToCardContent.ts";
 import {mapCategoryToFilterItem} from "./mappers/mapCategoryToFilterItem.ts";
 import {getCheckedFilterItemIds} from "../../common/getCheckedFilterItemIds.ts";
 
 export class RecipeUseCases {
 
-    constructor(private readonly repository: JsonRecipeRepository) {}
+    constructor(private readonly repository: RecipeRepository) {}
 
     public getRecipeCards(searchTerm: string, categoryFilters: FilterItem[]): CardContent[] {
         const checkedCategories: string[] = getCheckedFilterItemIds(categoryFilters);
