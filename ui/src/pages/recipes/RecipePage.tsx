@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom'
 import { Page } from '../../components/Page/Page';
 import { Notecard, NotecardRow } from '../../components/Notecard/Notecard';
 import { Recipe } from '../../features/recipes/recipe';
-import { RecipeRepository } from '../../features/recipes/recipe-repository';
+import { JsonRecipeRepository } from '../../features/recipes/json-recipe-repository.ts';
 
 type RecipePageProps = {
-  recipeRepository: RecipeRepository;
+  recipeRepository: JsonRecipeRepository;
 };
 
 export function RecipePage({ recipeRepository }: Readonly<RecipePageProps>): React.JSX.Element {

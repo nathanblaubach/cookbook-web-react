@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { Recipe } from "./recipe";
-import { RecipeRepository } from "./recipe-repository";
+import { JsonRecipeRepository } from "./json-recipe-repository.ts";
 
 const repositoryRecipes: Recipe[] = [
   {
@@ -40,7 +40,7 @@ const repositoryRecipes: Recipe[] = [
   }
 ];
 
-const recipeRepository = new RecipeRepository(repositoryRecipes);
+const recipeRepository = new JsonRecipeRepository(repositoryRecipes);
 
 describe('getRecipesBySearchTermAndCategories', () => {
 

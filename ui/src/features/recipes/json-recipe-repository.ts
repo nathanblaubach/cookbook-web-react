@@ -1,7 +1,7 @@
 import recipes from '../../assets/recipes.json';
 import { Recipe } from './recipe';
 
-export class RecipeRepository {
+export class JsonRecipeRepository {
   constructor(private readonly recipes: Array<Recipe> = []) {}
 
   public getRecipesBySearchTermAndCategories(searchTerm: string, categories: Array<string>): Array<Recipe> {
@@ -35,7 +35,7 @@ export class RecipeRepository {
     return categories;
   }
 
-  public static loadFromJson(): RecipeRepository {
-    return new RecipeRepository(recipes as Array<Recipe>);
+  public static loadFromJson(): JsonRecipeRepository {
+    return new JsonRecipeRepository(recipes as Array<Recipe>);
   }
 }

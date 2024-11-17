@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Page } from '../../components/Page/Page';
 import { NotecardForm, NotecardRow, NotecardListField } from '../../components/Notecard/Notecard';
-import { RecipeRepository } from '../../features/recipes/recipe-repository';
+import { JsonRecipeRepository } from '../../features/recipes/json-recipe-repository.ts';
 
 type RecipeFormPageProps = {
-  recipeRepository: RecipeRepository;
+  recipeRepository: JsonRecipeRepository;
 };
 
 export function RecipeFormPage({ recipeRepository }: Readonly<RecipeFormPageProps>): React.JSX.Element {

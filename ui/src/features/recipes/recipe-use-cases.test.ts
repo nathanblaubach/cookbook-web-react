@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { RecipeRepository } from './recipe-repository';
+import { JsonRecipeRepository } from './json-recipe-repository.ts';
 import { RecipeUseCases } from './recipe-use-cases';
 import { Recipe } from './recipe';
 import { FilterItem } from '../../components/Filter/Filter';
@@ -42,7 +42,7 @@ const repositoryRecipes: Recipe[] = [
   }
 ];
 
-const testRepository = new RecipeRepository(repositoryRecipes);
+const testRepository = new JsonRecipeRepository(repositoryRecipes);
 const recipeUseCases: RecipeUseCases = new RecipeUseCases(testRepository);
 
 describe('Recipe Card Grid Search and Filter: getRecipeCards', () => {
