@@ -21,7 +21,7 @@ export function CardGrid({ cards }: Readonly<CardGridProps>): React.JSX.Element 
           <Link className='card-link' key={card.id} to={card.link}>
             <div className='card'>
               <h2>{card.title}</h2>
-              { card.contentLines.map(line => <p key={card.id}>{line}</p>) }
+              { card.contentLines.map((line, index) => <p key={`${card.id}-${index}`}>{line}</p>) }
             </div>
           </Link>
         ))
