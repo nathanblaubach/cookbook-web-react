@@ -1,6 +1,6 @@
 import {describe, expect, it} from "vitest";
 import {mapRecipeToCardContent} from "./mapRecipeToCardContent.ts";
-import {Recipe} from "../recipe.ts";
+import {Recipe} from "../../recipe.ts";
 
 describe('mapRecipeToCardContent', () => {
 

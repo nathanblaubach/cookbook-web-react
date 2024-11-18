@@ -1,12 +1,12 @@
-import recipes from '../../../assets/recipes.json';
-import { Recipe } from '../recipe.ts';
-import {RecipeRepository} from "../recipe-repository.ts";
+import { Recipe } from '../../recipe.ts';
+import {RecipeRepository} from "../../recipe-repository.ts";
+import { JsonRecipeReader } from './json-recipe-reader.ts';
 
-export class JsonRecipeRepository implements RecipeRepository{
-  constructor(private readonly recipes: Recipe[] = []) {}
+export class JsonRecipeRepository implements RecipeRepository {
+  constructor(private readonly jsonRecipeReader: JsonRecipeReader) {}
 
   public getRecipesBySearchTermAndCategories(searchTerm: string, categories: string[], includeIngredientMatches: boolean): Recipe[] {
-    return this.recipes.filter(recipe => {
+    return this.jsonRecipeReader.read().filter(recipe => {
       const recipeNameMatched = this.includesCaseInsensitive(recipe.name, searchTerm);
 
       const recipeIngredientMatched = includeIngredientMatches && recipe.ingredients
@@ -23,20 +23,16 @@ export class JsonRecipeRepository implements RecipeRepository{
   }
 
   public getRecipeById(id: number): Recipe | undefined {
-    return this.recipes.find(recipe => recipe.id === id);
+    return this.jsonRecipeReader.read().find(recipe => recipe.id === id);
   }
 
   public getCategories(): string[] {
     const categories: string[] = [];
-    this.recipes.forEach(recipe => {
+    this.jsonRecipeReader.read().forEach(recipe => {
       if (!categories.includes(recipe.category)) {
         categories.push(recipe.category);
       }
     });
     return categories;
-  }
-
-  public static loadFromJson(): JsonRecipeRepository {
-    return new JsonRecipeRepository(recipes as Recipe[]);
   }
 }

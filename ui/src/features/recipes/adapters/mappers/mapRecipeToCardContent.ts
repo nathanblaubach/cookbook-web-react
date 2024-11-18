@@ -1,5 +1,5 @@
-import {Recipe} from "../recipe.ts";
-import {CardContent} from "../../../components/CardGrid/CardGrid.tsx";
+import {Recipe} from "../../recipe.ts";
+import {CardContent} from "../../../../components/CardGrid/CardGrid.tsx";
 
 export function mapRecipeToCardContent(recipe: Recipe, searchTerm?: string): CardContent {
     const relevantIngredients: string[] = searchTerm
