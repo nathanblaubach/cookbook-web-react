@@ -44,6 +44,7 @@ Thumbs.db
 #binaries
 node_modules
 dist
+coverage
 
 #firebase
 .firebase
