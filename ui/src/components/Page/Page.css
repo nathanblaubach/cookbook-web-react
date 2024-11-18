@@ -2,12 +2,13 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
 body, input {
     font-family: sans-serif;
     background-color: white;
     color: black;
 }
-  
+
 
 .cookbook-logo {
     color: white;
@@ -20,14 +21,17 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
 main {
     max-width: 768px;
     margin: 0 auto;
     padding: .75rem;
 }
+
 nav {
     margin: 1.5rem 0;
 }
+
 .nav-link {
     margin-left: 1rem;
     color: #00304E;

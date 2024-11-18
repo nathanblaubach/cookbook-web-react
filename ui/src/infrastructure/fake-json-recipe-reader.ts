@@ -1,5 +1,5 @@
-import { JsonRecipe } from "../features/recipes/adapters/repository/json-recipe";
-import { JsonRecipeReader } from "../features/recipes/adapters/repository/json-recipe-reader";
+import {JsonRecipe} from "../features/recipes/adapters/repository/json-recipe";
+import {JsonRecipeReader} from "../features/recipes/adapters/repository/json-recipe-reader";
 
 export class FakeJsonRecipeReader implements JsonRecipeReader {
     read(): JsonRecipe[] {

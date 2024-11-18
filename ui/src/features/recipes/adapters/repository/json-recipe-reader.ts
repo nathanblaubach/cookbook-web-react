@@ -1,4 +1,4 @@
-import { JsonRecipe } from "./json-recipe";
+import {JsonRecipe} from "./json-recipe";
 
 export interface JsonRecipeReader {
     read(): JsonRecipe[];

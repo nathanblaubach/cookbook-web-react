@@ -25,6 +25,7 @@
 .notecard-row-title {
     border-bottom: 2px red solid;
 }
+
 .notecard-text-title {
     font-size: 2rem;
     font-weight: bold;
@@ -33,6 +34,7 @@
 .notecard-row-border {
     border-bottom: 1px darkgray solid;
 }
+
 .notecard-text-font {
     font-size: 1rem;
 }
