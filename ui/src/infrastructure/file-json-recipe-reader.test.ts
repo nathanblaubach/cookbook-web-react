@@ -2,6 +2,7 @@ import {describe, expect, it} from "vitest";
 import {FileJsonRecipeReader} from "./file-json-recipe-reader.ts";
 
 describe("FileJsonRecipeReader", () => {
+
     it("should get json recipes out of the file", async () => {
         // Arrange
         const fileJsonRecipeReader = new FileJsonRecipeReader();
@@ -18,5 +19,6 @@ describe("FileJsonRecipeReader", () => {
             expect(recipe.ingredients).not.toBeUndefined();
             expect(recipe.instructions).not.toBeUndefined();
         })
-    })
+    });
+
 });

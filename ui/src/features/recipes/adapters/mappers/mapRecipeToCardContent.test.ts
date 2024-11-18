@@ -93,5 +93,6 @@ describe('mapRecipeToCardContent', () => {
         cardContent.contentLines.forEach(contentLine => {
             expect(contentLine.toLocaleLowerCase()).toContain(searchTerm.toLocaleLowerCase());
         });
-    })
+    });
+
 });
