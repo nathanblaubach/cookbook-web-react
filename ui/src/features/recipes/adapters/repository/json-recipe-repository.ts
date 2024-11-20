@@ -19,10 +19,6 @@ export class JsonRecipeRepository implements RecipeRepository {
         });
     }
 
-    private includesCaseInsensitive(checkString: string, searchString: string): boolean {
-        return checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
-    }
-
     public getRecipeById(id: number): Recipe | undefined {
         return this.jsonRecipeReader.read().find(recipe => recipe.id === id);
     }
@@ -35,5 +31,9 @@ export class JsonRecipeRepository implements RecipeRepository {
             }
         });
         return categories;
+    }
+
+    private includesCaseInsensitive(checkString: string, searchString: string): boolean {
+        return checkString.toLocaleLowerCase().includes(searchString.toLocaleLowerCase());
     }
 }
