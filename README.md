@@ -4,7 +4,7 @@
 
 This cookbook is a simple list of recipes for my mom's family's family cookbook, but I am writing it in a way that (I
 hope) is easily reusable. The recipes seen when the application is launched are currently being pulled from a JSON file.
-This application is being developed using Vite, Vitest, React and Typescript.
+This application is being developed using Playwright, Axe, Vitest, Vite, React and Typescript.
 
 - Dependencies are kept to a relative minimum to minimize impact on the application, and Snyk is used to scan for code
   and dependency vulnerabilities.
@@ -18,14 +18,21 @@ You will need to have [node.js](https://nodejs.org) and [npm](https://www.npmjs.
 
 Then, if you understand them, run the following commands in your terminal:
 
-```bash
--- Clone this repository
+```sh
+# Clone this repository
 git clone https://github.com/nathanblaubach/cookbook.git
 
--- Run the web application:
+# Run the web application/unit tests:
 cd cookbook/ui
-npm install
+npm i
 npm run dev
+npm run test
+
+# Run the end to end tests (The web application must be running)
+cd cookbook/ui
+npm i
+npm run install # If you haven't installed playwright browsers before
+npm run test
 ```
 
 ## Contributors
