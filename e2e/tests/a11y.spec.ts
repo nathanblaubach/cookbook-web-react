@@ -16,8 +16,7 @@ test('Recipe Search Page (base url)', async ({page}) => {
 
 test('Recipe Search Page', async ({page}) => {
     await page.goto(`${getBaseUrl()}/recipes`);
-    await page.getByRole('button').click(); // Expand filter area to ensure it is accessible
-
+    await page.getByRole('button', {name: 'Show Filter Area'}).click({force: true});
     await expect(page.getByRole('heading', {name: 'Recipes'})).toBeVisible();
     await expect(page.getByRole('checkbox', {name: 'Beverage'})).toBeVisible();
     await expectNoAccessibilityViolation(page);

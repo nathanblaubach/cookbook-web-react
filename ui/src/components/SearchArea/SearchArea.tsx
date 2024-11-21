@@ -18,8 +18,8 @@ export function SearchArea({
 
     return (
         <div className="search-area">
-            <button onClick={() => setShowFilters(!showFilters)}>
-                <img src={filterImage} alt="Filter Area Expansion Button"/>
+            <button onClick={() => setShowFilters(!showFilters)} aria-label="Show Filter Area">
+                <img src={filterImage} alt="Filter Icon"/>
             </button>
             <input
                 className="search-bar"
