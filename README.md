@@ -26,24 +26,19 @@ You will need to have [node.js](https://nodejs.org) and [npm](https://www.npmjs.
 Then, if you understand them, run the following commands in your terminal:
 
 ```sh
-# Clone this repository
+# Clone this repository and switch to the directory
 git clone https://github.com/nathanblaubach/cookbook.git
+cd cookbook
 
 # Run the web application
-cd cookbook/ui
-npm i
-npm run dev
+npm --prefix ./ui run dev
 
 # Run the unit tests
-cd cookbook/ui
-npm i
-npm run test
+npm --prefix ./ui run test
 
 # Run the end to end tests (The web application must be running)
-cd cookbook/e2e
-npm i
-npm run install-playwright-browsers # If you haven't installed playwright browsers before
-npm run e2e
+npm --prefix ./e2e run install-playwright-browsers # If you haven't installed playwright browsers before
+npm --prefix ./e2e run e2e
 ```
 
 ## Contributors
