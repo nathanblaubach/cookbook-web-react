@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "install": "npx playwright install --with-deps",
-    "test": "npx playwright test"
+    "install-playwright-browsers": "npx playwright install --with-deps",
+    "e2e": "npx playwright test"
   },
   "keywords": [],
   "author": "",
