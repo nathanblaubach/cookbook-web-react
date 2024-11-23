@@ -22,14 +22,18 @@ Then, if you understand them, run the following commands in your terminal:
 # Clone this repository
 git clone https://github.com/nathanblaubach/cookbook.git
 
-# Run the web application/unit tests:
+# Run the web application
 cd cookbook/ui
 npm i
 npm run dev
+
+# Run the unit tests
+cd cookbook/ui
+npm i
 npm run test
 
 # Run the end to end tests (The web application must be running)
-cd cookbook/ui
+cd cookbook/e2e
 npm i
 npm run install # If you haven't installed playwright browsers before
 npm run test
