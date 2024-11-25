@@ -23,21 +23,32 @@ hope) is easily reusable. It is being developed using Typescript, React and Vite
 
 You will need to have [node.js](https://nodejs.org) and [npm](https://www.npmjs.com) installed.
 
-Then, if you understand them, run the following commands in your terminal:
+Clone the repository and install dependencies
 
-```sh
+```shell
 # Clone this repository and switch to the directory
 git clone https://github.com/nathanblaubach/cookbook.git
 cd cookbook
-
-# Run the web application
-npm --prefix ./ui run dev
-
-# Run the unit tests
-npm --prefix ./ui run test
-
-# Run the end to end tests (The web application must be running)
+npm --prefix ./ui i
+npm --prefix ./e2e i
 npm --prefix ./e2e run install-playwright-browsers # If you haven't installed playwright browsers before
+```
+
+Run the web application
+
+```shell
+npm --prefix ./ui run dev
+```
+
+Run the unit tests
+
+```shell
+npm --prefix ./ui run test
+```
+
+Run the end to end tests (The web application must be running)
+
+```shell
 npm --prefix ./e2e run e2e
 ```
 
