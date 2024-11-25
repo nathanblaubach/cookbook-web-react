@@ -20,7 +20,7 @@ export function RecipeSearchPage({recipeUseCases}: Readonly<RecipeSearchPageProp
         <Page>
             <h1>Recipes</h1>
             <SearchArea searchString={searchString} onSearchStringChange={setSearchString}>
-                <Filter type='Category' items={categoryFilters} onItemsUpdate={setCategoryFilters}/>
+                <Filter type='Categories' items={categoryFilters} onItemsUpdate={setCategoryFilters}/>
             </SearchArea>
             <CardGrid cards={recipeCards}/>
         </Page>

@@ -27,22 +27,25 @@ export function Filter({items, type, onItemsUpdate}: Readonly<FilterProps>): Rea
     }
 
     return (
-        <div className="filters">
-            {
-                items.map(filterItem =>
-                    <div key={filterItem.id} className="filter" style={{marginBottom: '.5rem'}}>
-                        <input
-                            type="checkbox"
-                            aria-label={`${type} Filter: ${filterItem.name}`}
-                            id={filterItem.id.toString()}
-                            checked={filterItem.checked}
-                            onChange={() => alertParentOfFilterToggle(filterItem.id)}
-                        />
-                        <label htmlFor={filterItem.id.toString()}>{filterItem.name}</label>
-                    </div>
-                )
-            }
-        </div>
+        <>
+            <h2>{type}</h2>
+            <div className="filters">
+                {
+                    items.map(filterItem =>
+                        <div key={filterItem.id} className="filter" style={{marginBottom: '.5rem'}}>
+                            <input
+                                type="checkbox"
+                                aria-label={filterItem.name}
+                                id={filterItem.id.toString()}
+                                checked={filterItem.checked}
+                                onChange={() => alertParentOfFilterToggle(filterItem.id)}
+                            />
+                            <label htmlFor={filterItem.id.toString()}>{filterItem.name}</label>
+                        </div>
+                    )
+                }
+            </div>
+        </>
     );
 
 }
