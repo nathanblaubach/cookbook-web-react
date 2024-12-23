@@ -29,27 +29,27 @@ Clone the repository and install dependencies
 # Clone this repository and switch to the directory
 git clone https://github.com/nathanblaubach/cookbook.git
 cd cookbook
-npm --prefix ./ui i
-npm --prefix ./e2e i
-npm --prefix ./e2e run install-playwright-browsers # If you haven't installed playwright browsers before
+npm --prefix ui i
+npm --prefix e2e i
+npm --prefix e2e run install-playwright # If you haven't installed playwright before
 ```
 
 Run the web application
 
 ```shell
-npm --prefix ./ui run dev
+npm --prefix ui run dev
 ```
 
 Run the unit tests
 
 ```shell
-npm --prefix ./ui run test
+npm --prefix ui run test
 ```
 
 Run the end to end tests (The web application must be running)
 
 ```shell
-npm --prefix ./e2e run e2e
+npm --prefix e2e run e2e
 ```
 
 ## Contributors

@@ -1,15 +1,11 @@
 {
-  "name": "e2e",
+  "name": "cookbook-e2e",
+  "private": true,
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "install-playwright-browsers": "npx playwright install --with-deps",
+    "install-playwright": "npx playwright install --with-deps",
     "e2e": "npx playwright test"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
     "@playwright/test": "^1.49.0",
