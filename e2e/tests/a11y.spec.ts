@@ -1,5 +1,4 @@
 import {expect, Page, test} from '@playwright/test';
-import {getBaseUrl} from './util/base-url';
 import AxeBuilder from '@axe-core/playwright';
 
 async function expectNoAccessibilityViolation(page: Page) {
@@ -8,14 +7,14 @@ async function expectNoAccessibilityViolation(page: Page) {
 }
 
 test('Recipe Search Page (base url)', async ({page}) => {
-    await page.goto(getBaseUrl());
+    await page.goto('/');
     await expect(page).toHaveTitle(/McClain Family Cookbook/);
     await expect(page.getByRole('heading', {name: 'Recipes'})).toBeVisible();
     await expectNoAccessibilityViolation(page);
 });
 
 test('Recipe Search Page', async ({page}) => {
-    await page.goto(`${getBaseUrl()}/recipes`);
+    await page.goto('/recipes');
     await page.getByRole('button', {name: 'Show Filter Area'}).click({force: true});
     await expect(page.getByRole('heading', {name: 'Recipes'})).toBeVisible();
     await expect(page.getByRole('heading', {name: 'Categories'})).toBeVisible();
@@ -24,20 +23,20 @@ test('Recipe Search Page', async ({page}) => {
 
 test('Recipe Page: Found', async ({page}) => {
     const recipeId = 0;
-    await page.goto(`${getBaseUrl()}/recipes/${recipeId}`);
+    await page.goto(`/recipes/${recipeId}`);
     await expect(page.getByRole('heading', {name: 'Recipe Name'})).toBeVisible();
     await expectNoAccessibilityViolation(page);
 });
 
 test('Recipe Page: Not Found', async ({page}) => {
     const recipeId = -1;
-    await page.goto(`${getBaseUrl()}/recipes/${recipeId}`);
+    await page.goto(`/recipes/${recipeId}`);
     await expect(page.getByRole('heading', {name: 'Recipe Not Found'})).toBeVisible();
     await expectNoAccessibilityViolation(page);
 });
 
 test('About Page', async ({page}) => {
-    await page.goto(`${getBaseUrl()}/about`);
+    await page.goto('/about');
     await expect(page.getByRole('heading', {name: 'The McClain Family Cookbook'})).toBeVisible();
     await expectNoAccessibilityViolation(page);
 });
